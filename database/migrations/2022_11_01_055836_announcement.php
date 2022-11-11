@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('announcement',function(Blueprint $table){
             $table->bigIncrements('anno_ID');
+            $table->string('anno_pic', 300)->nullable();
             $table->string('anno_title');
             $table->string('anno_author');
             $table->date('anno_date');

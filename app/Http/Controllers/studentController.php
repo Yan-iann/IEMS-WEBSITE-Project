@@ -62,6 +62,9 @@ class studentController extends Controller
             }
             else
             {
+                $filename = time().request()->file('anno_pic')->getClientOriginalName();
+                $path = request()->file('anno_pic')->move('storage/images',$filename);
+                
                 $anno = [
                     'anno_title' => $request->anno_title,
                     'anno_author' => $request->anno_author,
@@ -69,6 +72,7 @@ class studentController extends Controller
                     'anno_content' => $request->anno_content,
                     'anno_status' => $request->anno_status,
                     'user_ID' => $request->user_ID,
+                    'anno_pic' => $path,
                 ];
                 announcement::create($anno);
                 $anno = announcement::where('user_ID', '=', Auth::user()->id )->get();

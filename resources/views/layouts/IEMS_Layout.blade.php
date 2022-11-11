@@ -27,6 +27,6 @@
     </div>
 
 
-    @include('iems.SITE.footer')
+    @include('IEMS\Linus.SITE.footer')
 </body>
 </html>

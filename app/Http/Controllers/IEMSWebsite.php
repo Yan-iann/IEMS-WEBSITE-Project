@@ -26,23 +26,23 @@ class IEMSWebsite extends Controller
     }
 
     function accessCollege(){
-        return view('IEMS.college');
+        return view('IEMS\Linus.SITE.college');
     }
 
     function accessEnrollment(){
-        return view('IEMS.coursesenrollment');
+        return view('IEMS\Linus.SITE.coursesenrollment');
     }
 
     function accessFacilities(){
-        return view('IEMS.facilities');
+        return view('IEMS\Linus.SITE.facilities');
     }
 
     function accessFacultyStaff(){
-        return view('IEMS.facultystaff');
+        return view('IEMS\Linus.SITE.facultystaff');
     }
 
     function accessLinus(){
-        return view('IEMS.linus');
+        return view('IEMS\Linus.SITE.linus');
     }
 
     function accessRates(){
@@ -56,7 +56,7 @@ class IEMSWebsite extends Controller
     }
 
     function accessAnnouncementDisplay(){
-        return view('IEMS\Linus.SITE.announcement_display');
+        return view('IEMS\Linus.SITE.announcement_display')->with('announcement',$anno);
     }
 
 }

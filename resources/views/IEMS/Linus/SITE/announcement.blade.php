@@ -1,4 +1,4 @@
-@extends('iems.home')
+@extends('IEMS\Linus.SITE.home')
 @section('content')
     <section class="mbr-section article" style="background-color: #1DA2d8; padding-top: 180px; padding-bottom: 180px;">
 
@@ -50,17 +50,18 @@
                 </div>
 
                 {{-- Other Announcement up to 6 --}}
+                @foreach ($announcement as $item)
                 <div class="col-12 col-md-6 col-lg-4  mb-lg-5">
                     <div class="card shadow bg-white border-gray-300 p-4 rounded">
-                        <img src="{{-- Image Source --}}" class="card-img-top rounded" alt="Image Cap">
+                        <img src="{{ asset($item->anno_pic) }}" class="card-img-top rounded" alt="Image Cap">
                         {{-- Image --}}
                         <div class="card-body p-0 pt-4">
 
-                            <h2 class="subheader"> {{-- Title --}}</h2> {{-- Title --}}
+                            <h2 class="subheader"> {{ $item->anno_title }}</h2> {{-- Title --}}
 
                             <div class="d-flex align-items-center my-3">
-                                <h3 class="h6 small ms-2 mb-0">{{-- Author --}}</h3> {{-- Author --}}
-                                <span class="h6 text-muted small fw-normal mb-0 ms-auto">{{-- Date Created --}}</span>
+                                <h3 class="h6 small ms-2 mb-0">{{ $item->anno_author }}</h3>{{-- Author --}}
+                                <span class="h6 text-muted small fw-normal mb-0 ms-auto">{{ $item->anno_date }}</span>
                                 {{-- Date Created --}}
                             </div>
 
@@ -73,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-
+                @endforeach
                 <div class="col-12">
                     <div class="d-flex justify-content-center">
                         <nav aria-label="Page navigation example">

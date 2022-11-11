@@ -145,6 +145,11 @@
           <div class="modal-body">
             <div class="container-fluid">
             <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
+                  
+                 <div class="col-12">
+                    <label for="anno_pic">Announcement Cover:</label>
+                    <input type="file" id="anno_pic" class="form-control"  placeholder="Announcement Cover Photo" name="anno_pic">
+                  </div> 
 
                   <div class="col-12">
                     <label for="formGroupExampleInput" class="form-label">Announcement Title</label>
