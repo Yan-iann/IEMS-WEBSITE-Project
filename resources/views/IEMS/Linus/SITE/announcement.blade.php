@@ -1,0 +1,97 @@
+@extends('iems.home')
+@section('content')
+    <section class="mbr-section article" style="background-color: #1DA2d8; padding-top: 180px; padding-bottom: 180px;">
+
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6 text-center ">
+                    <h1 class=" text-white display-2 subheader">Announcements</h1>
+                    <h1 class="lead">See all the announcements in the college</h1>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <section class="section section-lg line-bottom-light">
+        <div class="container mt-n10 mt-lg-n12 z-2" style="transform: translateY(-15rem)">
+            <div class="row">
+
+                {{-- For Each na loop up to 6 --}}
+
+
+                {{-- Featured Announcement --}}
+                <div class="col-lg-12 mb-5">
+                    <div class="card shadow bg-white border-gray-300 flex-lg-row align-items-center g-0 p-4"
+                        style="cursor: default">
+
+                        <img src="{{-- Photo --}}" alt="Image Cap" class="card-img-top rounded"> {{-- Photo --}}
+
+                        <div class="card-body d-flex flex-column justify-content-between col-auto py-4 p-0 p-lg-3 p-xl-5">
+                            <h2 class="subheader">{{-- --}}</h2> {{-- Title --}}
+
+                            <div class="d-flex align-items-center mt-3">
+                                <h3 class="h6 small ms-2 mb-0">{{-- --}}</h3> {{-- Author --}}
+                                <span class="h6 text-muted small fw-normal mb-0 ms-auto">{{-- --}}</span>
+                                {{-- Date Created --}}
+                            </div>
+                            <div class="col-12">
+                                <p style="color: transparent"> Filler Text </p>
+                            </div>
+                            <p><a class="btn btn-lg btn-info text-white" href="/announcementDisplay"
+                                    style="background-color: #1DA2d8; font-size:19px">Read Article</a></p>
+                            {{-- DisplayAnnouncement --}}
+
+                        </div>
+
+                    </div>
+                </div>
+
+                {{-- Other Announcement up to 6 --}}
+                <div class="col-12 col-md-6 col-lg-4  mb-lg-5">
+                    <div class="card shadow bg-white border-gray-300 p-4 rounded">
+                        <img src="{{-- Image Source --}}" class="card-img-top rounded" alt="Image Cap">
+                        {{-- Image --}}
+                        <div class="card-body p-0 pt-4">
+
+                            <h2 class="subheader"> {{-- Title --}}</h2> {{-- Title --}}
+
+                            <div class="d-flex align-items-center my-3">
+                                <h3 class="h6 small ms-2 mb-0">{{-- Author --}}</h3> {{-- Author --}}
+                                <span class="h6 text-muted small fw-normal mb-0 ms-auto">{{-- Date Created --}}</span>
+                                {{-- Date Created --}}
+                            </div>
+
+                            <div class="col-12">
+                                <p style="color: transparent"> Filler Text </p>
+                            </div>
+
+                            <p><a class="btn btn-lg btn-info text-white" href="/announcementDisplay"
+                                    style="background-color: #1DA2d8">Read Announcement</a></p> {{-- DisplayAnnouncement --}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="d-flex justify-content-center">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination btn-info">
+                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
+
+

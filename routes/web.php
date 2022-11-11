@@ -6,6 +6,7 @@ use App\Http\Controllers\infocardMaintain;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\studentController;
 use App\Http\Controllers\guestController;
+use App\Http\Controllers\IEMSWebsite;
 
 /*
 |--------------------------------------------------------------------------
@@ -122,3 +123,9 @@ Route::get('/G_undergradThesis_paper',[guestController::class, 'undergradThesis'
 Route::get('/G_journal_articles',[guestController::class, 'journal'])->name('Guest_journal');
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 require __DIR__.'/auth.php';
+
+
+//FOR SITE /////////////////////////////////////////
+
+Route::get('/announcement',[IEMSWebsite::class, 'accessAnnouncement']); //access announcement table
+Route::get('/announcementDisplay',[IEMSWebsite::class, 'accessAnnouncementDisplay']); // access announcement
