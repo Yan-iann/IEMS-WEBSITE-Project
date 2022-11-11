@@ -32,7 +32,10 @@ Route::get('/', function () {
 //for student//
 //Route::get('/dashboard', [studentController::class, 'studentDashboard'])->name('studentDashboard');
 //for guest//
-Route::get('/dashboard', [guestController::class, 'guestDashboard'])->name('guestDashboard');
+//Route::get('/dashboard', [guestController::class, 'guestDashboard'])->name('guestDashboard');
+
+//test//
+Route::get('/dashboard', [IEMSWebsite::class, 'accessAnnouncement'])->name('announcement');
 
 
 
@@ -122,10 +125,11 @@ Route::get('/G_gradThesis_paper',[guestController::class, 'gradThesis'])->name('
 Route::get('/G_undergradThesis_paper',[guestController::class, 'undergradThesis'])->name('G_undergradThesis');
 Route::get('/G_journal_articles',[guestController::class, 'journal'])->name('Guest_journal');
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//FOR SITE /////////////////////////////////////////
+//Route::get('/announcement',[IEMSWebsite::class, 'accessAnnouncement']); //access announcement table
+//Route::get('/announcementDisplay',[IEMSWebsite::class, 'accessAnnouncementDisplay']); // access announcement
 require __DIR__.'/auth.php';
 
 
-//FOR SITE /////////////////////////////////////////
 
-Route::get('/announcement',[IEMSWebsite::class, 'accessAnnouncement']); //access announcement table
-Route::get('/announcementDisplay',[IEMSWebsite::class, 'accessAnnouncementDisplay']); // access announcement

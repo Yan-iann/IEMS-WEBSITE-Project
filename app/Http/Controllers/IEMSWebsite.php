@@ -2,12 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Validator;
+use App\Models\user_info;
+use App\Models\User;
+use App\Models\wildlife;
+use App\Models\thesis_paper;
+use App\Models\journal_article;
+use App\Models\announcement;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Redirect; 
+use DB;
 
 class IEMSWebsite extends Controller
 {
     function accessHome(){
-        return view('IEMS.home');
+        return view('IEMS\Linus.SITE.home');
     }
 
     function accessCollege(){
@@ -31,15 +46,17 @@ class IEMSWebsite extends Controller
     }
 
     function accessRates(){
-        return view('IEMS.rates');
+        return view('IEMS\Linus.SITE.rates');
     }
 
-    function accessAnnouncement(){
-        return view('IEMS.SITE.announcement');
+    public function accessAnnouncement()
+    {
+        $anno = announcement::all();
+        return view('IEMS\Linus.SITE.announcement')->with('announcement',$anno);
     }
 
     function accessAnnouncementDisplay(){
-        return view('IEMS.SITE.announcement_display');
+        return view('IEMS\Linus.SITE.announcement_display');
     }
 
 }
