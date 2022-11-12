@@ -14,7 +14,7 @@
                                   <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="">
                                     <td></td>
                                     <td></td>
-                                    <td><input type="search" name="searchWildlife" class="form-control mr-sm2" placeholder="Search Wildlife Name"></td>
+                                    <td><input type="search" name="searchWildlife" class="form-control mr-sm2" placeholder="Search Reference Name"></td>
                                     <td><button class="btn btn-info btn-sm" type="submit" style="color: white">Search</button></td>
                                   </form>
                                 </tr>
