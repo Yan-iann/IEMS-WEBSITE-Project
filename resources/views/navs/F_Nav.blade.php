@@ -107,6 +107,6 @@
                    </x-dropdown-link>
                 </form>
           </div>
-        </li><!--end of Profile-->
+        </li><!--end of Pro file-->
       </ul><!--end of Nav Links-->    
 </div><!--end of Sidebar-->

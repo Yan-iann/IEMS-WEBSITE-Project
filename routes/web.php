@@ -7,6 +7,7 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\studentController;
 use App\Http\Controllers\guestController;
 use App\Http\Controllers\IEMSWebsite;
+use App\Http\Controllers\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,14 +24,11 @@ Route::get('/', [IEMSWebsite::class, 'accessHome']); //access announcement table
 
 
 // login
-Route::get('/login',function(){
-    return view('auth.login');
-});
 
 //ROUTE FOR Dashboard According to User////////////////////////////////////////////////////////////////////////
 
 //for faculty//
-//Route::get('/dashboard', [infocardMaintain::class, 'wildlife'])->name('facultyDashboard');
+Route::get('/dashboard', [infocardMaintain::class, 'wildlife'])->name('facultyDashboard');
 
 //for Admin//
 //Route::get('/dashboard', [adminController::class, 'adminDashboard'])->name('adminDashboard');
@@ -40,14 +38,18 @@ Route::get('/login',function(){
 //Route::get('/dashboard', [studentController::class, 'studentDashboard'])->name('studentDashboard');
 
 //for guest//
-Route::get('/dashboard', [guestController::class, 'guestDashboard'])->name('guestDashboard');
+Route::get('/dashboardGuest', [guestController::class, 'guestDashboard'])->name('guestDashboard');
 
 //test//
 //Route::get('/dashboard', [IEMSWebsite::class, 'accessAnnouncement'])->name('announcement');
 //Route::get('/dashboard', [IEMSWebsite::class, 'accessHome'])->name('accessHome');
 
 
+//for login/////////////////////
 
+Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
+
+///////////////////////////
 //ROUTE FOR FACULTY////////////////////////////////////////////////////////////////////////////////////////////////
 Route::post('/store',[allInfocardMaintain::class,'storeDataWildlife'])->name('store');
 Route::post('/storeBone',[allInfocardMaintain::class,'storeDataBone'])->name('storeDataBone');
