@@ -28,10 +28,10 @@ Route::get('/', [IEMSWebsite::class, 'accessHome']); //access announcement table
 //ROUTE FOR Dashboard According to User////////////////////////////////////////////////////////////////////////
 
 //for faculty//
-Route::get('/dashboard', [infocardMaintain::class, 'wildlife'])->name('facultyDashboard');
+//Route::get('/dashboard', [infocardMaintain::class, 'wildlife'])->name('facultyDashboard');
 
 //for Admin//
-//Route::get('/dashboard', [adminController::class, 'adminDashboard'])->name('adminDashboard');
+Route::get('/dashboard', [adminController::class, 'adminDashboard'])->name('adminDashboard');
 
 
 //for student//
