@@ -18,7 +18,7 @@
                         a wide range of wildlife information garnered by the department’s
                         students and faculty.
                     </p>
-                    <a href="/dashboard">
+                    <a href="{{ route('guestDashboard') }}">
                         <button type="button" class="btn btn-info btn-lg ">View Information Library</button>
                     </a>
                 </div>

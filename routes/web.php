@@ -37,10 +37,10 @@ Route::get('/login',function(){
 
 
 //for student//
-Route::get('/dashboard', [studentController::class, 'studentDashboard'])->name('studentDashboard');
+//Route::get('/dashboard', [studentController::class, 'studentDashboard'])->name('studentDashboard');
 
 //for guest//
-//Route::get('/dashboard', [guestController::class, 'guestDashboard'])->name('guestDashboard');
+Route::get('/dashboard', [guestController::class, 'guestDashboard'])->name('guestDashboard');
 
 //test//
 //Route::get('/dashboard', [IEMSWebsite::class, 'accessAnnouncement'])->name('announcement');
