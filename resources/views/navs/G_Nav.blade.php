@@ -63,15 +63,21 @@
         </li><!--end of Journal Article-->
       <!--Profile-->
       <li>
+
+        <a href="{{ route('login') }}">
           <div class="profile-details">
-            
+            <div class="name-job">
+                <h1 class="profile_name" style="padding-left: 30px; font-size:30px;padding-top:7px">
+                    Log In
+                </h1>
+              </div>
                  <!-- Authentication for LogOut-->
-                  <a href="{{ route('login') }}">
-                  <i class='bx bx-log-in' ></i>
-                  </a>
-                
-               
+                  <i class='bx bx-log-in' style="font-size:40px"></i>
+
+
           </div>
+
+        </a>
         </li><!--end of Profile-->
-      </ul><!--end of Nav Links-->    
+      </ul><!--end of Nav Links-->
 </div><!--end of Sidebar-->

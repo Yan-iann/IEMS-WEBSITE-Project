@@ -1,8 +1,9 @@
 @extends('layouts.G_Layout')
 @section('content')
 <div class="container-fluid">
-    <div class="home-section">
+
         <div class="home-content">
+        <i class='bx bx-menu'></i>
             <span class="text">Critters</span>
         </div>
 
@@ -46,5 +47,5 @@
 
     </div>
     <!--end of class container fluid-->
-    </div>
+
 @endsection
