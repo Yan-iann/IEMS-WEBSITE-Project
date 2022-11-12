@@ -47,6 +47,7 @@ Route::get('/dashboard', [infocardMaintain::class, 'wildlife'])->name('facultyDa
 //ROUTE FOR FACULTY////////////////////////////////////////////////////////////////////////////////////////////////
 Route::post('/store',[allInfocardMaintain::class,'storeDataWildlife'])->name('store');
 Route::post('/storeBone',[allInfocardMaintain::class,'storeDataBone'])->name('storeDataBone');
+Route::post('/storeDataRef',[allInfocardMaintain::class,'storeDataRef'])->name('storeDataRef');
 Route::post('/storeThesis',[allInfocardMaintain::class,'storeDataThesis'])->name('storeThesis');
 Route::post('/storeJournal',[allInfocardMaintain::class,'storeDataJournal'])->name('storeJournal');
 
@@ -54,6 +55,7 @@ Route::post('/storeJournal',[allInfocardMaintain::class,'storeDataJournal'])->na
 Route::get('/wildlife',[infocardMaintain::class, 'wildlife'])->name('wildlife');
 Route::get('/boneCollection',[infocardMaintain::class, 'boneCollection'])->name('boneCollection');
 Route::post('/updateBone/{info_ID}',[infocardMaintain::class, 'updateBone'])->name('updateBone');
+Route::post('/updateRef/{info_ID}',[infocardMaintain::class, 'updateRef'])->name('updateRef');
 Route::get('/refCollection',[infocardMaintain::class, 'refCollection'])->name('refCollection');
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

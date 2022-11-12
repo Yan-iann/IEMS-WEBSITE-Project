@@ -29,7 +29,7 @@
             <ul class="sub-menu">
               <li><a class="link_name" href="{{ route('boneCollection') }}">Museum</a></li>
               <li><a href="{{ route('boneCollection') }}">Bones</a></li>
-              <li><a href="#">References</a></li>
+              <li><a href="{{ route('refCollection') }}">References</a></li>
             </ul>
       </li>
       <!--end of Museum Bar-->

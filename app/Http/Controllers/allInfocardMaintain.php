@@ -79,6 +79,40 @@ class allInfocardMaintain extends Controller
                 return view ('IEMS.Linus.FACULTY.boneCollection')->with('wildlifes', $wildlife);
             }
         }
+    }//end of adding bone
+
+    public function storeDataRef(Request $request)
+    {
+         $validator = Validator::make(request()->all(), [
+        'wildlife_name' => 'required',
+        'wildlife_scientific_name' => 'required',
+        'wildlife_desc' => 'required',
+        'wildlife_pic' => 'required',
+        'wildlife_status' => 'required',
+        'wildlife_type' => 'required',
+        'info_type' => 'required',
+        ]);
+    
+        if($validator->fails())
+        {
+        return back()->withErrors($validator)->withInput()->with('error','Something went wrong. Please try again.');
+        }
+        else
+        {
+            $infocard = new Infocard;
+            $infocard->info_type = $request->info_type;
+            if($infocard->save())
+            {
+                $requestData = request()->all();
+                $requestData["info_ID"] =  $infocard->info_ID;
+                $filename = time().request()->file('wildlife_pic')->getClientOriginalName();
+                $path = request()->file('wildlife_pic')->move('storage/images',$filename);
+                $requestData["wildlife_pic"] = $path;
+                Wildlife::create($requestData);
+                $wildlife = Wildlife::where('wildlife_type','Reference')->get();
+                return view ('IEMS.Linus.FACULTY.refCollection')->with('wildlifes', $wildlife);
+            }
+        }
     }//end of adding wildlife
 
     public function storeDataThesis(Request $request)

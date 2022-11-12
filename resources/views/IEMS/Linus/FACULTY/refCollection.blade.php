@@ -3,7 +3,7 @@
 <body>
 <div class="home-section">
 <div class="home-content">
-    <span class="text">Wildlifes</span>
+    <span class="text">Reference Collection</span>
 </div>
 </div>
 
@@ -32,9 +32,9 @@
                   <p class="card-text text-center">({{$item->wildlife_scientific_name}})</p>
                 </div>
             </div>
-            @include('IEMS.Linus.FACULTY.editWildlife')  
+            @include('IEMS.Linus.FACULTY.editRefCollection')  
           </div>
-          @include('IEMS.Linus.FACULTY.displayWildlife') 
+          @include('IEMS.Linus.FACULTY.displayRefCollection') 
           @endforeach
         </div><!--end of catalog-->
         <!-- Add Button -->
@@ -66,7 +66,7 @@
 </form>
 @endforeach
 <!-- Add Bone Collection Modal-->
-<form action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('storeDataRef') }}" method="POST" enctype="multipart/form-data">
       {!! csrf_field() !!}
       <div class="modal fade" id="ModalAddWl" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
@@ -81,45 +81,31 @@
               <div class="container-fluid">
                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
                   <div class="col-12">
-                    <label for="wildlife_pic">Wildlife Picture:</label>
+                    <label for="wildlife_pic">Reference Picture:</label>
                     <input type="file" id="wildlife_pic" class="form-control"  placeholder="Wildlife Picture" name="wildlife_pic">
                   </div> 
                   <div class="col-12">
-                    <label for="formGroupExampleInput" class="form-label">Wildlife Name</label>
+                    <label for="formGroupExampleInput" class="form-label">Reference Name</label>
                     <input type="input" class="form-control"  placeholder="Enter Wildlife Name" name="wildlife_name">
                   </div>
                   <div class="col-12">
-                    <label for="formGroupExampleInput" class="form-label">Scientific Name</label>
+                    <label for="formGroupExampleInput" class="form-label">Reference Scientific Name</label>
                     <input type="input" class="form-control" placeholder="Enter Wildlife Scientific Name" name="wildlife_scientific_name" >
                   </div>
-                  <div class="col-12 col-md-4">
-                    <label for="formGroupExampleInput2" class="form-label">Class</label>
-                    <input type="input" placeholder="Enter Wildlife Class" class="form-control" name="wildlife_class" >
-                  </div>
-                  <div class="col-12 col-md-4">
-                    <label for="formGroupExampleInput2" class="form-label">Order</label>
-                    <input type="input" class="form-control"  placeholder="Enter Wildlife Order" name="wildlife_order" >
-                  </div>
-                  <div class="col-12 col-md-4">
-                    <label for="formGroupExampleInput2" class="form-label">Family</label>
-                    <input type="input" class="form-control" placeholder="Enter Wildlife Family" name="wildlife_family" >
-                  </div>
+                 
+                  
+        
                   <div class="-12 col-md-4">
-                    <label for="formGroupExampleInput2" class="form-label">Genus</label>  
+                    <label for="formGroupExampleInput2" class="form-label">Reference Genus</label>  
                     <input type="input" class="form-control" placeholder="Enter Wildlife Genus"  name="wildlife_genus"  name="wildlife_genus" >
                   </div>
-                  <div class="col-12 col-md-4">
-                    <label for="formGroupExampleInput2" class="form-label">Specie</label>
-                    <input type="input" class="form-control" placeholder="Enter Wildlife Species"  name="wildlife_species" >
-                  </div>
-                  <div class="col-12">
-                    <label for="formGroupExampleInput2" class="form-label">Location</label> 
-                    <input type="input" class="form-control"  placeholder="Enter Wildlife Location" name="wildlife_location" >
-                  </div>
+               
+                
                     <!--Hidden Inputs-->
                     <input type="hidden" class="form-control" name="info_type" value="wildlife">
                     <input type="hidden" class="form-control" name="wildlife_type" value="Reference">
                     <input type="hidden" class="form-control"  name="wildlife_status" value="Approved">
+
                   <div class="col-12">
                     <label for="exampleFormControlinputarea1" class="form-label">Description</label>
                     <textarea class="form-control" name="wildlife_desc" rows="3" placeholder="Enter Wildlife Description"></textarea>
