@@ -10,15 +10,15 @@
 
                 {{-- Announcement Headers --}}
                 <div class="col-12">
-                    <h1 class="hero-heading text-wrap">Title</h1> <!-- Title -->
+                    <h1 class="hero-heading text-wrap">{{ $announcement->anno_title }}</h1> <!-- Title -->
                     <p class="lead text-black">
-                        By Joefrey Mahusay
+                        By {{ $announcement->anno_author }}
                         <!-- Author -->
                         <span class="mx-3">&bullet;</span>
-                        on Jun 13, 2021
+                        on {{ $announcement->anno_date }}
                     </p> <!-- Date Published -->
 
-                    <img src="{{ URL::asset('img/Home_Banner.png') }}" alt="featured image"
+                    <img src="{{ asset($announcement->anno_pic) }}" alt="featured image"
                         style="height:300px; object-fit:cover; margin-bottom: 40px">
 
                 </div>
@@ -34,7 +34,7 @@
 
 
                 <article class="col-lg-8 order-lg-2 px-lg-5">
-                    <p>{{-- here tong descritopn Yuhh --}}</p>
+                    <p>{{ $announcement->anno_content }}</p>
 
 
 

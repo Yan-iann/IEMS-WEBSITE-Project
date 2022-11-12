@@ -49,4 +49,11 @@ class guestController extends Controller
         return view('IEMS\Linus.GUEST.GuestJournalDashboard')->with('journal',$journal);
     }
 
+    public function boneCollection()
+    {
+        $wildlife = Wildlife::where('wildlife_type','Bone')->get();
+        return view ('IEMS.Linus.GUEST.GuestBoneCollection')->with('wildlifes', $wildlife);
+    }
+
+
 }

@@ -34,6 +34,7 @@
                     <div class="card-footer border-0"></div>
                 </div>
             </div>
+            @include('IEMS.Linus.GUEST.displayJournal')
         @endforeach  
       </div>
     </div>   

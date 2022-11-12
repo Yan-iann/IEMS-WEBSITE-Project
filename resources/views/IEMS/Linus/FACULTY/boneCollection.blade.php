@@ -66,7 +66,7 @@
 </form>
 @endforeach
 <!-- Add Bone Collection Modal-->
-<form action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('storeDataBone') }}" method="POST" enctype="multipart/form-data">
       {!! csrf_field() !!}
       <div class="modal fade" id="ModalAddWl" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">

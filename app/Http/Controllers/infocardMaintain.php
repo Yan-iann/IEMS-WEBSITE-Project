@@ -113,7 +113,14 @@ class infocardMaintain extends Controller
         $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
         return view('IEMS.Linus.FACULTY.wildlife')->with('wildlifes',$wildlife);
     }
-
+    public function updateBone(Request $request, $info_ID)
+    {
+        $wildlife = Wildlife::find($info_ID);
+        $input = $request->all();
+        $wildlife->update($input);
+        $wildlife = Wildlife::where('wildlife_type','Bone')->get();
+        return view('IEMS.Linus.FACULTY.boneCollection')->with('wildlifes',$wildlife);
+    }
     public function editThesis($info_ID)
     {
         $thesis = thesis_paper::find($info_ID);

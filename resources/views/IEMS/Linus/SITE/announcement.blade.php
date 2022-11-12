@@ -69,7 +69,7 @@
                                 <p style="color: transparent"> Filler Text </p>
                             </div>
 
-                            <p><a class="btn btn-lg btn-info text-white" href="/announcementDisplay"
+                            <p><a class="btn btn-lg btn-info text-white" href="{{ route('accessAnnouncementDisplay',$item->anno_ID) }}"
                                     style="background-color: #1DA2d8">Read Announcement</a></p> {{-- DisplayAnnouncement --}}
                         </div>
                     </div>

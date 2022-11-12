@@ -37,6 +37,7 @@
                
             </div>
         </div>
+        @include('IEMS.Linus.GUEST.displayThesis')
     @endforeach  
 
         </div>

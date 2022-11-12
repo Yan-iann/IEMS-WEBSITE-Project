@@ -24,33 +24,38 @@ Route::get('/', function () {
 });
 
 //ROUTE FOR Dashboard According to User////////////////////////////////////////////////////////////////////////
+
 //for faculty//
-//Route::get('/dashboard', [infocardMaintain::class, 'wildlife'])->name('facultyDashboard');
+Route::get('/dashboard', [infocardMaintain::class, 'wildlife'])->name('facultyDashboard');
+
 //for Admin//
 //Route::get('/dashboard', [adminController::class, 'adminDashboard'])->name('adminDashboard');
-//end of route for dashboard
+
+
 //for student//
 //Route::get('/dashboard', [studentController::class, 'studentDashboard'])->name('studentDashboard');
+
 //for guest//
 //Route::get('/dashboard', [guestController::class, 'guestDashboard'])->name('guestDashboard');
 
 //test//
-Route::get('/dashboard', [IEMSWebsite::class, 'accessAnnouncement'])->name('announcement');
+//Route::get('/dashboard', [IEMSWebsite::class, 'accessAnnouncement'])->name('announcement');
+//Route::get('/dashboard', [IEMSWebsite::class, 'accessHome'])->name('accessHome');
 
 
 
 //ROUTE FOR FACULTY////////////////////////////////////////////////////////////////////////////////////////////////
 Route::post('/store',[allInfocardMaintain::class,'storeDataWildlife'])->name('store');
+Route::post('/storeBone',[allInfocardMaintain::class,'storeDataBone'])->name('storeDataBone');
 Route::post('/storeThesis',[allInfocardMaintain::class,'storeDataThesis'])->name('storeThesis');
 Route::post('/storeJournal',[allInfocardMaintain::class,'storeDataJournal'])->name('storeJournal');
 
-Route::get('/addWL',[infocardMaintain::class, 'storeDataWildlife'])->name('storeDataWildlife');
-Route::get('/addThesis_Paper',[infocardMaintain::class, 'storeDataThesis'])->name('storeDataThesis');
-Route::get('/addJournal_Article',[infocardMaintain::class, 'storeDataJournal'])->name('storeDataJournal');
-
+//for musuem//////////////////////////////////////////////////////////////////////////
 Route::get('/wildlife',[infocardMaintain::class, 'wildlife'])->name('wildlife');
 Route::get('/boneCollection',[infocardMaintain::class, 'boneCollection'])->name('boneCollection');
+Route::post('/updateBone/{info_ID}',[infocardMaintain::class, 'updateBone'])->name('updateBone');
 Route::get('/refCollection',[infocardMaintain::class, 'refCollection'])->name('refCollection');
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Route::get('/showWildlife/{info_ID}',[infocardMaintain::class, 'showWildlife'])->name('showWildlife');
 Route::get('/editWildlife/{info_ID}',[infocardMaintain::class, 'editWildlife'])->name('editWildlife');
@@ -78,6 +83,7 @@ Route::get('/deleteJournal/{info_ID}',[infocardMaintain::class, 'deleteJournal']
 Route::get('/searchJournal',[infocardMaintain::class, 'searchJournal'])->name('searchJournal');
 Route::get('/advanceSearchJournal',[infocardMaintain::class, 'advanceSearchJournal'])->name('advanceSearchJournal');
 
+
 Route::get('/profile',[infocardMaintain::class, 'Fprofile'])->name('Fprofile');
 Route::get('/analytics',[infocardMaintain::class, 'analysis'])->name('analysis');
 
@@ -85,12 +91,8 @@ Route::get('/analytics',[infocardMaintain::class, 'analysis'])->name('analysis')
 Route::get('/requestValidation',[infocardMaintain::class, 'request'])->name('Faculty_request');
 Route::post('/updateAnnouncementF/{id}',[infocardMaintain::class, 'updateAnnoF'])->name('updateAnnoF');
 
-Route::get('/boneCollection',[infocardMaintain::class, 'boneCollection'])->name('boneCollection');
-Route::get('/refCollection',[infocardMaintain::class, 'refCollection'])->name('refCollection');
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 
 
 //ROUTE FOR Admin////////////////////////////////////////////////////////////////////////////////////////////////
@@ -114,7 +116,7 @@ Route::get('/journal_articles',[studentController::class, 'journal'])->name('Stu
 Route::get('/request',[studentController::class, 'request'])->name('Student_request');
 Route::post('/storeRequest',[studentController::class, 'storeAnno'])->name('storeAnno');
 Route::post('/updateAnnouncement/{id}',[studentController::class, 'updateAnno'])->name('updateAnno');
-//for deleting user information
+//for deleting announcement information
 Route::get('/deleteAnnouncement/{id}',[studentController::class, 'deleteAnno'])->name('deleteAnno');
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -124,11 +126,12 @@ Route::get('/G_thesis_papers',[guestController::class, 'thesis'])->name('Guest_t
 Route::get('/G_gradThesis_paper',[guestController::class, 'gradThesis'])->name('G_gradThesis');
 Route::get('/G_undergradThesis_paper',[guestController::class, 'undergradThesis'])->name('G_undergradThesis');
 Route::get('/G_journal_articles',[guestController::class, 'journal'])->name('Guest_journal');
+Route::get('/G_boneCollection',[guestController::class, 'boneCollection'])->name('G_boneCollection');
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //FOR SITE /////////////////////////////////////////
-//Route::get('/announcement',[IEMSWebsite::class, 'accessAnnouncement']); //access announcement table
-//Route::get('/announcementDisplay',[IEMSWebsite::class, 'accessAnnouncementDisplay']); // access announcement
+Route::get('/announcement',[IEMSWebsite::class, 'accessAnnouncement']); //access announcement table
+Route::get('/announcementDisplay/{anno_ID}',[IEMSWebsite::class, 'accessAnnouncementDisplay'])->name('accessAnnouncementDisplay'); // access announcement
 require __DIR__.'/auth.php';
 
 
