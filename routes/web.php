@@ -19,7 +19,11 @@ use App\Http\Controllers\IEMSWebsite;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', [IEMSWebsite::class, 'accessHome']); //access announcement table
+
+
+
+Route::get('/login',function(){
     return view('auth.login');
 });
 
@@ -133,8 +137,19 @@ Route::get('/G_refCollection',[guestController::class, 'refCollection'])->name('
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //FOR SITE /////////////////////////////////////////
+Route::get('/college',[IEMSWebsite::class, 'accessCollege']);
+Route::get('/enrollment',[IEMSWebsite::class, 'accessEnrollment']);
+Route::get('/facilities',[IEMSWebsite::class, 'accessFacilities']);
+Route::get('/linus',[IEMSWebsite::class, 'accessLinus']);
+Route::get('/rates',[IEMSWebsite::class, 'accessRates']);
+
+Route::get('/facultystaff',[IEMSWebsite::class, 'accessFacultyStaff']); //access faculty table
 Route::get('/announcement',[IEMSWebsite::class, 'accessAnnouncement']); //access announcement table
 Route::get('/announcementDisplay/{anno_ID}',[IEMSWebsite::class, 'accessAnnouncementDisplay'])->name('accessAnnouncementDisplay'); // access announcement
+
+Route::get('contact-us', [ContactController::class, 'index']);
+Route::post('contact-us', [ContactController::class, 'store'])->name('contact-us.store');
+
 require __DIR__.'/auth.php';
 
 
