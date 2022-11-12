@@ -61,6 +61,17 @@
               <li><a class="link_name" href="{{ route('Guest_journal') }}"> Journal Articles</a></li>
             </ul>
         </li><!--end of Journal Article-->
-  
+      <!--Profile-->
+      <li>
+          <div class="profile-details">
+            
+                 <!-- Authentication for LogOut-->
+                  <a href="{{ route('login') }}">
+                  <i class='bx bx-log-in' ></i>
+                  </a>
+                
+               
+          </div>
+        </li><!--end of Profile-->
       </ul><!--end of Nav Links-->    
 </div><!--end of Sidebar-->

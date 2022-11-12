@@ -7,6 +7,7 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\studentController;
 use App\Http\Controllers\guestController;
 use App\Http\Controllers\IEMSWebsite;
+use App\Http\Controllers\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +24,6 @@ Route::get('/', [IEMSWebsite::class, 'accessHome']); //access announcement table
 
 
 // login
-Route::get('/login',function(){
-    return view('auth.login');
-});
 
 //ROUTE FOR Dashboard According to User////////////////////////////////////////////////////////////////////////
 
@@ -47,7 +45,11 @@ Route::get('/dashboard', [guestController::class, 'guestDashboard'])->name('gues
 //Route::get('/dashboard', [IEMSWebsite::class, 'accessHome'])->name('accessHome');
 
 
+//for login/////////////////////
 
+Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
+
+///////////////////////////
 //ROUTE FOR FACULTY////////////////////////////////////////////////////////////////////////////////////////////////
 Route::post('/store',[allInfocardMaintain::class,'storeDataWildlife'])->name('store');
 Route::post('/storeBone',[allInfocardMaintain::class,'storeDataBone'])->name('storeDataBone');
