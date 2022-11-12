@@ -55,7 +55,9 @@ class IEMSWebsite extends Controller
         return view('IEMS\Linus.SITE.announcement')->with('announcement',$anno);
     }
 
-    function accessAnnouncementDisplay(){
+    function accessAnnouncementDisplay($anno_ID)
+    {
+        $anno = announcement::find($anno_ID);
         return view('IEMS\Linus.SITE.announcement_display')->with('announcement',$anno);
     }
 

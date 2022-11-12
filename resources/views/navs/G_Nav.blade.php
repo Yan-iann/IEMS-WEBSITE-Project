@@ -20,15 +20,15 @@
             <!--Museum-->
         <li>
             <div class="iocn-link">
-              <a href="{{ route('boneCollection') }}">
+              <a href="{{ route('G_boneCollection') }}">
                 <i class='bx bx-collection' ></i>
                 <span class="link_name">Museum</span>
               </a>
               <i class='bx bxs-chevron-down arrow' ></i>
             </div>
             <ul class="sub-menu">
-              <li><a class="link_name" href="{{ route('boneCollection') }}">Museum</a></li>
-              <li><a href="{{ route('boneCollection') }}">Bones</a></li>
+              <li><a class="link_name" href="{{ route('G_boneCollection') }}">Museum</a></li>
+              <li><a href="{{ route('G_boneCollection') }}">Bones</a></li>
               <li><a href="#">References</a></li>
             </ul>
       </li>
