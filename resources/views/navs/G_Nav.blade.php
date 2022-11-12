@@ -61,30 +61,6 @@
               <li><a class="link_name" href="{{ route('Guest_journal') }}"> Journal Articles</a></li>
             </ul>
         </li><!--end of Journal Article-->
-
-        
-         <!--Profile-->
-        <li>
-          <div class="profile-details">
-            <div class="profile-content">
-            </div>
-              <div class="name-job">
-                <a href="{{ route('Fprofile') }}">
-                  <div class="profile_name">{{ Auth::user()->name }}
-                  </div> <!-- call Name -->
-                </a>
-                  <div class="job">{{ Auth::user()->user_type }}</div><!-- user type -->   
-              </div>
-                <!-- Authentication for LogOut-->         
-                <form method="POST" action="{{ route('logout') }}">
-                  @csrf
-                  <x-dropdown-link :href="route('logout')"
-                  onclick="event.preventDefault();
-                  this.closest('form').submit();">
-                  <i class='bx bx-log-out' ></i>
-                   </x-dropdown-link>
-                </form>
-          </div>
-        </li><!--end of Profile-->
+  
       </ul><!--end of Nav Links-->    
 </div><!--end of Sidebar-->
