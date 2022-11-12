@@ -22,7 +22,7 @@ use App\Http\Controllers\IEMSWebsite;
 Route::get('/', [IEMSWebsite::class, 'accessHome']); //access announcement table
 
 
-
+// login
 Route::get('/login',function(){
     return view('auth.login');
 });

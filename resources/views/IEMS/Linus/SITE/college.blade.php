@@ -145,7 +145,7 @@ padding-bottom: 180px; height:75vh">
 
                 <div class="col-12" style="margin-bottom:30vh">
                     <div class="row d-flex align-items-center">
-                        <div class="col-12 col-md-6 col-lg-6 p-5">
+                        <div class="col-12 col-md-6 col-lg-6 p-5 sticky-top">
                             <h1 class=" text-black display-3 subheader">Vision</h1>
                             <p class="lead">To become a global leader in environmental and marine research
                                 and education, producing competent and responsible graduates trained within the
@@ -159,53 +159,55 @@ padding-bottom: 180px; height:75vh">
                     </div>
                 </div>
 
-                <div class="col-12 d-flex justify-content-center">
-                    <div class="col-12 col-md-6 col-lg-6 text-left m-5 d-flex justify-content-end">
-                        <h1 class=" text-black display-4 subheader">Mission</h1>
-                    </div>
+                <div class="col-12">
+                    <div class="row d-flex align-items-start justify-content-around">
+                        <div class="col-12 col-md-6 col-lg-6 p-5 sticky-top d-flex justify-content-end">
+                            <h1 class=" text-black display-3 subheader">Mission</h1>
+                        </div>
 
-                    <div class="col-12 col-md-6 col-lg-6 m-5">
-                        <ul class="lead" style="list-style-type: square">
-                            <li>
-                                Provide quality education in marine biology, natural resource management,
-                                specifically ICRM and environmental science
-                            </li>
-                            <li>
-                                Produce graduates with competency in marine science and environmental
-                                science, coastal resource management and environmental policy
-                            </li>
-                            <li>
-                                Undertake basic research in coastal, marine and environmental sciences with
-                                emphasis on the shallow coastal ecosystems, such as coral reefs, seagrass beds,
-                                mangrove forests, and soft-bottom communities
-                            </li>
-                            <li>
-                                Provide laboratory facilities for biological courses of the University
-                            </li>
-                            <li>
-                                Promote local and international exchange of scientists and students in marine and environmental science
-                            </li>
-                            <li>
-                                Assist public and private agencies in coastal management training, resource and ecological assessment,
-                                 marine parks, aquaculture, and pollution studies
-                            </li>
-                            <li>
-                                Link marine science and humanity
-                            </li>
-                            <li>
-                                Promote environmental stewardship
-                            </li>
-                            <li>
-                                Conduct resource and ecological assessments as well as environmental impact studies on proposed
-                                and on-going industries
-                            </li>
-                            <li>
-                                Provide a marine interpretive facility with nature trails and exhibits
-                            </li>
-                        </ul>
+                        <div class="col-12 col-md-6 col-lg-6">
+                            <ul class="lead" style="list-style-type: square; margin-top:70px">
+                                <li>
+                                    Provide quality education in marine biology, natural resource management,
+                                    specifically ICRM and environmental science
+                                </li>
+                                <li>
+                                    Produce graduates with competency in marine science and environmental
+                                    science, coastal resource management and environmental policy
+                                </li>
+                                <li>
+                                    Undertake basic research in coastal, marine and environmental sciences with
+                                    emphasis on the shallow coastal ecosystems, such as coral reefs, seagrass beds,
+                                    mangrove forests, and soft-bottom communities
+                                </li>
+                                <li>
+                                    Provide laboratory facilities for biological courses of the University
+                                </li>
+                                <li>
+                                    Promote local and international exchange of scientists and students in marine and environmental science
+                                </li>
+                                <li>
+                                    Assist public and private agencies in coastal management training, resource and ecological assessment,
+                                    marine parks, aquaculture, and pollution studies
+                                </li>
+                                <li>
+                                    Link marine science and humanity
+                                </li>
+                                <li>
+                                    Promote environmental stewardship
+                                </li>
+                                <li>
+                                    Conduct resource and ecological assessments as well as environmental impact studies on proposed
+                                    and on-going industries
+                                </li>
+                                <li>
+                                    Provide a marine interpretive facility with nature trails and exhibits
+                                </li>
+                            </ul> </div>
                     </div>
-
                 </div>
+
+
             </div>
         </div>
 
