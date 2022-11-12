@@ -16,7 +16,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
-use Illuminate\Support\Facades\Redirect; 
+use Illuminate\Support\Facades\Redirect;
 use DB;
 
 class guestController extends Controller
@@ -24,29 +24,29 @@ class guestController extends Controller
     public function guestDashboard()
     {
         $guestDashboard = Wildlife::where('wildlife_type','Zoo')->get();
-        return view ('IEMS.Linus.GUEST.GuestWLDashboard')->with('studentDashboard', $guestDashboard);
+        return view ('IEMS\Linus.GUEST.GuestWLDashboard')->with('studentDashboard', $guestDashboard);
     }//end viewing of student wildlife dashboard
 
     public function thesis()
     {
         $thesis = thesis_paper::all();
-        return view('IEMS.Linus.GUEST.GuestThesisDashboard')->with('thesis',$thesis);
+        return view('IEMS\Linus.GUEST.GuestThesisDashboard')->with('thesis',$thesis);
     }
     public function gradThesis()
     {
         $thesis = thesis_paper::where('thesis_type','PostGraduate')->get();
-        return view('IEMS.Linus.GUEST.GuestThesisDashboard')->with('thesis',$thesis);
+        return view('IEMS\Linus.GUEST.GuestThesisDashboard')->with('thesis',$thesis);
     }
     public function undergradThesis()
     {
         $thesis = thesis_paper::where('thesis_type','UnderGraduate')->get();
-        return view('IEMS.Linus.GUEST.GuestThesisDashboard')->with('thesis',$thesis);
+        return view('IEMS\Linus.GUEST.GuestThesisDashboard')->with('thesis',$thesis);
     }
 
     public function journal()
     {
         $journal = journal_article::all();
-        return view('IEMS.Linus.GUEST.GuestJournalDashboard')->with('journal',$journal);
+        return view('IEMS\Linus.GUEST.GuestJournalDashboard')->with('journal',$journal);
     }
 
     public function boneCollection()
@@ -55,5 +55,5 @@ class guestController extends Controller
         return view ('IEMS.Linus.GUEST.GuestBoneCollection')->with('wildlifes', $wildlife);
     }
 
-    
+
 }
