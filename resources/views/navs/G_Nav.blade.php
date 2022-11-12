@@ -29,7 +29,7 @@
             <ul class="sub-menu">
               <li><a class="link_name" href="{{ route('G_boneCollection') }}">Museum</a></li>
               <li><a href="{{ route('G_boneCollection') }}">Bones</a></li>
-              <li><a href="#">References</a></li>
+              <li><a href="{{ route('G_refCollection') }}">References</a></li>
             </ul>
       </li>
       <!--end of Museum Bar-->

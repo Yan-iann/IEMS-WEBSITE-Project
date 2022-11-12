@@ -26,7 +26,7 @@ Route::get('/', function () {
 //ROUTE FOR Dashboard According to User////////////////////////////////////////////////////////////////////////
 
 //for faculty//
-Route::get('/dashboard', [infocardMaintain::class, 'wildlife'])->name('facultyDashboard');
+//Route::get('/dashboard', [infocardMaintain::class, 'wildlife'])->name('facultyDashboard');
 
 //for Admin//
 //Route::get('/dashboard', [adminController::class, 'adminDashboard'])->name('adminDashboard');
@@ -36,7 +36,7 @@ Route::get('/dashboard', [infocardMaintain::class, 'wildlife'])->name('facultyDa
 //Route::get('/dashboard', [studentController::class, 'studentDashboard'])->name('studentDashboard');
 
 //for guest//
-//Route::get('/dashboard', [guestController::class, 'guestDashboard'])->name('guestDashboard');
+Route::get('/dashboard', [guestController::class, 'guestDashboard'])->name('guestDashboard');
 
 //test//
 //Route::get('/dashboard', [IEMSWebsite::class, 'accessAnnouncement'])->name('announcement');
@@ -129,6 +129,7 @@ Route::get('/G_gradThesis_paper',[guestController::class, 'gradThesis'])->name('
 Route::get('/G_undergradThesis_paper',[guestController::class, 'undergradThesis'])->name('G_undergradThesis');
 Route::get('/G_journal_articles',[guestController::class, 'journal'])->name('Guest_journal');
 Route::get('/G_boneCollection',[guestController::class, 'boneCollection'])->name('G_boneCollection');
+Route::get('/G_refCollection',[guestController::class, 'refCollection'])->name('G_refCollection');
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //FOR SITE /////////////////////////////////////////
