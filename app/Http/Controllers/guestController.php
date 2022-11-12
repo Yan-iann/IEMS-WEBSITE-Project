@@ -54,6 +54,11 @@ class guestController extends Controller
         $wildlife = Wildlife::where('wildlife_type','Bone')->get();
         return view ('IEMS.Linus.GUEST.GuestBoneCollection')->with('wildlifes', $wildlife);
     }
+    public function refCollection()
+    {
+        $wildlife = Wildlife::where('wildlife_type','Reference')->get();
+        return view ('IEMS.Linus.GUEST.GuestRefCollection')->with('wildlifes', $wildlife);
+    }
 
 
 }
