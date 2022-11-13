@@ -21,34 +21,6 @@
 
                 {{-- For Each na loop up to 6 --}}
 
-
-                {{-- Featured Announcement --}}
-                <div class="col-lg-12 mb-5">
-                    <div class="card shadow bg-white border-gray-300 flex-lg-row align-items-center g-0 p-4"
-                        style="cursor: default">
-
-                        <img src="{{-- Photo --}}" alt="Image Cap" class="card-img-top rounded"> {{-- Photo --}}
-
-                        <div class="card-body d-flex flex-column justify-content-between col-auto py-4 p-0 p-lg-3 p-xl-5">
-                            <h2 class="subheader">{{-- --}}</h2> {{-- Title --}}
-
-                            <div class="d-flex align-items-center mt-3">
-                                <h3 class="h6 small ms-2 mb-0">{{-- --}}</h3> {{-- Author --}}
-                                <span class="h6 text-muted small fw-normal mb-0 ms-auto">{{-- --}}</span>
-                                {{-- Date Created --}}
-                            </div>
-                            <div class="col-12">
-                                <p style="color: transparent"> Filler Text </p>
-                            </div>
-                            <p><a class="btn btn-lg btn-info text-white" href="/announcementDisplay"
-                                    style="background-color: #1DA2d8; font-size:19px">Read Article</a></p>
-                            {{-- DisplayAnnouncement --}}
-
-                        </div>
-
-                    </div>
-                </div>
-
                 {{-- Other Announcement up to 6 --}}
                 @foreach ($announcement as $item)
                 <div class="col-12 col-md-6 col-lg-4  mb-lg-5">
