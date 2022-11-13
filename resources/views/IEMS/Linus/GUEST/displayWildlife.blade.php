@@ -56,7 +56,7 @@
             </div>
 
             <div class="col-12 col-lg-4">
-              <label for="formGroupExampleInput2" class="form-label">Specie</label>
+              <label for="formGroupExampleInput2" class="form-label">Species</label>
               <h5 class="detailsView">{{ $item->wildlife_species}}</h5 class="detailsView">
             </div>
 
