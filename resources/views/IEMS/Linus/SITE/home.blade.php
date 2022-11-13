@@ -177,8 +177,8 @@
 
 
     {{-- Announcement Section --}}
-    
-   
+
+
     <section class="mbr-section article"
         style="background-color: rgb(242, 242, 242); padding-top: 120px; padding-bottom: 120px;">
         <div class="container-fluid g-10">
@@ -195,39 +195,37 @@
 
                 <div class="col-12 col-md-6 col-lg-6">
                     <div class="wrapper">
-                        @foreach ($announcement as $item)
-                        <div class="item col-md-1 col-lg-1 order-lg-2 my-10">
+                        {{-- Announcement Cards Loop --}}
+                            {{-- Insert For Loop Here (start with last to first) --}}
+                            <div class="item col-md-1 col-lg-1 order-lg-2 my-10">
 
-                            <div class="card bg-dark text-white  align-text-bottom"
-                                style="width:36rem; height: 90vh; object-fit:cover">
+                                <div class="card bg-dark text-white  align-text-bottom"
+                                    style="width:36rem; height: 90vh; object-fit:cover">
 
-                                    <img src="{{ asset($item->anno_pic) }}" class="card-img-top"
-                                        style="width:36rem; height: 90vh; object-fit:cover" alt="Announcement"> {{--Photo--}}
+                                        <img src="{{-- {{ URL::asset('img/Home_Info1.jpg') }} --}}" class="card-img-top"
+                                            style="width:36rem; height: 90vh; object-fit:cover" alt="Announcement"> {{--Photo--}}
 
-                                <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                    <div class="card-img-overlay d-flex flex-column justify-content-end">
 
-                                    <h3 class="card-text fst-italic"> {{ $item->anno_date }}</h3>
+                                        <h3 class="card-text fst-italic">Date Published</h3> {{-- Date --}}
 
-                                     <h2 class="display-3 card-title" style=" font-family: 'Playfair Display', serif;">
-                                     {{ $item->anno_title }}
-                                    </h2> {{-- Announcement title --}}
+                                         <h2 class="display-3 card-title" style=" font-family: 'Playfair Display', serif;">
+                                             Card title
+                                        </h2> {{-- Announcement title --}}
 
-                                    <p class="lead card-text"> {{ $item->anno_author }}</p> {{-- Author et.al --}}
+                                        <p class="lead card-text">Author Here</p> {{-- Author et.al --}}
 
-                                    <div class="col-12">
-                                        <p style="color: transparent"> Filler Text </p>
+                                        <div class="col-12">
+                                            <p style="color: transparent"> Filler Text </p>
+                                        </div>
+
+                                        <p><a class="btn btn-lg btn-light" href="/announcementDisplay">Read Announcement</a></p> {{-- Display Announcement Page --}}
                                     </div>
-
-                                    <p><a class="btn btn-lg btn-light" href="{{ route('accessAnnouncementDisplay',$item->anno_ID) }}">Read Announcement</a></p> {{-- Display Announcement Page --}}
                                 </div>
-                            </div>
 
-                        </div>
-                        @if ($loop->iteration > 4)
-                        @break
-                        @endif
-                        @endforeach
-                     
+                            </div>
+                            {{-- end Announcement Card Loop --}}
+
                         {{-- View Announcements Card --}}
                         <div class="item col-md-1 col-lg-1 order-lg-2 my-10">
                             <div class="card align-text-bottom border-dark"
@@ -244,16 +242,16 @@
                                 </div>
                             </div>
                         </div>
-                       
+
                     </div> {{--end wrapper--}}
                 </div> {{--end div col group}}
 
             </div> {{--end row--}}
         </div> {{--end container--}}
     </section>
-   
-    
-    
+
+
+
 
 
 
