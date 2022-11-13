@@ -31,11 +31,11 @@ Route::get('/', [IEMSWebsite::class, 'accessHome']); //access announcement table
 //Route::get('/dashboard', [infocardMaintain::class, 'wildlife'])->name('facultyDashboard');
 
 //for Admin//
-Route::get('/dashboard', [adminController::class, 'adminDashboard'])->name('adminDashboard');
+//Route::get('/dashboard', [adminController::class, 'adminDashboard'])->name('adminDashboard');
 
 
 //for student//
-//Route::get('/dashboard', [studentController::class, 'studentDashboard'])->name('studentDashboard');
+Route::get('/dashboard', [studentController::class, 'studentDashboard'])->name('studentDashboard');
 
 //for guest//
 Route::get('/dashboardGuest', [guestController::class, 'guestDashboard'])->name('guestDashboard');
