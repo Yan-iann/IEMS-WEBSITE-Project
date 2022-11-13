@@ -7,7 +7,7 @@
 </div>
 </div>
 
- 
+
 <div class="table-responsive">
                         <table class="table">
                              <thead>
@@ -30,13 +30,13 @@
             <div class="card border-dark" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#ModalWildlife{{$item->info_ID}}">
               <img class="card-img-top "src="{{ asset($item->wildlife_pic) }}" alt="Card image cap">
                 <div class="card-body bg-light text-primary">
-                  <h5 class="card-title text-center">{{$item->wildlife_name}}</h5>
-                  <p class="card-text text-center">({{$item->wildlife_scientific_name}})</p>
+                  <h5 class="card-title text-center fst-italic">{{$item->wildlife_scientific_name}}</h5>
+                  <p class="card-text text-center">>{{$item->wildlife_name}}</p>
                 </div>
             </div>
-            @include('IEMS.Linus.FACULTY.editWildlife')  
+            @include('IEMS.Linus.FACULTY.editWildlife')
           </div>
-          @include('IEMS.Linus.FACULTY.displayWildlife') 
+          @include('IEMS.Linus.FACULTY.displayWildlife')
           @endforeach
         </div><!--end of catalog-->
         <!-- Add Button -->
@@ -73,19 +73,19 @@
       <div class="modal fade" id="ModalAddWl" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
           <div class="modal-content  bg-light">
-            
+
             <div class="modal-header border-0 text-center">
               <h5 class="modal-title  text-center">Add Wildlife Information</h5>
               <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-      
+
             <div class="modal-body">
               <div class="container-fluid">
                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
                   <div class="col-12">
                     <label for="wildlife_pic">Wildlife Picture:</label>
                     <input type="file" id="wildlife_pic" class="form-control"  placeholder="Wildlife Picture" name="wildlife_pic">
-                  </div> 
+                  </div>
                   <div class="col-12">
                     <label for="formGroupExampleInput" class="form-label">Wildlife Name</label>
                     <input type="input" class="form-control"  placeholder="Enter Wildlife Name" name="wildlife_name">
@@ -107,7 +107,7 @@
                     <input type="input" class="form-control" placeholder="Enter Wildlife Family" name="wildlife_family" >
                   </div>
                   <div class="-12 col-md-4">
-                    <label for="formGroupExampleInput2" class="form-label">Genus</label>  
+                    <label for="formGroupExampleInput2" class="form-label">Genus</label>
                     <input type="input" class="form-control" placeholder="Enter Wildlife Genus"  name="wildlife_genus"  name="wildlife_genus" >
                   </div>
                   <div class="col-12 col-md-4">
@@ -115,7 +115,7 @@
                     <input type="input" class="form-control" placeholder="Enter Wildlife Species"  name="wildlife_species" >
                   </div>
                   <div class="col-12">
-                    <label for="formGroupExampleInput2" class="form-label">Location</label> 
+                    <label for="formGroupExampleInput2" class="form-label">Location</label>
                     <input type="input" class="form-control"  placeholder="Enter Wildlife Location" name="wildlife_location" >
                   </div>
                     <!--Hidden Inputs-->
@@ -144,12 +144,12 @@
       <div class="modal fade" id="ModalSearch" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
           <div class="modal-content  bg-light">
-            
+
             <div class="modal-header border-0 text-center">
               <h5 class="modal-title  text-center">Advance Search</h5>
               <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-      
+
             <div class="modal-body">
               <div class="container-fluid">
                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
@@ -162,7 +162,7 @@
                       <option value="{{ $item->wildlife_class }}">{{$item->wildlife_class}}</option>
                       @endforeach
                     </select>
-                  </div> 
+                  </div>
 
                   <div class="col-12">
                   <label class="focus-label">Critter Specie:</label>
@@ -172,8 +172,8 @@
                       <option value="{{ $item->wildlife_species }}">{{$item->wildlife_species}}</option>
                       @endforeach
                     </select>
-                  </div> 
-                
+                  </div>
+
                   <div class="modal-footer border-0">
                     <button type="submit" class="btn btn-info text-white">Search</button>
                     <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
@@ -188,4 +188,4 @@
 </body>
 @endsection
 
-  
+
