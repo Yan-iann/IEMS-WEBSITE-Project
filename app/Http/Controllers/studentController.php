@@ -33,12 +33,35 @@ class studentController extends Controller
         $thesis = thesis_paper::all();
         return view('IEMS.Linus.STUDENT.StudentThesisDashboard')->with('thesis',$thesis);
     }
+    public function gradThesis()
+    {
+        $thesis = thesis_paper::where('thesis_type','PostGraduate')->get();
+        return view('IEMS\Linus.STUDENT.StudentThesisDashboard')->with('thesis',$thesis);
+    }
+    public function undergradThesis()
+    {
+        $thesis = thesis_paper::where('thesis_type','UnderGraduate')->get();
+        return view('IEMS\Linus.STUDENT.StudentThesisDashboard')->with('thesis',$thesis);
+    }
+
 
     public function journal()
     {
         $journal = journal_article::all();
         return view('IEMS.Linus.STUDENT.StudentJournalDashboard')->with('journal',$journal);
     }
+
+    public function boneCollection()
+    {
+        $wildlife = Wildlife::where('wildlife_type','Bone')->get();
+        return view ('IEMS.Linus.STUDENT.StudentBoneCollection')->with('wildlifes', $wildlife);
+    }
+    public function refCollection()
+    {
+        $wildlife = Wildlife::where('wildlife_type','Reference')->get();
+        return view ('IEMS.Linus.STUDENT.StudentRefCollection')->with('wildlifes', $wildlife);
+    }
+
     public function request()
     {
         $anno = announcement::where('user_ID', '=', Auth::user()->id )->get();

@@ -15,17 +15,41 @@
               </li>
             </ul>
         </li> <!--end of wildlife Bar-->
-         <!--Thesis-->
-        <li>
-          <a href="{{ route('Student_thesis') }}">
-            <i class='bx bx-collection' ></i>
-            <span class="link_name">Thesis Paper</span>
-          </a>
+        
+            <!--Museum-->
+            <li>
+            <div class="iocn-link">
+              <a href="{{ route('S_boneCollection') }}">
+                <i class='bx bx-collection' ></i>
+                <span class="link_name">Museum</span>
+              </a>
+              <i class='bx bxs-chevron-down arrow' ></i>
+            </div>
             <ul class="sub-menu">
-              <li><a class="link_name" href="{{ route('Student_thesis') }}">Thesis Papers</a>
-              </li>
+              <li><a class="link_name" href="{{ route('S_boneCollection') }}">Museum</a></li>
+              <li><a href="{{ route('S_boneCollection') }}">Bones</a></li>
+              <li><a href="{{ route('S_refCollection') }}">References</a></li>
             </ul>
-        </li> <!--end of Thesis Paper-->
+      </li>
+      <!--end of Museum Bar-->
+
+       <!--Thesis-->
+        <li>
+            <div class="iocn-link">
+              <a href="{{ route('Student_thesis') }}">
+                <i class='bx bx-collection' ></i>
+                <span class="link_name">Thesis Papers</span>
+              </a>
+              <i class='bx bxs-chevron-down arrow' ></i>
+            </div>
+            <ul class="sub-menu">
+              <li><a class="link_name" href="{{ route('Student_thesis') }}">Thesis Papers</a></li>
+              <li><a href="{{ route('S_gradThesis') }}">PostGraduate</a></li>
+              <li><a href="{{ route('S_undergradThesis') }}">UnderGraduate</a></li>
+            </ul>
+      </li>
+      <!--end of Thesis Paper-->
+
          <!--Journal-->
         <li>
           <a href="{{ route('Student_journal') }}">
