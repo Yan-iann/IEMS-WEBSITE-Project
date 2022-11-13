@@ -120,7 +120,11 @@ Route::get('/studentAccounts', [adminController::class, 'adminStudentAccounts'])
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //FOR STUDENTS/////////////////////////////////////////////////////////////////////////////////////////////////////////
+Route::get('/S_boneCollection',[studentController::class, 'boneCollection'])->name('S_boneCollection');
+Route::get('/S_refCollection',[studentController::class, 'refCollection'])->name('S_refCollection');
 Route::get('/thesis_papers',[studentController::class, 'thesis'])->name('Student_thesis');
+Route::get('/S_gradThesis_paper',[studentController::class, 'gradThesis'])->name('S_gradThesis');
+Route::get('/S_undergradThesis_paper',[studentController::class, 'undergradThesis'])->name('S_undergradThesis');
 Route::get('/journal_articles',[studentController::class, 'journal'])->name('Student_journal');
 Route::get('/request',[studentController::class, 'request'])->name('Student_request');
 Route::post('/storeRequest',[studentController::class, 'storeAnno'])->name('storeAnno');
