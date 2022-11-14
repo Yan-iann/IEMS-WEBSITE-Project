@@ -40,7 +40,14 @@ class IEMSWebsite extends Controller
     }
 
     function accessFacultyStaff(){
-        return view('IEMS\Linus.SITE.facultystaff');
+
+        //$faculty = user_info::where('','Faculty')->get();
+        $faculty = DB::table('user_info')
+        ->join('users','user_info.user_ID',"=",'users.id')
+        ->select('user_info.*','users.email')
+        ->where('users.user_type','Faculty')
+        ->get();
+        return view('IEMS\Linus.SITE.facultystaff')->with('user', $faculty);;
     }
 
     function accessLinus(){
