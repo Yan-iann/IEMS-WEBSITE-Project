@@ -1,6 +1,6 @@
 <div class="sidebar close">
     <div class="logo-details">
-      <i class='bx bx-menu'></i>
+      <i class='bx bx-books'></i>
       <span class="logo_name">Linus</span>
     </div>
       <ul class="nav-links">
@@ -66,11 +66,13 @@
 
         <a href="{{ route('login') }}">
           <div class="profile-details">
+            <div class="profile-content">
+                <!--<img src="image/profile.jpg" alt="profileImg">-->
+            </div>
             <div class="name-job">
-                <h1 class="profile_name" style="padding-left: 30px; font-size:30px;padding-top:7px">
-                    Log In
-                </h1>
-              </div>
+                <div class="profile_name">IEMS Member?</div>
+                <div class="job">Login here</div>
+            </div>
                  <!-- Authentication for LogOut-->
                   <i class='bx bx-log-in' style="font-size:40px"></i>
 
