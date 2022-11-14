@@ -8,6 +8,7 @@ use App\Http\Controllers\studentController;
 use App\Http\Controllers\guestController;
 use App\Http\Controllers\IEMSWebsite;
 use App\Http\Controllers\AuthenticatedSessionController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
