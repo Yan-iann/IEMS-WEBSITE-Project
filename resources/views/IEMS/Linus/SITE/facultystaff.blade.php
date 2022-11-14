@@ -27,7 +27,7 @@
                     </p>
 
                     <h1 class="subheader fst-italic fw-light m-0" style="color: #1DA2D8">
-                        Faculty Members
+                        Faculty and Staff
                     </h1>
                 </div>
 
@@ -49,42 +49,7 @@
         </div>
     </section>
 
-    <section class="mbr-section article"
-        style="background-color: rgb(242, 242, 242); padding-top: 120px; padding-bottom:120px; object-fit:cover; g">
-        <div class="container-fluid ">
-            <div class="row  d-flex justify-content-center">
 
-                {{-- Heading --}}
-                <div class="col-12 text-center mb-5">
-                    <p class=" fw-bold mb-0" style="color: #252525">
-                        OUR PEOPLE
-                    </p>
-
-                    <h1 class="subheader fst-italic fw-light m-0" style="color: #1DA2D8">
-                        Staff
-                    </h1>
-                </div>
-
-
-                {{-- Card --}}
-                <div class="col-6 col-md-2 col-lg-2" style="margin: 20px">
-                    <div class="card bg-transparent" style="width: 18rem; border:none; cursor:default">
-                        <img src="{{-- Photo --}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Name</h5>
-                            <p class="card-text">Rank</p>
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#viewfacultydetails"
-                                class="btn btn-info">View Details</button>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-            </div>
-        </div>
-    </section>
 
 
 
