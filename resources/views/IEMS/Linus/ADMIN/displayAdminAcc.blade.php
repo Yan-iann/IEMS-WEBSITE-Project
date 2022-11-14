@@ -3,7 +3,7 @@
 <body>
 <div class="home-section">
   <div class="home-content">
-    <span class="text">User Accounts</span>
+    <span class="text">Admin Accounts</span>
   </div>
   
 </div>
@@ -25,7 +25,7 @@
 
   <div class="row">
     <div class="col">
-        <div class="az-content-label mg-b-5"><h3>User Accounts</h3></div>
+        <div class="az-content-label mg-b-5"><h3>Admin Accounts</h3></div>
     </div>
     <div class="col text-right">
         <a href=""><i class="typcn typcn-document-add" id="addbutton" data-toggle="tooltip" data-placement="left" title="Add New Faculty Account"></i> </a>

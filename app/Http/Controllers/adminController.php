@@ -28,19 +28,19 @@ class adminController extends Controller
     public function adminAccounts()
     {
         $userAdmin = User::where('user_type','Admin')->get();
-        return view ('IEMS.Linus.ADMIN.adminDashboard')->with('user', $userAdmin);
+        return view ('IEMS.Linus.ADMIN.displayAdminAcc')->with('user', $userAdmin);
     }//end viewing of admin user accounts dashboard
 
     public function adminFacultyAccounts()
     {
         $userFaculty = User::where('user_type','Faculty')->get();
-        return view ('IEMS.Linus.ADMIN.adminDashboard')->with('user', $userFaculty);
+        return view ('IEMS.Linus.ADMIN.displayFacultyAcc')->with('user', $userFaculty);
     }//end viewing of admin user accounts dashboard
 
     public function adminStudentAccounts()
     {
         $userStudent = User::where('user_type','Student')->get();
-        return view ('IEMS.Linus.ADMIN.adminDashboard')->with('user', $userStudent);
+        return view ('IEMS.Linus.ADMIN.displayStudentAcc')->with('user', $userStudent);
     }//end viewing of admin user accounts dashboard
 
     //for storing userInformation And Register
@@ -50,6 +50,10 @@ class adminController extends Controller
             'middle_name' => 'required',
             'last_name' => 'required',
             'name' => 'required',
+            'rank' => 'required',
+            'specialty' => 'required',
+            'educational' => 'required',
+            'phone_no' => 'required',
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'user_type' => 'required',
@@ -66,6 +70,10 @@ class adminController extends Controller
                         'name' => $request->name,
                         'middle_name' => $request->middle_name,
                         'last_name' => $request->last_name,
+                        'rank'=> $request-> rank,
+                        'specialty'=> $request->specialty,
+                        'educational'=> $request->educational,
+                        'phone_no'=> $request->phone_no,
                         'user_ID' => $id,
                     ];
                     user_info::create($userInfo);

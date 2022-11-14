@@ -19,5 +19,9 @@ class user_info extends Model
         'middle_name',
         'last_name',
         'profile_pic',
+        'rank',
+        'specialty',
+        'educational',
+        'phone_no',
     ];
 }

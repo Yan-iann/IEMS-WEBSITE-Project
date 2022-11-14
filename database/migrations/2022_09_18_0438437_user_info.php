@@ -19,6 +19,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('middle_name')->nullable();
             $table->string('last_name');
+            $table->string('rank')->nullable();
+            $table->string('specialty')->nullable();
+            $table->string('educational')->nullable();
+            $table->string('phone_no')->nullable();
             $table->string('profile_pic',300)->nullable();
         });
     }

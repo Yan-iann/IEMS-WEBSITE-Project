@@ -3,7 +3,7 @@
 <body>
 <div class="home-section">
   <div class="home-content">
-    <span class="text">User Accounts</span>
+    <span class="text">Student Accounts</span>
   </div>
   
 </div>
@@ -25,7 +25,7 @@
 
   <div class="row">
     <div class="col">
-        <div class="az-content-label mg-b-5"><h3>User Accounts</h3></div>
+        <div class="az-content-label mg-b-5"><h3>Student Accounts</h3></div>
     </div>
     <div class="col text-right">
         <a href=""><i class="typcn typcn-document-add" id="addbutton" data-toggle="tooltip" data-placement="left" title="Add New Faculty Account"></i> </a>
@@ -143,6 +143,64 @@
     <div class="container-fluid">
     </div><!--end of container-->
 
+        <a class="float" data-bs-toggle="modal" data-bs-target="#ModalAddUser">
+          <i class="bx bx-plus my-float"></i>
+        </a>
+
+        
+<!-- Add User Modal-->
+<form action="{{ route('storeUserInfo') }}" method="post" enctype="multipart/form-data">
+@csrf
+  <div class="modal fade" id="ModalAddUser" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header border-0 text-center">
+            <h5 class="modal-title  text-center">Add User Account</h5>
+            <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+            <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
+
+                  <div class="col-12">
+                    <label for="formGroupExampleInput" class="form-label">First Name</label>
+                    <input type="input" class="form-control"  placeholder="Enter First Name" name="name">
+                  </div>
+
+                  <div class="col-12">
+                    <label for="formGroupExampleInput" class="form-label">Middle Name</label>
+                    <input type="input" class="form-control" placeholder="Enter Middle Name" name="middle_name" >
+                  </div>
+
+                  <div class="col-12 col-md-4">
+                    <label for="formGroupExampleInput" class="form-label">Last Name</label>
+                    <input type="input" placeholder="Enter Last Name" class="form-control" name="last_name" >
+                  </div>
+
+                  <input type="hidden" class="form-control"  placeholder="Enter user type " name="user_type" value="Student">
+              
+
+                  <div class="col-12 col-md-4">
+                    <label for="formGroupExampleInput" class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" placeholder="Enter email " >
+                  </div>
+
+                  <div class="-12 col-md-4">
+                    <label for="formGroupExampleInput" class="form-label">Password</label>  
+                    <input  type="input"
+                                name="password"
+                                class="form-control" placeholder="Enter Password ">
+                  </div>
+
+                  <div class="modal-footer border-0">
+                    <button type="submit" class="btn btn-info text-white">Submit</button>
+                    <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
+                  </div>
+                </div>
+        </div>
+      </div>
+  </div>
+</form>
 </body>
 @endsection
 
