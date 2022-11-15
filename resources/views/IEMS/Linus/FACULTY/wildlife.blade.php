@@ -23,6 +23,7 @@
                                         <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#ModalSearch"><i class='bx bx-filter-alt'></i></button>
                                     </div>
                                     <button class="btn btn-info " type="submit">Search</button>
+                                </form>
                                 </div>
                             </div>
                         </div>

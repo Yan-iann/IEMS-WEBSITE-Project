@@ -2,60 +2,39 @@
 @section('content')
 <div class="container-fluid">
 
-        <div class="home-content">
-        <i class='bx bx-menu'></i>
-            <span class="text">Critters</span>
-            <div class="input-group" id="adv-search">
-                <input type="text" class="form-control" placeholder="Search for snippets" />
-                <div class="input-group-btn">
-                    <div class="btn-group" role="group">
-                        <div class="dropdown dropdown-lg">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
-                            <div class="dropdown-menu dropdown-menu-right" role="menu">
-                                <form class="form-horizontal" role="form">
-                                  <div class="form-group">
-                                    <label for="filter">Filter by</label>
-                                    <select class="form-control">
-                                        <option value="0" selected>All Snippets</option>
-                                        <option value="1">Featured</option>
-                                        <option value="2">Most popular</option>
-                                        <option value="3">Top rated</option>
-                                        <option value="4">Most commented</option>
-                                    </select>
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="contain">Author</label>
-                                    <input class="form-control" type="text" />
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="contain">Contains the words</label>
-                                    <input class="form-control" type="text" />
-                                  </div>
-                                  <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+    {{-- Page Name, and Burger Icon. AND Search Bar --}}
+    <div class="col-12">
+
+        <div class="row d-flex justify-content-around">
+            <div class="home-content">
+                <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center">
+                    <i class='bx bx-menu'></i>
+                    <span class="text">Critters</span>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-6">
+                    <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get"
+                        action="{{ route('searchWildlife') }}"> {{-- uhm di pani sure ?? --}}
+                        <div class="input-group">
+                            <input type="search" name="searchWildlife" class="form-control mr-sm2"
+                                placeholder="Search Critter Name">
+                            <div class="input-group-btn">
+                                <div class="btn-group" role="group">
+                                    <div class="dropdown dropdown-lg">
+                                        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#ModalSearch"><i class='bx bx-filter-alt'></i></button>
+                                    </div>
+                                    <button class="btn btn-info " type="submit">Search</button>
                                 </form>
+                                </div>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                    </div>
                 </div>
             </div>
+
         </div>
+    </div>
 
-        <div class="table-responsive">
-            <table class="table">
-                 <thead>
-                    <tr>
-                      <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('searchWildlife') }}">
-                        <td></td>
-                        <td><a data-bs-toggle="modal" data-bs-target="#ModalSearch"><i class='bx bx-filter-alt'></i></a></td>
-                        <td><input type="search" name="searchWildlife" class="form-control mr-sm2" placeholder="Search Wildlife Name"></td>
-                        <td><button class="btn btn-info btn-sm" type="submit" style="color: white">Search</button></td>
-                      </form>
-                    </tr>
-                  </thead>
-           </table><!--end of table-->
-</div> <!--end of table-->
-
+    <section class="col-12">
 <div class="container-fluid">
 <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
             @foreach ($studentDashboard as $item)
@@ -78,6 +57,7 @@
 
     </div>
     <!--end of class container fluid-->
+    </section>
 @endsection
 
 
