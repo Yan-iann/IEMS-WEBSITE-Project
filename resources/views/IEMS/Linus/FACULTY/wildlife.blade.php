@@ -164,7 +164,7 @@
                   <label class="focus-label">Critter Class:</label>
                     <select class="select floating" id="" name="wildlife_class">
                       <option></option>
-                      @foreach($wildlifes as $item)
+                      @foreach($searchClass as $item)
                       <option value="{{ $item->wildlife_class }}">{{$item->wildlife_class}}</option>
                       @endforeach
                     </select>
@@ -174,8 +174,18 @@
                   <label class="focus-label">Critter Specie:</label>
                     <select class="select floating" id="" name="wildlife_species">
                       <option></option>
-                      @foreach($wildlifes as $item)
+                      @foreach($searchSpecie as $item)
                       <option value="{{ $item->wildlife_species }}">{{$item->wildlife_species}}</option>
+                      @endforeach
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                  <label class="focus-label">Wildlife Location:</label>
+                    <select class="select floating" id="" name="wildlife_location">
+                      <option></option>
+                      @foreach($searchLoc as $item)
+                      <option value="{{ $item->wildlife_location }}">{{$item->wildlife_location}}</option>
                       @endforeach
                     </select>
                   </div>

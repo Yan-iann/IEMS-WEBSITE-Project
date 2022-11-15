@@ -116,6 +116,11 @@ Route::post('/storeRequest',[studentController::class, 'storeAnno'])->name('stor
 Route::post('/updateAnnouncement/{id}',[studentController::class, 'updateAnno'])->name('updateAnno');
 //for deleting announcement information
 Route::get('/deleteAnnouncement/{id}',[studentController::class, 'deleteAnno'])->name('deleteAnno');
+//for searching
+Route::get('/S_searchWildlife',[studentController::class, 'searchWildlife'])->name('S_searchWildlife');
+Route::get('/S_advanceSearchWildlife',[studentController::class, 'advanceSearchWildlife'])->name('S_advanceSearchWildlife');
+Route::get('/S_advanceSearchThesis',[studentController::class, 'advanceSearchThesis'])->name('S_advanceSearchThesis');
+Route::get('/S_advanceSearchJournal',[studentController::class, 'advanceSearchJournal'])->name('S_advanceSearchJournal');
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 

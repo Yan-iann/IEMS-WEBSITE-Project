@@ -9,7 +9,7 @@ use App\Models\Wildlife;
 use App\Models\thesis_paper;
 use App\Models\journal_article;
 use Illuminate\Support\Facades\Redirect;  
-
+use DB;
 class allInfocardMaintain extends Controller
 {
     
@@ -41,8 +41,31 @@ class allInfocardMaintain extends Controller
                 $path = request()->file('wildlife_pic')->move('storage/images',$filename);
                 $requestData["wildlife_pic"] = $path;
                 Wildlife::create($requestData);
+
+                $searchClass = DB::table('wildlife')
+                ->select('wildlife.wildlife_class')
+                ->distinct('wildlife.wildlife_class')
+                ->where('wildlife_type','Zoo')
+                ->get();
+        
+                $searchSpecie = DB::table('wildlife')
+                ->select('wildlife.wildlife_species')
+                ->distinct('wildlife.wildlife_species')
+                ->where('wildlife_type','Zoo')
+                ->get();
+        
+                $searchLoc = DB::table('wildlife')
+                ->select('wildlife.wildlife_location')
+                ->distinct('wildlife.wildlife_location')
+                ->where('wildlife_type','Zoo')
+                ->get();
+                
                 $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
-                return view ('IEMS.Linus.FACULTY.wildlife')->with('wildlifes', $wildlife);
+                return view ('IEMS.Linus.FACULTY.wildlife')
+                ->with('wildlifes', $wildlife)
+                ->with('searchClass', $searchClass)
+                ->with('searchSpecie', $searchSpecie)
+                ->with('searchLoc', $searchLoc);
             }
         }
     }//end of adding wildlife
@@ -140,8 +163,16 @@ class allInfocardMaintain extends Controller
                 $requestData = request()->all();
                 $requestData["info_ID"] =  $infocard->info_ID;
                 thesis_paper::create($requestData);
+
+                $searchData = DB::table('thesis_paper')
+                ->select('thesis_paper.thesis_type','thesis_paper.thesis_reference')
+                ->distinct('thesis_paper.thesis_type','thesis_paper.thesis_reference')
+                ->get();
+        
                 $thesis = thesis_paper::all();
-                return view('IEMS.Linus.FACULTY.thesis')->with('thesis',$thesis);
+                return view('IEMS.Linus.FACULTY.thesis')
+                ->with('thesis',$thesis)
+                ->with('searchData',$searchData);
             }     
         }
     }//end of adding thesis
@@ -171,8 +202,16 @@ class allInfocardMaintain extends Controller
                     $requestData = request()->all();
                     $requestData["info_ID"] =  $infocard->info_ID;
                     journal_article::create($requestData);
+                    
+                    $searchData = DB::table('journal_article')
+                    ->select('journal_article.journal_reference','journal_article.date_published')
+                    ->distinct('journal_article.journal_reference','journal_article.date_published')
+                    ->get();
+            
                     $journal = journal_article::all();
-                    return view('IEMS.Linus.FACULTY.journal')->with('journal',$journal);
+                    return view('IEMS.Linus.FACULTY.journal')
+                    ->with('journal',$journal)
+                    ->with('searchData',$searchData);
                 }
             }
     }//end of adding journal

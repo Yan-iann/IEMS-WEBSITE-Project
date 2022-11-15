@@ -1,4 +1,4 @@
-@extends('layouts.F_Layout')
+@extends('layouts.S_Layout')
 @section('content')
 <body>
 <div class="home-section">
@@ -7,9 +7,22 @@
 </div>
 </div>
 
+    <div class="table-responsive">
+                        <table class="table">
+                             <thead>
+                                <tr>
+                                  <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('searchWildlife') }}">
+                                    <td></td>
+                                    <td><a data-bs-toggle="modal" data-bs-target="#ModalSearch"><i class='bx bx-filter-alt'></i></a></td>
+                                    <td><input type="search" name="searchWildlife" class="form-control mr-sm2" placeholder="Search Critter Name"></td>
+                                    <td><button class="btn btn-info btn-sm" type="submit" style="color: white">Search</button></td>
+                                  </form>
+                                </tr>
+                              </thead>
+                       </table><!--end of table-->
+    </div> <!--end of table-->
       <div class="container-fluid">
         <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
-          @if($wildlife->count()) 
           @foreach($wildlife as $item)
           <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
             <div class="card border-dark" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#ModalWildlife{{$item->info_ID}}">
@@ -19,38 +32,11 @@
                   <p class="card-text text-center">({{$item->wildlife_scientific_name}})</p>
                 </div>
             </div>
-            @include('IEMS.Linus.FACULTY.editWildlife')  
           </div>
-          @include('IEMS.Linus.FACULTY.displayWildlife') 
+          @include('IEMS.Linus.STUDENT.displayWildlife')
           @endforeach
-          @else
-            <p>No Search Results</p>
-          @endif
         </div><!--end of catalog-->
       </div><!--end of class container fluid-->
-<!-- Delete Wildlife Modal-->
-@foreach($wildlife as $item)
-<form action="{{ route('deleteWildlife',$item->info_ID) }}" method="get" enctype="multipart/form-data">
-      <div class="modal fade" id="ModalDeleteWl{{$item->info_ID}}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-            {!! csrf_field() !!}
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-          <div class="modal-content  bg-light">
-            <div class="modal-header border-0 text-center">
-              <h5 class="modal-title  text-center">Confirmation</h5>
-              <button type="button" class="btn-close bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body border-0">
-              <p>Are you sure you want to delete this information card?</p>
-            </div>
-            <div class="modal-footer border-0">
-              <button type="submit" class="btn btn-danger">Delete</button>
-              <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
-            </div>
-          </div>
-        </div>
-      </div>
-</form>
-@endforeach
 
 <!--advance search-->
 <form action="{{ route('advanceSearchWildlife') }}" method="GET" enctype="multipart/form-data">

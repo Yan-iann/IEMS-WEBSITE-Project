@@ -153,7 +153,7 @@
                   <label class="focus-label">Journal Reference:</label>
                     <select class="select floating" id="" name="journal_reference">
                       <option></option>
-                      @foreach($journal as $item)
+                      @foreach($searchData as $item)
                       <option value="{{ $item->journal_reference }}">{{$item->journal_reference}}</option>
                       @endforeach
                     </select>
@@ -163,7 +163,7 @@
                   <label class="focus-label">Date Published:</label>
                     <select class="select floating" id="" name="date_published">
                       <option></option>
-                      @foreach($journal as $item)
+                      @foreach($searchData as $item)
                       <option value="{{ $item->date_published }}">{{$item->date_published}}</option>
                       @endforeach
                     </select>
