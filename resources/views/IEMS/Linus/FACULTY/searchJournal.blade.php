@@ -38,9 +38,6 @@
           @include('IEMS.Linus.FACULTY.displayJournal')
         @endforeach  
       </div>
-        <a class="float" data-bs-toggle="modal" data-bs-target="#ModalAddJournal">
-          <i class="bx bx-plus my-float"></i>
-        </a>  
     </div>   
 
 <!-- Delete journal Modal-->
@@ -66,72 +63,6 @@
   </div>
 </form>
 @endforeach  
-
-<!-- Add Journal Modal-->
-<form action="{{ route('storeJournal') }}" method="POST" enctype="multipart/form-data">
-  <div class="modal fade" id="ModalAddJournal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-    {!! csrf_field() !!}
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-        <div class="modal-content">
-
-          <div class="modal-header border-0 text-center">
-            <h5 class="modal-title  text-center">Add Journal Article Information</h5>
-            <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-
-            <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
-                  <!--Column8-->
-                  <div class="col-8">
-                    <div class="row">
-                      <div class="col-12">
-                        <label for="formGroupExampleInput" class="form-label">Journal Title</label>
-                        <input type="input" class="form-control" placeholder="Enter journal Title" name="journal_title">
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12"><br>
-                        <label for="formGroupExampleInput" class="form-label">Journal Author</label>
-                        <input type="input" class="form-control" placeholder="Enter journal Author" name="journal_author" >
-                      </div>
-                    </div>
-                  </div>
-                   <!--Column4-->
-                  <div class="col-4">
-                    <label for="formGroupExampleInput2" class="form-label">Journal Reference</label>
-                    <input type="input" class="form-control" placeholder="Enter journal Reference" name="journal_reference" >
-                  </div>
-                  <!--Column4-->
-                  <div class="col-4">
-                    <label for="formGroupExampleInput2" class="form-label">Journal Type</label>
-                    <input type="input" class="form-control" placeholder="Enter journal Type" name="journal_type" >
-                  </div>
-                  <!--Column4-->
-                  <div class="col-4">
-                    <label for="formGroupExampleInput2" class="form-label">Date Published</label>
-                    <input type="date" class="form-control" placeholder="Enter Date Published" name="date_published" >
-                  </div>
-                  <!--Form Group-->
-                  <div class="form-group">
-                    <label for="wildlife_order">Journal Description:</label>
-                    <input type="input" class="form-control"  placeholder="Enter Journal Description" name="journal_desc">
-                  </div>
-                  <!--Hidden Inputs-->
-                  <input type="hidden" class="form-control" name="journal_status" value="approved">
-                  <input type="hidden" class="form-control" name="info_type" value="journal_paper">
-                   <!--Footer-->
-                  <div class="modal-footer border-0">
-                    <button type="submit" class="btn btn-info">Submit</button>
-                    <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
-                  </div>
-                </div>
-              </div><!--End Of Container Body-->
-            </div> <!--End Of Modal Body-->
-        </div><!--End Of Modal Content-->
-      </div>
-  </div><!--End Of Modal-->
-</form>
 <!--advance search-->
 <form action="{{ route('advanceSearchJournal') }}" method="GET" enctype="multipart/form-data">
       {!! csrf_field() !!}
