@@ -118,6 +118,22 @@ class infocardMaintain extends Controller
         return view ('IEMS.Linus.FACULTY.refCollection')->with('wildlifes', $wildlife);
     }
 
+    //for storing data in infocard table
+    public function storeDataWildlife(Request $request)
+    {
+        return view('/addWL');
+    }//end of save
+
+    public function storeDataThesis(Request $request)
+    {
+        return view('/addThesis');
+    }//end of save
+
+    public function storeDataJournal(Request $request)
+    {
+        return view('/addJournal');
+    }//end of save
+
     public function updateAnnoF(Request $request, $id)
     {
         $anno = announcement::find($id);

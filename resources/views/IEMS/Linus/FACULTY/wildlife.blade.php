@@ -78,6 +78,7 @@
       </div>
 </form>
 @endforeach
+
 <!-- Add Wildlife Modal-->
 <form action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
       {!! csrf_field() !!}
