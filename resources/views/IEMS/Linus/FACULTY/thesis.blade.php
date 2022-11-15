@@ -142,7 +142,7 @@
                   <label class="focus-label">Thesis Type:</label>
                     <select class="select floating" id="" name="thesis_type">
                       <option></option>
-                      @foreach($thesis as $item)
+                      @foreach($searchData as $item)
                       <option value="{{ $item->thesis_type }}">{{$item->thesis_type}}</option>
                       @endforeach
                     </select>
@@ -152,7 +152,7 @@
                   <label class="focus-label">Thesis Reference:</label>
                     <select class="select floating" id="" name="thesis_reference">
                       <option></option>
-                      @foreach($thesis as $item)
+                      @foreach($searchData as $item)
                       <option value="{{ $item->thesis_reference }}">{{$item->thesis_reference}}</option>
                       @endforeach
                     </select>

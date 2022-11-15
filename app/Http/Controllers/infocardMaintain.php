@@ -19,30 +19,82 @@ class infocardMaintain extends Controller
     //for viewing the infocards
     public function wildlife()
     {
+        $searchClass = DB::table('wildlife')
+        ->select('wildlife.wildlife_class')
+        ->distinct('wildlife.wildlife_class')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchSpecie = DB::table('wildlife')
+        ->select('wildlife.wildlife_species')
+        ->distinct('wildlife.wildlife_species')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchLoc = DB::table('wildlife')
+        ->select('wildlife.wildlife_location')
+        ->distinct('wildlife.wildlife_location')
+        ->where('wildlife_type','Zoo')
+        ->get();
+        
         $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
-        return view ('IEMS.Linus.FACULTY.wildlife')->with('wildlifes', $wildlife);
+        return view ('IEMS.Linus.FACULTY.wildlife')
+        ->with('wildlifes', $wildlife)
+        ->with('searchClass', $searchClass)
+        ->with('searchSpecie', $searchSpecie)
+        ->with('searchLoc', $searchLoc);
+      
     }
     public function thesis()
     {
+
+        $searchData = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_type','thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_type','thesis_paper.thesis_reference')
+        ->get();
+
         $thesis = thesis_paper::all();
-        return view('IEMS.Linus.FACULTY.thesis')->with('thesis',$thesis);
+        return view('IEMS.Linus.FACULTY.thesis')
+        ->with('thesis',$thesis)
+        ->with('searchData',$searchData);
     }
 
     public function gradThesis()
     {
+        $searchData = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_type','thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_type','thesis_paper.thesis_reference')
+        ->get();
+
         $thesis = thesis_paper::where('thesis_type','PostGraduate')->get();
-        return view('IEMS.Linus.FACULTY.thesis')->with('thesis',$thesis);
+        return view('IEMS.Linus.FACULTY.thesis')
+        ->with('thesis',$thesis)
+        ->with('searchData',$searchData);
     }
     public function undergradThesis()
     {
+        $searchData = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_type','thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_type','thesis_paper.thesis_reference')
+        ->get();
+
         $thesis = thesis_paper::where('thesis_type','UnderGraduate')->get();
-        return view('IEMS.Linus.FACULTY.thesis')->with('thesis',$thesis);
+        return view('IEMS.Linus.FACULTY.thesis')
+        ->with('thesis',$thesis)
+        ->with('searchData',$searchData);
     }
 
     public function journal()
     {
+        $searchData = DB::table('journal_article')
+        ->select('journal_article.journal_reference','journal_article.date_published')
+        ->distinct('journal_article.journal_reference','journal_article.date_published')
+        ->get();
+
         $journal = journal_article::all();
-        return view('IEMS.Linus.FACULTY.journal')->with('journal',$journal);
+        return view('IEMS.Linus.FACULTY.journal')
+        ->with('journal',$journal)
+        ->with('searchData',$searchData);
     }
 
     public function request()
@@ -110,8 +162,31 @@ class infocardMaintain extends Controller
         $wildlife = Wildlife::find($info_ID);
         $input = $request->all();
         $wildlife->update($input);
+
+        $searchClass = DB::table('wildlife')
+        ->select('wildlife.wildlife_class')
+        ->distinct('wildlife.wildlife_class')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchSpecie = DB::table('wildlife')
+        ->select('wildlife.wildlife_species')
+        ->distinct('wildlife.wildlife_species')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchLoc = DB::table('wildlife')
+        ->select('wildlife.wildlife_location')
+        ->distinct('wildlife.wildlife_location')
+        ->where('wildlife_type','Zoo')
+        ->get();
+        
         $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
-        return view('IEMS.Linus.FACULTY.wildlife')->with('wildlifes',$wildlife);
+        return view ('IEMS.Linus.FACULTY.wildlife')
+        ->with('wildlifes', $wildlife)
+        ->with('searchClass', $searchClass)
+        ->with('searchSpecie', $searchSpecie)
+        ->with('searchLoc', $searchLoc);
     }
     public function updateBone(Request $request, $info_ID)
     {
@@ -161,8 +236,24 @@ class infocardMaintain extends Controller
     public function deleteWildlife($info_ID)
     {
         Infocard::destroy($info_ID);
+          
+        $searchClass = DB::table('wildlife')
+        ->select('wildlife.wildlife_class')
+        ->distinct('wildlife.wildlife_class')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchSpecie = DB::table('wildlife')
+        ->select('wildlife.wildlife_species')
+        ->distinct('wildlife.wildlife_species')
+        ->where('wildlife_type','Zoo')
+        ->get();
+        
         $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
-        return view ('IEMS.Linus.FACULTY.wildlife')->with('wildlifes', $wildlife);
+        return view ('IEMS.Linus.FACULTY.wildlife')
+        ->with('wildlifes', $wildlife)
+        ->with('searchClass', $searchClass)
+        ->with('searchSpecie', $searchSpecie);
     }
     public function deleteThesis($info_ID)
     {
@@ -179,24 +270,6 @@ class infocardMaintain extends Controller
     //end of deleting infocards
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
-
-    //for storing data in infocard table
-    public function storeDataWildlife(Request $request)
-    {
-        return view('/addWL');
-    }//end of save
-
-    public function storeDataThesis(Request $request)
-    {
-        return view('/addThesis');
-    }//end of save
-
-    public function storeDataJournal(Request $request)
-    {
-        return view('/addJournal');
-    }//end of save
-    //end of storing data in infocard table
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //search infocards
     public function searchwildlife()
     {   
@@ -225,12 +298,27 @@ class infocardMaintain extends Controller
                                 ->where('wildlife_type','Zoo')
                                 ->get();
         }
-
-        //for class and specie
-        if($request->wildlife_class && $request->wildlife_species)
+        //for location
+        if($request->wildlife_location)
+        {
+            $wildlife = Wildlife::where('wildlife_location','LIKE','%'.$request->wildlife_location.'%')
+                                ->where('wildlife_type','Zoo')
+                                ->get();
+        }
+        //for species and loc
+        if($request->wildlife_species && $request->wildlife_location)
+        {
+            $wildlife = Wildlife::where('wildlife_species','LIKE','%'.$request->wildlife_species.'%')
+                        ->where('wildlife_location','LIKE','%'.$request->wildlife_location.'%')
+                        ->where('wildlife_type','Zoo')
+                        ->get();
+        }
+        //for class and specie and loc
+        if($request->wildlife_class && $request->wildlife_species && $request->wildlife_location)
         {
             $wildlife = Wildlife::where('wildlife_class','LIKE','%'.$request->wildlife_class.'%')
                                 ->where('wildlife_species','LIKE','%'.$request->wildlife_species.'%')
+                                ->where('wildlife_location','LIKE','%'.$request->wildlife_location.'%')
                                 ->where('wildlife_type','Zoo')
                                 ->get();            
         }
