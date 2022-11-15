@@ -1,12 +1,7 @@
 @extends('layouts.A_Layout')
 @section('content')
 <body>
-<div class="home-section">
-  <div class="home-content">
-    <span class="text">Faculty Accounts</span>
-  </div>
-  
-</div>
+
   <div class="table-responsive">
     <table class="table">
       <thead>

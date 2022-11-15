@@ -37,10 +37,6 @@
           @include('IEMS.Linus.FACULTY.displayWildlife') 
           @endforeach
         </div><!--end of catalog-->
-        <!-- Add Button -->
-        <a class="float" data-bs-toggle="modal" data-bs-target="#ModalAddWl">
-          <i class="bx bx-plus my-float"></i>
-        </a>
       </div><!--end of class container fluid-->
 <!-- Delete Wildlife Modal-->
 @foreach($wildlife as $item)
@@ -65,75 +61,6 @@
       </div>
 </form>
 @endforeach
-<!-- Add Wildlife Modal-->
-<form action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
-      {!! csrf_field() !!}
-      <div class="modal fade" id="ModalAddWl" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-          <div class="modal-content  bg-light">
-            
-            <div class="modal-header border-0 text-center">
-              <h5 class="modal-title  text-center">Add Wildlife Information</h5>
-              <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-      
-            <div class="modal-body">
-              <div class="container-fluid">
-                <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
-                  <div class="col-12">
-                    <label for="wildlife_pic">Wildlife Picture:</label>
-                    <input type="file" id="wildlife_pic" class="form-control"  placeholder="Wildlife Picture" name="wildlife_pic">
-                  </div> 
-                  <div class="col-12">
-                    <label for="formGroupExampleInput" class="form-label">Wildlife Name</label>
-                    <input type="input" class="form-control"  placeholder="Enter Wildlife Name" name="wildlife_name">
-                  </div>
-                  <div class="col-12">
-                    <label for="formGroupExampleInput" class="form-label">Scientific Name</label>
-                    <input type="input" class="form-control" placeholder="Enter Wildlife Scientific Name" name="wildlife_scientific_name" >
-                  </div>
-                  <div class="col-12 col-md-4">
-                    <label for="formGroupExampleInput2" class="form-label">Class</label>
-                    <input type="input" placeholder="Enter Wildlife Class" class="form-control" name="wildlife_class" >
-                  </div>
-                  <div class="col-12 col-md-4">
-                    <label for="formGroupExampleInput2" class="form-label">Order</label>
-                    <input type="input" class="form-control"  placeholder="Enter Wildlife Order" name="wildlife_order" >
-                  </div>
-                  <div class="col-12 col-md-4">
-                    <label for="formGroupExampleInput2" class="form-label">Family</label>
-                    <input type="input" class="form-control" placeholder="Enter Wildlife Family" name="wildlife_family" >
-                  </div>
-                  <div class="-12 col-md-4">
-                    <label for="formGroupExampleInput2" class="form-label">Genus</label>  
-                    <input type="input" class="form-control" placeholder="Enter Wildlife Genus"  name="wildlife_genus"  name="wildlife_genus" >
-                  </div>
-                  <div class="col-12 col-md-4">
-                    <label for="formGroupExampleInput2" class="form-label">Specie</label>
-                    <input type="input" class="form-control" placeholder="Enter Wildlife Species"  name="wildlife_species" >
-                  </div>
-                  <div class="col-12">
-                    <label for="formGroupExampleInput2" class="form-label">Location</label> 
-                    <input type="input" class="form-control"  placeholder="Enter Wildlife Location" name="wildlife_location" >
-                  </div>
-                    <!--Hidden Inputs-->
-                    <input type="hidden" class="form-control" name="info_type" value="wildlife">
-                    <input type="hidden" class="form-control"  name="wildlife_status" value="Approved">
-                  <div class="col-12">
-                    <label for="exampleFormControlinputarea1" class="form-label">Description</label>
-                    <textarea class="form-control" name="wildlife_desc" rows="3" placeholder="Enter Wildlife Description"></textarea>
-                  </div>
-                  <div class="modal-footer border-0">
-                    <button type="submit" class="btn btn-info text-white">Submit</button>
-                    <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-</form><!--end of form-->
 
 <!--advance search-->
 <form action="{{ route('advanceSearchWildlife') }}" method="GET" enctype="multipart/form-data">
