@@ -31,7 +31,7 @@
             </div>
         </div>
 
-
+        <section class="col-12">
         <div class="container-fluid">
             <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
                 @foreach ($wildlife as $item)
@@ -52,6 +52,7 @@
             <!--end of catalog-->
         </div>
         <!--end of class container fluid-->
+        </section>
         <!-- Delete Wildlife Modal-->
         @foreach ($wildlife as $item)
             <form action="{{ route('deleteWildlife', $item->info_ID) }}" method="get" enctype="multipart/form-data">
