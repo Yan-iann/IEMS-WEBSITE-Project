@@ -29,5 +29,6 @@ class Wildlife extends Model
         'wildlife_bone',
         'wildlife_ref',
         'wildlife_type',
+        'date_added',
     ];
 }

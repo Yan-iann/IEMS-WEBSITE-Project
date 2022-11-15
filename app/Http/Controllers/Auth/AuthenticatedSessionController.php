@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use User;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -32,7 +33,19 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        if(Auth::user()->user_type == 'Admin')
+        {
+            
+            return redirect()->route('adminDashboard');
+        }
+        else if(Auth::user()->user_type == 'Faculty')
+        {
+            return redirect()->route('facultyDashboard');
+        }
+        else if(Auth::user()->user_type == 'Student')
+        {
+            return redirect()->route('studentDashboard');
+        }
     }
 
     /**

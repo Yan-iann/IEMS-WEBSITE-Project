@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('thesis_type');
             $table->string('date_published');
             $table->string('thesis_status');
+            $table->string('date_added');
         });
     }
 

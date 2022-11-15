@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('journal_desc',500);
             $table->string('date_published');
             $table->string('journal_status');
+            $table->string('date_added');
         });
     }
 

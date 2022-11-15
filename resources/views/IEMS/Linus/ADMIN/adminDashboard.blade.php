@@ -24,6 +24,22 @@
                 </table>
             </div>
             <!--end of search bar-->
+<body>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="">
+            <td></td>
+            <td></td>
+            <td><input type="search" name="searchUser" class="form-control mr-sm2" placeholder="Search User"></td>
+            <td><button class="btn btn-primary btn-sm" type="submit">Search</button></td>
+          </form>
+        </tr>
+      </thead>
+    </table>
+</div><!--end of search bar-->
 
 
             <div class="row">

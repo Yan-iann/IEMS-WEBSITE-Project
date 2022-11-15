@@ -118,6 +118,12 @@
                     <label for="formGroupExampleInput2" class="form-label">Location</label>
                     <input type="input" class="form-control"  placeholder="Enter Wildlife Location" name="wildlife_location" >
                   </div>
+
+                  <div class="col-12">
+                    <label for="formGroupExampleInput2" class="form-label">Date Added</label>
+                    <input type="date" class="form-control"  placeholder="Enter Date" name="date_added" >
+                  </div>
+
                     <!--Hidden Inputs-->
                     <input type="hidden" class="form-control" name="info_type" value="wildlife">
                     <input type="hidden" class="form-control" name="wildlife_type" value="Zoo">

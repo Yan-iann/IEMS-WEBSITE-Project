@@ -9,6 +9,7 @@ use App\Http\Controllers\guestController;
 use App\Http\Controllers\IEMSWebsite;
 use App\Http\Controllers\AuthenticatedSessionController;
 use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,19 +25,11 @@ use App\Http\Controllers\ContactController;
 Route::get('/', [IEMSWebsite::class, 'accessHome']); //access announcement table
 
 
-// login
-
 //ROUTE FOR Dashboard According to User////////////////////////////////////////////////////////////////////////
+Route::get('/adminDashboard', [adminController::class, 'adminDashboard'])->name('adminDashboard');
+Route::get('/facultyDashboard', [infocardMaintain::class, 'wildlife'])->name('facultyDashboard');
+Route::get('/studentDashboard', [studentController::class, 'studentDashboard'])->name('studentDashboard');
 
-//for faculty//
-Route::get('/dashboard', [infocardMaintain::class, 'wildlife'])->name('facultyDashboard');
-
-//for Admin//
-//Route::get('/dashboard', [adminController::class, 'adminDashboard'])->name('adminDashboard');
-
-
-//for student//
-//Route::get('/dashboard', [studentController::class, 'studentDashboard'])->name('studentDashboard');
 
 //for login/////////////////////
 

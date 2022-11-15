@@ -21,5 +21,6 @@ class journal_article extends Model
         'journal_desc',
         'date_published',
         'journal_status',
+        'date_added',
     ];
 }
