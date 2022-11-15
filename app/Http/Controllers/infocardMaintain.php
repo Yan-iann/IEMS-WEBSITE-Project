@@ -298,6 +298,25 @@ class infocardMaintain extends Controller
 
     public function advanceSearchWildlife(Request $request)
     {
+
+        $searchClass = DB::table('wildlife')
+        ->select('wildlife.wildlife_class')
+        ->distinct('wildlife.wildlife_class')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchSpecie = DB::table('wildlife')
+        ->select('wildlife.wildlife_species')
+        ->distinct('wildlife.wildlife_species')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchLoc = DB::table('wildlife')
+        ->select('wildlife.wildlife_location')
+        ->distinct('wildlife.wildlife_location')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
         $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
 
         //for class
@@ -338,7 +357,12 @@ class infocardMaintain extends Controller
                                 ->where('wildlife_type','Zoo')
                                 ->get();            
         }
-        return view('IEMS.Linus.FACULTY.searchwildlife',compact('wildlife'));
+
+        return view('IEMS.Linus.FACULTY.searchwildlife')
+        ->with('wildlife', $wildlife)
+        ->with('searchClass', $searchClass)
+        ->with('searchSpecie', $searchSpecie)
+        ->with('searchLoc', $searchLoc);
     }
 
 

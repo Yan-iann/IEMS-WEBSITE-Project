@@ -63,7 +63,7 @@ class allInfocardMaintain extends Controller
                 $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
                 return view ('IEMS.Linus.FACULTY.wildlife')
                 ->with('wildlifes', $wildlife)
-                >with('searchClass', $searchClass)
+                ->with('searchClass', $searchClass)
                 ->with('searchSpecie', $searchSpecie)
                 ->with('searchLoc', $searchLoc);
             }
