@@ -1,32 +1,63 @@
 @extends('layouts.G_Layout')
 @section('content')
-    <div class="container-fluid">
+<div class="container-fluid">
 
         <div class="home-content">
-            <i class='bx bx-menu'></i>
+        <i class='bx bx-menu'></i>
             <span class="text">Critters</span>
+            <div class="input-group" id="adv-search">
+                <input type="text" class="form-control" placeholder="Search for snippets" />
+                <div class="input-group-btn">
+                    <div class="btn-group" role="group">
+                        <div class="dropdown dropdown-lg">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                <form class="form-horizontal" role="form">
+                                  <div class="form-group">
+                                    <label for="filter">Filter by</label>
+                                    <select class="form-control">
+                                        <option value="0" selected>All Snippets</option>
+                                        <option value="1">Featured</option>
+                                        <option value="2">Most popular</option>
+                                        <option value="3">Top rated</option>
+                                        <option value="4">Most commented</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="contain">Author</label>
+                                    <input class="form-control" type="text" />
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="contain">Contains the words</label>
+                                    <input class="form-control" type="text" />
+                                  </div>
+                                  <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                </form>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                    </div>
+                </div>
+            </div>
         </div>
-
 
         <div class="table-responsive">
             <table class="table">
-                <thead>
+                 <thead>
                     <tr>
-                        <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get"
-                            action="{{ route('searchWildlife') }}">
-                            <td></td>
-                            <td></td>
-                            <td><input type="search" name="searchWildlife" class="form-control mr-sm2"
-                                    placeholder="Search Wildlife Name"></td>
-                            <td><button class="btn btn-info btn-sm" type="submit">Search</button></td>
-                        </form>
+                      <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('searchWildlife') }}">
+                        <td></td>
+                        <td><a data-bs-toggle="modal" data-bs-target="#ModalSearch"><i class='bx bx-filter-alt'></i></a></td>
+                        <td><input type="search" name="searchWildlife" class="form-control mr-sm2" placeholder="Search Wildlife Name"></td>
+                        <td><button class="btn btn-info btn-sm" type="submit" style="color: white">Search</button></td>
+                      </form>
                     </tr>
-                </thead>
-            </table>
-            <!--end of table-->
-        </div>
-        <!--end of table-->
-        <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
+                  </thead>
+           </table><!--end of table-->
+</div> <!--end of table-->
+
+<div class="container-fluid">
+<div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
             @foreach ($studentDashboard as $item)
                 <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
                     <div class="card border-dark" style="width: 18rem;" data-bs-toggle="modal"
@@ -48,3 +79,9 @@
     </div>
     <!--end of class container fluid-->
 @endsection
+
+
+
+
+
+
