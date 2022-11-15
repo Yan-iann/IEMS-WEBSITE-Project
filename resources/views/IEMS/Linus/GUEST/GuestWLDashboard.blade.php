@@ -18,7 +18,7 @@
                         <td></td>
                         <td><input type="search" name="searchWildlife" class="form-control mr-sm2"
                                 placeholder="Search Wildlife Name"></td>
-                        <td><button class="btn btn-info btn-sm" type="submit" style="color: white">Search</button></td>
+                        <td><button class="btn btn-info btn-sm" type="submit">Search</button></td>
                     </form>
                 </tr>
             </thead>
@@ -47,5 +47,7 @@
 
     </div>
     <!--end of class container fluid-->
+
+
 
 @endsection
