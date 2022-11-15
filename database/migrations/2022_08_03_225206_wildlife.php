@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('wildlife_status')->nullable();
             $table->string('wildlife_bone')->nullable();
             $table->string('wildlife_ref')->nullable();
+            $table->string('date_added');
             $table->string('wildlife_type');
         });
     }

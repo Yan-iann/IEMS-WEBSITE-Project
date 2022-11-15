@@ -21,5 +21,6 @@ class thesis_paper extends Model
         'thesis_type',
         'date_published',
         'thesis_status',
+        'date_added',
     ];
 }

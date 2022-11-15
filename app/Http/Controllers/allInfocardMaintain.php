@@ -41,6 +41,13 @@ class allInfocardMaintain extends Controller
                 $path = request()->file('wildlife_pic')->move('storage/images',$filename);
                 $requestData["wildlife_pic"] = $path;
                 Wildlife::create($requestData);
+                $maintain = [
+                    'maintain_Date' => $request->name,
+                    'user_ID' => Auth::user()->id,
+                    'info_ID' => $infocard->info_ID,
+                    'user_type' => $request->user_type,
+                ];
+                maintain::create($maintain);
                 $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
                 return view ('IEMS.Linus.FACULTY.wildlife')->with('wildlifes', $wildlife);
             }
