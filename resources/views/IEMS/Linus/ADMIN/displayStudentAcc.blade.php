@@ -198,24 +198,9 @@
                                         {{-- Filler --}}
                                     </div>
 
-                                    <div class="col-12">
-                                        <label for="formGroupExampleInput" class="form-label">Educational
-                                            Attaintment</label>
-                                        <input type="input" placeholder="Enter Educational Attaintment"
-                                            class="form-control" name="educational">
-                                    </div>
+                                  
 
-                                    <div class="col-12 col-md-6">
-                                        <label for="formGroupExampleInput" class="form-label">Rank</label>
-                                        <input type="input" placeholder="Enter Rank" class="form-control"
-                                            name="rank">
-                                    </div>
 
-                                    <div class="col-12 col-md-6">
-                                        <label for="formGroupExampleInput" class="form-label">Specialty</label>
-                                        <input type="input" placeholder="Enter Specialty" class="form-control"
-                                            name="specialty">
-                                    </div>
 
                                     <div class="col-12 col-md-6">
                                         <label for="formGroupExampleInput" class="form-label">Phone Number</label>
