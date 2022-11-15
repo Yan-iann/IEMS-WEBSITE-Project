@@ -21,16 +21,29 @@
         z-index: 1;
     }
 
+    .icon {
+        background: url('../img/Linus_white_icon.ico');
+        height: 20px;
+        width: 20px;
+        display: block;
+        /* Other styles here */
+    }
+
     .sidebar {
         position: fixed;
         top: 0;
         left: 0;
         height: 100%;
-        width: 266px;
+        width: 280px;
         background: #1DA2D8;
         z-index: 100;
         transition: all 0.5s ease;
         font-weight: bold;
+    }
+
+    .sidebar::-webkit-scrollbar {
+        width: 0px;
+        display: none;
     }
 
     .sidebar.close {
@@ -54,11 +67,10 @@
     }
 
     .sidebar .logo-details .logo_name {
-        font-size: 22px;
         color: #fff;
-        font-weight: 600;
         transition: 0.3s ease;
         transition-delay: 0.1s;
+        background-image: url('../img/Logo_linus_white.png');
     }
 
     .sidebar.close .logo-details .logo_name {
@@ -78,6 +90,7 @@
     }
 
     .sidebar .nav-links::-webkit-scrollbar {
+        width: 0px;
         display: none;
     }
 
@@ -88,7 +101,7 @@
     }
 
     .sidebar .nav-links li:hover {
-        background: #E5E5E5;
+        background-color:#0f8bbc;
 
 
     }
@@ -122,6 +135,8 @@
         display: none;
     }
 
+
+
     .sidebar .nav-links li a {
         display: flex;
         align-items: center;
@@ -139,7 +154,6 @@
     .sidebar .nav-links li a .link_name:hover {
         font-size: 18px;
         font-weight: 400;
-        color: #252525;
         transition: all 0.4s ease;
     }
 
@@ -151,7 +165,14 @@
     .sidebar .nav-links li .sub-menu {
         padding: 6px 6px 14px 80px;
         margin-top: -10px;
-        background: #1A96C9;
+        background: #0f8bbc;
+        display: none;
+    }
+
+    .sidebar .nav-links li .sub-menu:hover {
+        padding: 6px 6px 14px 80px;
+        margin-top: -10px;
+        background: #0f8bbc;
         display: none;
     }
 
@@ -170,7 +191,7 @@
 
     .sidebar .nav-links li .sub-menu a:hover {
         opacity: 1;
-        color: #252525;
+        color: white;
     }
 
     .sidebar.close .nav-links li .sub-menu {
@@ -220,13 +241,18 @@
     .sidebar .profile-details {
         position: fixed;
         bottom: 0;
-        width: 260px;
+        width: 280px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: #1A96C9;
+        background: #1DA2D8;
         padding: 12px 0;
-        transition: all 0.5s ease;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .sidebar .profile-details:hover {
+        background: #0f8bbc;
+        transition: all 0.5s ease-in-out;
     }
 
     .sidebar.close .profile-details {

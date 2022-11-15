@@ -1,11 +1,12 @@
 @extends('layouts.S_Layout')
 @section('content')
 <body>
-<div class="home-section">
+<div class="container-fluid">
 <div class="home-content">
-    <span class="text">Wildlifes</span>
+    <i class='bx bx-menu'></i>
+    <span class="text">Critters</span>
 </div>
-</div>
+
 
     <div class="table-responsive">
                         <table class="table">
@@ -32,15 +33,16 @@
                   <p class="card-text text-center">{{$item->wildlife_name}}</p>
                 </div>
             </div>
-           
+
           </div>
           @include('IEMS.Linus.STUDENT.displayWildlife')
           @endforeach
         </div><!--end of catalog-->
         <!-- Add Button -->
-        
-      </div><!--end of class container fluid-->
+
+      </div>
+</div>
 </body>
 @endsection
 
-  
+

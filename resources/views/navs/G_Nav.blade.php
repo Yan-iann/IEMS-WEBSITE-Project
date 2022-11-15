@@ -1,14 +1,16 @@
 <div class="sidebar close">
     <div class="logo-details">
-      <i class='bx bx-books'></i>
-      <span class="logo_name">Linus</span>
+
+      <i class="mt-4"><img src="{{ URL::asset('img/Logo_linus_white.png') }}"></i>
     </div>
+
+    <br>
       <ul class="nav-links">
 
         <!--Wildlife-->
         <li>
           <a href="{{ route('guestDashboard') }}">
-            <i class='bx bx-grid-alt' ></i>
+            <i class='bx bx-leaf' ></i>
             <span class="link_name">Critters</span>
           </a>
             <ul class="sub-menu">
@@ -21,7 +23,7 @@
         <li>
             <div class="iocn-link">
               <a href="{{ route('G_boneCollection') }}">
-                <i class='bx bx-collection' ></i>
+                <i class='bx bx-library' ></i>
                 <span class="link_name">Museum</span>
               </a>
               <i class='bx bxs-chevron-down arrow' ></i>
@@ -38,15 +40,15 @@
         <li>
             <div class="iocn-link">
               <a href="{{ route('Guest_thesis') }}">
-                <i class='bx bx-collection' ></i>
+                <i class='bx bx-book' ></i>
                 <span class="link_name">Thesis Papers</span>
               </a>
               <i class='bx bxs-chevron-down arrow' ></i>
             </div>
             <ul class="sub-menu">
               <li><a class="link_name" href="{{ route('Guest_thesis') }}">Thesis Papers</a></li>
-              <li><a href="{{ route('G_gradThesis') }}">PostGraduate</a></li>
-              <li><a href="{{ route('G_undergradThesis') }}">UnderGraduate</a></li>
+              <li><a href="{{ route('G_gradThesis') }}">Post Graduate</a></li>
+              <li><a href="{{ route('G_undergradThesis') }}">Under Graduate</a></li>
             </ul>
       </li>
       <!--end of Thesis Paper-->
@@ -54,7 +56,7 @@
          <!--Journal-->
         <li>
           <a href="{{ route('Guest_journal') }}">
-            <i class='bx bx-book-alt' ></i>
+            <i class='bx bx-news' ></i>
             <span class="link_name">Journal Articles</span>
           </a>
             <ul class="sub-menu">
@@ -73,7 +75,7 @@
                 <div class="profile_name">IEMS Member?</div>
                 <div class="job">Login here</div>
             </div>
-                 <!-- Authentication for LogOut-->
+                 <!-- Log in Icon-->
                   <i class='bx bx-log-in' style="font-size:40px"></i>
 
 

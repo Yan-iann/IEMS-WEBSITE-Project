@@ -1,10 +1,10 @@
 @extends('layouts.F_Layout')
 @section('content')
-<body>
-<div class="home-section">
+<div class="container-fluid">
+
 <div class="home-content">
+    <i class='bx bx-menu'></i>
     <span class="text">Critters</span>
-</div>
 </div>
 
 
@@ -185,7 +185,7 @@
         </div>
       </div>
 </form><!--end of form-->
-</body>
+</div>
 @endsection
 
 
