@@ -1,10 +1,10 @@
 @extends('layouts.F_Layout')
 @section('content')
-<body>
-<div class="home-section">
+
+<div class="container-fluid">
 <div class="home-content">
-    <span class="text">Wildlifes</span>
-</div>
+    <i class='bx bx-menu'></i>
+    <span class="text">Critters Search Results</span>
 </div>
 
     <div class="table-responsive">
@@ -32,9 +32,9 @@
                   <p class="card-text text-center">({{$item->wildlife_scientific_name}})</p>
                 </div>
             </div>
-            @include('IEMS.Linus.FACULTY.editWildlife')  
+            @include('IEMS.Linus.FACULTY.editWildlife')
           </div>
-          @include('IEMS.Linus.FACULTY.displayWildlife') 
+          @include('IEMS.Linus.FACULTY.displayWildlife')
           @endforeach
         </div><!--end of catalog-->
       </div><!--end of class container fluid-->
@@ -68,12 +68,12 @@
       <div class="modal fade" id="ModalSearch" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
           <div class="modal-content  bg-light">
-            
+
             <div class="modal-header border-0 text-center">
               <h5 class="modal-title  text-center">Advance Search</h5>
               <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-      
+
             <div class="modal-body">
               <div class="container-fluid">
                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
@@ -86,7 +86,7 @@
                       <option value="{{ $item->wildlife_class }}">{{$item->wildlife_class}}</option>
                       @endforeach
                     </select>
-                  </div> 
+                  </div>
 
                   <div class="col-12">
                   <label class="focus-label">Critter Specie:</label>
@@ -96,8 +96,8 @@
                       <option value="{{ $item->wildlife_species }}">{{$item->wildlife_species}}</option>
                       @endforeach
                     </select>
-                  </div> 
-                
+                  </div>
+
                   <div class="modal-footer border-0">
                     <button type="submit" class="btn btn-info text-white">Search</button>
                     <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
@@ -109,8 +109,7 @@
         </div>
       </div>
 </form><!--end of form-->
-
-</body>
+</div>
 @endsection
 
-  
+
