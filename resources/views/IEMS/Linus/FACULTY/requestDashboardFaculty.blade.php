@@ -1,32 +1,37 @@
 @extends('layouts.F_Layout')
 @section('content')
-<body>
-<div class="home-section">
+<div class="conatiner-fluid">
   <div class="home-content">
-    <span class="text">Requests</span>
+
+    <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center p-4">
+        <i class='bx bx-menu'></i>
+        <span class="text">Announcement Requests</span>
+    </div>
+
+    <div class="col-12 col-md-5 col-lg-5">
+        <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get"
+            action="">
+            <div class="input-group">
+                <input type="search" name="searchUser" class="form-control mr-sm2"
+                    placeholder="Search Announcements">
+                <div class="input-group-btn">
+                    <div class="btn-group" role="group">
+                        <div class="dropdown dropdown-lg">
+                            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
+                                data-bs-target="#ModalSearch"><i class='bx bx-filter-alt'></i></button>
+                        </div>
+                        <button class="btn btn-info " type="submit">Search</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
   </div>
-  
-</div>
-  <div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="">
-            <td></td>
-            <td></td>
-            <td><input type="search" name="searchUser" class="form-control mr-sm2" placeholder="Search Request"></td>
-            <td><button class="btn btn-primary btn-sm" type="submit">Search</button></td>
-          </form>
-        </tr>
-      </thead>
-    </table>
-</div><!--end of search bar-->
 
 
-<hr class="mg-y-3">
-<br>
-<div class="table-responsive">
-    <table class="table table-hover mg-b-0 text-center" id="maintables">
+<div class="table-responsive" style="overflow: hidden">
+    <table class="table table-hover mg-b-0 text-center" id="maintables" >
         <thead>
         <tr>
             <th>Request ID</th>
@@ -34,23 +39,23 @@
             <th>Author</th>
             <th>Date Published</th>
             <th>Status</th>
-         
+
             <th>Action</th>
         </tr>
         </thead>
         <tbody>
                 @foreach ($announcement as $item)
-              
+
                 <tr>
                     <td class="align-middle">{{ $item->anno_ID }}</td>
                     <td class="align-middle">{{ $item->anno_title }}</td>
                     <td class="align-middle">{{ $item->anno_author }}</td>
                     <td class="align-middle">{{ $item->anno_date }}</td>
                     <td class="align-middle">{{ $item->anno_status }}</td>
-                  
+
                     <td class="align-middle">
                             <button type="button" class="btn btn-info" style="color:white"data-bs-toggle="modal" data-bs-target="#ModalEditReq{{ $item->anno_ID }}"><i class='bx bxs-edit' ></i></button>
-                            <button type="button" class="btn btn-info" style="color:white"data-bs-toggle="modal" data-bs-target="#ModalDeleteReq{{ $item->anno_ID }}"> <i class='bx bx-trash' ></i></button>  
+                            <button type="button" class="btn btn-info" style="color:white"data-bs-toggle="modal" data-bs-target="#ModalDeleteReq{{ $item->anno_ID }}"> <i class='bx bx-trash' ></i></button>
                     </td>
                 </tr>
                 <!-- Edit Announcement Modal-->
@@ -96,7 +101,7 @@
                                         </select>
                                       </div>
 
-                                     
+
                                       <input type="hidden" class="form-control"  name="user_ID" value="{{ Auth::user()->id }}">
 
                                       <div class="modal-footer border-0">
@@ -133,7 +138,7 @@
                       </div>
                 </form>
               @endforeach
-            
+
         </tbody>
     </table>
 </div>
@@ -190,11 +195,11 @@
 </div>
 </div>
 </form>
-</body>
+</div>
 @endsection
 
 
 
 
 
-  
+

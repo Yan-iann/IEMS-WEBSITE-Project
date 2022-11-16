@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse justify-content-center mx-auto text-black" id="navbarNav">
             <ul class="navbar-nav  mb-2 mb-lg-0">
             <li class="nav-item" style="padding:5px">
-                <a class="nav-link font-weight-bold " href="/linus" >Linus</a>
+                <a class="nav-link font-weight-bold " href="/exhibit" >Exhibit</a>
             </li>
             <li class="nav-item" style="padding:5px">
                 <a class="nav-link font-weight-bold" href="#">Fishery</a>
