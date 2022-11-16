@@ -418,9 +418,10 @@ class infocardMaintain extends Controller
         ->with('searchLoc', $searchLoc);
     }
 
-
+//for thesis
     public function searchThesis()
     {
+
         $searchText = $_GET['searchThesis'];
         $thesis = thesis_paper::where('thesis_title','LIKE','%'.$searchText.'%')->get();
         return view('IEMS.Linus.FACULTY.searchThesis',compact('thesis'));
@@ -428,17 +429,17 @@ class infocardMaintain extends Controller
     public function advanceSearchThesis(Request $request)
     {   
         $thesis = thesis_paper::all();
-        if($request->thesis_type)
+        if($request->thesis_author)
         {
-            $thesis = thesis_paper::where('thesis_type','LIKE','%'.$request->thesis_type.'%')->get();
+            $thesis = thesis_paper::where('thesis_author','LIKE','%'.$request->thesis_author.'%')->get();
         }
         if($request->thesis_reference)
         {
             $thesis = thesis_paper::where('thesis_reference','LIKE','%'.$request->thesis_reference.'%')->get();
         }
-        if($request->thesis_type && $request->thesis_reference)
+        if($request->thesis_author && $request->thesis_reference)
         {
-            $thesis = thesis_paper::where('thesis_type','LIKE','%'.$request->thesis_type.'%')
+            $thesis = thesis_paper::where('thesis_author','LIKE','%'.$request->thesis_author.'%')
                                     ->where('thesis_reference','LIKE','%'.$request->thesis_reference.'%')
                                     ->get();
         }

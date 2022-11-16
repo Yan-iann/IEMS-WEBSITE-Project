@@ -153,11 +153,11 @@
                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
 
                   <div class="col-12">
-                  <label class="focus-label">Thesis Type:</label>
-                    <select class="select floating" id="" name="thesis_type">
+                  <label class="focus-label">Thesis Author:</label>
+                    <select class="select floating" id="" name="thesis_author">
                       <option></option>
                       @foreach($searchData as $item)
-                      <option value="{{ $item->thesis_type }}">{{$item->thesis_type}}</option>
+                      <option value="{{ $item->thesis_author }}">{{$item->thesis_author}}</option>
                       @endforeach
                     </select>
                   </div>

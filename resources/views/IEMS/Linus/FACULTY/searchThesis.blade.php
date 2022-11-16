@@ -37,7 +37,7 @@
     <section class="col-12">
     <div class="container-fluid">
       <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
-
+    @if($thesis->count())
     @foreach($thesis as $item)
         <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch" data-bs-toggle="modal" data-bs-target="#ModalThesis{{$item->info_ID}}">
             <div class="card border-dark" style="width: 18rem;">
@@ -53,6 +53,8 @@
         </div>
       @include('IEMS.Linus.FACULTY.displayThesis')
     @endforeach
+    @else
+      <h3>No records found</h3>
 
         </div>
 
@@ -98,11 +100,11 @@
                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
 
                   <div class="col-12">
-                  <label class="focus-label">Thesis Type:</label>
-                    <select class="select floating" id="" name="thesis_type">
+                  <label class="focus-label">Thesis Author:</label>
+                    <select class="select floating" id="" name="thesis_author">
                       <option></option>
                       @foreach($thesis as $item)
-                      <option value="{{ $item->thesis_type }}">{{$item->thesis_type}}</option>
+                      <option value="{{ $item->thesis_author }}">{{$item->thesis_author}}</option>
                       @endforeach
                     </select>
                   </div>
