@@ -118,22 +118,6 @@ class infocardMaintain extends Controller
         return view ('IEMS.Linus.FACULTY.refCollection')->with('wildlifes', $wildlife);
     }
 
-    //for storing data in infocard table
-    public function storeDataWildlife(Request $request)
-    {
-        return view('/addWL');
-    }//end of save
-
-    public function storeDataThesis(Request $request)
-    {
-        return view('/addThesis');
-    }//end of save
-
-    public function storeDataJournal(Request $request)
-    {
-        return view('/addJournal');
-    }//end of save
-
     public function updateAnnoF(Request $request, $id)
     {
         $anno = announcement::find($id);
@@ -264,12 +248,19 @@ class infocardMaintain extends Controller
         ->distinct('wildlife.wildlife_species')
         ->where('wildlife_type','Zoo')
         ->get();
+
+        $searchLoc = DB::table('wildlife')
+        ->select('wildlife.wildlife_location')
+        ->distinct('wildlife.wildlife_location')
+        ->where('wildlife_type','Zoo')
+        ->get();
         
         $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
         return view ('IEMS.Linus.FACULTY.wildlife')
         ->with('wildlifes', $wildlife)
         ->with('searchClass', $searchClass)
-        ->with('searchSpecie', $searchSpecie);
+        ->with('searchSpecie', $searchSpecie)
+        ->with('searchLoc', $searchLoc);
     }
     public function deleteThesis($info_ID)
     {
@@ -287,13 +278,74 @@ class infocardMaintain extends Controller
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
 //search infocards
-    public function searchwildlife()
+    public function searchwildlife(Request $request)
     {   
-        $searchText = $_GET['searchWildlife'];
-        $wildlife = Wildlife::where('wildlife_name','LIKE','%'.$searchText.'%')
+        $searchClass = DB::table('wildlife')
+        ->select('wildlife.wildlife_class')
+        ->distinct('wildlife.wildlife_class')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchSpecie = DB::table('wildlife')
+        ->select('wildlife.wildlife_species')
+        ->distinct('wildlife.wildlife_species')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchLoc = DB::table('wildlife')
+        ->select('wildlife.wildlife_location')
+        ->distinct('wildlife.wildlife_location')
+        ->where('wildlife_type','Zoo')
+        ->get();
+         //for class
+         if($request->wildlife_class)
+         {
+             $wildlife = Wildlife::where('wildlife_class','LIKE','%'.$request->wildlife_class.'%')
+                                 ->where('wildlife_type','Zoo')
+                                 ->get();
+         }
+         //for species
+         if($request->wildlife_species)
+         {
+             $wildlife = Wildlife::where('wildlife_species','LIKE','%'.$request->wildlife_species.'%')
+                                 ->where('wildlife_type','Zoo')
+                                 ->get();
+         }
+         //for location
+         if($request->wildlife_location)
+         {
+             $wildlife = Wildlife::where('wildlife_location','LIKE','%'.$request->wildlife_location.'%')
+                                 ->where('wildlife_type','Zoo')
+                                 ->get();
+         }
+         //for species and loc
+         if($request->wildlife_species && $request->wildlife_location)
+         {
+             $wildlife = Wildlife::where('wildlife_species','LIKE','%'.$request->wildlife_species.'%')
+                         ->where('wildlife_location','LIKE','%'.$request->wildlife_location.'%')
+                         ->where('wildlife_type','Zoo')
+                         ->get();
+         }
+         //for class and specie and loc
+         if($request->wildlife_class && $request->wildlife_species && $request->wildlife_location)
+         {
+             $wildlife = Wildlife::where('wildlife_class','LIKE','%'.$request->wildlife_class.'%')
+                                 ->where('wildlife_species','LIKE','%'.$request->wildlife_species.'%')
+                                 ->where('wildlife_location','LIKE','%'.$request->wildlife_location.'%')
+                                 ->where('wildlife_type','Zoo')
+                                 ->get();            
+         } 
+        if($request->searchWildlife)
+        {
+        $wildlife = Wildlife::where('wildlife_name','LIKE','%'.$request->searchWildlife.'%')
                             ->where('wildlife_type','Zoo')
                             ->get();
-        return view('IEMS.Linus.FACULTY.searchwildlife',compact('wildlife'));
+        }
+        return view('IEMS.Linus.FACULTY.searchwildlife')
+        ->with('wildlife', $wildlife)
+        ->with('searchClass', $searchClass)
+        ->with('searchSpecie', $searchSpecie)
+        ->with('searchLoc', $searchLoc);
     }
 
     public function advanceSearchWildlife(Request $request)
@@ -318,7 +370,8 @@ class infocardMaintain extends Controller
         ->get();
 
         $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
-
+        //for search
+      
         //for class
         if($request->wildlife_class)
         {

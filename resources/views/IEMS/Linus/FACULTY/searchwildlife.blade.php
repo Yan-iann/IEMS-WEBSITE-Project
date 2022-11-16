@@ -34,6 +34,7 @@
         <section class="col-12">
         <div class="container-fluid">
             <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
+              @if($wildlife->count())
                 @foreach ($wildlife as $item)
                     <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
                         <div class="card border-dark" style="width: 18rem;" data-bs-toggle="modal"
@@ -48,6 +49,9 @@
                     </div>
                     @include('IEMS.Linus.FACULTY.displayWildlife')
                 @endforeach
+                @else
+                <h3>No records found</h3>
+                @endif
             </div>
             <!--end of catalog-->
         </div>
@@ -79,8 +83,8 @@
             </form>
         @endforeach
 
-        <!--advance search-->
-        <!--advance search-->
+       
+<!--advance search-->
 <form action="{{ route('advanceSearchWildlife') }}" method="GET" enctype="multipart/form-data">
       {!! csrf_field() !!}
       <div class="modal fade" id="ModalSearch" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
