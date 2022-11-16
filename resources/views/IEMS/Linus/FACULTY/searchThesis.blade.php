@@ -17,7 +17,7 @@
                         action="{{ route('searchThesis') }}">
                         <div class="input-group">
                             <input type="search" name="searchThesis" class="form-control mr-sm2"
-                                placeholder="Search Critter Name">
+                                placeholder="Search Title Title">
                             <div class="input-group-btn">
                                 <div class="btn-group" role="group">
                                     <div class="dropdown dropdown-lg">
@@ -33,7 +33,7 @@
 
         </div>
     </div>
-
+</div>
     <section class="col-12">
     <div class="container-fluid">
       <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
@@ -55,7 +55,7 @@
     @endforeach
     @else
       <h3>No records found</h3>
-
+    @endif
         </div>
 
 
@@ -103,7 +103,7 @@
                   <label class="focus-label">Thesis Author:</label>
                     <select class="select floating" id="" name="thesis_author">
                       <option></option>
-                      @foreach($thesis as $item)
+                      @foreach($searchAuthor as $item)
                       <option value="{{ $item->thesis_author }}">{{$item->thesis_author}}</option>
                       @endforeach
                     </select>
@@ -113,7 +113,7 @@
                   <label class="focus-label">Thesis Reference:</label>
                     <select class="select floating" id="" name="thesis_reference">
                       <option></option>
-                      @foreach($thesis as $item)
+                      @foreach($searchRef as $item)
                       <option value="{{ $item->thesis_reference }}">{{$item->thesis_reference}}</option>
                       @endforeach
                     </select>
@@ -131,4 +131,5 @@
       </div>
 </form><!--end of form-->
     </div>
+    <body>
 @endsection

@@ -48,40 +48,58 @@ class infocardMaintain extends Controller
     public function thesis()
     {
 
-        $searchData = DB::table('thesis_paper')
-        ->select('thesis_paper.thesis_type','thesis_paper.thesis_reference')
-        ->distinct('thesis_paper.thesis_type','thesis_paper.thesis_reference')
+        $searchRef = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_reference')
+        ->get();
+
+        $searchAuthor = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_author')
+        ->distinct('thesis_paper.thesis_author')
         ->get();
 
         $thesis = thesis_paper::all();
         return view('IEMS.Linus.FACULTY.thesis')
         ->with('thesis',$thesis)
-        ->with('searchData',$searchData);
+        ->with('searchRef',$searchRef)
+        ->with('searchAuthor',$searchAuthor);
     }
 
     public function gradThesis()
     {
-        $searchData = DB::table('thesis_paper')
-        ->select('thesis_paper.thesis_type','thesis_paper.thesis_reference')
-        ->distinct('thesis_paper.thesis_type','thesis_paper.thesis_reference')
+        $searchRef = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_reference')
+        ->get();
+
+        $searchAuthor = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_author')
+        ->distinct('thesis_paper.thesis_author')
         ->get();
 
         $thesis = thesis_paper::where('thesis_type','PostGraduate')->get();
         return view('IEMS.Linus.FACULTY.thesis')
         ->with('thesis',$thesis)
-        ->with('searchData',$searchData);
+        ->with('searchRef',$searchRef)
+        ->with('searchAuthor',$searchAuthor);
     }
     public function undergradThesis()
     {
-        $searchData = DB::table('thesis_paper')
-        ->select('thesis_paper.thesis_type','thesis_paper.thesis_reference')
-        ->distinct('thesis_paper.thesis_type','thesis_paper.thesis_reference')
+        $searchRef = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_reference')
+        ->get();
+
+        $searchAuthor = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_author')
+        ->distinct('thesis_paper.thesis_author')
         ->get();
 
         $thesis = thesis_paper::where('thesis_type','UnderGraduate')->get();
         return view('IEMS.Linus.FACULTY.thesis')
         ->with('thesis',$thesis)
-        ->with('searchData',$searchData);
+        ->with('searchRef',$searchRef)
+        ->with('searchAuthor',$searchAuthor);
     }
 
     public function journal()
@@ -265,8 +283,22 @@ class infocardMaintain extends Controller
     public function deleteThesis($info_ID)
     {
         Infocard::destroy($info_ID);
+
+        $searchRef = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_reference')
+        ->get();
+
+        $searchAuthor = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_author')
+        ->distinct('thesis_paper.thesis_author')
+        ->get();
+
         $thesis = thesis_paper::all();
-        return view ('IEMS.Linus.FACULTY.thesis')->with('thesis', $thesis);
+        return view('IEMS.Linus.FACULTY.thesis')
+        ->with('thesis',$thesis)
+        ->with('searchRef',$searchRef)
+        ->with('searchAuthor',$searchAuthor);
     }
     public function deleteJournal($info_ID)
     {
@@ -419,15 +451,18 @@ class infocardMaintain extends Controller
     }
 
 //for thesis
-    public function searchThesis()
+    public function searchThesis(Request $request)
     {
+        $searchRef = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_reference')
+        ->get();
 
-        $searchText = $_GET['searchThesis'];
-        $thesis = thesis_paper::where('thesis_title','LIKE','%'.$searchText.'%')->get();
-        return view('IEMS.Linus.FACULTY.searchThesis',compact('thesis'));
-    }
-    public function advanceSearchThesis(Request $request)
-    {   
+        $searchAuthor = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_author')
+        ->distinct('thesis_paper.thesis_author')
+        ->get();
+
         $thesis = thesis_paper::all();
         if($request->thesis_author)
         {
@@ -443,7 +478,48 @@ class infocardMaintain extends Controller
                                     ->where('thesis_reference','LIKE','%'.$request->thesis_reference.'%')
                                     ->get();
         }
-        return view('IEMS.Linus.FACULTY.searchThesis',compact('thesis'));
+        if($request->searchThesis)
+        {
+            $thesis = thesis_paper::where('thesis_title','LIKE','%'.$request->searchThesis.'%')
+                                    ->get();
+        }
+        
+        return view('IEMS.Linus.FACULTY.searchThesis')
+        ->with('thesis', $thesis)
+        ->with('searchRef', $searchRef)
+        ->with('searchAuthor', $searchAuthor);
+    }
+    public function advanceSearchThesis(Request $request)
+    {   
+        $searchRef = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_reference')
+        ->get();
+
+        $searchAuthor = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_author')
+        ->distinct('thesis_paper.thesis_author')
+        ->get();
+
+        $thesis = thesis_paper::all();
+        if($request->thesis_author)
+        {
+            $thesis = thesis_paper::where('thesis_author','LIKE','%'.$request->thesis_author.'%')->get();
+        }
+        if($request->thesis_reference)
+        {
+            $thesis = thesis_paper::where('thesis_reference','LIKE','%'.$request->thesis_reference.'%')->get();
+        }
+        if($request->thesis_author && $request->thesis_reference)
+        {
+            $thesis = thesis_paper::where('thesis_author','LIKE','%'.$request->thesis_author.'%')
+                                    ->where('thesis_reference','LIKE','%'.$request->thesis_reference.'%')
+                                    ->get();
+        }
+        return view('IEMS.Linus.FACULTY.searchThesis')
+        ->with('thesis', $thesis)
+        ->with('searchRef', $searchRef)
+        ->with('searchAuthor', $searchAuthor);
     }
 
     public function searchJournal()

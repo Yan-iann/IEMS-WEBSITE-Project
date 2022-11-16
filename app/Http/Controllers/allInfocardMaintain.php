@@ -146,16 +146,12 @@ class allInfocardMaintain extends Controller
         'thesis_reference' => 'required',
         'thesis_type' => 'required',
         'date_published' => 'required',
+        'date_added' => 'required',
         'thesis_status' => 'required',
         'info_type' => 'required',
         ]);
     
-        if($validator->fails())
-        {
-        return back()->withErrors($validator)->withInput()->with('error','Something went wrong. Please try again.');
-        }
-        else
-        {
+       
             $infocard = new Infocard;
             $infocard->info_type = $request->info_type;
             if($infocard->save())
@@ -164,17 +160,23 @@ class allInfocardMaintain extends Controller
                 $requestData["info_ID"] =  $infocard->info_ID;
                 thesis_paper::create($requestData);
 
-                $searchData = DB::table('thesis_paper')
-                ->select('thesis_paper.thesis_type','thesis_paper.thesis_reference')
-                ->distinct('thesis_paper.thesis_type','thesis_paper.thesis_reference')
+                $searchRef = DB::table('thesis_paper')
+                ->select('thesis_paper.thesis_reference')
+                ->distinct('thesis_paper.thesis_reference')
+                ->get();
+
+                $searchAuthor = DB::table('thesis_paper')
+                ->select('thesis_paper.thesis_author')
+                ->distinct('thesis_paper.thesis_author')
                 ->get();
         
                 $thesis = thesis_paper::all();
                 return view('IEMS.Linus.FACULTY.thesis')
                 ->with('thesis',$thesis)
-                ->with('searchData',$searchData);
+                ->with('searchRef',$searchRef)
+                ->with('searchAuthor',$searchAuthor);
             }     
-        }
+        
     }//end of adding thesis
 
     public function storeDataJournal(Request $request)
@@ -185,6 +187,7 @@ class allInfocardMaintain extends Controller
             'journal_reference' => 'required',
             'journal_desc' => 'required',
             'date_published' => 'required',
+            'date_added' => 'required',
             'journal_status' => 'required',
             'info_type' => 'required',
             ]);

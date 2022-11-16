@@ -16,7 +16,7 @@
                         action="{{ route('searchThesis') }}">
                         <div class="input-group">
                             <input type="search" name="searchThesis" class="form-control mr-sm2"
-                                placeholder="Search Critter Name">
+                                placeholder="Search Thesis Title">
                             <div class="input-group-btn">
                                 <div class="btn-group" role="group">
                                     <div class="dropdown dropdown-lg">
@@ -122,6 +122,12 @@
                   <label for="formGroupExampleInput2" class="form-label">Date Published</label>
                   <input type="date" class="form-control" placeholder="Enter Date Published" name="date_published" >
                 </div>
+
+                <div class="col-4">
+                  <label for="formGroupExampleInput2" class="form-label">Date Added</label>
+                  <input type="date" class="form-control" placeholder="Enter Date Published" name="date_added" >
+                </div>
+
                 <input type="hidden" class="form-control" name="thesis_status" value="approved">
                 <input type="hidden" class="form-control" name="info_type" value="thesis_paper">
                 <div class="modal-footer border-0">
@@ -156,7 +162,7 @@
                   <label class="focus-label">Thesis Author:</label>
                     <select class="select floating" id="" name="thesis_author">
                       <option></option>
-                      @foreach($searchData as $item)
+                      @foreach($searchAuthor as $item)
                       <option value="{{ $item->thesis_author }}">{{$item->thesis_author}}</option>
                       @endforeach
                     </select>
@@ -166,7 +172,7 @@
                   <label class="focus-label">Thesis Reference:</label>
                     <select class="select floating" id="" name="thesis_reference">
                       <option></option>
-                      @foreach($searchData as $item)
+                      @foreach($searchRef as $item)
                       <option value="{{ $item->thesis_reference }}">{{$item->thesis_reference}}</option>
                       @endforeach
                     </select>
