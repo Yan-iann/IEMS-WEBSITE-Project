@@ -1,25 +1,40 @@
 @extends('layouts.F_Layout')
 @section('content')
-<body>
-<div class="home-section" style="height: 100%">
-  <div class="home-content">
-    <span class="text">Journal Articles</span>
-  </div>
-</div>  
-  <div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('searchJournal') }}">
-            <td></td>
-            <td><a data-bs-toggle="modal" data-bs-target="#ModalSearch"><i class='bx bx-filter-alt'></i></a></td>
-            <td><input type="search" name="searchJournal" class="form-control mr-sm2" placeholder="Search Journal Title"></td>
-            <td><button class="btn btn-info btn-sm" type="submit">Search</button></td>
-          </form>
-        </tr>
-      </thead>
-    </table>
-  </div> <!--Search Bar-->
+
+<div class="container-fluid">
+  {{-- Page Name, and Burger Icon. AND Search Bar --}}
+  <div class="col-12">
+
+    <div class="row d-flex justify-content-around">
+        <div class="home-content">
+            <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center">
+                <i class='bx bx-menu'></i>
+                <span class="text">Journal Articles</span>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-6">
+                <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get"
+                    action="{{ route('searchJournal') }}">
+                    <div class="input-group">
+                        <input type="search" name="searchJournal" class="form-control mr-sm2"
+                            placeholder="Search Journal Article">
+                        <div class="input-group-btn">
+                            <div class="btn-group" role="group">
+                                <div class="dropdown dropdown-lg">
+                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#ModalSearch"><i class='bx bx-filter-alt'></i></button>
+                                </div>
+                                <button class="btn btn-info " type="submit">Search</button>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<section class="col-12">
     <div class="container-fluid">
       <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
         @foreach($journal as $item)
@@ -33,15 +48,17 @@
                       </div>
                     <div class="card-footer border-0"></div>
                 </div>
-                @include('IEMS.Linus.FACULTY.editJournal')  
+                @include('IEMS.Linus.FACULTY.editJournal')
             </div>
           @include('IEMS.Linus.FACULTY.displayJournal')
-        @endforeach  
+        @endforeach
       </div>
         <a class="float" data-bs-toggle="modal" data-bs-target="#ModalAddJournal">
           <i class="bx bx-plus my-float"></i>
-        </a>  
-    </div>   
+        </a>
+    </div>
+
+</section>
 
 <!-- Delete journal Modal-->
 @foreach($journal as $item)
@@ -65,7 +82,7 @@
       </div>
   </div>
 </form>
-@endforeach  
+@endforeach
 
 <!-- Add Journal Modal-->
 <form action="{{ route('storeJournal') }}" method="POST" enctype="multipart/form-data">
@@ -139,12 +156,12 @@
       <div class="modal fade" id="ModalSearch" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
           <div class="modal-content  bg-light">
-            
+
             <div class="modal-header border-0 text-center">
               <h5 class="modal-title  text-center">Advance Search</h5>
               <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-      
+
             <div class="modal-body">
               <div class="container-fluid">
                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
@@ -157,7 +174,7 @@
                       <option value="{{ $item->journal_reference }}">{{$item->journal_reference}}</option>
                       @endforeach
                     </select>
-                  </div> 
+                  </div>
 
                   <div class="col-12">
                   <label class="focus-label">Date Published:</label>
@@ -167,8 +184,8 @@
                       <option value="{{ $item->date_published }}">{{$item->date_published}}</option>
                       @endforeach
                     </select>
-                  </div> 
-                
+                  </div>
+
                   <div class="modal-footer border-0">
                     <button type="submit" class="btn btn-info text-white">Search</button>
                     <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
@@ -180,10 +197,9 @@
         </div>
       </div>
 </form><!--end of form-->
-
-</body>
+<div>
 @endsection
 
 
 
-  
+

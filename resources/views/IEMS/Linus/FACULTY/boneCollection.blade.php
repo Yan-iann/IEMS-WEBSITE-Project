@@ -1,26 +1,36 @@
 @extends('layouts.F_Layout')
 @section('content')
-<body>
-<div class="home-section">
-<div class="home-content">
-    <span class="text">Bone Collections</span>
-</div>
-</div>
+<div class="container-fluid">
+ {{-- Page Name, and Burger Icon. AND Search Bar --}}
+ <div class="col-12">
 
-    <div class="table-responsive">
-                        <table class="table">
-                             <thead>
-                                <tr>
-                                  <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="">
-                                    <td></td>
-                                    <td></td>
-                                    <td><input type="search" name="searchWildlife" class="form-control mr-sm2" placeholder="Search Bone Name"></td>
-                                    <td><button class="btn btn-info btn-sm" type="submit" style="color: white">Search</button></td>
-                                  </form>
-                                </tr>
-                              </thead>
-                       </table><!--end of table-->
-    </div> <!--end of table-->
+    <div class="row d-flex justify-content-around">
+        <div class="home-content">
+            <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center">
+                <i class='bx bx-menu'></i>
+                <span class="text">Bone Collection</span>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-6">
+                <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get"
+                    action="">
+                    <div class="input-group">
+                        <input type="search" name="" class="form-control mr-sm2"
+                            placeholder="Search Bone Collection">
+                        <div class="input-group-btn">
+                            <div class="btn-group" role="group">
+                                <div class="dropdown dropdown-lg">
+                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#ModalSearch"><i class='bx bx-filter-alt'></i></button>
+                                </div>
+                                <button class="btn btn-info " type="submit">Search</button>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+
+{{-- informationcards --}}
       <div class="container-fluid">
         <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
           @foreach($wildlifes as $item)
@@ -32,9 +42,9 @@
                   <p class="card-text text-center">({{$item->wildlife_scientific_name}})</p>
                 </div>
             </div>
-            @include('IEMS.Linus.FACULTY.editBoneCollection')  
+            @include('IEMS.Linus.FACULTY.editBoneCollection')
           </div>
-          @include('IEMS.Linus.FACULTY.displayBoneCollection') 
+          @include('IEMS.Linus.FACULTY.displayBoneCollection')
           @endforeach
         </div><!--end of catalog-->
         <!-- Add Button -->
@@ -71,19 +81,19 @@
       <div class="modal fade" id="ModalAddWl" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
           <div class="modal-content  bg-light">
-            
+
             <div class="modal-header border-0 text-center">
               <h5 class="modal-title  text-center">Add Bone Collection Information</h5>
               <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-      
+
             <div class="modal-body">
               <div class="container-fluid">
                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
                   <div class="col-12">
                     <label for="wildlife_pic">Bone Picture:</label>
                     <input type="file" id="wildlife_pic" class="form-control"  placeholder="Wildlife Picture" name="wildlife_pic">
-                  </div> 
+                  </div>
                   <div class="col-12">
                     <label for="formGroupExampleInput" class="form-label">Bone Name</label>
                     <input type="input" class="form-control"  placeholder="Enter Wildlife Name" name="wildlife_name">
@@ -92,13 +102,13 @@
                     <label for="formGroupExampleInput" class="form-label">Bone Scientific Name</label>
                     <input type="input" class="form-control" placeholder="Enter Wildlife Scientific Name" name="wildlife_scientific_name" >
                   </div>
-                 
+
                   <div class="-12 col-md-4">
-                    <label for="formGroupExampleInput2" class="form-label">Bone Genus</label>  
+                    <label for="formGroupExampleInput2" class="form-label">Bone Genus</label>
                     <input type="input" class="form-control" placeholder="Enter Wildlife Genus"  name="wildlife_genus"  name="wildlife_genus" >
                   </div>
-                 
-                  
+
+
                     <!--Hidden Inputs-->
                     <input type="hidden" class="form-control" name="info_type" value="wildlife">
                     <input type="hidden" class="form-control" name="wildlife_type" value="Bone">
@@ -118,7 +128,7 @@
         </div>
       </div>
 </form><!--end of form-->
-</body>
+</div>
 @endsection
 
-  
+
