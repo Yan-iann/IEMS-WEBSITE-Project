@@ -20,7 +20,7 @@
         <!--Wildlife-->
         <li>
             <a href="{{ route('wildlife') }}">
-                <i class='bx bx-leaf'></i>
+                <i class='bx bx-radar'></i>
                 <span class="link_name">Critters</span>
             </a>
             <ul class="sub-menu">
