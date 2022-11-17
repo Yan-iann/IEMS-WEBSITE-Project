@@ -1,5 +1,5 @@
    {{-- Contact Us --}}
-   <section class="mbr-section article" style="background-color: #1da2d8; padding-top: 120px; padding-bottom: 120px;">
+   <section data-scroll-section class="mbr-section article" style="background-color: #1da2d8; padding-top: 120px; padding-bottom: 120px;">
        <div class="container">
            <div class="row justify-content-around align-items-center">
 

@@ -1,28 +1,30 @@
 @extends('layouts.IEMS_Layout')
 
 @section('content')
-{{-- Hero Section --}}
-<div data-scroll-container>
+    {{-- Hero Section --}}
 
     <div data-scroll-section class="home-banner w-100 vh-100 d-flex justify-content-center align-items-center"
         style="background-image: url('img/Home_Banner.png'); background-size:cover;
         background-repeat: no-repeat; background-blend-mode: multiply; background-position: center">
-        <div class="content text-center">
+        <div class="content text-center ">
             <h2 class="lead text-white  my-4 fw-bold">SU IEMS</h2>
 
-            <h1 class="display-2 text-white text-wrap lh-1" style="font-family: 'Playfair Display', serif">
+            <h1 class="display-2 text-white text-wrap lh-1" style="font-family: 'Playfair Display', serif" data-scroll
+                data-scroll-speed="1.5" data-scroll-direction="horizontal">
                 A
                 <span class="fst-italic" style="font-family: 'Playfair Display', serif">global leader</span>
                 in
             </h1>
 
-            <h1 class="display-2 text-white text-wrap lh-1" style="font-family: 'Playfair Display', serif">
+            <h1 class="display-2 text-white text-wrap lh-1" style="font-family: 'Playfair Display', serif" data-scroll
+                data-scroll-speed="-1.5" data-scroll-direction="horizontal">
                 <span class="text-decoration-underline" style="font-family: 'Playfair Display', serif">environment</span>
                 and
                 <span class="text-decoration-underline" style="font-family: 'Playfair Display', serif">marine</span>
             </h1>
 
-            <h1 class="display-2 text-white text-wrap lh-1" data-scroll-speed="4"style="font-family: 'Playfair Display', serif">
+            <h1 class="display-2 text-white text-wrap lh-1"style="font-family: 'Playfair Display', serif" data-scroll
+                data-scroll-speed="1.5" data-scroll-direction="horizontal">
                 research <span class="fst-italic " style="font-family: 'Playfair Display', serif">and</span> education
             </h1>
 
@@ -31,9 +33,8 @@
 
     </div>
 
-</div>
 
-<div data-scroll-container>
+
 
     <section data-scroll-section class="mbr-section article"
         style="background-color: #1da2d8; padding-top: 120px; padding-bottom:120px; object-fit:cover ">
@@ -52,18 +53,18 @@
 
                 <div class="col-md-12 col-lg-4 mb-5 mt-5 order-lg-2">
                     <div class="image-stack">
-                        <div class="image-stack__item image-stack__item--bottom">
+                        <div class="image-stack__item image-stack__item--bottom" data-scroll data-scroll-speed="0.5">
                             <img src="{{ URL::asset('img/Home_Info1.jpg') }}" alt="Fish">
                         </div>
 
-                        <div class="image-stack__item image-stack__item--top">
+                        <div class="image-stack__item image-stack__item--top" data-scroll data-scroll-speed="2.5">
                             <img src="{{ URL::asset('img/Home_Info2.jpg') }}" alt="Divers">
                         </div>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-12 col-lg-4 order-lg-3 text-md-left text-leftorder-lg-3 word-wrap"
-                    style="margin-top: 50px; padding-left:50px;padding-right: 50px">
+                    style="margin-top: 50px; padding-left:50px;padding-right: 50px" data-scroll data-scroll-speed="0.4">
                     <p class="lead mb-5 fw-bold" style="color: white">Pioneering research in community-based
                         biodiversity conservation,
                         coastal research management, and marine protected areas.
@@ -85,7 +86,8 @@
                             <div class="text text-center" style="padding-left: 40px;padding-right:40px">
                                 <div class="row justify-content-center">
                                     <h4 class="col-12 subheader fst-italic fw-light" style="color: white">High-End
-                                        <br>Facilities</h4>
+                                        <br>Facilities
+                                    </h4>
                                     <p class=" col-9 lead text-break justify-content-between" style="word-wrap: break-word">
                                         boasts multiple ammenities that allow students to venture
                                         and explore for their research</p>
@@ -131,7 +133,8 @@
                             <div class="text text-center" style="padding-left: 40px;padding-right:40px">
                                 <div class="row justify-content-center">
                                     <h4 class="col-12 subheader fst-italic fw-light" style="color: white">High-End
-                                        <br>Facilities</h4>
+                                        <br>Facilities
+                                    </h4>
                                     <p class=" col-9 lead text-break" style="word-wrap: break-word">boasts multiple
                                         ammenities that allow students to venture
                                         and explore for their research</p>
@@ -172,14 +175,14 @@
         </div>
     </section>
 
-</div>
+
 
 
 
     {{-- Announcement Section --}}
 
 
-    <section class="mbr-section article"
+    <section data-scroll-section class="mbr-section article"
         style="background-color: rgb(242, 242, 242); padding-top: 120px; padding-bottom: 120px;">
         <div class="container-fluid g-10">
             <div class="row d-flex justify-content-center align-items-center text-align-left g-10">
@@ -196,35 +199,37 @@
                 <div class="col-12 col-md-6 col-lg-6">
                     <div class="wrapper">
                         {{-- Announcement Cards Loop --}}
-                            {{-- Insert For Loop Here (start with last to first) --}}
-                            <div class="item col-md-1 col-lg-1 order-lg-2 my-10">
+                        {{-- Insert For Loop Here (start with last to first) --}}
+                        <div class="item col-md-1 col-lg-1 order-lg-2 my-10">
 
-                                <div class="card bg-dark text-white  align-text-bottom"
-                                    style="width:36rem; height: 90vh; object-fit:cover">
+                            <div class="card bg-dark text-white  align-text-bottom"
+                                style="width:36rem; height: 90vh; object-fit:cover">
 
-                                        <img src="{{-- {{ URL::asset('img/Home_Info1.jpg') }} --}}" class="card-img-top"
-                                            style="width:36rem; height: 90vh; object-fit:cover" alt="Announcement"> {{--Photo--}}
+                                <img src="{{-- {{ URL::asset('img/Home_Info1.jpg') }} --}}" class="card-img-top"
+                                    style="width:36rem; height: 90vh; object-fit:cover" alt="Announcement">
+                                {{-- Photo --}}
 
-                                    <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                <div class="card-img-overlay d-flex flex-column justify-content-end">
 
-                                        <h3 class="card-text fst-italic">Date Published</h3> {{-- Date --}}
+                                    <h3 class="card-text fst-italic">Date Published</h3> {{-- Date --}}
 
-                                         <h2 class="display-3 card-title" style=" font-family: 'Playfair Display', serif;">
-                                             Card title
-                                        </h2> {{-- Announcement title --}}
+                                    <h2 class="display-3 card-title" style=" font-family: 'Playfair Display', serif;">
+                                        Card title
+                                    </h2> {{-- Announcement title --}}
 
-                                        <p class="lead card-text">Author Here</p> {{-- Author et.al --}}
+                                    <p class="lead card-text">Author Here</p> {{-- Author et.al --}}
 
-                                        <div class="col-12">
-                                            <p style="color: transparent"> Filler Text </p>
-                                        </div>
-
-                                        <p><a class="btn btn-lg btn-light" href="/announcementDisplay">Read Announcement</a></p> {{-- Display Announcement Page --}}
+                                    <div class="col-12">
+                                        <p style="color: transparent"> Filler Text </p>
                                     </div>
-                                </div>
 
+                                    <p><a class="btn btn-lg btn-light" href="/announcementDisplay">Read Announcement</a>
+                                    </p> {{-- Display Announcement Page --}}
+                                </div>
                             </div>
-                            {{-- end Announcement Card Loop --}}
+
+                        </div>
+                        {{-- end Announcement Card Loop --}}
 
                         {{-- View Announcements Card --}}
                         <div class="item col-md-1 col-lg-1 order-lg-2 my-10">
@@ -238,16 +243,17 @@
                                         <div class="col-12">
                                             <p style="color: transparent"> Filler Text </p>
                                         </div>
-                                        <p><a class="btn btn-lg btn-dark" href="/announcement">View All Announcements</a></p>
+                                        <p><a class="btn btn-lg btn-dark" href="/announcement">View All Announcements</a>
+                                        </p>
                                 </div>
                             </div>
                         </div>
 
-                    </div> {{--end wrapper--}}
-                </div> {{--end div col group}}
+                    </div> {{-- end wrapper --}}
+                </div> {{-- end div col group}}
 
-            </div> {{--end row--}}
-        </div> {{--end container--}}
+            </div> {{-- end row --}}
+            </div> {{-- end container --}}
     </section>
 
 
@@ -256,7 +262,7 @@
 
 
     {{-- Carousel Section --}}
-    <section class="mbr-section article" style="background-color: rgb(242, 242, 242);">
+    <section data-scroll-section class="mbr-section article" style="background-color: rgb(242, 242, 242);">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 
             {{-- Indicators --}}
@@ -280,7 +286,7 @@
 
                 {{-- Carousel Item 1 --}}
                 <div class="carousel-item  active "
-                    style="background-image: url('img/Carousel_IEMS.jpg');
+                    style="background-image: linear-gradient(0deg, #00000022,  #00000058),url('img/Carousel_IEMS.jpg');
                     background-size:cover;background-repeat: no-repeat; background-blend-mode: multiply; background-position:right 50% bottom 50%;">
                     <div class="container">
                         <div class="carousel-caption">
@@ -293,7 +299,7 @@
 
                 {{-- Carousel Item 2 --}}
                 <div class="carousel-item"
-                    style="background-image: url('img/Carousel_Facilities.jpg'); background-size:cover;background-repeat: no-repeat; background-blend-mode: multiply; background-position:center; ">
+                    style="background-image: linear-gradient(0deg, #00000022,  #00000022),url('img/Carousel_Facilities.jpg'); background-size:cover;background-repeat: no-repeat; background-blend-mode: multiply;">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1 class="subheader  text-white fst-italic fw-light">Facilities</h1>
@@ -305,7 +311,7 @@
 
                 {{-- Carousel Item 3 --}}
                 <div class="carousel-item"
-                    style="background-image: url('img/Carousel_Faculty.jpg'); background-size:cover;background-repeat: no-repeat; background-blend-mode: multiply; background-position:center; ">
+                    style="background-image: linear-gradient(0deg, #00000034,  #00000034),url('img/Carousel_Faculty.jpg'); background-size:cover;background-repeat: no-repeat; background-blend-mode: multiply; background-position:center; ">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1 class="subheader  text-white fst-italic fw-light">Faculty and Staff</h1>
@@ -320,16 +326,16 @@
                     style="background-image: url('img/Carousel_Linus.jpg'); background-size:cover;background-repeat: no-repeat; background-blend-mode: multiply; background-position:center; ">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1 class="subheader  text-white fst-italic fw-light">Linus</h1>
+                            <h1 class="subheader  text-white fst-italic fw-light">Exhibit</h1>
                             <p>An information library of critters and museum exhibits</p>
-                            <p><a class="btn btn-lg btn-light" href="/linus">Learn more</a></p>
+                            <p><a class="btn btn-lg btn-light" href="/exhibit">Learn more</a></p>
                         </div>
                     </div>
                 </div>
 
                 {{-- Carousel Item 5 --}}
                 <div class="carousel-item"
-                    style="background-image: url('img/Carousel_Rates.jpg'); background-size:cover;background-repeat: no-repeat; background-blend-mode: multiply; background-position:center;">
+                    style="background-image: linear-gradient(0deg, #00000034,  #00000034),url('img/Carousel_Rates.jpg'); background-size:cover;background-repeat: no-repeat; background-blend-mode: multiply; background-position:center;">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1 class="subheader  text-white fst-italic fw-light">Rates</h1>
@@ -341,7 +347,7 @@
 
                 {{-- Carousel Item 6 --}}
                 <div class="carousel-item"
-                    style="background-image: url('img/Carousel_Enrollment.jpg'); background-size:cover;background-repeat: no-repeat; background-blend-mode: multiply; background-position:center; ">
+                    style="background-image: linear-gradient(0deg, #00000034,  #00000034),url('img/Carousel_Enrollment.jpg'); background-size:cover;background-repeat: no-repeat; background-blend-mode: multiply; background-position:center; ">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1 class="subheader  text-white fst-italic fw-light">Courses and Enrollment</h1>
@@ -373,16 +379,16 @@
 
 
     {{-- FAQ Section --}}
-    <section class="mbr-section article"
+    <section data-scroll-section class="mbr-section article"
         style="background-color: rgb(242, 242, 242); padding-top: 120px; padding-bottom: 120px;">
 
         <div class="container ">
             <div class="row justify-content-around">
                 <div class="col-lg-4 mb-lg-0">
 
-                    <h1 class="mb-4 subheader">Frequently Asked Questions</h1>
+                    <h1 class="mb-4 subheader " data-scroll data-scroll-speed="1.5">Frequently Asked Questions</h1>
                     <div class="line my-3"></div>
-                    <p>
+                    <p data-scroll data-scroll-speed="1.9">
                         Here are some common queries that are usually asked by everyone.
                     </p>
 
@@ -391,7 +397,7 @@
                 </div>
 
                 {{-- Accordion Items --}}
-                <div class="col-lg-7">
+                <div class="col-lg-7" data-scroll data-scroll-speed="1">
                     <div class="custom-accordion" id="accordionPanelsStayOpenExample">
                         <div class="accordion-item">
                             <p id="panelsStayOpen-headingOne">
@@ -435,10 +441,10 @@
                                 aria-labelledby="panelsStayOpen-headingThree">
                                 <div class="accordion-body">
                                     Answers to accordion heading 1
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
     </section>
     {{-- end of FAQ section --}}
@@ -447,18 +453,19 @@
 
 
     {{-- Call to Action Section --}}
-    <section class="mbr-section article  justify-content-center align-items-center text-center"
+    <section data-scroll-section class="mbr-section article  justify-content-center align-items-center text-center"
         style="background-color: rgb(242, 242, 242); padding-top: 120px; padding-bottom: 120px; min-height:80vh">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-3 d-none d-lg-block">
                     <div class="image-stack">
-                        <div class="image-stack__item image-stack__item--bottom">
+                        <div class="image-stack__item image-stack__item--bottom" data-scroll data-scroll-speed="0.9">
                             <img src="{{ URL::asset('img/CTA_upperleft.jpg') }}" alt="Outreach">
                         </div>
 
                         <div class="image-stack__item image-stack__item--top">
-                            <img src="{{ URL::asset('img/CTA_lowerleft.jpg') }}" alt="Divers" style="width:500px">
+                            <img src="{{ URL::asset('img/CTA_lowerleft.jpg') }}" alt="Divers" style="width:500px"
+                                data-scroll data-scroll-speed="3.9">
                         </div>
                     </div>
                 </div>
@@ -478,11 +485,13 @@
                 </div>
                 <div class="col-3 d-none d-lg-block">
                     <div class="image-stack">
-                        <div class="image-stack__item image-stack__item--bottom2" style="transform: translateY(-10rem)">
+                        <div class="image-stack__item image-stack__item--bottom2" style="transform: translateY(-3rem)"
+                            data-scroll data-scroll-speed="-4.0">
                             <img src="{{ URL::asset('img/CTA_upperright.jpg') }}" alt="Crocodile Pen">
                         </div>
 
-                        <div class="image-stack__item image-stack__item--top2" style="transform: translateY(10rem)">
+                        <div class="image-stack__item image-stack__item--top2" style="transform: translateY(10rem)"
+                            data-scroll data-scroll-speed="1.5">
                             <img src="{{ URL::asset('img/CTA_Lowerright.jpg') }}" alt="Coral">
                         </div>
                     </div>
@@ -493,7 +502,6 @@
         </div>
     </section>
     {{-- End of COS --}}
-
 
     {{-- Contact Us Block --}}
     @include('IEMS\Linus.SITE.contact_block')

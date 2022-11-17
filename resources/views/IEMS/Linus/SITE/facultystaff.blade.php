@@ -1,6 +1,7 @@
 @extends('layouts.IEMS_Layout')
 @section('content')
-    <section class="mbr-section article" style="background-color: #1DA2d8; padding-top: 180px; padding-bottom: 180px;">
+    <section class="mbr-section article" style="background-color: #1DA2d8; padding-top: 180px; padding-bottom: 180px;"
+        data-scroll-section>
 
         <div class="container">
             <div class="row d-flex justify-content-center">
@@ -16,7 +17,8 @@
 
 
     <section class="mbr-section article"
-        style="background-color: rgb(242, 242, 242); padding-top: 120px; padding-bottom:120px; object-fit:cover; g">
+        style="background-color: rgb(242, 242, 242); padding-top: 120px; padding-bottom:120px; object-fit:cover;"
+        data-scroll-section>
         <div class="container-fluid">
             <div class="row  d-flex justify-content-center">
 
@@ -33,19 +35,20 @@
 
                 {{-- Card --}}
                 @foreach ($user as $item)
-                <div class="col-6 col-md-2 col-lg-2" style="margin: 20px">
-                    <div class="card bg-transparent" style="width: 18rem; border:none; cursor:default">
-                        <img src="{{-- Photo --}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $item->name }}</h5> {{--Name Of Faculty--}}
-                            <p class="card-text">{{ $item->rank }}</p>     {{--Rank Of Faculty--}}
-                            <button type="button" data-bs-toggle="modal" data-bs-target="#viewfacultydetails{{ $item->id }}"
-                                class="btn btn-info">View Details</button>
+                    <div class="col-6 col-md-2 col-lg-2" style="margin: 20px">
+                        <div class="card bg-transparent" style="width: 18rem; border:none; cursor:default">
+                            <img src="{{-- Photo --}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $item->name }}</h5> {{-- Name Of Faculty --}}
+                                <p class="card-text">{{ $item->rank }}</p> {{-- Rank Of Faculty --}}
+                                <button type="button" data-bs-toggle="modal"
+                                    data-bs-target="#viewfacultydetails{{ $item->id }}" class="btn btn-info">View
+                                    Details</button>
+                            </div>
                         </div>
-                    </div>
-                    {{-- View Faculty Details Modal --}}
-                        <div class="modal fade" id="viewfacultydetails{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-                            aria-hidden="true" style="height: 80vh; padding:0px">
+                        {{-- View Faculty Details Modal --}}
+                        <div class="modal fade" id="viewfacultydetails{{ $item->id }}" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="height: 80vh; padding:0px">
                             <div class="modal-dialog modal-xl modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="row no-gutters">
@@ -60,7 +63,8 @@
 
                                         {{-- Faculty Details Section --}}
                                         <div class="col-md-6 d-flex p-0">
-                                            <div class="modal-body  align-items-center" style="background-color:rgb(242, 242, 242)">
+                                            <div class="modal-body  align-items-center"
+                                                style="background-color:rgb(242, 242, 242)">
 
                                                 {{-- Exit Modal --}}
                                                 <div class="modal-header p-0" style="border:none">
@@ -106,11 +110,13 @@
                                                     <div class=" col-12 d-flex justify-content-between">
 
                                                         <div class="col-12 col-lg-4">
-                                                            <p class="text-muted">{{ $item->email }}</p> {{-- Email --}}
+                                                            <p class="text-muted">{{ $item->email }}</p>
+                                                            {{-- Email --}}
                                                         </div>
 
                                                         <div class="col-12 col-lg-4">
-                                                            <p class="text-muted">{{ $item->phone_no }}</p> {{-- Contact Number --}}
+                                                            <p class="text-muted">{{ $item->phone_no }}</p>
+                                                            {{-- Contact Number --}}
                                                         </div>
                                                     </div>
 
@@ -119,7 +125,8 @@
 
                                                 {{-- Close Modal Button --}}
                                                 <div class="modal-footer" style="border: none">
-                                                    <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-info"
+                                                        data-bs-dismiss="modal">Close</button>
                                                 </div>
 
 
@@ -131,9 +138,9 @@
                                 </div>
                             </div>
                         </div> {{-- End of Modal --}}
-                </div>
+                    </div>
                 @endforeach
-                
+
 
 
 

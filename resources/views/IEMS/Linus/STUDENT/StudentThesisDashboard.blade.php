@@ -52,6 +52,23 @@
                   </div>
                 <div class="card-footer border-0"></div>
 
+            @foreach($thesis as $item)
+                <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch" data-bs-toggle="modal" data-bs-target="#ModalThesis{{$item->info_ID}}">
+                    <div class="card border-dark" style="width: 18rem;">
+                          <div class="card-body bg-light ">
+                            <p class="text-muted fst-italic">{{$item->date_published }}</p>
+                            <h4 class="card-title">{{$item->thesis_title}}</h4>
+                            <br>
+                            <p class="card-subtitle mb-2 text-muted">{{$item->thesis_author}}</p>
+                          </div>
+                        <div class="card-footer border-0"></div>
+
+                    </div>
+                </div>
+                @include('IEMS.Linus.STUDENT.displayThesis')
+            @endforeach
+
+                </div>
             </div>
         </div>
         @include('IEMS.Linus.STUDENT.displayThesis')

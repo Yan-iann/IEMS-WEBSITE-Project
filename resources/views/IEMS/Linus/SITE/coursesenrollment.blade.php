@@ -1,6 +1,7 @@
 @extends('layouts.IEMS_Layout')
 @section('content')
-    <section class="mbr-section article" style="background-color: #1DA2d8; padding-top: 180px; padding-bottom: 180px;">
+    <section class="mbr-section article" style="background-color: #1DA2d8; padding-top: 180px; padding-bottom: 180px;"
+        data-scroll-section>
 
         <div class="container">
             <div class="row d-flex justify-content-center">
@@ -17,7 +18,7 @@
 
     {{-- Undergraduate Section Table --}}
     <section class="mbr-section article"
-        style="background-color: #FBFBFB; padding-top: 120px; padding-bottom:120px; object-fit:cover;">
+        style="background-color: #FBFBFB; padding-top: 120px; padding-bottom:120px; object-fit:cover;" data-scroll-section>
         <div class="container">
             <div class="row d-flex justify-content-center">
 
@@ -51,11 +52,11 @@
 
                                             {{-- Course Name --}}
                                             <h2 class="subheader">
-                                                Certificate in Coastal Resource Management
+                                                Bachelor of Science in Environmental Science
                                             </h2>
 
                                             {{-- Description --}}
-                                            <p class="lead">Certification program for managing coastal resources</p>
+                                            <p class="lead">Environmental Studies</p>
 
                                             {{-- Link to Course Outline --}}
                                             <p class="lead">See course outline
@@ -253,7 +254,8 @@
 
     {{-- Graduate Section Table --}}
     <section class="mbr-section article"
-        style="background-color: rgb(247,247,247); padding-top: 120px; padding-bottom:120px; object-fit:cover;">
+        style="background-color: rgb(247,247,247); padding-top: 120px; padding-bottom:120px; object-fit:cover;"
+        data-scroll-section>
         <div class="container">
             <div class="row d-flex justify-content-center">
 
@@ -506,7 +508,7 @@
 
     {{-- Post-Graduate Section Table --}}
     <section class="mbr-section article"
-        style="background-color: #FBFBFB; padding-top: 120px; padding-bottom:120px; object-fit:cover;">
+        style="background-color: #FBFBFB; padding-top: 120px; padding-bottom:120px; object-fit:cover;" data-scroll-section>
         <div class="container">
             <div class="row d-flex justify-content-center">
 

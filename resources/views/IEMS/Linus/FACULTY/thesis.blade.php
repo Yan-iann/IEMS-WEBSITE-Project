@@ -8,7 +8,7 @@
             <div class="home-content">
                 <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center">
                     <i class='bx bx-menu'></i>
-                    <span class="text">Thesis Paper Search Results</span>
+                    <span class="text">Thesis Paper</span>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-6">
