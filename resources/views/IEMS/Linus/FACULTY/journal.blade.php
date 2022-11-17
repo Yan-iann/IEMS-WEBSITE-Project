@@ -39,7 +39,7 @@
       <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
         @foreach($journal as $item)
             <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
-                <div class="card border-dark" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#ModalJournal{{$item->info_ID}}">
+                <div class="card " style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#ModalJournal{{$item->info_ID}}">
                       <div class="card-body bg-light ">
                         <p class="text-muted fst-italic">{{$item->date_published }}</p>
                         <h4 class="card-title">{{$item->journal_title}}</h4>
@@ -120,7 +120,7 @@
                     <input type="input" class="form-control" placeholder="Enter journal Reference" name="journal_reference" >
                   </div>
                   <!--Column4-->
-                
+
                   <!--Column4-->
                   <div class="col-4">
                     <label for="formGroupExampleInput2" class="form-label">Date Published</label>
