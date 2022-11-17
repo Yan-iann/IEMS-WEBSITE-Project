@@ -1,35 +1,38 @@
 @extends('layouts.F_Layout')
 @section('content')
-    <div class="container-fluid">
-        {{-- Page Name, and Burger Icon. AND Search Bar --}}
-        <div class="col-12">
+<div class="container-fluid">
+     {{-- Page Name, and Burger Icon. AND Search Bar --}}
+     <div class="col-12">
 
-            <div class="row d-flex justify-content-around">
-                <div class="home-content">
-                    <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center">
-                        <i class='bx bx-menu'></i>
-                        <span class="text">Thesis Papers</span>
-                    </div>
+        <div class="row d-flex justify-content-around">
+            <div class="home-content">
+                <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center">
+                    <i class='bx bx-menu'></i>
+                    <span class="text">Thesis Paper Search Results</span>
+                </div>
 
                 <div class="col-12 col-md-6 col-lg-6">
                     <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get"
                         action="{{ route('searchThesis') }}">
                         <div class="input-group">
                             <input type="search" name="searchThesis" class="form-control mr-sm2"
-                                placeholder="Search Thesis Title">
+                                placeholder="Search Title Title">
                             <div class="input-group-btn">
                                 <div class="btn-group" role="group">
                                     <div class="dropdown dropdown-lg">
                                         <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#ModalSearch"><i class='bx bx-filter-alt'></i></button>
                                     </div>
+                                    <button class="btn btn-info " type="submit">Search</button>
+                                </form>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                        </div>
                 </div>
             </div>
-        </div>
 
+        </div>
+    </div>
+</div>
 
     <section class="col-12">
         <div class="container-fluid">
@@ -124,6 +127,12 @@
                   <label for="formGroupExampleInput2" class="form-label">Date Published</label>
                   <input type="date" class="form-control" placeholder="Enter Date Published" name="date_published" >
                 </div>
+
+                <div class="col-4">
+                  <label for="formGroupExampleInput2" class="form-label">Date Added</label>
+                  <input type="date" class="form-control" placeholder="Enter Date Published" name="date_added" >
+                </div>
+
                 <input type="hidden" class="form-control" name="thesis_status" value="approved">
                 <input type="hidden" class="form-control" name="info_type" value="thesis_paper">
                 <div class="modal-footer border-0">
@@ -138,7 +147,7 @@
 </div>
 </form>
 
-        <!--advance search-->
+<!--advance search-->
 <form action="{{ route('advanceSearchThesis') }}" method="GET" enctype="multipart/form-data">
             {!! csrf_field() !!}
             <div class="modal fade" id="ModalSearch" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
