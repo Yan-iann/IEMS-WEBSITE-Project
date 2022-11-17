@@ -105,6 +105,7 @@ class studentController extends Controller
         return view('IEMS.Linus.STUDENT.StudentReqDashboard')->with('announcement',$anno);
     }
     //for storing announcement
+
     public function storeAnno(Request $request)
     {
         $validator = Validator::make(request()->all(), [
@@ -136,7 +137,7 @@ class studentController extends Controller
                 ];
                 announcement::create($anno);
                 $anno = announcement::where('user_ID', '=', Auth::user()->id )->get();
-                return view('IEMS.Linus.STUDENT.requestDashboard')->with('announcement',$anno);
+                return view('IEMS/Linus.STUDENT.requestDashboard')->with('announcement',$anno);
             }
 
     }

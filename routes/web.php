@@ -46,9 +46,16 @@ Route::post('/storeJournal',[allInfocardMaintain::class,'storeDataJournal'])->na
 //for musuem//////////////////////////////////////////////////////////////////////////
 Route::get('/wildlife',[infocardMaintain::class, 'wildlife'])->name('wildlife');
 Route::get('/boneCollection',[infocardMaintain::class, 'boneCollection'])->name('boneCollection');
+Route::get('/searchBone',[infocardMaintain::class, 'searchBone'])->name('searchBone');
+Route::get('/advanceSearchBone',[infocardMaintain::class, 'advanceSearchBone'])->name('advanceSearchBone');
 Route::post('/updateBone/{info_ID}',[infocardMaintain::class, 'updateBone'])->name('updateBone');
+Route::get('/deleteBone/{info_ID}',[infocardMaintain::class, 'deleteBone'])->name('deleteBone');
+
 Route::post('/updateRef/{info_ID}',[infocardMaintain::class, 'updateRef'])->name('updateRef');
 Route::get('/refCollection',[infocardMaintain::class, 'refCollection'])->name('refCollection');
+Route::get('/searchRef',[infocardMaintain::class, 'searchRef'])->name('searchRef');
+Route::get('/advanceSearchRef',[infocardMaintain::class, 'advanceSearchRef'])->name('advanceSearchRef');
+Route::get('/deleteRef/{info_ID}',[infocardMaintain::class, 'deleteRef'])->name('deleteRef');
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Route::get('/showWildlife/{info_ID}',[infocardMaintain::class, 'showWildlife'])->name('showWildlife');
@@ -83,6 +90,8 @@ Route::get('/analytics',[infocardMaintain::class, 'analysis'])->name('analysis')
 
 
 Route::get('/requestValidation',[infocardMaintain::class, 'request'])->name('Faculty_request');
+Route::get('/searchRequest',[infocardMaintain::class, 'searchReq'])->name('searchReq');
+Route::get('/advanceSearchRequest',[infocardMaintain::class, 'advanceSearchReq'])->name('advanceSearchReq');
 Route::post('/updateAnnouncementF/{id}',[infocardMaintain::class, 'updateAnnoF'])->name('updateAnnoF');
 
 

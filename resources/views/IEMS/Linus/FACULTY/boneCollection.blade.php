@@ -1,5 +1,6 @@
 @extends('layouts.F_Layout')
 @section('content')
+
     <div class="container-fluid">
         {{-- Page Name, and Burger Icon. AND Search Bar --}}
         <div class="col-12">
@@ -12,9 +13,9 @@
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-6">
-                        <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="">
+                        <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('searchBone') }}">
                             <div class="input-group">
-                                <input type="search" name="" class="form-control mr-sm2"
+                                <input type="search" name="searchBone" class="form-control mr-sm2"
                                     placeholder="Search Bone Collection">
                                 <div class="input-group-btn">
                                     <div class="btn-group" role="group">
@@ -31,7 +32,7 @@
                 </div>
             </div>
         </div>
-
+        </div>
 
         {{-- informationcards --}}
         <div class="container-fluid">
@@ -58,9 +59,10 @@
             </a>
         </div>
         <!--end of class container fluid-->
+
         <!-- Delete Wildlife Modal-->
         @foreach ($wildlifes as $item)
-            <form action="{{ route('deleteWildlife', $item->info_ID) }}" method="get" enctype="multipart/form-data">
+            <form action="{{ route('deleteBone', $item->info_ID) }}" method="get" enctype="multipart/form-data">
                 <div class="modal fade" id="ModalDeleteWl{{ $item->info_ID }}" tabindex="-1" aria-labelledby="ModalLabel"
                     aria-hidden="true">
                     {!! csrf_field() !!}
@@ -83,6 +85,7 @@
                 </div>
             </form>
         @endforeach
+
         <!-- Add Bone Collection Modal-->
         <form action="{{ route('storeDataBone') }}" method="POST" enctype="multipart/form-data">
             {!! csrf_field() !!}
@@ -126,11 +129,6 @@
                     <input type="date" class="form-control" placeholder="Enter Date"  name="date_added"  name="date_added" >
                   </div>
 
-                  <div class="-12 col-md-4">
-                    <label for="formGroupExampleInput2" class="form-label">Date Added</label>
-                    <input type="date" class="form-control" placeholder="Enter Date"  name="date_added"  name="date_added" >
-                  </div>
-
 
 
 
@@ -148,7 +146,58 @@
                   </div>
                 </div>
             </div>
-        </form>
-        <!--end of form-->
-    </div>
+</div>
+</div>
+</div>
+</div>
+        </form> <!--end of form-->
+       
+<!--advance search-->
+<form action="{{ route('advanceSearchBone') }}" method="GET" enctype="multipart/form-data">
+      {!! csrf_field() !!}
+      <div class="modal fade" id="ModalSearch" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+          <div class="modal-content  bg-light">
+
+            <div class="modal-header border-0 text-center">
+              <h5 class="modal-title  text-center">Advance Search</h5>
+              <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
+
+                  <div class="col-12">
+                  <label class="focus-label">Bone Genus:</label>
+                    <select class="select floating" id="" name="wildlife_genus">
+                      <option></option>
+                      @foreach($searchGenus as $item)
+                      <option value="{{ $item->wildlife_genus }}">{{$item->wildlife_genus}}</option>
+                      @endforeach
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                  <label class="focus-label">Bone Added Date:</label>
+                    <select class="select floating" id="" name="date_added">
+                      <option></option>
+                      @foreach($searchDate as $item)
+                      <option value="{{ $item->date_added }}">{{$item->date_added}}</option>
+                      @endforeach
+                    </select>
+                  </div>
+
+
+                  <div class="modal-footer border-0">
+                    <button type="submit" class="btn btn-info text-white">Search</button>
+                    <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</form><!--end of form-->  
 @endsection

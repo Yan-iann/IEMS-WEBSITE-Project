@@ -9,14 +9,14 @@
                 <div class="home-content">
                     <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center">
                         <i class='bx bx-menu'></i>
-                        <span class="text">Bone Collection Search Results</span>
+                        <span class="text">Reference Collection Search Results</span>
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-6">
-                        <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('searchBone') }}">
+                        <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('searchRef') }}">
                             <div class="input-group">
-                                <input type="search" name="searchBone" class="form-control mr-sm2"
-                                    placeholder="Search Bone Collection">
+                                <input type="search" name="searchRef" class="form-control mr-sm2"
+                                    placeholder="Search Reference Collection">
                                 <div class="input-group-btn">
                                     <div class="btn-group" role="group">
                                         <div class="dropdown dropdown-lg">
@@ -37,6 +37,7 @@
         {{-- informationcards --}}
         <div class="container-fluid">
             <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
+                @if($wildlifes->count())
                 @foreach ($wildlifes as $item)
                     <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
                         <div class="card border-dark" style="width: 18rem;" data-bs-toggle="modal"
@@ -47,16 +48,15 @@
                                 <p class="card-text text-center">({{ $item->wildlife_scientific_name }})</p>
                             </div>
                         </div>
-                        @include('IEMS.Linus.FACULTY.editBoneCollection')
+                        @include('IEMS.Linus.FACULTY.editRefCollection')
                     </div>
-                    @include('IEMS.Linus.FACULTY.displayBoneCollection')
+                    @include('IEMS.Linus.FACULTY.displayRefCollection')
                 @endforeach
+                @else
+                    <h3>No records found</h3>
+                @endif
             </div>
             <!--end of catalog-->
-            <!-- Add Button -->
-            <a class="float" data-bs-toggle="modal" data-bs-target="#ModalAddWl">
-                <i class="bx bx-plus my-float"></i>
-            </a>
         </div>
         <!--end of class container fluid-->
 
@@ -87,7 +87,7 @@
         @endforeach
        
 <!--advance search-->
-<form action="{{ route('advanceSearchBone') }}" method="GET" enctype="multipart/form-data">
+<form action="{{ route('advanceSearchRef') }}" method="GET" enctype="multipart/form-data">
       {!! csrf_field() !!}
       <div class="modal fade" id="ModalSearch" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">

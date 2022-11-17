@@ -6,7 +6,7 @@
 
     <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center p-4">
         <i class='bx bx-menu'></i>
-        <span class="text">Announcement Requests</span>
+        <span class="text">Announcement Search Results</span>
     </div>
 
     <div class="col-12 col-md-5 col-lg-5">
@@ -47,7 +47,6 @@
         </tr>
         </thead>
         <tbody>
-              
                 @foreach ($announcement as $item)
                 <tr>
                     <td class="align-middle">{{ $item->anno_ID }}</td>
@@ -141,7 +140,7 @@
                         </div>
                       </div>
                 </form>
-                
+            
               @endforeach
 
         </tbody>
