@@ -61,7 +61,7 @@ class allInfocardMaintain extends Controller
                 ->get();
 
                 $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
-                return view ('IEMS.Linus.FACULTY.wildlife')
+                return redirect()->route('wildlife')
                 ->with('wildlifes', $wildlife)
                 ->with('searchClass', $searchClass)
                 ->with('searchSpecie', $searchSpecie)
@@ -171,7 +171,7 @@ class allInfocardMaintain extends Controller
                 ->get();
         
                 $thesis = thesis_paper::all();
-                return view('IEMS.Linus.FACULTY.thesis')
+                return redirect()->route('thesis')
                 ->with('thesis',$thesis)
                 ->with('searchRef',$searchRef)
                 ->with('searchAuthor',$searchAuthor);
@@ -218,7 +218,7 @@ class allInfocardMaintain extends Controller
             
             
                     $journal = journal_article::all();
-                    return view('IEMS.Linus.FACULTY.journal')
+                    return redirect()->route('journal')
                     ->with('journal',$journal)
                     ->with('searchDate',$searchDate)
                     ->with('searchRef',$searchRef);

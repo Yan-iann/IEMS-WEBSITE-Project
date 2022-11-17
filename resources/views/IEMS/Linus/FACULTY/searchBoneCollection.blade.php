@@ -1,5 +1,6 @@
 @extends('layouts.F_Layout')
 @section('content')
+
 <div class="container-fluid">
  {{-- Page Name, and Burger Icon. AND Search Bar --}}
  <div class="col-12">
@@ -75,57 +76,55 @@
       </div>
 </form>
 @endforeach
-<!-- Add Bone Collection Modal-->
-<form action="{{ route('storeDataBone') }}" method="POST" enctype="multipart/form-data">
+
+<!--advance search-->
+<form action="{{ route('advanceSearchWildlife') }}" method="GET" enctype="multipart/form-data">
       {!! csrf_field() !!}
-      <div class="modal fade" id="ModalAddWl" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal fade" id="ModalSearch" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
           <div class="modal-content  bg-light">
 
             <div class="modal-header border-0 text-center">
-              <h5 class="modal-title  text-center">Add Bone Collection Information</h5>
+              <h5 class="modal-title  text-center">Advance Search</h5>
               <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <div class="modal-body">
               <div class="container-fluid">
                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
-                  <div class="col-12">
-                    <label for="wildlife_pic">Bone Picture:</label>
-                    <input type="file" id="wildlife_pic" class="form-control"  placeholder="Wildlife Picture" name="wildlife_pic">
-                  </div>
-                  <div class="col-12">
-                    <label for="formGroupExampleInput" class="form-label">Bone Name</label>
-                    <input type="input" class="form-control"  placeholder="Enter Wildlife Name" name="wildlife_name">
-                  </div>
-                  <div class="col-12">
-                    <label for="formGroupExampleInput" class="form-label">Bone Scientific Name</label>
-                    <input type="input" class="form-control" placeholder="Enter Wildlife Scientific Name" name="wildlife_scientific_name" >
-                  </div>
-
-                  <div class="-12 col-md-4">
-                    <label for="formGroupExampleInput2" class="form-label">Bone Genus</label>
-                    <input type="input" class="form-control" placeholder="Enter Wildlife Genus"  name="wildlife_genus"  name="wildlife_genus" >
-                  </div>
-
-                  <div class="-12 col-md-4">
-                    <label for="formGroupExampleInput2" class="form-label">Date Added</label>
-                    <input type="date" class="form-control" placeholder="Enter Date"  name="date_added"  name="date_added" >
-                  </div>
-
-
-
-                    <!--Hidden Inputs-->
-                    <input type="hidden" class="form-control" name="info_type" value="wildlife">
-                    <input type="hidden" class="form-control" name="wildlife_type" value="Bone">
-                    <input type="hidden" class="form-control"  name="wildlife_status" value="Approved">
 
                   <div class="col-12">
-                    <label for="exampleFormControlinputarea1" class="form-label">Description</label>
-                    <textarea class="form-control" name="wildlife_desc" rows="3" placeholder="Enter Wildlife Description"></textarea>
+                  <label class="focus-label">Critter Class:</label>
+                    <select class="select floating" id="" name="wildlife_class">
+                      <option></option>
+                      @foreach($searchClass as $item)
+                      <option value="{{ $item->wildlife_class }}">{{$item->wildlife_class}}</option>
+                      @endforeach
+                    </select>
                   </div>
+
+                  <div class="col-12">
+                  <label class="focus-label">Critter Specie:</label>
+                    <select class="select floating" id="" name="wildlife_species">
+                      <option></option>
+                      @foreach($searchSpecie as $item)
+                      <option value="{{ $item->wildlife_species }}">{{$item->wildlife_species}}</option>
+                      @endforeach
+                    </select>
+                  </div>
+
+                  <div class="col-12">
+                  <label class="focus-label">Wildlife Location:</label>
+                    <select class="select floating" id="" name="wildlife_location">
+                      <option></option>
+                      @foreach($searchLoc as $item)
+                      <option value="{{ $item->wildlife_location }}">{{$item->wildlife_location}}</option>
+                      @endforeach
+                    </select>
+                  </div>
+
                   <div class="modal-footer border-0">
-                    <button type="submit" class="btn btn-info text-white">Submit</button>
+                    <button type="submit" class="btn btn-info text-white">Search</button>
                     <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
                   </div>
                 </div>
@@ -135,6 +134,7 @@
         </div>
       </div>
 </form><!--end of form-->
+
 </div>
 @endsection
 
