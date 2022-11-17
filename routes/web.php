@@ -138,7 +138,7 @@ Route::get('/G_refCollection',[guestController::class, 'refCollection'])->name('
 Route::get('/college',[IEMSWebsite::class, 'accessCollege']);
 Route::get('/enrollment',[IEMSWebsite::class, 'accessEnrollment']);
 Route::get('/facilities',[IEMSWebsite::class, 'accessFacilities']);
-Route::get('/linus',[IEMSWebsite::class, 'accessLinus']);
+Route::get('/exhibit',[IEMSWebsite::class, 'accessLinus']);
 Route::get('/rates',[IEMSWebsite::class, 'accessRates']);
 
 Route::get('/facultystaff',[IEMSWebsite::class, 'accessFacultyStaff']); //access faculty table

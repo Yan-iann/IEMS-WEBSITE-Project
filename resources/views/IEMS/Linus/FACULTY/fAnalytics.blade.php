@@ -1,14 +1,15 @@
 @extends('layouts.F_Layout')
 @section('content')
-<body>
-<div class="home-section" style="height:100%">
+<div class="container-fluid">
     <div class="home-content">
+        <i class='bx bx-menu'></i>
       <span class="text">Analysis</span>
     </div>
-    </div>
-    <div class="container-fluid">
-      <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
-        
+
+    <div class="row g-5  d-flex align-items-stretch g-l">
+
+
+
         <div class="col-12 col-md-6 col-lg-3">
           <div class="card">
             <div class="card-body">
@@ -47,11 +48,11 @@
               <h6 class="card-subtitle mb-2 text-muted">Analysis Here</h6>
             </div>
           </div>
-        </div> 
+        </div>
 
         <div class="col-12 col-md-12 col-lg-6"style="height:12rem;">
           <div class="card" >
-            <div class="card-body">           
+            <div class="card-body">
               <div id="chartContainer" style="height: 370px; width: 100%;"></div>
               <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
             </div>
@@ -61,23 +62,22 @@
       </div>
     </div>
 
-</body>
-    
+
 
 <script>
 
   <?php
-  $dataPoints = array( 
+  $dataPoints = array(
     array("label"=>"Wildlifes", "y"=> $wildlife),
     array("label"=>"PostGrad Thesis Papers", "y"=> $gradThesis),
     array("label"=>"UnderGrad Thesis Papers", "y"=> $undergradThesis),
     array("label"=>"Journal", "y"=> $journal),
   )
-  
+
   ?>
   window.onload = function() {
-   
-   
+
+
   var chart = new CanvasJS.Chart("chartContainer", {
     animationEnabled: true,
     title: {
@@ -94,7 +94,7 @@
     }]
   });
   chart.render();
-   
+
   }
 </script>
 @endsection

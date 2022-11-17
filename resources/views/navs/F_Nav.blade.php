@@ -96,7 +96,7 @@
                 <span class="link_name">Analysis</span>
             </a>
             <ul class="sub-menu">
-                <li><a class="link_name" href="{{ route('analysis') }}">analysis</a>
+                <li><a class="link_name" href="{{ route('analysis') }}">Analysis</a>
                 </li>
             </ul>
         </li>

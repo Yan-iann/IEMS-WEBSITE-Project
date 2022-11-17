@@ -49,7 +49,7 @@
               <div class="widget">
                 <ul class="links list-unstyled">
                   <li><a href="/">Home</a></li>
-                  <li><a href="/linus">Linus</a></li>
+                  <li><a href="/exhibit">Exhibit</a></li>
                   <li><a href="#">Fishery</a></li>
                   <li><a href="/announcement">Announcements</a></li>
                   <li><a href="/contact-us">Contact Us</a></li>

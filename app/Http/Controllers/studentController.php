@@ -16,7 +16,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
-use Illuminate\Support\Facades\Redirect; 
+use Illuminate\Support\Facades\Redirect;
 use DB;
 
 class studentController extends Controller
@@ -30,7 +30,7 @@ class studentController extends Controller
         ->distinct('wildlife.wildlife_class','wildlife.wildlife_species')
         ->where('wildlife_type','Zoo')
         ->get();
-        
+
         $studentDashboard = Wildlife::where('wildlife_type','Zoo')->get();
         return view ('IEMS.Linus.STUDENT.StudentWLDashboard')
         ->with('studentDashboard', $studentDashboard)
@@ -38,7 +38,7 @@ class studentController extends Controller
     }//end viewing of student wildlife dashboard
 
     public function thesis()
-    {   
+    {
         $searchData = DB::table('thesis_paper')
         ->select('thesis_paper.thesis_type','thesis_paper.thesis_reference')
         ->distinct('thesis_paper.thesis_type','thesis_paper.thesis_reference')
@@ -102,7 +102,7 @@ class studentController extends Controller
     public function request()
     {
         $anno = announcement::where('user_ID', '=', Auth::user()->id )->get();
-        return view('IEMS.Linus.STUDENT.requestDashboard')->with('announcement',$anno);
+        return view('IEMS.Linus.STUDENT.StudentReqDashboard')->with('announcement',$anno);
     }
     //for storing announcement
     public function storeAnno(Request $request)
@@ -115,7 +115,7 @@ class studentController extends Controller
             'anno_status' => 'required',
             'user_ID' => 'required',
             ]);
-        
+
             if($validator->fails())
             {
             return back()->withErrors($validator)->withInput()->with('error','Something went wrong. Please try again.');
@@ -124,7 +124,7 @@ class studentController extends Controller
             {
                 $filename = time().request()->file('anno_pic')->getClientOriginalName();
                 $path = request()->file('anno_pic')->move('storage/images',$filename);
-                
+
                 $anno = [
                     'anno_title' => $request->anno_title,
                     'anno_author' => $request->anno_author,
@@ -158,7 +158,7 @@ class studentController extends Controller
     }//end of deleting user accounts
 
     public function searchWildlife()
-    {   
+    {
         $searchText = $_GET['searchWildlife'];
         $wildlife = Wildlife::where('wildlife_name','LIKE','%'.$searchText.'%')
                             ->where('wildlife_type','Zoo')
@@ -191,7 +191,7 @@ class studentController extends Controller
             $wildlife = Wildlife::where('wildlife_class','LIKE','%'.$request->wildlife_class.'%')
                                 ->where('wildlife_species','LIKE','%'.$request->wildlife_species.'%')
                                 ->where('wildlife_type','Zoo')
-                                ->get();            
+                                ->get();
         }
         return view('IEMS.Linus.STUDENT.StudentSearchwildlife',compact('wildlife'));
     }
@@ -202,9 +202,9 @@ class studentController extends Controller
         $thesis = thesis_paper::where('thesis_title','LIKE','%'.$searchText.'%')->get();
         return view('IEMS.Linus.FACULTY.searchThesis',compact('thesis'));
     }
-    
+
     public function advanceSearchThesis(Request $request)
-    {   
+    {
         $thesis = thesis_paper::all();
         if($request->thesis_type)
         {
@@ -231,7 +231,7 @@ class studentController extends Controller
     }
 
     public function advanceSearchJournal(Request $request)
-    {   
+    {
         $journal = journal_article::all();
 
         if($request->journal_reference)
