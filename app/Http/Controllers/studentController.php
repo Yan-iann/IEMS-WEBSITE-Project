@@ -25,78 +25,148 @@ class studentController extends Controller
     public function studentDashboard()
     {
 
-        $searchData = DB::table('wildlife')
-        ->select('wildlife.wildlife_class','wildlife.wildlife_species')
-        ->distinct('wildlife.wildlife_class','wildlife.wildlife_species')
+        $searchClass = DB::table('wildlife')
+        ->select('wildlife.wildlife_class')
+        ->distinct('wildlife.wildlife_class')
         ->where('wildlife_type','Zoo')
         ->get();
 
-        $studentDashboard = Wildlife::where('wildlife_type','Zoo')->get();
+        $searchSpecie = DB::table('wildlife')
+        ->select('wildlife.wildlife_species')
+        ->distinct('wildlife.wildlife_species')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchLoc = DB::table('wildlife')
+        ->select('wildlife.wildlife_location')
+        ->distinct('wildlife.wildlife_location')
+        ->where('wildlife_type','Zoo')
+        ->get();
+        
+        $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
         return view ('IEMS.Linus.STUDENT.StudentWLDashboard')
-        ->with('studentDashboard', $studentDashboard)
-        ->with('searchData', $searchData);
+        ->with('studentDashboard', $wildlife)
+        ->with('searchClass', $searchClass)
+        ->with('searchSpecie', $searchSpecie)
+        ->with('searchLoc', $searchLoc);
     }//end viewing of student wildlife dashboard
 
     public function thesis()
     {
-        $searchData = DB::table('thesis_paper')
-        ->select('thesis_paper.thesis_type','thesis_paper.thesis_reference')
-        ->distinct('thesis_paper.thesis_type','thesis_paper.thesis_reference')
+        $searchRef = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_reference')
+        ->get();
+
+        $searchAuthor = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_author')
+        ->distinct('thesis_paper.thesis_author')
         ->get();
 
         $thesis = thesis_paper::all();
         return view('IEMS.Linus.STUDENT.StudentThesisDashboard')
         ->with('thesis',$thesis)
-        ->with('searchData', $searchData);
+        ->with('searchRef',$searchRef)
+        ->with('searchAuthor',$searchAuthor);
     }
     public function gradThesis()
     {
-        $searchData = DB::table('thesis_paper')
-        ->select('thesis_paper.thesis_type','thesis_paper.thesis_reference')
-        ->distinct('thesis_paper.thesis_type','thesis_paper.thesis_reference')
+        $searchRef = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_reference')
+        ->get();
+
+        $searchAuthor = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_author')
+        ->distinct('thesis_paper.thesis_author')
         ->get();
 
         $thesis = thesis_paper::where('thesis_type','PostGraduate')->get();
-        return view('IEMS\Linus.STUDENT.StudentThesisDashboard')
+         return view('IEMS.Linus.STUDENT.StudentThesisDashboard')
         ->with('thesis',$thesis)
-        ->with('searchData', $searchData);
+        ->with('searchRef',$searchRef)
+        ->with('searchAuthor',$searchAuthor);
     }
     public function undergradThesis()
     {
-        $searchData = DB::table('thesis_paper')
-        ->select('thesis_paper.thesis_type','thesis_paper.thesis_reference')
-        ->distinct('thesis_paper.thesis_type','thesis_paper.thesis_reference')
+        $searchRef = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_reference')
+        ->get();
+
+        $searchAuthor = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_author')
+        ->distinct('thesis_paper.thesis_author')
         ->get();
 
         $thesis = thesis_paper::where('thesis_type','UnderGraduate')->get();
-        return view('IEMS\Linus.STUDENT.StudentThesisDashboard')
+        return view('IEMS.Linus.STUDENT.StudentThesisDashboard')
         ->with('thesis',$thesis)
-        ->with('searchData', $searchData);
+        ->with('searchRef',$searchRef)
+        ->with('searchAuthor',$searchAuthor);
     }
 
 
     public function journal()
     {
-        $searchData = DB::table('journal_article')
-        ->select('journal_article.journal_reference','journal_article.date_published')
-        ->distinct('journal_article.journal_reference','journal_article.date_published')
+        $searchRef = DB::table('journal_article')
+        ->select('journal_article.journal_reference')
+        ->distinct('journal_article.journal_reference')
         ->get();
+
+        $searchDate = DB::table('journal_article')
+        ->select('journal_article.date_published')
+        ->distinct('journal_article.date_published')
+        ->get();
+
 
         $journal = journal_article::all();
         return view('IEMS.Linus.STUDENT.StudentJournalDashboard')
         ->with('journal',$journal)
-        ->with('searchData', $searchData);
+        ->with('searchDate',$searchDate)
+        ->with('searchRef',$searchRef);
     }
 
     public function boneCollection()
     {
+        $searchGenus = DB::table('wildlife')
+        ->select('wildlife.wildlife_genus')
+        ->distinct('wildlife.wildlife_genus')
+        ->where('wildlife_type','Bone')
+        ->get();
+
+        $searchDate = DB::table('wildlife')
+        ->select('wildlife.date_added')
+        ->distinct('wildlife.date_added')
+        ->where('wildlife_type','Bone')
+        ->get();
+
         $wildlife = Wildlife::where('wildlife_type','Bone')->get();
-        return view ('IEMS.Linus.STUDENT.StudentBoneCollection')->with('wildlifes', $wildlife);
+        return view ('IEMS.Linus.STUDENT.StudentBoneCollection')
+        ->with('wildlifes', $wildlife)
+        ->with('searchGenus', $searchGenus)
+        ->with('searchDate', $searchDate);
+
     }
     public function refCollection()
     {
+        $searchGenus = DB::table('wildlife')
+        ->select('wildlife.wildlife_genus')
+        ->distinct('wildlife.wildlife_genus')
+        ->where('wildlife_type','Reference')
+        ->get();
+
+        $searchDate = DB::table('wildlife')
+        ->select('wildlife.date_added')
+        ->distinct('wildlife.date_added')
+        ->where('wildlife_type','Reference')
+        ->get();
+
         $wildlife = Wildlife::where('wildlife_type','Reference')->get();
-        return view ('IEMS.Linus.STUDENT.StudentRefCollection')->with('wildlifes', $wildlife);
+        return view ('IEMS.Linus.STUDENT.StudentRefCollection')
+        ->with('wildlifes', $wildlife)
+        ->with('searchGenus', $searchGenus)
+        ->with('searchDate', $searchDate);
     }
 
     public function request()
@@ -137,7 +207,8 @@ class studentController extends Controller
                 ];
                 announcement::create($anno);
                 $anno = announcement::where('user_ID', '=', Auth::user()->id )->get();
-                return view('IEMS/Linus.STUDENT.requestDashboard')->with('announcement',$anno);
+                return view('IEMS.Linus.STUDENT.StudentReqDashboard')
+                ->with('announcement',$anno);
             }
 
     }
@@ -155,22 +226,104 @@ class studentController extends Controller
     {
         announcement::destroy($id);
         $anno = announcement::where('user_ID', '=', Auth::user()->id )->get();
-        return view('IEMS.Linus.STUDENT.requestDashboard')->with('announcement',$anno);
+        return view('IEMS.Linus.STUDENT.StudentReqDashboard')
+        ->with('announcement',$anno);
     }//end of deleting user accounts
 
-    public function searchWildlife()
-    {
-        $searchText = $_GET['searchWildlife'];
-        $wildlife = Wildlife::where('wildlife_name','LIKE','%'.$searchText.'%')
+    public function searchwildlife(Request $request)
+    {   
+        $searchClass = DB::table('wildlife')
+        ->select('wildlife.wildlife_class')
+        ->distinct('wildlife.wildlife_class')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchSpecie = DB::table('wildlife')
+        ->select('wildlife.wildlife_species')
+        ->distinct('wildlife.wildlife_species')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchLoc = DB::table('wildlife')
+        ->select('wildlife.wildlife_location')
+        ->distinct('wildlife.wildlife_location')
+        ->where('wildlife_type','Zoo')
+        ->get();
+         //for class
+         if($request->wildlife_class)
+         {
+             $wildlife = Wildlife::where('wildlife_class','LIKE','%'.$request->wildlife_class.'%')
+                                 ->where('wildlife_type','Zoo')
+                                 ->get();
+         }
+         //for species
+         if($request->wildlife_species)
+         {
+             $wildlife = Wildlife::where('wildlife_species','LIKE','%'.$request->wildlife_species.'%')
+                                 ->where('wildlife_type','Zoo')
+                                 ->get();
+         }
+         //for location
+         if($request->wildlife_location)
+         {
+             $wildlife = Wildlife::where('wildlife_location','LIKE','%'.$request->wildlife_location.'%')
+                                 ->where('wildlife_type','Zoo')
+                                 ->get();
+         }
+         //for species and loc
+         if($request->wildlife_species && $request->wildlife_location)
+         {
+             $wildlife = Wildlife::where('wildlife_species','LIKE','%'.$request->wildlife_species.'%')
+                         ->where('wildlife_location','LIKE','%'.$request->wildlife_location.'%')
+                         ->where('wildlife_type','Zoo')
+                         ->get();
+         }
+         //for class and specie and loc
+         if($request->wildlife_class && $request->wildlife_species && $request->wildlife_location)
+         {
+             $wildlife = Wildlife::where('wildlife_class','LIKE','%'.$request->wildlife_class.'%')
+                                 ->where('wildlife_species','LIKE','%'.$request->wildlife_species.'%')
+                                 ->where('wildlife_location','LIKE','%'.$request->wildlife_location.'%')
+                                 ->where('wildlife_type','Zoo')
+                                 ->get();            
+         } 
+        if($request->searchWildlife)
+        {
+        $wildlife = Wildlife::where('wildlife_name','LIKE','%'.$request->searchWildlife.'%')
                             ->where('wildlife_type','Zoo')
                             ->get();
-        return view('IEMS.Linus.STUDENT.StudentSearchwildlife',compact('wildlife'));
+        }
+        return view('IEMS.Linus.STUDENT.searchWildlife')
+        ->with('wildlife', $wildlife)
+        ->with('searchClass', $searchClass)
+        ->with('searchSpecie', $searchSpecie)
+        ->with('searchLoc', $searchLoc);
     }
 
     public function advanceSearchWildlife(Request $request)
     {
-        $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
 
+        $searchClass = DB::table('wildlife')
+        ->select('wildlife.wildlife_class')
+        ->distinct('wildlife.wildlife_class')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchSpecie = DB::table('wildlife')
+        ->select('wildlife.wildlife_species')
+        ->distinct('wildlife.wildlife_species')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchLoc = DB::table('wildlife')
+        ->select('wildlife.wildlife_location')
+        ->distinct('wildlife.wildlife_location')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
+        //for search
+      
         //for class
         if($request->wildlife_class)
         {
@@ -185,63 +338,132 @@ class studentController extends Controller
                                 ->where('wildlife_type','Zoo')
                                 ->get();
         }
-
-        //for class and specie
-        if($request->wildlife_class && $request->wildlife_species)
+        //for location
+        if($request->wildlife_location)
         {
-            $wildlife = Wildlife::where('wildlife_class','LIKE','%'.$request->wildlife_class.'%')
-                                ->where('wildlife_species','LIKE','%'.$request->wildlife_species.'%')
+            $wildlife = Wildlife::where('wildlife_location','LIKE','%'.$request->wildlife_location.'%')
                                 ->where('wildlife_type','Zoo')
                                 ->get();
         }
-        return view('IEMS.Linus.STUDENT.StudentSearchwildlife',compact('wildlife'));
-    }
-
-    public function searchThesis()
-    {
-        $searchText = $_GET['searchThesis'];
-        $thesis = thesis_paper::where('thesis_title','LIKE','%'.$searchText.'%')->get();
-        return view('IEMS.Linus.FACULTY.searchThesis',compact('thesis'));
-    }
-
-    public function advanceSearchThesis(Request $request)
-    {
-        $thesis = thesis_paper::all();
-        if($request->thesis_type)
+        //for species and loc
+        if($request->wildlife_species && $request->wildlife_location)
         {
-            $thesis = thesis_paper::where('thesis_type','LIKE','%'.$request->thesis_type.'%')->get();
+            $wildlife = Wildlife::where('wildlife_species','LIKE','%'.$request->wildlife_species.'%')
+                        ->where('wildlife_location','LIKE','%'.$request->wildlife_location.'%')
+                        ->where('wildlife_type','Zoo')
+                        ->get();
+        }
+        //for class and specie and loc
+        if($request->wildlife_class && $request->wildlife_species && $request->wildlife_location)
+        {
+            $wildlife = Wildlife::where('wildlife_class','LIKE','%'.$request->wildlife_class.'%')
+                                ->where('wildlife_species','LIKE','%'.$request->wildlife_species.'%')
+                                ->where('wildlife_location','LIKE','%'.$request->wildlife_location.'%')
+                                ->where('wildlife_type','Zoo')
+                                ->get();            
+        }
+
+        return view('IEMS.Linus.STUDENT.searchWildlife')
+        ->with('wildlife', $wildlife)
+        ->with('searchClass', $searchClass)
+        ->with('searchSpecie', $searchSpecie)
+        ->with('searchLoc', $searchLoc);
+    }
+
+    //for thesis
+    public function searchThesis(Request $request)
+    {
+        $searchRef = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_reference')
+        ->get();
+
+        $searchAuthor = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_author')
+        ->distinct('thesis_paper.thesis_author')
+        ->get();
+
+        $thesis = thesis_paper::all();
+        if($request->thesis_author)
+        {
+            $thesis = thesis_paper::where('thesis_author','LIKE','%'.$request->thesis_author.'%')->get();
         }
         if($request->thesis_reference)
         {
             $thesis = thesis_paper::where('thesis_reference','LIKE','%'.$request->thesis_reference.'%')->get();
         }
-        if($request->thesis_type && $request->thesis_reference)
+        if($request->thesis_author && $request->thesis_reference)
         {
-            $thesis = thesis_paper::where('thesis_type','LIKE','%'.$request->thesis_type.'%')
+            $thesis = thesis_paper::where('thesis_author','LIKE','%'.$request->thesis_author.'%')
                                     ->where('thesis_reference','LIKE','%'.$request->thesis_reference.'%')
                                     ->get();
         }
-        return view('IEMS.Linus.FACULTY.searchThesis',compact('thesis'));
+        if($request->searchThesis)
+        {
+            $thesis = thesis_paper::where('thesis_title','LIKE','%'.$request->searchThesis.'%')
+                                    ->get();
+        }
+        
+        return view('IEMS.Linus.STUDENT.searchThesis')
+        ->with('thesis', $thesis)
+        ->with('searchRef', $searchRef)
+        ->with('searchAuthor', $searchAuthor);
+    }
+    public function advanceSearchThesis(Request $request)
+    {   
+        $searchRef = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_reference')
+        ->get();
+
+        $searchAuthor = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_author')
+        ->distinct('thesis_paper.thesis_author')
+        ->get();
+
+        $thesis = thesis_paper::all();
+        if($request->thesis_author)
+        {
+            $thesis = thesis_paper::where('thesis_author','LIKE','%'.$request->thesis_author.'%')->get();
+        }
+        if($request->thesis_reference)
+        {
+            $thesis = thesis_paper::where('thesis_reference','LIKE','%'.$request->thesis_reference.'%')->get();
+        }
+        if($request->thesis_author && $request->thesis_reference)
+        {
+            $thesis = thesis_paper::where('thesis_author','LIKE','%'.$request->thesis_author.'%')
+                                    ->where('thesis_reference','LIKE','%'.$request->thesis_reference.'%')
+                                    ->get();
+        }
+        return view('IEMS.Linus.STUDENT.searchThesis')
+        ->with('thesis', $thesis)
+        ->with('searchRef', $searchRef)
+        ->with('searchAuthor', $searchAuthor);
     }
 
-    public function searchJournal()
+    public function searchJournal(Request $request)
     {
-        $searchText = $_GET['searchJournal'];
-        $journal = journal_article::where('journal_title','LIKE','%'.$searchText.'%')->get();
-        return view('IEMS.Linus.FACULTY.searchJournal',compact('journal'));
-    }
+        $searchRef = DB::table('journal_article')
+        ->select('journal_article.journal_reference')
+        ->distinct('journal_article.journal_reference')
+        ->get();
 
-    public function advanceSearchJournal(Request $request)
-    {
+        $searchDate = DB::table('journal_article')
+        ->select('journal_article.date_published')
+        ->distinct('journal_article.date_published')
+        ->get();
+
         $journal = journal_article::all();
-
         if($request->journal_reference)
         {
-            $journal = journal_article::where('journal_reference','LIKE','%'.$request->journal_reference.'%')->get();
+            $journal = journal_article::where('journal_reference','LIKE','%'.$request->journal_reference.'%')
+            ->get();
         }
         if($request->date_published)
         {
-            $journal = journal_article::where('date_published','LIKE','%'.$request->date_published.'%')->get();
+            $journal = journal_article::where('date_published','LIKE','%'.$request->date_published.'%')
+            ->get();
         }
         if($request->journal_reference && $request->date_published)
         {
@@ -249,8 +471,249 @@ class studentController extends Controller
                                     ->where('date_published','LIKE','%'.$request->date_published.'%')
                                     ->get();
         }
-        return view('IEMS.Linus.FACULTY.searchJournal',compact('journal'));
+        if($request->searchJournal)
+        {
+            $journal = journal_article::where('journal_title','LIKE','%'.$request->searchJournal.'%')->get();
+        }
+        return view('IEMS.Linus.STUDENT.searchJournal')
+        ->with('journal', $journal)
+        ->with('searchRef', $searchRef)
+        ->with('searchDate', $searchDate);
+        
+        
     }
+
+    public function advanceSearchJournal(Request $request)
+    {   
+        $searchRef = DB::table('journal_article')
+        ->select('journal_article.journal_reference')
+        ->distinct('journal_article.journal_reference')
+        ->get();
+
+        $searchDate = DB::table('journal_article')
+        ->select('journal_article.date_published')
+        ->distinct('journal_article.date_published')
+        ->get();
+
+        $journal = journal_article::all();
+        
+        if($request->journal_reference)
+        {
+            $journal = journal_article::where('journal_reference','LIKE','%'.$request->journal_reference.'%')
+            ->get();
+        }
+        if($request->date_published)
+        {
+            $journal = journal_article::where('date_published','LIKE','%'.$request->date_published.'%')
+            ->get();
+        }
+        if($request->journal_reference && $request->date_published)
+        {
+            $journal = journal_article::where('journal_reference','LIKE','%'.$request->journal_reference.'%')
+                                    ->where('date_published','LIKE','%'.$request->date_published.'%')
+                                    ->get();
+        }
+        return view('IEMS.Linus.STUDENT.searchJournal')
+        ->with('journal', $journal)
+        ->with('searchRef', $searchRef)
+        ->with('searchDate', $searchDate);
+    }
+
+    public function searchBone(Request $request)
+    {   
+        $searchGenus = DB::table('wildlife')
+        ->select('wildlife.wildlife_genus')
+        ->distinct('wildlife.wildlife_genus')
+        ->where('wildlife_type','Bone')
+        ->get();
+
+        $searchDate = DB::table('wildlife')
+        ->select('wildlife.date_added')
+        ->distinct('wildlife.date_added')
+        ->where('wildlife_type','Bone')
+        ->get();
+
+         //for genus
+         if($request->wildlife_genus)
+         {
+             $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
+                                 ->where('wildlife_type','Bone')
+                                 ->get();
+         }
+         //for date
+         if($request->date_added)
+         {
+             $wildlife = Wildlife::where('date_added','LIKE','%'.$request->date_added.'%')
+                                 ->where('wildlife_type','Bone')
+                                 ->get();
+         }
+         
+         //for genus and date
+         if($request->wildlife_species && $request->date_added)
+         {
+             $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
+                         ->where('date_added','LIKE','%'.$request->date_added.'%')
+                         ->where('wildlife_type','Bone')
+                         ->get();
+         }
+         
+        if($request->searchBone)
+        {
+        $wildlife = Wildlife::where('wildlife_name','LIKE','%'.$request->searchBone.'%')
+                            ->where('wildlife_type','Bone')
+                            ->get();
+        }
+        return view ('IEMS.Linus.STUDENT.searchBoneCollection')
+        ->with('wildlifes', $wildlife)
+        ->with('searchGenus', $searchGenus)
+        ->with('searchDate', $searchDate);
+    }
+
+    public function advanceSearchBone(Request $request)
+    {
+
+        $searchGenus = DB::table('wildlife')
+        ->select('wildlife.wildlife_genus')
+        ->distinct('wildlife.wildlife_genus')
+        ->where('wildlife_type','Bone')
+        ->get();
+
+        $searchDate = DB::table('wildlife')
+        ->select('wildlife.date_added')
+        ->distinct('wildlife.date_added')
+        ->where('wildlife_type','Bone')
+        ->get();
+
+         //for genus
+         if($request->wildlife_genus)
+         {
+             $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
+                                 ->where('wildlife_type','Bone')
+                                 ->get();
+         }
+         //for date
+         if($request->date_added)
+         {
+             $wildlife = Wildlife::where('date_added','LIKE','%'.$request->date_added.'%')
+                                 ->where('wildlife_type','Bone')
+                                 ->get();
+         }
+         
+         //for genus and date
+         if($request->wildlife_species && $request->date_added)
+         {
+             $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
+                         ->where('date_added','LIKE','%'.$request->date_added.'%')
+                         ->where('wildlife_type','Bone')
+                         ->get();
+         }
+         
+        if($request->searchBone)
+        {
+        $wildlife = Wildlife::where('wildlife_name','LIKE','%'.$request->searchBone.'%')
+                            ->where('wildlife_type','Bone')
+                            ->get();
+        }
+        return view ('IEMS.Linus.STUDENT.searchBoneCollection')
+        ->with('wildlifes', $wildlife)
+        ->with('searchGenus', $searchGenus)
+        ->with('searchDate', $searchDate);
+    }
+    public function searchRef(Request $request)
+    {   
+        $searchGenus = DB::table('wildlife')
+        ->select('wildlife.wildlife_genus')
+        ->distinct('wildlife.wildlife_genus')
+        ->where('wildlife_type','Reference')
+        ->get();
+
+        $searchDate = DB::table('wildlife')
+        ->select('wildlife.date_added')
+        ->distinct('wildlife.date_added')
+        ->where('wildlife_type','Reference')
+        ->get();
+
+         //for genus
+         if($request->wildlife_genus)
+         {
+             $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
+                                 ->where('wildlife_type','Reference')
+                                 ->get();
+         }
+         //for date
+         if($request->date_added)
+         {
+             $wildlife = Wildlife::where('date_added','LIKE','%'.$request->date_added.'%')
+                                 ->where('wildlife_type','Reference')
+                                 ->get();
+         }
+         
+         //for genus and date
+         if($request->wildlife_species && $request->date_added)
+         {
+             $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
+                         ->where('date_added','LIKE','%'.$request->date_added.'%')
+                         ->where('wildlife_type','Reference')
+                         ->get();
+         }
+         
+        if($request->searchRef)
+        {
+        $wildlife = Wildlife::where('wildlife_name','LIKE','%'.$request->searchRef.'%')
+                            ->where('wildlife_type','Reference')
+                            ->get();
+        }
+        return view ('IEMS.Linus.STUDENT.searchRefCollection')
+        ->with('wildlifes', $wildlife)
+        ->with('searchGenus', $searchGenus)
+        ->with('searchDate', $searchDate);
+    }
+
+    public function advanceSearchRef(Request $request)
+    {
+
+        $searchGenus = DB::table('wildlife')
+        ->select('wildlife.wildlife_genus')
+        ->distinct('wildlife.wildlife_genus')
+        ->where('wildlife_type','Reference')
+        ->get();
+
+        $searchDate = DB::table('wildlife')
+        ->select('wildlife.date_added')
+        ->distinct('wildlife.date_added')
+        ->where('wildlife_type','Reference')
+        ->get();
+
+         //for genus
+         if($request->wildlife_genus)
+         {
+             $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
+                                 ->where('wildlife_type','Reference')
+                                 ->get();
+         }
+         //for date
+         if($request->date_added)
+         {
+             $wildlife = Wildlife::where('date_added','LIKE','%'.$request->date_added.'%')
+                                 ->where('wildlife_type','Reference')
+                                 ->get();
+         }
+         
+         //for genus and date
+         if($request->wildlife_species && $request->date_added)
+         {
+             $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
+                         ->where('date_added','LIKE','%'.$request->date_added.'%')
+                         ->where('wildlife_type','Reference')
+                         ->get();
+         }
+         
+        return view ('IEMS.Linus.STUDENT.searchRefCollection')
+        ->with('wildlifes', $wildlife)
+        ->with('searchGenus', $searchGenus)
+        ->with('searchDate', $searchDate);
+    }
+
     //end of search
 
 }

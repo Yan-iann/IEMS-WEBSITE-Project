@@ -1,4 +1,4 @@
-@extends('layouts.S_Layout')
+@extends('layouts.G_Layout')
 @section('content')
     <div class="container-fluid">
         {{-- Page Name, and Burger Icon. AND Search Bar --}}
@@ -8,12 +8,12 @@
                 <div class="home-content">
                     <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center">
                         <i class='bx bx-menu'></i>
-                        <span class="text">Journal Articles</span>
+                        <span class="text">Journal Articles Search Results</span>
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-6">
-                        <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('S_searchJournal') }}">
-                            {{-- uhm di pani sure ?? --}}
+                        <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get"
+                            action="{{ route('G_searchJournal') }}">
                             <div class="input-group">
                                 <input type="search" name="searchJournal" class="form-control mr-sm2"
                                     placeholder="Search Journal Article">
@@ -33,14 +33,16 @@
             </div>
         </div>
 
-        {{-- Information Cards --}}
+
+        {{-- informationcards --}}
         <section class="col-12">
             <div class="container-fluid">
                 <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
+                    @if($journal->count())
                     @foreach ($journal as $item)
                         <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch" data-bs-toggle="modal"
                             data-bs-target="#ModalJournal{{ $item->info_ID }}">
-                            <div class="card " style="width: 18rem;">
+                            <div class="card border-dark" style="width: 18rem;">
                                 <div class="card-body bg-light ">
                                     <p class="text-muted fst-italic">{{ $item->date_published }}</p>
                                     <h4 class="card-title">{{ $item->journal_title }}</h4>
@@ -50,15 +52,17 @@
                                 <div class="card-footer border-0"></div>
                             </div>
                         </div>
-                        @include('IEMS.Linus.STUDENT.displayJournal')
-                    @endforeach
+                        @include('IEMS.Linus.GUEST.displayJournal')
+                        @endforeach
+                        @else
+                            <h3>No records found</h3>
+                        @endif
                 </div>
-            </div>
-        </section>
-    </div>
+                </div>
+</section>
 
-   <!--advance search-->
-   <form action="{{ route('S_advanceSearchJournal') }}" method="GET" enctype="multipart/form-data">
+        <!--advance search-->
+        <form action="{{ route('G_advanceSearchJournal') }}" method="GET" enctype="multipart/form-data">
             {!! csrf_field() !!}
             <div class="modal fade" id="ModalSearch" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
@@ -107,4 +111,5 @@
             </div>
         </form>
         <!--end of form-->
+    </div>
 @endsection

@@ -4,7 +4,7 @@
             
   <div class="col-12 col-lg-4">
     <label for="formGroupExampleInput" class="form-label">Image</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Upload Image">
   </div>
 
         <div class="col-12 col-lg-8">

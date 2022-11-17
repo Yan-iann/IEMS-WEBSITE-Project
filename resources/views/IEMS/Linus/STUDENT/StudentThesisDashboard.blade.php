@@ -13,7 +13,7 @@
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-6">
-                        <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action=""> {{-- uhm di pani sure ?? --}}
+                        <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('S_searchThesis') }}"> {{-- uhm di pani sure ?? --}}
                             <div class="input-group">
                                 <input type="search" name="searchThesis" class="form-control mr-sm2"
                                     placeholder="Search Thesis Paper">
@@ -32,14 +32,25 @@
                 </div>
             </div>
         </div>
+</div>
 
 
 
-
-        {{-- Information Cards --}}
+{{-- Information Cards --}}
         <section class="col-12">
-            <div class="container-fluid">
-              <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
+    <div class="container-fluid">
+      <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
+
+    @foreach($thesis as $item)
+        <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch" data-bs-toggle="modal" data-bs-target="#ModalThesis{{$item->info_ID}}">
+            <div class="card border-dark" style="width: 18rem;">
+                  <div class="card-body bg-light ">
+                    <p class="text-muted fst-italic">{{$item->date_published }}</p>
+                    <h4 class="card-title">{{$item->thesis_title}}</h4>
+                    <br>
+                    <p class="card-subtitle mb-2 text-muted">{{$item->thesis_author}}</p>
+                  </div>
+                <div class="card-footer border-0"></div>
 
             @foreach($thesis as $item)
                 <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch" data-bs-toggle="modal" data-bs-target="#ModalThesis{{$item->info_ID}}">
@@ -59,12 +70,15 @@
 
                 </div>
             </div>
-                </section>
+        </div>
+        @include('IEMS.Linus.STUDENT.displayThesis')
+    @endforeach
 
-
-
+        </div>
+    </div>
+        </section>
 <!--advance search-->
-<form action="{{ route('advanceSearchThesis') }}" method="GET" enctype="multipart/form-data">
+<form action="{{ route('S_advanceSearchThesis') }}" method="GET" enctype="multipart/form-data">
       {!! csrf_field() !!}
       <div class="modal fade" id="ModalSearch" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
@@ -80,11 +94,11 @@
                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
 
                   <div class="col-12">
-                  <label class="focus-label">Thesis Type:</label>
-                    <select class="select floating" id="" name="thesis_type">
+                  <label class="focus-label">Thesis Author:</label>
+                    <select class="select floating" id="" name="thesis_author">
                       <option></option>
-                      @foreach($searchData as $item)
-                      <option value="{{ $item->thesis_type }}">{{$item->thesis_type}}</option>
+                      @foreach($searchAuthor as $item)
+                      <option value="{{ $item->thesis_author }}">{{$item->thesis_author}}</option>
                       @endforeach
                     </select>
                   </div>
@@ -93,7 +107,7 @@
                   <label class="focus-label">Thesis Reference:</label>
                     <select class="select floating" id="" name="thesis_reference">
                       <option></option>
-                      @foreach($searchData as $item)
+                      @foreach($searchRef as $item)
                       <option value="{{ $item->thesis_reference }}">{{$item->thesis_reference}}</option>
                       @endforeach
                     </select>

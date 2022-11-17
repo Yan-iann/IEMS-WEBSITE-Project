@@ -1,5 +1,6 @@
-@extends('layouts.S_Layout')
+@extends('layouts.G_Layout')
 @section('content')
+
     <div class="container-fluid">
         {{-- Page Name, and Burger Icon. AND Search Bar --}}
         <div class="col-12">
@@ -8,15 +9,14 @@
                 <div class="home-content">
                     <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center">
                         <i class='bx bx-menu'></i>
-                        <span class="text">Reference Collection</span>
+                        <span class="text">Bone Collection Search Results</span>
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-6">
-                        <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('S_searchRef') }}">
-                            {{-- uhm di pani sure ?? --}}
+                        <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('G_searchBone') }}">
                             <div class="input-group">
-                                <input type="search" name="searchRef" class="form-control mr-sm2"
-                                    placeholder="Search Reference Collection">
+                                <input type="search" name="searchBone" class="form-control mr-sm2"
+                                    placeholder="Search Bone Collection">
                                 <div class="input-group-btn">
                                     <div class="btn-group" role="group">
                                         <div class="dropdown dropdown-lg">
@@ -32,32 +32,33 @@
                 </div>
             </div>
         </div>
+        </div>
 
-        {{-- Information Cards --}}
-        <section class="col-12">
-            <div class="container-fluid">
-                <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
-                    @foreach ($wildlifes as $item)
-                        <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
-                            <div class="card " style="width: 18rem;" data-bs-toggle="modal"
-                                data-bs-target="#ModalWildlife{{ $item->info_ID }}">
-                                <img class="card-img-top "src="{{ asset($item->wildlife_pic) }}" alt="Card image cap">
-                                <div class="card-body bg-light text-primary">
-                                    <h5 class="card-title text-center">({{ $item->wildlife_scientific_name }})</h5>
-                                    <p class="card-text text-center">{{ $item->wildlife_name }}</p>
-                                </div>
+        {{-- informationcards --}}
+        <div class="container-fluid">
+            <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
+                @foreach ($wildlifes as $item)
+                    <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
+                        <div class="card border-dark" style="width: 18rem;" data-bs-toggle="modal"
+                            data-bs-target="#ModalWildlife{{ $item->info_ID }}">
+                            <img class="card-img-top "src="{{ asset($item->wildlife_pic) }}" alt="Card image cap">
+                            <div class="card-body bg-light text-primary">
+                                <h5 class="card-title text-center">{{ $item->wildlife_name }}</h5>
+                                <p class="card-text text-center">({{ $item->wildlife_scientific_name }})</p>
                             </div>
                         </div>
-                        @include('IEMS.Linus.STUDENT.displayRefCollection')
-                    @endforeach
-                </div>
-                <!--end of catalog-->
+                       
+                    </div>
+                    @include('IEMS.Linus.GUEST.displayBoneCollection')
+                @endforeach
             </div>
-            <!--end of class container fluid-->
-        </section>
-    </div>
-    <!--advance search-->
-<form action="{{ route('S_advanceSearchRef') }}" method="GET" enctype="multipart/form-data">
+            <!--end of catalog-->
+            <!-- Add Button -->
+        </div>
+        <!--end of class container fluid-->
+       
+<!--advance search-->
+<form action="{{ route('G_advanceSearchBone') }}" method="GET" enctype="multipart/form-data">
       {!! csrf_field() !!}
       <div class="modal fade" id="ModalSearch" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
