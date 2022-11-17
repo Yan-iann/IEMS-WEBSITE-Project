@@ -34,6 +34,7 @@
 <section class="col-12">
     <div class="container-fluid">
       <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
+        @if($journal->count())
         @foreach($journal as $item)
             <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch" data-bs-toggle="modal" data-bs-target="#ModalJournal{{$item->info_ID}}">
                 <div class="card border-dark" style="width: 18rem;">
@@ -49,6 +50,9 @@
             </div>
           @include('IEMS.Linus.FACULTY.displayJournal')
         @endforeach
+        @else
+        <h3>No records found</h3>
+        @endif
       </div>
     </div>
 </section>

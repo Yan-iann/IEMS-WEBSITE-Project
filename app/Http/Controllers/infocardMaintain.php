@@ -182,6 +182,7 @@ class infocardMaintain extends Controller
         $wildlife = Wildlife::find($info_ID);
         return view('IEMS.Linus.FACULTY.editWildlife')->with('wildlifes',$wildlife);
     }
+
     public function updateWildlife(Request $request, $info_ID)
     {
         $wildlife = Wildlife::find($info_ID);
@@ -213,6 +214,7 @@ class infocardMaintain extends Controller
         ->with('searchSpecie', $searchSpecie)
         ->with('searchLoc', $searchLoc);
     }
+
     public function updateBone(Request $request, $info_ID)
     {
         $wildlife = Wildlife::find($info_ID);
@@ -234,26 +236,58 @@ class infocardMaintain extends Controller
         $thesis = thesis_paper::find($info_ID);
         return view('IEMS.Linus.FACULTY.editThesis')->with('thesis',$thesis);
     }
+    
     public function updateThesis(Request $request, $info_ID)
     {
         $thesis = thesis_paper::find($info_ID);
         $input = $request->all();
         $thesis->update($input);
+
+        $searchRef = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_reference')
+        ->get();
+
+        $searchAuthor = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_author')
+        ->distinct('thesis_paper.thesis_author')
+        ->get();
+
         $thesis = thesis_paper::all();
-        return view('IEMS.Linus.FACULTY.thesis')->with('thesis',$thesis);
+        return view('IEMS.Linus.FACULTY.thesis')
+        ->with('thesis',$thesis)
+        ->with('searchRef',$searchRef)
+        ->with('searchAuthor',$searchAuthor);
     }
+
     public function editJournal($info_ID)
     {
         $journal = journal_article::find($info_ID);
         return view('IEMS.Linus.FACULTY.editJournal')->with('journal',$journal);
     }
+
     public function updateJournal(Request $request, $info_ID)
     {
         $journal = journal_article::find($info_ID);
         $input = $request->all();
         $journal->update($input);
+
+        $searchRef = DB::table('journal_article')
+        ->select('journal_article.journal_reference')
+        ->distinct('journal_article.journal_reference')
+        ->get();
+
+        $searchDate = DB::table('journal_article')
+        ->select('journal_article.date_published')
+        ->distinct('journal_article.date_published')
+        ->get();
+
+
         $journal = journal_article::all();
-        return view('IEMS.Linus.FACULTY.journal')->with('journal',$journal);
+        return view('IEMS.Linus.FACULTY.journal')
+        ->with('journal',$journal)
+        ->with('searchDate',$searchDate)
+        ->with('searchRef',$searchRef);
     }
     //end of editing of infocards
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -310,8 +344,22 @@ class infocardMaintain extends Controller
     public function deleteJournal($info_ID)
     {
         Infocard::destroy($info_ID);
+        $searchRef = DB::table('journal_article')
+        ->select('journal_article.journal_reference')
+        ->distinct('journal_article.journal_reference')
+        ->get();
+
+        $searchDate = DB::table('journal_article')
+        ->select('journal_article.date_published')
+        ->distinct('journal_article.date_published')
+        ->get();
+
+
         $journal = journal_article::all();
-        return view ('IEMS.Linus.FACULTY.journal')->with('journal', $journal);
+        return view('IEMS.Linus.FACULTY.journal')
+        ->with('journal',$journal)
+        ->with('searchDate',$searchDate)
+        ->with('searchRef',$searchRef);
     }
     //end of deleting infocards
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////// 
@@ -529,11 +577,45 @@ class infocardMaintain extends Controller
         ->with('searchAuthor', $searchAuthor);
     }
 
-    public function searchJournal()
+    public function searchJournal(Request $request)
     {
-        $searchText = $_GET['searchJournal'];
-        $journal = journal_article::where('journal_title','LIKE','%'.$searchText.'%')->get();
-        return view('IEMS.Linus.FACULTY.searchJournal',compact('journal'));
+        $searchRef = DB::table('journal_article')
+        ->select('journal_article.journal_reference')
+        ->distinct('journal_article.journal_reference')
+        ->get();
+
+        $searchDate = DB::table('journal_article')
+        ->select('journal_article.date_published')
+        ->distinct('journal_article.date_published')
+        ->get();
+
+        $journal = journal_article::all();
+        if($request->journal_reference)
+        {
+            $journal = journal_article::where('journal_reference','LIKE','%'.$request->journal_reference.'%')
+            ->get();
+        }
+        if($request->date_published)
+        {
+            $journal = journal_article::where('date_published','LIKE','%'.$request->date_published.'%')
+            ->get();
+        }
+        if($request->journal_reference && $request->date_published)
+        {
+            $journal = journal_article::where('journal_reference','LIKE','%'.$request->journal_reference.'%')
+                                    ->where('date_published','LIKE','%'.$request->date_published.'%')
+                                    ->get();
+        }
+        if($request->searchJournal)
+        {
+            $journal = journal_article::where('journal_title','LIKE','%'.$request->searchJournal.'%')->get();
+        }
+        return view('IEMS.Linus.FACULTY.searchJournal')
+        ->with('journal', $journal)
+        ->with('searchRef', $searchRef)
+        ->with('searchDate', $searchDate);
+        
+        
     }
 
     public function advanceSearchJournal(Request $request)
