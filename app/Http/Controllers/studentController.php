@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\File;
 use DB;
 
 class studentController extends Controller
@@ -714,6 +715,50 @@ class studentController extends Controller
         ->with('searchDate', $searchDate);
     }
 
+    public function Sprofile()
+    {
+        $profile = DB::table('users')
+        ->where('users.id', '=' , Auth::user()->id )
+        ->join('user_info','user_info.user_ID', "=" ,'users.id')
+        ->select('user_info.*','users.email')
+        ->get();
+
+        return view ('IEMS.Linus.STUDENT.SProfileView')
+        ->with('profile',$profile);
+    }
+
+    public function editSprofile(Request $request, $id)
+    {
+        $profile = DB::table('users')
+        ->where('users.id', '=' , Auth::user()->id )
+        ->join('user_info','user_info.user_ID', "=" ,'users.id')
+        ->select('user_info.*','users.*')
+        ->get();
+        
+        $user = user_info::find($id);
+        $user->name = $request->input('name');
+        $user->middle_name = $request->input('middle_name');
+        $user->last_name = $request->input('last_name');
+        $user->phone_no = $request->input('phone_no');
+
+        if($request->hasfile('profile_pic'))
+        {
+            $path = 'storage/images'.$user->profile_pic;
+            if(FILE::exists($path))
+            {
+                FILE::delete($path);
+            }
+            $file = $request->file('profile_pic');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time(). '.'.$extention;
+            $file->move('storage/images',$filename);
+            $user->profile_pic = $filename;
+        }
+        $user->save();
+        return redirect()->route('Sprofile')
+        ->with('user', $user)
+        ->with('profile',$profile);
+    }
     //end of search
 
 }

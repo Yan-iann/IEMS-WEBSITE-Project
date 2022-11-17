@@ -78,6 +78,9 @@ Route::get('/deleteJournal/{info_ID}',[infocardMaintain::class, 'deleteJournal']
 
 //for profile
 Route::get('/profile',[infocardMaintain::class, 'Fprofile'])->name('Fprofile');
+Route::post('/editProfile/{id}',[infocardMaintain::class, 'editFprofile'])->name('editFprofile');
+Route::get('/S_profile',[studentController::class, 'Sprofile'])->name('Sprofile');
+Route::post('/S_editProfile/{id}',[studentController::class, 'editSprofile'])->name('editSprofile');
 
 //for analytics
 Route::get('/analytics',[infocardMaintain::class, 'analysis'])->name('analysis');

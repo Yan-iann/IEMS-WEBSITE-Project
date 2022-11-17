@@ -1,3 +1,4 @@
+
 <div class="sidebar close">
 
     {{-- Linus Logo Header --}}
@@ -91,10 +92,10 @@
         <li>
           <div class="profile-details">
             <div class="profile-content">
-                <img src="{{Auth::user()->profile_pic}}">
+                <img src="{{ Auth::user()->profile_pic }}">
             </div>
               <div class="name-job">
-                <a href="{{ route('Fprofile') }}">
+                <a href="{{ route('Sprofile') }}">
                   <div class="profile_name">{{ Auth::user()->name }}
                   </div> <!-- call Name -->
                 </a>

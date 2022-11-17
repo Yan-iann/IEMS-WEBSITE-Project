@@ -1,4 +1,4 @@
-@extends('layouts.F_Layout')
+@extends('layouts.S_Layout')
 @section('content')
 
 <body>
@@ -35,21 +35,6 @@
                 <h3>{{$item->phone_no}}</h3>
               </div>
 
-              <div class="col-12  col-lg-7">
-                <label for="formGroupExampleInput" class="form-label">Rank</label>
-                <h3>{{$item->rank}}</h3>
-              </div>
-          
-              <div class="col-12  col-lg-7">
-                <label for="formGroupExampleInput" class="form-label">Specialty</label>
-                <h3>{{$item->specialty}}</h3>
-              </div>
-              <div class="col-12  col-lg-7">
-                <label for="formGroupExampleInput" class="form-label">Educational Attaintment</label>
-                <h3>{{$item->educational}}</h3>
-              </div>
-          
-          
               <div class="col-12"><br>
               </div>
               <div class="col-12"><br>
@@ -73,13 +58,13 @@
               <button type="button" class="btn btn-info" data-bs-toggle="modal"
                                         data-bs-target="#ModalEditProf{{ $item->id }}"><i
                                             class='bx bxs-edit'>Edit Profile</i></button>
-             
+              
             </div>
       </div>
     </div><!--end of container-->
 
      <!-- Edit User Modal-->
-     <form action="{{ route('editFprofile', $item->id) }}" method="post" enctype="multipart/form-data">
+     <form action="{{ route('editSprofile', $item->id) }}" method="post" enctype="multipart/form-data">
                                 <div class="modal fade" id="ModalEditProf{{ $item->id }}" tabindex="-1"
                                     aria-labelledby="ModalLabel" aria-hidden="true">
                                     {!! csrf_field() !!}
@@ -119,28 +104,6 @@
                                                                         class="form-label">Last Name</label>
                                                                     <input type="text" class="form-control"
                                                                         name="last_name" value="{{ $item->last_name }}">
-                                                                </div>
-
-                                                                <div class="col-12">
-                                                                    <label for="formGroupExampleInput"
-                                                                        class="form-label">Rank</label>
-                                                                    <input type="text" class="form-control"
-                                                                        name="rank" value="{{ $item->rank}}">
-                                                                </div>
-
-                                                                <div class="col-12">
-                                                                    <label for="formGroupExampleInput"
-                                                                        class="form-label">Specialty</label>
-                                                                    <input type="text" class="form-control"
-                                                                        name="specialty" value="{{ $item->specialty}}">
-                                                                </div>
-
-                                                                
-                                                                <div class="col-12">
-                                                                    <label for="formGroupExampleInput"
-                                                                        class="form-label">Educational Attaintment</label>
-                                                                    <input type="text" class="form-control"
-                                                                        name="educational" value="{{ $item->educational}}">
                                                                 </div>
 
 

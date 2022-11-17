@@ -2,16 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Validator;
-use App\Models\Infocard;
-use App\Models\Wildlife;
+use App\Models\user_info;
+use App\Models\User;
+use App\Models\wildlife;
 use App\Models\thesis_paper;
 use App\Models\journal_article;
 use App\Models\announcement;
-use App\Models\User;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect; 
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\File;
 use DB;
 
 class infocardMaintain extends Controller
@@ -207,7 +213,50 @@ class infocardMaintain extends Controller
 
     public function Fprofile()
     {
-        return view ('IEMS.Linus.FACULTY.FProfileView');
+        $profile = DB::table('users')
+        ->where('users.id', '=' , Auth::user()->id )
+        ->join('user_info','user_info.user_ID', "=" ,'users.id')
+        ->select('user_info.*','users.email')
+        ->get();
+
+        return view ('IEMS.Linus.FACULTY.FProfileView')
+        ->with('profile',$profile);
+    }
+
+    public function editFprofile(Request $request, $id)
+    {
+        $profile = DB::table('users')
+        ->where('users.id', '=' , Auth::user()->id )
+        ->join('user_info','user_info.user_ID', "=" ,'users.id')
+        ->select('user_info.*','users.*')
+        ->get();
+        
+        $user = user_info::find($id);
+        $user->name = $request->input('name');
+        $user->middle_name = $request->input('middle_name');
+        $user->last_name = $request->input('last_name');
+        $user->phone_no = $request->input('phone_no');
+        $user->rank = $request->input('rank');
+        $user->educational = $request->input('educational');
+        $user->specialty = $request->input('specialty');
+
+        if($request->hasfile('profile_pic'))
+        {
+            $path = 'storage/images'.$user->profile_pic;
+            if(FILE::exists($path))
+            {
+                FILE::delete($path);
+            }
+            $file = $request->file('profile_pic');
+            $extention = $file->getClientOriginalExtension();
+            $filename = time(). '.'.$extention;
+            $file->move('storage/images',$filename);
+            $user->profile_pic = $filename;
+        }
+        $user->save();
+        return redirect()->route('Fprofile')
+        ->with('user', $user)
+        ->with('profile',$profile);
     }
     //end of viewing infocards
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
