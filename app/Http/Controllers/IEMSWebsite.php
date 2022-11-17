@@ -60,7 +60,10 @@ class IEMSWebsite extends Controller
 
     public function accessAnnouncement()
     {
-        $anno = announcement::all();
+        $anno = DB::table('announcement')
+        ->select('announcement.*')
+        ->where('announcement.anno_status','approve')
+        ->get();
         return view('IEMS\Linus.SITE.announcement')->with('announcement',$anno);
     }
 

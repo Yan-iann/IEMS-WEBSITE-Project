@@ -187,7 +187,6 @@
                   </div>
 
                   <input type="hidden" class="form-control"  name="anno_status" value="unapproved">
-                  <input type="hidden" class="form-control"  name="user_ID" value="{{ Auth::user()->id }}">
 
                   <div class="modal-footer border-0">
                     <button type="submit" class="btn btn-info text-white">Submit</button>

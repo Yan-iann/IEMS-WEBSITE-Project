@@ -11,6 +11,7 @@ use App\Models\wildlife;
 use App\Models\thesis_paper;
 use App\Models\journal_article;
 use App\Models\announcement;
+use App\Models\Infocard;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
@@ -193,8 +194,8 @@ class infocardMaintain extends Controller
     public function updateAnnoF(Request $request, $id)
     {
         $anno = announcement::find($id);
-        $input = $request->all();
-        $anno->update($input);
+        $anno->anno_status = $request->input('anno_status');
+        $anno->save();
 
         $searchStatus = DB::table('announcement')
         ->select('announcement.anno_status')
