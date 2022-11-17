@@ -40,7 +40,7 @@
                     @foreach ($journal as $item)
                         <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch" data-bs-toggle="modal"
                             data-bs-target="#ModalJournal{{ $item->info_ID }}">
-                            <div class="card border-dark" style="width: 18rem;">
+                            <div class="card " style="width: 18rem;">
                                 <div class="card-body bg-light ">
                                     <p class="text-muted fst-italic">{{ $item->date_published }}</p>
                                     <h4 class="card-title">{{ $item->journal_title }}</h4>
