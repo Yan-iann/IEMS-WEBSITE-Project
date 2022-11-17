@@ -120,14 +120,15 @@
                     <input type="input" class="form-control" placeholder="Enter journal Reference" name="journal_reference" >
                   </div>
                   <!--Column4-->
-                  <div class="col-4">
-                    <label for="formGroupExampleInput2" class="form-label">Journal Type</label>
-                    <input type="input" class="form-control" placeholder="Enter journal Type" name="journal_type" >
-                  </div>
+                
                   <!--Column4-->
                   <div class="col-4">
                     <label for="formGroupExampleInput2" class="form-label">Date Published</label>
                     <input type="date" class="form-control" placeholder="Enter Date Published" name="date_published" >
+                  </div>
+                  <div class="col-4">
+                    <label for="formGroupExampleInput2" class="form-label">Date Added</label>
+                    <input type="date" class="form-control" placeholder="Enter Date Published" name="date_added" >
                   </div>
                   <!--Form Group-->
                   <div class="form-group">
@@ -170,7 +171,7 @@
                   <label class="focus-label">Journal Reference:</label>
                     <select class="select floating" id="" name="journal_reference">
                       <option></option>
-                      @foreach($searchData as $item)
+                      @foreach($searchRef as $item)
                       <option value="{{ $item->journal_reference }}">{{$item->journal_reference}}</option>
                       @endforeach
                     </select>
@@ -180,7 +181,7 @@
                   <label class="focus-label">Date Published:</label>
                     <select class="select floating" id="" name="date_published">
                       <option></option>
-                      @foreach($searchData as $item)
+                      @foreach($searchDate as $item)
                       <option value="{{ $item->date_published }}">{{$item->date_published}}</option>
                       @endforeach
                     </select>

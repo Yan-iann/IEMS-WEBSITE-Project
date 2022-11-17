@@ -206,15 +206,22 @@ class allInfocardMaintain extends Controller
                     $requestData["info_ID"] =  $infocard->info_ID;
                     journal_article::create($requestData);
                     
-                    $searchData = DB::table('journal_article')
-                    ->select('journal_article.journal_reference','journal_article.date_published')
-                    ->distinct('journal_article.journal_reference','journal_article.date_published')
+                    $searchRef = DB::table('journal_article')
+                    ->select('journal_article.journal_reference')
+                    ->distinct('journal_article.journal_reference')
                     ->get();
+            
+                    $searchDate = DB::table('journal_article')
+                    ->select('journal_article.date_published')
+                    ->distinct('journal_article.date_published')
+                    ->get();
+            
             
                     $journal = journal_article::all();
                     return view('IEMS.Linus.FACULTY.journal')
                     ->with('journal',$journal)
-                    ->with('searchData',$searchData);
+                    ->with('searchDate',$searchDate)
+                    ->with('searchRef',$searchRef);
                 }
             }
     }//end of adding journal

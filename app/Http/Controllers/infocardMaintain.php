@@ -104,15 +104,22 @@ class infocardMaintain extends Controller
 
     public function journal()
     {
-        $searchData = DB::table('journal_article')
-        ->select('journal_article.journal_reference','journal_article.date_published')
-        ->distinct('journal_article.journal_reference','journal_article.date_published')
+        $searchRef = DB::table('journal_article')
+        ->select('journal_article.journal_reference')
+        ->distinct('journal_article.journal_reference')
         ->get();
+
+        $searchDate = DB::table('journal_article')
+        ->select('journal_article.date_published')
+        ->distinct('journal_article.date_published')
+        ->get();
+
 
         $journal = journal_article::all();
         return view('IEMS.Linus.FACULTY.journal')
         ->with('journal',$journal)
-        ->with('searchData',$searchData);
+        ->with('searchDate',$searchDate)
+        ->with('searchRef',$searchRef);
     }
 
     public function request()
@@ -531,15 +538,27 @@ class infocardMaintain extends Controller
 
     public function advanceSearchJournal(Request $request)
     {   
-        $journal = journal_article::all();
+        $searchRef = DB::table('journal_article')
+        ->select('journal_article.journal_reference')
+        ->distinct('journal_article.journal_reference')
+        ->get();
 
+        $searchDate = DB::table('journal_article')
+        ->select('journal_article.date_published')
+        ->distinct('journal_article.date_published')
+        ->get();
+
+        $journal = journal_article::all();
+        
         if($request->journal_reference)
         {
-            $journal = journal_article::where('journal_reference','LIKE','%'.$request->journal_reference.'%')->get();
+            $journal = journal_article::where('journal_reference','LIKE','%'.$request->journal_reference.'%')
+            ->get();
         }
         if($request->date_published)
         {
-            $journal = journal_article::where('date_published','LIKE','%'.$request->date_published.'%')->get();
+            $journal = journal_article::where('date_published','LIKE','%'.$request->date_published.'%')
+            ->get();
         }
         if($request->journal_reference && $request->date_published)
         {
@@ -547,7 +566,10 @@ class infocardMaintain extends Controller
                                     ->where('date_published','LIKE','%'.$request->date_published.'%')
                                     ->get();
         }
-        return view('IEMS.Linus.FACULTY.searchJournal',compact('journal'));
+        return view('IEMS.Linus.FACULTY.searchJournal')
+        ->with('journal', $journal)
+        ->with('searchRef', $searchRef)
+        ->with('searchDate', $searchDate);
     }
 
     //end of search//
