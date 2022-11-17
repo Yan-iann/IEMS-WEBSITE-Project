@@ -38,7 +38,7 @@
         <section class="col-12">
             <div class="container-fluid">
                 <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
-        @if($journal->count())
+                    @if($journal->count())
                     @foreach ($journal as $item)
                         <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch" data-bs-toggle="modal"
                             data-bs-target="#ModalJournal{{ $item->info_ID }}">
@@ -54,13 +54,12 @@
                             </div>
                         </div>
                         @include('IEMS.Linus.FACULTY.displayJournal')
-                    @endforeach
+                        @endforeach
+                        @else
+                            <h3>No records found</h3>
+                        @endif
                 </div>
-            </div>
-          @include('IEMS.Linus.FACULTY.displayJournal')
-        @endforeach
-      </div>
-    </div>
+                </div>
 </section>
 
         <!-- Delete journal Modal-->
@@ -88,6 +87,7 @@
                 </div>
             </form>
         @endforeach
+
         <!--advance search-->
         <form action="{{ route('advanceSearchJournal') }}" method="GET" enctype="multipart/form-data">
             {!! csrf_field() !!}
@@ -109,7 +109,7 @@
                   <label class="focus-label">Journal Reference:</label>
                     <select class="select floating" id="" name="journal_reference">
                       <option></option>
-                      @foreach($journal as $item)
+                      @foreach($searchRef as $item)
                       <option value="{{ $item->journal_reference }}">{{$item->journal_reference}}</option>
                       @endforeach
                     </select>
@@ -119,7 +119,7 @@
                   <label class="focus-label">Date Published:</label>
                     <select class="select floating" id="" name="date_published">
                       <option></option>
-                      @foreach($journal as $item)
+                      @foreach($searchDate as $item)
                       <option value="{{ $item->date_published }}">{{$item->date_published}}</option>
                       @endforeach
                     </select>

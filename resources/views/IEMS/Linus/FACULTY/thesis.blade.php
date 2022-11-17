@@ -86,6 +86,7 @@
 
 <!-- Add Thesis Modal-->
 <form action="{{ route('storeThesis') }}" method="POST" enctype="multipart/form-data">
+
   <div class="modal fade" id="ModalAddThesis" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
     {!! csrf_field() !!}
       <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
@@ -130,10 +131,15 @@
                   <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
                 </div>
             </div>
-        </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</form>
 
         <!--advance search-->
-        <form action="{{ route('advanceSearchThesis') }}" method="GET" enctype="multipart/form-data">
+<form action="{{ route('advanceSearchThesis') }}" method="GET" enctype="multipart/form-data">
             {!! csrf_field() !!}
             <div class="modal fade" id="ModalSearch" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
@@ -163,7 +169,7 @@
                   <label class="focus-label">Thesis Reference:</label>
                     <select class="select floating" id="" name="thesis_reference">
                       <option></option>
-                      @foreach($searchData as $item)
+                      @foreach($searchRef as $item)
                       <option value="{{ $item->thesis_reference }}">{{$item->thesis_reference}}</option>
                       @endforeach
                     </select>
