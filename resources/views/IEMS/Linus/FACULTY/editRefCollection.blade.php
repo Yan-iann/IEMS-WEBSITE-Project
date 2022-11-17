@@ -5,7 +5,7 @@
       <div class="modal-content  bg-light">
 
       <div class="modal-header border-0 text-center">
-        <h5 class="modal-title  text-center">Bone Details</h5>
+        <h5 class="modal-title  text-center">Reference Details</h5>
         <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       
