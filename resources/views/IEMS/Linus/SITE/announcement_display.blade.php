@@ -1,6 +1,6 @@
 @extends('layouts.IEMS_Layout')
 @section('content')
-    <div class="custom-hero text-wrap subheader blog-post" style=" background-color: rgb(242, 242, 242)">
+    <div data-scroll-section class="custom-hero text-wrap subheader blog-post" style=" background-color: rgb(242, 242, 242)">
         <div class="container "style="padding-top: 30px">
             <div class="row justify-content-center">
 
@@ -28,7 +28,7 @@
 
 
     {{-- Announcement Content --}}
-    <section class="mbr-section article" style="background-color: rgb(242, 242, 242)">
+    <section data-scroll-section class="mbr-section article" style="background-color: rgb(242, 242, 242)">
         <div class="container article" style="padding-bottom:0">
             <div class="row justify-content-center align-items-stretch">
 
@@ -49,9 +49,11 @@
                         <section class="related-posts">
                             <h2 class="section-title mb-4" data-aos="fade-up">Other Posts</h2>
                             <div class="row d-flex justify-content-evenly ">
-                            {{-- For Loop Other Posts up to 2 or 3--}}
+                                {{-- For Loop Other Posts up to 2 or 3 --}}
                                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                                    <a href="#"><h5 class="post-title">Front becomes an official Instagram</h5></a> <!-- Related Post Title -->
+                                    <a href="#">
+                                        <h5 class="post-title">Front becomes an official Instagram</h5>
+                                    </a> <!-- Related Post Title -->
                                 </div>
                             </div>
                         </section>
@@ -63,10 +65,12 @@
 
                 <div class="col-md-12 col-lg-1 order-lg-1">
                     <div class="share sticky-top">
-                        <h3>Share</h3>
+                        <h3>Visit Us</h3>
                         <ul class="list-unstyled share-article">
-                            <li><a href="#"><i class='bx bxl-facebook-circle' style="font-size: 40px; "></i></a></li>
-                            <li><a href="#"><i class='bx bxl-instagram' style="font-size: 40px; "></i></a></li>
+                            <li><a href="https://www.facebook.com/iemsSTEWaRDS/"><i class='bx bxl-facebook-circle'
+                                        style="font-size: 40px; "></i></a></li>
+                            <li><a href="https://www.instagram.com/silliman_u/?hl=en"><i class='bx bxl-instagram'
+                                        style="font-size: 40px; "></i></a></li>
                         </ul>
                     </div>
                 </div>

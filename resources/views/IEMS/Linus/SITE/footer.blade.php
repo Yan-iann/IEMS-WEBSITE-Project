@@ -1,4 +1,5 @@
-<div class="site-footer " style="background-color: #252525">
+<section data-scroll-section>
+<div  class="site-footer " style="background-color: #252525">
     <div class="container">
       <div class="row justify-content-between">
         <div class="col-lg-4 ">
@@ -82,3 +83,4 @@
       </div>
     </div>
 </div>
+</section>

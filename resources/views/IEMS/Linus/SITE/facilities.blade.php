@@ -1,23 +1,24 @@
 @extends('layouts.IEMS_Layout')
 @section('content')
-<section class="mbr-section article" style="background-color: #1DA2d8; padding-top: 180px; padding-bottom: 180px;">
+    <section class="mbr-section article" style="background-color: #1DA2d8; padding-top: 180px; padding-bottom: 180px;"
+        data-scroll-section>
 
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-6 text-center ">
-                <h1 class=" text-white display-2 subheader">Facilities</h1>
-                <h1 class="lead">Various spaces of the college that allows students and
-                    researchers to learn and experience first hand
-                </h1>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6 text-center ">
+                    <h1 class=" text-white display-2 subheader">Facilities</h1>
+                    <h1 class="lead">Various spaces of the college that allows students and
+                        researchers to learn and experience first hand
+                    </h1>
+                </div>
             </div>
         </div>
-    </div>
 
-</section>
+    </section>
 
-{{-- Facilities Section--}}
-<section class="mbr-section article"
-        style="background-color: #FBFBFB; padding-top: 120px; padding-bottom:120px; object-fit:cover;">
+    {{-- Facilities Section --}}
+    <section class="mbr-section article"
+        style="background-color: #FBFBFB; padding-top: 120px; padding-bottom:120px; object-fit:cover;" data-scroll-section>
         <div class="container">
             <div class="row d-flex justify-content-center">
 
@@ -57,11 +58,13 @@
                             <div class="col-12 col-md-6 ">
                                 <div class="image-stack">
                                     <div class="image-stack__item image-stack__item--bottom3">
-                                        <img src="{{ URL::asset('img/Facilities_geneticslab1.jpg') }}" alt="Genetics Lab">
+                                        <img src="{{ URL::asset('img/Facilities_geneticslab1.jpg') }}" alt="Genetics Lab"
+                                            data-scroll data-scroll-speed="-3">
                                     </div>
 
                                     <div class="image-stack__item image-stack__item--top2">
-                                        <img src="{{ URL::asset('img/Facilities_geneticslab2.jpg') }}" alt="Genetics Lab" style="width:80%">
+                                        <img src="{{ URL::asset('img/Facilities_geneticslab2.jpg') }}" alt="Genetics Lab"
+                                            style="width:80%" data-scroll data-scroll-speed="2">
                                     </div>
                                 </div>
                             </div>
@@ -134,11 +137,13 @@
                             <div class="col-12 col-md-6 ">
                                 <div class="image-stack">
                                     <div class="image-stack__item image-stack__item--bottom3">
-                                        <img src="{{ URL::asset('img/Facilities_referencecollection.jpg') }}" alt="Reference Collection">
+                                        <img src="{{ URL::asset('img/Facilities_referencecollection.jpg') }}"
+                                            alt="Reference Collection" data-scroll data-scroll-speed="-1">
                                     </div>
 
                                     <div class="image-stack__item image-stack__item--top">
-                                        <img src="{{ URL::asset('img/Facilities_referencecollection2.jpg') }}" alt="Reference Collection" style="width:80%">
+                                        <img src="{{ URL::asset('img/Facilities_referencecollection2.jpg') }}"
+                                            alt="Reference Collection" style="width:80%" data-scroll data-scroll-speed="2">
                                     </div>
                                 </div>
                             </div>
@@ -159,14 +164,16 @@
                     <div class="row d-flex align-items-center">
 
                         <div class="col-12 col-md-6 col-lg-6">
-                            <img src="{{ URL::asset('img/Facilities_boatshedpumpreservoir.jpg') }}" alt="Shed and Pump and Reservoir">
+                            <img src="{{ URL::asset('img/Facilities_boatshedpumpreservoir.jpg') }}"
+                                alt="Shed and Pump and Reservoir">
                         </div>
 
                         <div class="col-12 col-md-6 col-lg-6 p-5">
                             <h1 class=" display-4 subheader">Boat Shed, Pump, and Reservoir</h1>
                             <p class="lead">An in-campus reservoir along with dive equipments ready for rent
                             </p>
-                            <p class="lead">To learn more about rental rates for our equipments, <a href="/rates">click here</a>
+                            <p class="lead">To learn more about rental rates for our equipments, <a href="/rates">click
+                                    here</a>
                             </p>
                         </div>
                     </div>
@@ -178,7 +185,8 @@
                     <div class="row d-flex align-items-center">
 
                         <div class="col-12 col-md-6 col-lg-6">
-                            <img src="{{ URL::asset('img/Facilities_circulartanksandraceways.jpg') }}" alt="Circular Tanks and Raceways">
+                            <img src="{{ URL::asset('img/Facilities_circulartanksandraceways.jpg') }}"
+                                alt="Circular Tanks and Raceways">
                         </div>
 
                         <div class="col-12 col-md-6 col-lg-6 p-5">
@@ -234,17 +242,18 @@
 
                         <div class="col-12 col-md-6 col-lg-6 p-5">
                             <h1 class=" display-4 subheader">Mangrove Forest</h1>
-                            <p class="lead">A Mangrove Mangal sitauted inside the institution used for nursing and field studies
+                            <p class="lead">A Mangrove Mangal sitauted inside the institution used for nursing and field
+                                studies
                             </p>
                         </div>
                     </div>
                 </div>
 
 
-                </div>
             </div>
         </div>
-</section>
+
+    </section>
 
     {{-- Contact Block --}}
     @include('IEMS\Linus.SITE.contact_block')
