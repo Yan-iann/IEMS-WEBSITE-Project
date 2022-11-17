@@ -38,7 +38,7 @@
         <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
           @foreach($wildlifes as $item)
           <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
-            <div class="card border-dark" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#ModalWildlife{{$item->info_ID}}">
+            <div class="card " style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#ModalWildlife{{$item->info_ID}}">
               <img class="card-img-top "src="{{ asset($item->wildlife_pic) }}" alt="Card image cap">
                 <div class="card-body bg-light text-primary">
                   <h5 class="card-title text-center fst-italic">{{$item->wildlife_scientific_name}}</h5>

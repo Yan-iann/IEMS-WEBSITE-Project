@@ -40,7 +40,7 @@
                 @if($wildlifes->count())
                 @foreach ($wildlifes as $item)
                     <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
-                        <div class="card border-dark" style="width: 18rem;" data-bs-toggle="modal"
+                        <div class="card " style="width: 18rem;" data-bs-toggle="modal"
                             data-bs-target="#ModalWildlife{{ $item->info_ID }}">
                             <img class="card-img-top "src="{{ asset($item->wildlife_pic) }}" alt="Card image cap">
                             <div class="card-body bg-light text-primary">
@@ -85,7 +85,7 @@
                 </div>
             </form>
         @endforeach
-       
+
 <!--advance search-->
 <form action="{{ route('advanceSearchRef') }}" method="GET" enctype="multipart/form-data">
       {!! csrf_field() !!}
@@ -133,5 +133,5 @@
           </div>
         </div>
       </div>
-</form><!--end of form-->  
+</form><!--end of form-->
 @endsection
