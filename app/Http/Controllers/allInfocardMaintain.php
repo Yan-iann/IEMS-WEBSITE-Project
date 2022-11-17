@@ -98,8 +98,24 @@ class allInfocardMaintain extends Controller
                 $path = request()->file('wildlife_pic')->move('storage/images',$filename);
                 $requestData["wildlife_pic"] = $path;
                 Wildlife::create($requestData);
+
+                $searchGenus = DB::table('wildlife')
+                ->select('wildlife.wildlife_genus')
+                ->distinct('wildlife.wildlife_genus')
+                ->where('wildlife_type','Bone')
+                ->get();
+        
+                $searchDate = DB::table('wildlife')
+                ->select('wildlife.date_added')
+                ->distinct('wildlife.date_added')
+                ->where('wildlife_type','Bone')
+                ->get();
+        
                 $wildlife = Wildlife::where('wildlife_type','Bone')->get();
-                return view ('IEMS.Linus.FACULTY.boneCollection')->with('wildlifes', $wildlife);
+                return redirect()->route('boneCollection')
+                ->with('wildlifes', $wildlife)
+                ->with('searchGenus', $searchGenus)
+                ->with('searchDate', $searchDate);
             }
         }
     }//end of adding bone
@@ -132,8 +148,24 @@ class allInfocardMaintain extends Controller
                 $path = request()->file('wildlife_pic')->move('storage/images',$filename);
                 $requestData["wildlife_pic"] = $path;
                 Wildlife::create($requestData);
+
+                $searchGenus = DB::table('wildlife')
+                ->select('wildlife.wildlife_genus')
+                ->distinct('wildlife.wildlife_genus')
+                ->where('wildlife_type','Reference')
+                ->get();
+
+                $searchDate = DB::table('wildlife')
+                ->select('wildlife.date_added')
+                ->distinct('wildlife.date_added')
+                ->where('wildlife_type','Reference')
+                ->get();
+
                 $wildlife = Wildlife::where('wildlife_type','Reference')->get();
-                return view ('IEMS.Linus.FACULTY.refCollection')->with('wildlifes', $wildlife);
+                return redirect()->route('refCollection')
+                ->with('wildlifes', $wildlife)
+                ->with('searchGenus', $searchGenus)
+                ->with('searchDate', $searchDate);
             }
         }
     }//end of adding wildlife
