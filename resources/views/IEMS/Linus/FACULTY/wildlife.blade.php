@@ -42,7 +42,7 @@
               <img class="card-img-top "src="{{ asset($item->wildlife_pic) }}" alt="Card image cap">
                 <div class="card-body bg-light text-primary">
                   <h5 class="card-title text-center fst-italic">{{$item->wildlife_scientific_name}}</h5>
-                  <p class="card-text text-center">>{{$item->wildlife_name}}</p>
+                  <p class="card-text text-center">{{$item->wildlife_name}}</p>
                 </div>
             </div>
             @include('IEMS.Linus.FACULTY.editWildlife')
@@ -100,7 +100,7 @@
                     <input type="file" id="wildlife_pic" class="form-control"  placeholder="Wildlife Picture" name="wildlife_pic">
                   </div>
                   <div class="col-12">
-                    <label for="formGroupExampleInput" class="form-label">Wildlife Name</label>
+                    <label for="formGroupExampleInput" class="form-label">Common Name</label>
                     <input type="input" class="form-control"  placeholder="Enter Wildlife Name" name="wildlife_name">
                   </div>
                   <div class="col-12">
@@ -124,7 +124,7 @@
                     <input type="input" class="form-control" placeholder="Enter Wildlife Genus"  name="wildlife_genus"  name="wildlife_genus" >
                   </div>
                   <div class="col-12 col-md-4">
-                    <label for="formGroupExampleInput2" class="form-label">Specie</label>
+                    <label for="formGroupExampleInput2" class="form-label">Species</label>
                     <input type="input" class="form-control" placeholder="Enter Wildlife Species"  name="wildlife_species" >
                   </div>
                   <div class="col-12">

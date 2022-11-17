@@ -307,6 +307,7 @@
         background: #E5E5E5;
         width: calc(100% - 78px);
         min-height: 100vh;
+        padding:20px
     }
 
     .sidebar.close~.home-section {
@@ -363,10 +364,10 @@
 
 
     .location {
-        background-color: #1DA2D8;
-        color: white;
+
         border-radius: 20px;
         padding-left: 7px;
+        object-fit: contain;
     }
 
     .card-img-top {

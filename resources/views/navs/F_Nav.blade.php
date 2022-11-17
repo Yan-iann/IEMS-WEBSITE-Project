@@ -41,8 +41,8 @@
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="{{ route('boneCollection') }}">Museum</a></li>
-                <li><a href="{{ route('boneCollection') }}">Bones</a></li>
-                <li><a href="{{ route('refCollection') }}">References</a></li>
+                <li><a href="{{ route('boneCollection') }}">Bone</a></li>
+                <li><a href="{{ route('refCollection') }}">Reference</a></li>
             </ul>
         </li>
         <!--end of Museum Bar-->
@@ -58,8 +58,8 @@
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name" href="{{ route('thesis') }}">Thesis Papers</a></li>
-                <li><a href="{{ route('gradThesis') }}">PostGraduate</a></li>
-                <li><a href="{{ route('undergradThesis') }}">UnderGraduate</a></li>
+                <li><a href="{{ route('gradThesis') }}">Graduate</a></li>
+                <li><a href="{{ route('undergradThesis') }}">Under Graduate</a></li>
             </ul>
         </li>
         <!--end of Thesis Paper-->
@@ -105,7 +105,7 @@
         <li>
             <div class="profile-details">
                 <div class="profile-content">
-                    <img src="{{Auth::user()->profile_pic}}" alt="img">
+                    <img src="{{Auth::user()->profile_pic}}">
                 </div>
                 <div class="name-job">
                     <a href="{{ route('Fprofile') }}">
