@@ -15,7 +15,6 @@
             <div class="card-body">
               <h6 class="card-subtitle mb-2 text-muted">Wildlife</h6>
               <h1> {{ $wildlife }}</h1>
-              <h6 class="card-subtitle mb-2 text-muted">Analysis Here</h6>
             </div>
           </div>
         </div>
@@ -25,7 +24,6 @@
             <div class="card-body">
               <h6 class="card-subtitle mb-2 text-muted">Graduate Thesis Papers</h6>
               <h1> {{ $gradThesis }}</h1>
-              <h6 class="card-subtitle mb-2 text-muted">Analysis Here</h6>
             </div>
           </div>
         </div>
@@ -35,7 +33,6 @@
             <div class="card-body">
               <h6 class="card-subtitle mb-2 text-muted">Undergraduate Thesis Papers</h6>
               <h1> {{ $undergradThesis }}</h1>
-              <h6 class="card-subtitle mb-2 text-muted">Analysis Here</h6>
             </div>
           </div>
         </div>
@@ -45,7 +42,6 @@
             <div class="card-body">
               <h6 class="card-subtitle mb-2 text-muted">Journal Articles</h6>
               <h1> {{ $journal }}</h1>
-              <h6 class="card-subtitle mb-2 text-muted">Analysis Here</h6>
             </div>
           </div>
         </div>
