@@ -22,7 +22,9 @@ use DB;
 class IEMSWebsite extends Controller
 {
     function accessHome(){
-        $anno = announcement::orderBy('anno_ID','Desc')->get();
+        $anno = announcement::orderBy('anno_ID','Desc')
+        ->where('announcement.anno_status','approve')
+        ->get();
         //$anno = announcement::all();
         return view('IEMS\Linus.SITE.home')->with('announcement',$anno);
     }

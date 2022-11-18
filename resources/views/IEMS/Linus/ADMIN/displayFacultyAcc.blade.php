@@ -184,6 +184,11 @@
                             <div class="container-fluid">
                                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
 
+                                            <div class="col-12">
+                                                  <label for="profile">Profile Picture:</label>
+                                                  <input type="file" id="profile_pic" class="form-control"  placeholder="Profile Picture" name="profile_pic">
+                                            </div>
+
                                     <div class="col-12 col-md-4 col-lg-4">
                                         <label for="formGroupExampleInput" class="form-label">First Name</label>
                                         <input type="input" class="form-control" placeholder="Enter First Name"
