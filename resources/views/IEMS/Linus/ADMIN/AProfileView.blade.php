@@ -1,4 +1,4 @@
-@extends('layouts.F_Layout')
+@extends('layouts.A_Layout')
 @section('content')
 
 <body>
