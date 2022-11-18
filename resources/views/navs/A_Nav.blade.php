@@ -70,7 +70,7 @@
                 <img src="{{Auth::user()->profile_pic}}" >
             </div>
               <div class="name-job">
-                <a href="{{ route('Fprofile') }}">
+                <a href="{{ route('Aprofile') }}">
                   <div class="profile_name">{{ Auth::user()->name }}
                   </div> <!-- call Name -->
                 </a>
