@@ -95,7 +95,7 @@
 
                                                     {{-- Educational Attainment --}}
                                                     <div class="col-12">
-                                                        <label class="form-label">Educational Attainment</label>
+                                                        <label class="form-label">Highest Educational Attainment</label>
                                                         {{-- insert foreach here para sa educational attainment alone --}}
                                                         {{--
                                                             <ul style:"list-style-type: square">
@@ -132,7 +132,7 @@
 
                                             </div>
                                         </div> {{-- End of Faculty Details Section --}}
-                                       
+
                                     </div>
                                 </div>
                             </div>
@@ -140,7 +140,7 @@
                         @endforeach
                     </div>
             </div>
-        </div>
+
     </section>
 
     {{-- Contact Us Block --}}
