@@ -1,17 +1,15 @@
 @extends('layouts.F_Layout')
 @section('content')
 
-<body>
-  <div class="home-section" style="height: 100%">
+  <div class="container-fluid" style="height: 100%">
     <div class="home-content">
       <span class="text">Profile</span>
     </div>
-  </div>
     @foreach($profile as $item)
     <div class="container-fluid">
-      <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">   
-        <div class="col-12 col-lg-4"> 
-          <img style="width: 200px;"class="imageWildlife" src="{{ asset('storage/images/' .$item->profile_pic) }}" alt="No profile picture">   
+      <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
+        <div class="col-12 col-lg-4">
+          <img style="width: 200px;"class="imageWildlife" src="{{ asset('storage/images/' .$item->profile_pic) }}" alt="No profile picture">
         </div>
           <div class="col-12 col-lg-8">
             <div class="row g-1">
@@ -39,7 +37,7 @@
                 <label for="formGroupExampleInput" class="form-label">Rank</label>
                 <h3>{{$item->rank}}</h3>
               </div>
-          
+
               <div class="col-12  col-lg-7">
                 <label for="formGroupExampleInput" class="form-label">Specialty</label>
                 <h3>{{$item->specialty}}</h3>
@@ -48,8 +46,8 @@
                 <label for="formGroupExampleInput" class="form-label">Educational Attaintment</label>
                 <h3>{{$item->educational}}</h3>
               </div>
-          
-          
+
+
               <div class="col-12"><br>
               </div>
               <div class="col-12"><br>
@@ -58,7 +56,7 @@
               </div>
               <div class="col-12"><br>
                 <!-- Filler -->
-              </div> 
+              </div>
               <div class="col-12"><br>
                 <!-- Filler -->
               </div>
@@ -73,7 +71,7 @@
               <button type="button" class="btn btn-info" data-bs-toggle="modal"
                                         data-bs-target="#ModalEditProf{{ $item->id }}"><i
                                             class='bx bxs-edit'>Edit Profile</i></button>
-             
+
             </div>
       </div>
     </div><!--end of container-->
@@ -135,7 +133,7 @@
                                                                         name="specialty" value="{{ $item->specialty}}">
                                                                 </div>
 
-                                                                
+
                                                                 <div class="col-12">
                                                                     <label for="formGroupExampleInput"
                                                                         class="form-label">Educational Attaintment</label>
@@ -167,5 +165,5 @@
                                 </div>
                             </form>
 @endforeach
-</body>
+  </div>
 @endsection
