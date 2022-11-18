@@ -81,6 +81,9 @@ Route::get('/profile',[infocardMaintain::class, 'Fprofile'])->name('Fprofile');
 Route::post('/editProfile/{id}',[infocardMaintain::class, 'editFprofile'])->name('editFprofile');
 Route::get('/S_profile',[studentController::class, 'Sprofile'])->name('Sprofile');
 Route::post('/S_editProfile/{id}',[studentController::class, 'editSprofile'])->name('editSprofile');
+Route::get('/A_profile',[adminController::class, 'Aprofile'])->name('Aprofile');
+Route::post('/A_editProfile/{id}',[adminController::class, 'editAprofile'])->name('editAprofile');
+
 
 //for analytics
 Route::get('/analytics',[infocardMaintain::class, 'analysis'])->name('analysis');
