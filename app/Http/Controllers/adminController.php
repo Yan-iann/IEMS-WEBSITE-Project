@@ -58,6 +58,7 @@ class adminController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'user_type' => 'required',
             ]);
+
                     $user = [
                         'name' => $request->name,
                         'email' => $request->email,
@@ -66,6 +67,15 @@ class adminController extends Controller
                     ];
                     User::create($user);
                     $id = DB::table("users")->select("id")->orderBy('id','desc')->value('id');
+
+                    if($request->hasfile('profile_pic'))
+                    {
+                        
+                        $file = $request->file('profile_pic');
+                        $extention = $file->getClientOriginalExtension();
+                        $filename = time(). '.'.$extention;
+                        $file->move('storage/images',$filename);
+                    }
                     $userInfo = [
                         'name' => $request->name,
                         'middle_name' => $request->middle_name,
@@ -74,6 +84,7 @@ class adminController extends Controller
                         'specialty'=> $request->specialty,
                         'educational'=> $request->educational,
                         'phone_no'=> $request->phone_no,
+                        'profile_pic' =>  $filename,
                         'user_ID' => $id,
                     ];
                     user_info::create($userInfo);

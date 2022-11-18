@@ -37,7 +37,7 @@
                 @foreach ($user as $item)
                     <div class="col-6 col-md-2 col-lg-2" style="margin: 20px">
                         <div class="card bg-transparent" style="width: 18rem; border:none; cursor:default">
-                            <img src="{{-- Photo --}}" class="card-img-top" alt="...">
+                            <img src="{{ asset('storage/images/' .$item->profile_pic) }}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $item->name }}</h5> {{-- Name Of Faculty --}}
                                 <p class="card-text">{{ $item->rank }}</p> {{-- Rank Of Faculty --}}
@@ -46,6 +46,9 @@
                                     Details</button>
                             </div>
                         </div>
+                    </div>
+                @endforeach
+                @foreach ($user as $item)
                         {{-- View Faculty Details Modal --}}
                         <div class="modal fade" id="viewfacultydetails{{ $item->id }}" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="height: 80vh; padding:0px">
@@ -55,10 +58,7 @@
 
                                         {{-- Faculty Photo Section --}}
                                         <div class="col-md-6 d-flex p-0">
-                                            <div class="modal-body  img d-flex img text-center d-flex align-items-center"
-                                                style="background-image: url('img/Home_Banner.png');  {{-- Photo --}}
-                                                background-size:cover;background-repeat: no-repeat; background-blend-mode: multiply; background-position: center">
-                                            </div>
+                                        <img src="{{ asset('storage/images/' .$item->profile_pic) }}" class="card-img-top" alt="...">
                                         </div> {{-- End of Faculty Photo Section --}}
 
                                         {{-- Faculty Details Section --}}
@@ -131,19 +131,14 @@
 
 
                                             </div>
-
-
                                         </div> {{-- End of Faculty Details Section --}}
+                                       
                                     </div>
                                 </div>
                             </div>
                         </div> {{-- End of Modal --}}
+                        @endforeach
                     </div>
-                @endforeach
-
-
-
-
             </div>
         </div>
     </section>
