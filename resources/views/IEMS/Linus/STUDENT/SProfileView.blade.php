@@ -1,7 +1,7 @@
 @extends('layouts.S_Layout')
 @section('content')
 
-  <div class="home-section" style="height: 100%">
+  <div class="container-fluid" >
     <div class="home-content">
       <span class="text">Profile</span>
   </div>
