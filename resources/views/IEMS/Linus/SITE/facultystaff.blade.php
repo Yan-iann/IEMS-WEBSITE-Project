@@ -58,7 +58,7 @@
 
                                         {{-- Faculty Photo Section --}}
                                         <div class="col-md-6 d-flex p-0">
-                                        <img src="{{ asset('storage/images/' .$item->profile_pic) }}" class="card-img-top" alt="...">
+                                        <img src="{{ asset('storage/images/'.$item->profile_pic) }}" class="card-img-top" alt="...">
                                         </div> {{-- End of Faculty Photo Section --}}
 
                                         {{-- Faculty Details Section --}}
@@ -89,7 +89,7 @@
 
                                                     {{-- Specialty --}}
                                                     <div class="col-12 col-lg-6">
-                                                        <label class="form-label"></label>
+                                                        <label class="form-label">Specialty</label>
                                                         <h3>{{ $item->specialty }}</h3>
                                                     </div>
 
