@@ -1,8 +1,10 @@
+
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            
+        
         </x-slot>
+
         @if(Session::get('fail'))
         <div class="alert alert-danger">
             {{ Session::get('fail')}}
