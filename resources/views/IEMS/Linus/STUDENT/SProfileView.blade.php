@@ -1,11 +1,9 @@
 @extends('layouts.S_Layout')
 @section('content')
 
-<body>
-  <div class="home-section" style="height: 100%">
+  <div class="container-fluid" >
     <div class="home-content">
       <span class="text">Profile</span>
-    </div>
   </div>
     @foreach($profile as $item)
     <div class="container-fluid">
@@ -130,5 +128,5 @@
                                 </div>
                             </form>
 @endforeach
-</body>
+</div>
 @endsection

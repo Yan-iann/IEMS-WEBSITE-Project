@@ -233,6 +233,8 @@
                         </div>
                         {{-- end Announcement Card Loop --}}
 
+                        
+                        @endforeach
                         {{-- View Announcements Card --}}
                         <div class="item col-md-1 col-lg-1 order-lg-2 my-10">
                             <div class="card align-text-bottom border-dark"
@@ -250,7 +252,6 @@
                                 </div>
                             </div>
                         </div>
-                        @endforeach
                     </div> {{-- end wrapper --}}
                 </div> {{-- end div col group}}
 
