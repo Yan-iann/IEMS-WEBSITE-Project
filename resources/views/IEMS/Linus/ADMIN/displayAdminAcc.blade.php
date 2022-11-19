@@ -63,53 +63,55 @@
                                         class='bx bx-trash'></i></button>
                             </td>
                         </tr>
-                        <!-- Edit User Modal-->
-                        <form action="{{ route('updateUser', $user->id) }}" method="post" enctype="multipart/form-data">
-                            <div class="modal fade" id="ModalEditUser{{ $user->id }}" tabindex="-1"
-                                aria-labelledby="ModalLabel" aria-hidden="true">
-                                {!! csrf_field() !!}
-                                <div class="modal-dialog modal-dialog-centered modUal-dialog-scrollable modal-lg">
-                                    <div class="modal-content  bg-light">
+                       <!-- Edit User Modal-->
+                       <form action="{{ route('updateUser', $user->id) }}" method="post" enctype="multipart/form-data">
+                                <div class="modal fade" id="ModalEditUser{{ $user->id }}" tabindex="-1"
+                                    aria-labelledby="ModalLabel" aria-hidden="true">
+                                    {!! csrf_field() !!}
+                                    <div class="modal-dialog modal-dialog-centered modUal-dialog-scrollable modal-lg">
+                                        <div class="modal-content  bg-light">
 
-                                        <div class="modal-header border-0 text-center">
-                                            <h5 class="modal-title  text-center">User Account Details</h5>
-                                            <button type="button" class="btn-close btn-info bg-info"
-                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="container-fluid">
-                                                <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
+                                            <div class="modal-header border-0 text-center">
+                                                <h5 class="modal-title  text-center">User Account Details</h5>
+                                                <button type="button" class="btn-close btn-info bg-info"
+                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="container-fluid">
+                                                    <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
 
-                                                    <div class="col-12">
-                                                        <label for="formGroupExampleInput" class="form-label">User
-                                                            Name</label>
-                                                        <input type="text" class="form-control" name="name"
-                                                            value="{{ $user->name }}">
+                                                                <div class="col-12">
+                                                                    <label for="formGroupExampleInput"
+                                                                        class="form-label">User Name</label>
+                                                                    <input type="text" class="form-control"
+                                                                        name="name" value="{{ $user->name }}">
+                                                                </div>
 
-                                                        <div class="col-12">
-                                                            <label for="formGroupExampleInput" class="form-label">User
-                                                                Email</label>
-                                                            <input type="text" class="form-control" name="email"
-                                                                value="{{ $user->email }}">
-                                                        </div>
 
-                                                        <div class="col-12 col-lg-4">
-                                                            <label for="formGroupExampleInput2" class="form-label">User
-                                                                Type</label>
-                                                            <input type="text" class="form-control" name="user_type"
-                                                                value="{{ $user->user_type }}">
-                                                        </div>
+                                                                <div class="col-12">
+                                                                    <label for="formGroupExampleInput"
+                                                                        class="form-label">User Email</label>
+                                                                    <input type="text" class="form-control"
+                                                                        name="email" value="{{ $user->email }}">
+                                                                </div>
 
-                                                        <div class="col-12">
-                                                            {{-- Filler Collumn --}}
-                                                        </div>
+                                                                <div class="col-4">
+                                                                    <label for="formGroupExampleInput2" class="form-label">User
+                                                                        Type</label>
+                                                                    <input type="text" class="form-control" name="user_type"
+                                                                        value="{{ $user->user_type }}">
+                                                                </div>
 
-                                                        <div class="col-12">
+
+                                                        <div class="col-12 ">
                                                             <label for="formGroupExampleInput2" class="form-label">User
                                                                 Password</label>
                                                             <input type="password" class="form-control" name="password"
                                                                 value="{{ $user->password }}">
                                                         </div>
+
+                                                        <input type="hidden" class="form-control" name="changed_pass" value= "0">
+
 
                                                         <div class="modal-footer border-0">
                                                             <button type="submit" class="btn btn-info"
@@ -124,7 +126,10 @@
                                         </div>
                                     </div>
                                 </div>
-                        </form>
+                            </form>
+                            <!--end of edit modal-->
+
+
                         <!-- Delete Wildlife Modal-->
                         <form action="{{ route('deleteUser', $user->id) }}" method="get" enctype="multipart/form-data">
                             <div class="modal fade" id="ModalDeleteUser{{ $user->id }}" tabindex="-1"

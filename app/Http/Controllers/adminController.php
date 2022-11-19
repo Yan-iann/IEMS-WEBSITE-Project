@@ -76,7 +76,6 @@ class adminController extends Controller
                         $extention = $file->getClientOriginalExtension();
                         $filename = time(). '.'.$extention;
                         $file->move('storage/images',$filename);
-                    }
                     $userInfo = [
                         'name' => $request->name,
                         'middle_name' => $request->middle_name,
@@ -88,6 +87,20 @@ class adminController extends Controller
                         'profile_pic' =>  $filename,
                         'user_ID' => $id,
                     ];
+                    }
+                    else
+                    {
+                        $userInfo = [
+                            'name' => $request->name,
+                            'middle_name' => $request->middle_name,
+                            'last_name' => $request->last_name,
+                            'rank'=> $request-> rank,
+                            'specialty'=> $request->specialty,
+                            'educational'=> $request->educational,
+                            'phone_no'=> $request->phone_no,
+                            'user_ID' => $id,
+                        ];
+                    }
                     user_info::create($userInfo);
                     $user = User::all();
                     return view ('IEMS.Linus.ADMIN.adminDashboard')->with('user', $user);

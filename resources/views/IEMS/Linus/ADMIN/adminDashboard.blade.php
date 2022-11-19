@@ -114,6 +114,7 @@
                                                                 value="{{ $user->password }}">
                                                         </div>
 
+                                                        <input type="hidden" class="form-control" name="changed_pass" value= "0">
 
 
                                                         <div class="modal-footer border-0">
@@ -130,6 +131,8 @@
                                     </div>
                                 </div>
                             </form>
+                            <!--end of edit modal-->
+
                             <!-- Delete Wildlife Modal-->
                             <form action="{{ route('deleteUser', $user->id) }}" method="get"
                                 enctype="multipart/form-data">
@@ -144,7 +147,7 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body border-0">
-                                                <p>Are you sure you want to delete this information card?</p>
+                                                <p>Are you sure you want to delete this User Account?</p>
                                             </div>
                                             <div class="modal-footer border-0">
                                                 <button type="submit" class="btn btn-danger">Delete</button>
@@ -155,6 +158,7 @@
                                     </div>
                                 </div>
                             </form>
+                            <!--end of delete modal-->
                         @endforeach
                     </tbody>
                 </table>
