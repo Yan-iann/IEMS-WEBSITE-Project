@@ -4,36 +4,9 @@
         <div class="home-content">
 
             <i class='bx bx-menu'></i>
-            <span class="text">Admin Accounts</span>
+            <span class="text">Admin Account</span>
         </div>
-
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="">
-                            <td></td>
-                            <td></td>
-                            <td><input type="search" name="searchUser" class="form-control mr-sm2"
-                                    placeholder="Search User"></td>
-                            <td><button class="btn btn-primary btn-sm" type="submit">Search</button></td>
-                        </form>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-        <!--end of search bar-->
-
-
-        <div class="row">
-
-            <div class="text-right">
-                <a href=""><i class="typcn typcn-document-add" id="addbutton" data-toggle="tooltip"
-                        data-placement="left" title="Add New Faculty Account"></i> </a>
-            </div>
-        </div>
-
-
+    </div>
         <br>
         <div class="table-responsive">
             <table class="table table-hover mg-b-0 text-center" id="maintables">
@@ -57,10 +30,8 @@
                             <td class="align-middle">{{ $user->user_type }}</td>
                             <td class="align-middle">
                                 <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                                    data-bs-target="#ModalEditUser{{ $user->id }}"><i class='bx bxs-edit'></i></button>
-                                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                                    data-bs-target="#ModalDeleteUser{{ $user->id }}"> <i
-                                        class='bx bx-trash'></i></button>
+                                data-bs-target="#ModalEditUser{{ $user->id }}"><i class='bx bxs-edit'></i>
+                                </button>
                             </td>
                         </tr>
                        <!-- Edit User Modal-->
@@ -126,9 +97,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </form>
-                            <!--end of edit modal-->
-
+                       </form>
+                        <!--end of edit modal-->  
 
                         <!-- Delete Wildlife Modal-->
                         <form action="{{ route('deleteUser', $user->id) }}" method="get" enctype="multipart/form-data">
@@ -158,6 +128,4 @@
                 </tbody>
             </table>
         </div>
-
-    </div>
 @endsection

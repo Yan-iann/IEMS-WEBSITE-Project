@@ -7,7 +7,7 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\studentController;
 use App\Http\Controllers\guestController;
 use App\Http\Controllers\IEMSWebsite;
-use App\Http\Controllers\AuthenticatedSessionController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\RegisteredUserController;
@@ -116,6 +116,7 @@ Route::get('/searchRef',[infocardMaintain::class, 'searchRef'])->name('searchRef
 
 //for storing user information
 Route::post('/storeUser',[adminController::class, 'storeUserInfo'])->name('storeUserInfo');
+Route::post('/storeUserFaculty',[adminController::class, 'storeUserFaculty'])->name('storeUserFaculty');
 Route::post('/updateUser/{id}',[adminController::class, 'updateUser'])->name('updateUser');
 Route::get('/deleteUser/{id}',[adminController::class, 'deleteUser'])->name('deleteUser');
 Route::get('/AdminAccounts', [adminController::class, 'adminAccounts'])->name('adminAccounts');

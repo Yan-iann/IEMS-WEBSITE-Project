@@ -9,6 +9,7 @@ use App\Models\user_info;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
@@ -48,23 +49,28 @@ class adminController extends Controller
     public function storeUserInfo(Request $request)
     {
             $validator = Validator::make($request->all(), [
-            'middle_name' => 'required',
-            'last_name' => 'required',
             'name' => 'required',
-            'rank' => 'required',
-            'specialty' => 'required',
-            'educational' => 'required',
-            'phone_no' => 'required',
+            'last_name' => 'required',
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'user_type' => 'required',
+            'password' => [
+                'required', 
+                'regex:/[a-z]/',      // must contain at least one lowercase letter
+                'regex:/[A-Z]/',      // must contain at least one uppercase letter
+                'regex:/[0-9]/',      // must contain at least one digit
+            ],
             ]);
-
-                    $user = [
-                        'name' => $request->name,
-                        'email' => $request->email,
-                        'password' => Hash::make($request->password),
-                        'user_type' => $request->user_type,
+            if($validator->fails())
+            {
+                return redirect()->back()
+                ->with('fail','Creating Account Failed. Please try again');
+            }//if failed return back
+            else
+            {
+                $user = [
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'password' => Hash::make($request->password),
+                    'user_type' => $request->user_type,
                     ];
                     User::create($user);
                     $id = DB::table("users")->select("id")->orderBy('id','desc')->value('id');
@@ -76,7 +82,8 @@ class adminController extends Controller
                         $extention = $file->getClientOriginalExtension();
                         $filename = time(). '.'.$extention;
                         $file->move('storage/images',$filename);
-                    $userInfo = [
+
+                        $userInfo = [
                         'name' => $request->name,
                         'middle_name' => $request->middle_name,
                         'last_name' => $request->last_name,
@@ -103,10 +110,89 @@ class adminController extends Controller
                     }
                     user_info::create($userInfo);
                     $user = User::all();
-                    return view ('IEMS.Linus.ADMIN.adminDashboard')->with('user', $user);
-
-            event(new Registered($user));
+                    return redirect()->route('adminDashboard')
+                    ->with('sucess','Student User Account Successfully Created')
+                    ->with('user', $user);
+                    event(new Registered($user));  
+            }//if sucessful   
     }//end of adding userInformation
+
+    //for faculty
+    public function storeUserFaculty(Request $request)
+    {
+            $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'last_name' => 'required',
+            'educational' => 'required',
+            'rank' => 'required',
+            'specialty' => 'required',
+            'phone_no' => 'required',
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => [
+                'required', 
+                'regex:/[a-z]/',      // must contain at least one lowercase letter
+                'regex:/[A-Z]/',      // must contain at least one uppercase letter
+                'regex:/[0-9]/',      // must contain at least one digit
+            ],
+            ]);
+            if($validator->fails())
+            {
+                return redirect()->back()
+                ->with('fail','Creating Account Failed. Please fill all the textfields');
+            }//if failed return back
+            else
+            {
+                $user = [
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'password' => Hash::make($request->password),
+                    'user_type' => $request->user_type,
+                ];
+                User::create($user);
+                $id = DB::table("users")->select("id")->orderBy('id','desc')->value('id');
+
+                    if($request->hasfile('profile_pic'))
+                    {
+                    
+                        $file = $request->file('profile_pic');
+                        $extention = $file->getClientOriginalExtension();
+                        $filename = time(). '.'.$extention;
+                        $file->move('storage/images',$filename);
+                        $userInfo = [
+                            'name' => $request->name,
+                            'middle_name' => $request->middle_name,
+                            'last_name' => $request->last_name,
+                            'rank'=> $request-> rank,
+                            'specialty'=> $request->specialty,
+                            'educational'=> $request->educational,
+                            'phone_no'=> $request->phone_no,
+                            'profile_pic' =>  $filename,
+                            'user_ID' => $id,
+                        ];
+                    } //if naay picture
+                    else
+                    {
+                        $userInfo = [
+                            'name' => $request->name,
+                            'middle_name' => $request->middle_name,
+                            'last_name' => $request->last_name,
+                            'rank'=> $request-> rank,
+                            'specialty'=> $request->specialty,
+                            'educational'=> $request->educational,
+                            'phone_no'=> $request->phone_no,
+                            'user_ID' => $id,
+                        ];
+                    }//if walay picture
+
+                        user_info::create($userInfo);
+                        $user = User::all();
+                        return redirect()->route('adminDashboard')
+                        ->with('sucess','Faculty User Account Successfully Created')
+                        ->with('user', $user);
+                        event(new Registered($user));
+
+            }//successful    
+    }//end of adding faculty userInformation
 
     public function updateUser(Request $request, $id)
     {
@@ -114,14 +200,17 @@ class adminController extends Controller
         $input = $request->all();
         $user->update($input);
         $user = User::all();
-        return view ('IEMS.Linus.ADMIN.adminDashboard')->with('user', $user);
+        return redirect()->back()
+        ->with('sucess','Account Succesfully Updated');
     }//end of updating users table
 
     public function deleteUser($id)
     {
         User::destroy($id);
         $user = User::all();
-        return view ('IEMS.Linus.ADMIN.adminDashboard')->with('user', $user);
+        return redirect()->back()
+        ->with('user', $user)
+        ->with('sucess','Account Succesfully Deleted');
     }//end of deleting user accounts
 
     public function Aprofile()

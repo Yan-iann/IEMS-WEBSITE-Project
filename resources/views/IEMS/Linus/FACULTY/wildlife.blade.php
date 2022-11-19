@@ -1,7 +1,17 @@
 @extends('layouts.F_Layout')
 @section('content')
 <div class="container-fluid">
+                                @if(Session::get('fail'))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('fail')}}
+                                </div>
+                                @endif
 
+                                @if(Session::get('sucess'))
+                                    <div class="alert alert-success">
+                                      {{ Session::get('sucess')}}
+                                    </div>
+                                @endif
     <div class="col-12">
 
         <div class="row d-flex justify-content-around">

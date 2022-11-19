@@ -35,13 +35,26 @@ class RegisteredUserController extends Controller
         //$change->password = Hash::make($request->input('changed_pass'));
         $change->password = Hash::make($request->password);
         $change->changed_pass = '1';
-        $change->save();         
-        return view ('auth.login');
-
-        Auth::login($user);
-        
-        return redirect(RouteServiceProvider::HOME);  
+        $change->save(); 
+        if(Auth::user()->user_type == 'Admin')
+        {
+                return redirect()->route('adminDashboard')
+                ->with('sucess','New Password Updated');
+        }
+        else if(Auth::user()->user_type == 'Faculty')
+        {
+           
+                return redirect()->route('facultyDashboard')
+                ->with('sucess','New Password Updated'); 
+        }
+        else if(Auth::user()->user_type == 'Student')
+        {
+            
+                return redirect()->route('studentDashboard')
+                ->with('sucess','New Password Updated'); 
+        }
     }
+
     public function firstTime()
     {
         $profile = DB::table('users')
