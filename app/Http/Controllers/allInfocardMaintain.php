@@ -9,26 +9,34 @@ use App\Models\Wildlife;
 use App\Models\thesis_paper;
 use App\Models\journal_article;
 use Illuminate\Support\Facades\Redirect;  
+use App\Providers\RouteServiceProvider;
 use DB;
 class allInfocardMaintain extends Controller
 {
-    
     public function storeDataWildlife(Request $request)
     {
          $validator = Validator::make(request()->all(), [
+        'wildlife_pic' => 'required',
         'wildlife_name' => 'required',
         'wildlife_scientific_name' => 'required',
+        'wildlife_class'  => 'required',
         'wildlife_desc' => 'required',
-        'wildlife_pic' => 'required',
+        'wildlife_order' => 'required',
+        'wildlife_family' => 'required',
+        'wildlife_genus' => 'required',
+        'wildlife_species' => 'required',
+        'wildlife_location' => 'required',
+        'wildlife_desc' => 'required',
+        'date_added' => 'required',
         'wildlife_status' => 'required',
         'wildlife_type' => 'required',
         'info_type' => 'required',
         ]);
-    
         if($validator->fails())
         {
-        return back()->withErrors($validator)->withInput()->with('error','Something went wrong. Please try again.');
-        }
+            return redirect()->back()
+            ->with('fail','Please Provide All Information');
+        }//failed
         else
         {
             $infocard = new Infocard;
@@ -65,27 +73,35 @@ class allInfocardMaintain extends Controller
                 ->with('wildlifes', $wildlife)
                 ->with('searchClass', $searchClass)
                 ->with('searchSpecie', $searchSpecie)
-                ->with('searchLoc', $searchLoc);
+                ->with('searchLoc', $searchLoc)
+                ->with('sucess','Critter Added Succesfully');
             }
-        }
+            else
+            {
+                return redirect()->back()
+                ->with('fail','Infocard Not Saved');
+            }
+        }//successful validation
     }//end of adding wildlife
 
     public function storeDataBone(Request $request)
     {
-         $validator = Validator::make(request()->all(), [
+        $validator = Validator::make(request()->all(), [
+        'wildlife_pic' => 'required',
         'wildlife_name' => 'required',
         'wildlife_scientific_name' => 'required',
+        'wildlife_genus' => 'required',
         'wildlife_desc' => 'required',
-        'wildlife_pic' => 'required',
+        'date_added' => 'required',
         'wildlife_status' => 'required',
         'wildlife_type' => 'required',
         'info_type' => 'required',
         ]);
-    
         if($validator->fails())
         {
-        return back()->withErrors($validator)->withInput()->with('error','Something went wrong. Please try again.');
-        }
+            return redirect()->back()
+            ->with('fail','Please Provide All Information');
+        }//failed
         else
         {
             $infocard = new Infocard;
@@ -115,9 +131,15 @@ class allInfocardMaintain extends Controller
                 return redirect()->route('boneCollection')
                 ->with('wildlifes', $wildlife)
                 ->with('searchGenus', $searchGenus)
-                ->with('searchDate', $searchDate);
+                ->with('searchDate', $searchDate)
+                ->with('sucess','Whale Bone Added Succesfully');
             }
-        }
+            else
+            {
+                return redirect()->back()
+                ->with('fail','Infocard Not Saved');
+            }
+        }//succesfull fields
     }//end of adding bone
 
     public function storeDataRef(Request $request)

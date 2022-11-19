@@ -290,59 +290,94 @@ class infocardMaintain extends Controller
 
     public function updateWildlife(Request $request, $info_ID)
     {
-        $wildlife = Wildlife::find($info_ID);
-        $input = $request->all();
-        $wildlife->update($input);
-
-        $searchClass = DB::table('wildlife')
-        ->select('wildlife.wildlife_class')
-        ->distinct('wildlife.wildlife_class')
-        ->where('wildlife_type','Zoo')
-        ->get();
-
-        $searchSpecie = DB::table('wildlife')
-        ->select('wildlife.wildlife_species')
-        ->distinct('wildlife.wildlife_species')
-        ->where('wildlife_type','Zoo')
-        ->get();
-
-        $searchLoc = DB::table('wildlife')
-        ->select('wildlife.wildlife_location')
-        ->distinct('wildlife.wildlife_location')
-        ->where('wildlife_type','Zoo')
-        ->get();
+        $validator = Validator::make(request()->all(), [
+            'wildlife_name' => 'required',
+            'wildlife_scientific_name' => 'required',
+            'wildlife_class'  => 'required',
+            'wildlife_desc' => 'required',
+            'wildlife_order' => 'required',
+            'wildlife_family' => 'required',
+            'wildlife_genus' => 'required',
+            'wildlife_species' => 'required',
+            'wildlife_location' => 'required',
+            ]);
+            if($validator->fails())
+            {
+                return redirect()->back()
+                ->with('fail','Please Provide All Information');
+            }//failed
+            else
+            {
+                $wildlife = Wildlife::find($info_ID);
+                $input = $request->all();
+                $wildlife->update($input);
         
-        $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
-        return redirect()->route('wildlife')
-        ->with('wildlifes', $wildlife)
-        ->with('searchClass', $searchClass)
-        ->with('searchSpecie', $searchSpecie)
-        ->with('searchLoc', $searchLoc);
+                $searchClass = DB::table('wildlife')
+                ->select('wildlife.wildlife_class')
+                ->distinct('wildlife.wildlife_class')
+                ->where('wildlife_type','Zoo')
+                ->get();
+        
+                $searchSpecie = DB::table('wildlife')
+                ->select('wildlife.wildlife_species')
+                ->distinct('wildlife.wildlife_species')
+                ->where('wildlife_type','Zoo')
+                ->get();
+        
+                $searchLoc = DB::table('wildlife')
+                ->select('wildlife.wildlife_location')
+                ->distinct('wildlife.wildlife_location')
+                ->where('wildlife_type','Zoo')
+                ->get();
+                
+                $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
+                return redirect()->route('wildlife')
+                ->with('wildlifes', $wildlife)
+                ->with('searchClass', $searchClass)
+                ->with('searchSpecie', $searchSpecie)
+                ->with('searchLoc', $searchLoc)
+                ->with('sucess','Critter Information Updated Successfully');
+            }    
     }
 
     public function updateBone(Request $request, $info_ID)
     {
-        $wildlife = Wildlife::find($info_ID);
-        $input = $request->all();
-        $wildlife->update($input);
+        $validator = Validator::make(request()->all(), [
+            'wildlife_name' => 'required',
+            'wildlife_scientific_name' => 'required',
+            'wildlife_genus' => 'required',
+            'wildlife_desc' => 'required',
+            ]);
+            if($validator->fails())
+            {
+                return redirect()->back()
+                ->with('fail','Please Provide All Information');
+            }//failed
+            else
+            {
+                $wildlife = Wildlife::find($info_ID);
+                $input = $request->all();
+                $wildlife->update($input);
 
-        $searchGenus = DB::table('wildlife')
-        ->select('wildlife.wildlife_genus')
-        ->distinct('wildlife.wildlife_genus')
-        ->where('wildlife_type','Bone')
-        ->get();
+                $searchGenus = DB::table('wildlife')
+                ->select('wildlife.wildlife_genus')
+                ->distinct('wildlife.wildlife_genus')
+                ->where('wildlife_type','Bone')
+                ->get();
 
-        $searchDate = DB::table('wildlife')
-        ->select('wildlife.date_added')
-        ->distinct('wildlife.date_added')
-        ->where('wildlife_type','Bone')
-        ->get();
+                $searchDate = DB::table('wildlife')
+                ->select('wildlife.date_added')
+                ->distinct('wildlife.date_added')
+                ->where('wildlife_type','Bone')
+                ->get();
 
-        $wildlife = Wildlife::where('wildlife_type','Bone')->get();
-        return redirect()->route('boneCollection')
-        ->with('wildlifes', $wildlife)
-        ->with('searchGenus', $searchGenus)
-        ->with('searchDate', $searchDate);
+                $wildlife = Wildlife::where('wildlife_type','Bone')->get();
+                return redirect()->route('boneCollection')
+                ->with('wildlifes', $wildlife)
+                ->with('searchGenus', $searchGenus)
+                ->with('searchDate', $searchDate)
+                ->with('sucess','Whale Bone Information Updated Successfully');
+            }
     }
     public function updateRef(Request $request, $info_ID)
     {

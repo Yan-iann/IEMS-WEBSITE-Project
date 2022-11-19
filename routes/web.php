@@ -25,10 +25,12 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 
 //main landing page of the site
 Route::get('/', [IEMSWebsite::class, 'accessHome']); //access announcement table
-
-
-//for login/////////////////////
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
+
+Route::prefix('IEMS')->middleware('auth','isAdmin','isFaculty','isStudent')->group(function(){ 
+    Route::get('/firstTime', [RegisteredUserController::class, 'firstTime'])->name('firstTime');
+    Route::post('/updatePassword/{id}',[RegisteredUserController::class, 'updatePass'])->name('updatePass');
+});
 
 Route::prefix('IEMSAdmin')->middleware('auth','isAdmin')->group(function(){
     Route::get('/adminDashboard', [adminController::class, 'adminDashboard'])->name('adminDashboard');
@@ -115,28 +117,17 @@ Route::prefix('IEMSStudent')->middleware('auth','isStudent')->group(function(){
     Route::post('/storeRequest',[studentController::class, 'storeAnno'])->name('storeAnno');
     Route::post('/updateAnnouncement/{id}',[studentController::class, 'updateAnno'])->name('updateAnno');
     Route::get('/deleteAnnouncement/{id}',[studentController::class, 'deleteAnno'])->name('deleteAnno');
-
-//for searching
-Route::get('/S_searchWildlife',[studentController::class, 'searchWildlife'])->name('S_searchWildlife');
-Route::get('/S_advanceSearchWildlife',[studentController::class, 'advanceSearchWildlife'])->name('S_advanceSearchWildlife');
-Route::get('/S_searchThesis',[studentController::class, 'searchThesis'])->name('S_searchThesis');
-Route::get('/S_advanceSearchThesis',[studentController::class, 'advanceSearchThesis'])->name('S_advanceSearchThesis');
-Route::get('/S_searchJournal',[studentController::class, 'searchJournal'])->name('S_searchJournal');
-Route::get('/S_advanceSearchJournal',[studentController::class, 'advanceSearchJournal'])->name('S_advanceSearchJournal');
-Route::get('/S_searchBone',[studentController::class, 'searchBone'])->name('S_searchBone');
-Route::get('/S_advanceSearchBone',[studentController::class, 'advanceSearchBone'])->name('S_advanceSearchBone');
-Route::get('/S_searchRef',[studentController::class, 'searchRef'])->name('S_searchRef');
-Route::get('/S_advanceSearchRef',[studentController::class, 'advanceSearchRef'])->name('S_advanceSearchRef');
-
-
-
+    Route::get('/S_searchWildlife',[studentController::class, 'searchWildlife'])->name('S_searchWildlife');
+    Route::get('/S_advanceSearchWildlife',[studentController::class, 'advanceSearchWildlife'])->name('S_advanceSearchWildlife');
+    Route::get('/S_searchThesis',[studentController::class, 'searchThesis'])->name('S_searchThesis');
+    Route::get('/S_advanceSearchThesis',[studentController::class, 'advanceSearchThesis'])->name('S_advanceSearchThesis');
+    Route::get('/S_searchJournal',[studentController::class, 'searchJournal'])->name('S_searchJournal');
+    Route::get('/S_advanceSearchJournal',[studentController::class, 'advanceSearchJournal'])->name('S_advanceSearchJournal');
+    Route::get('/S_searchBone',[studentController::class, 'searchBone'])->name('S_searchBone');
+    Route::get('/S_advanceSearchBone',[studentController::class, 'advanceSearchBone'])->name('S_advanceSearchBone');
+    Route::get('/S_searchRef',[studentController::class, 'searchRef'])->name('S_searchRef');
+    Route::get('/S_advanceSearchRef',[studentController::class, 'advanceSearchRef'])->name('S_advanceSearchRef');
 });
-Route::prefix('IEMS')->middleware('auth','isAdmin','isFaculty','isStudent')->group(function(){ 
-    Route::get('/firstTime', [RegisteredUserController::class, 'firstTime'])->name('firstTime');
-    Route::post('/updatePassword/{id}',[RegisteredUserController::class, 'updatePass'])->name('updatePass');
-
-});
-
 
 //FOR GUEST///////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/dashboardGuest', [guestController::class, 'guestDashboard'])->name('guestDashboard');

@@ -3,6 +3,16 @@
 
     <div class="container-fluid">
         {{-- Page Name, and Burger Icon. AND Search Bar --}}
+                             @if(Session::get('fail'))
+                                    <div class="alert alert-danger">
+                                        {{ Session::get('fail')}}
+                                    </div>
+                             @endif
+                             @if(Session::get('sucess'))
+                                    <div class="alert alert-success">
+                                      {{ Session::get('sucess')}}
+                                    </div>
+                                @endif
         <div class="col-12">
 
             <div class="row d-flex justify-content-around">
@@ -94,7 +104,7 @@
                     <div class="modal-content  bg-light">
 
                         <div class="modal-header border-0 text-center">
-                            <h5 class="modal-title  text-center">Add Bone Collection Information</h5>
+                            <h5 class="modal-title  text-center">Add Whale Bone Information</h5>
                             <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
                         </div>
@@ -105,41 +115,38 @@
                                     <div class="col-12">
                                         <label for="wildlife_pic">Bone Picture:</label>
                                         <input type="file" id="wildlife_pic" class="form-control"
-                                            placeholder="Wildlife Picture" name="wildlife_pic">
+                                            placeholder="Wildlife Picture" name="wildlife_pic" required>
                                     </div>
                                     <div class="col-12">
                                         <label for="formGroupExampleInput" class="form-label">Bone Name</label>
                                         <input type="input" class="form-control" placeholder="Enter Wildlife Name"
-                                            name="wildlife_name">
+                                            name="wildlife_name" required>
                                     </div>
                                     <div class="col-12">
                                         <label for="formGroupExampleInput" class="form-label">Bone Scientific Name</label>
                                         <input type="input" class="form-control"
-                                            placeholder="Enter Wildlife Scientific Name" name="wildlife_scientific_name">
+                                            placeholder="Enter Wildlife Scientific Name" name="wildlife_scientific_name" required>
                                     </div>
 
                                     <div class="-12 col-md-4">
                                         <label for="formGroupExampleInput2" class="form-label">Bone Genus</label>
                                         <input type="input" class="form-control" placeholder="Enter Wildlife Genus"
-                                            name="wildlife_genus" name="wildlife_genus">
+                                            name="wildlife_genus" name="wildlife_genus" required>
                                     </div>
 
-                  <div class="-12 col-md-4">
-                    <label for="formGroupExampleInput2" class="form-label">Date Added</label>
-                    <input type="date" class="form-control" placeholder="Enter Date"  name="date_added"  name="date_added" >
-                  </div>
+                                    <div class="-12 col-md-4">
+                                        <label for="formGroupExampleInput2" class="form-label">Date Added</label>
+                                        <input type="date" class="form-control" placeholder="Enter Date"  name="date_added"  name="date_added" required>
+                                    </div>
+                                    <!--Hidden Inputs-->
+                                    <input type="hidden" class="form-control" name="info_type" value="wildlife">
+                                    <input type="hidden" class="form-control" name="wildlife_type" value="Bone">
+                                    <input type="hidden" class="form-control"  name="wildlife_status" value="Approved">
 
-
-
-
-                    <!--Hidden Inputs-->
-                    <input type="hidden" class="form-control" name="info_type" value="wildlife">
-                    <input type="hidden" class="form-control" name="wildlife_type" value="Bone">
-                    <input type="hidden" class="form-control"  name="wildlife_status" value="Approved">
-                  <div class="col-12">
-                    <label for="exampleFormControlinputarea1" class="form-label">Description</label>
-                    <textarea class="form-control" name="wildlife_desc" rows="3" placeholder="Enter Wildlife Description"></textarea>
-                  </div>
+                                    <div class="col-12">
+                                        <label for="exampleFormControlinputarea1" class="form-label">Description</label>
+                                        <textarea class="form-control" name="wildlife_desc" rows="3" placeholder="Enter Wildlife Description" required></textarea>
+                                    </div>
                   <div class="modal-footer border-0">
                     <button type="submit" class="btn btn-info text-white">Submit</button>
                     <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
