@@ -35,16 +35,31 @@ class AuthenticatedSessionController extends Controller
 
         if(Auth::user()->user_type == 'Admin')
         {
-            
-            return redirect()->route('adminDashboard');
+            if(Auth::user()->changed_pass == '1')
+            {
+                return redirect()->route('adminDashboard');
+            }
+            else
+            return redirect()->route('firstTime');
         }
         else if(Auth::user()->user_type == 'Faculty')
         {
-            return redirect()->route('facultyDashboard');
+            if(Auth::user()->changed_pass == '1')
+            {
+                return redirect()->route('facultyDashboard');
+            }
+            else
+            return redirect()->route('firstTime');
+            
         }
         else if(Auth::user()->user_type == 'Student')
         {
-            return redirect()->route('studentDashboard');
+            if(Auth::user()->changed_pass == '1')
+            {
+                return redirect()->route('studentDashboard');
+            }
+            else
+            return redirect()->route('firstTime');
         }
     }
 

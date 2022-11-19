@@ -25,6 +25,32 @@ class RegisteredUserController extends Controller
     public function create()
     {
         return view('auth.register');
+        
+    }
+
+    public function updatePass(Request $request, $id)
+    {
+        //$id = Auth::user()->id;
+        $change = User::find($id);
+        //$change->password = Hash::make($request->input('changed_pass'));
+        $change->password = Hash::make($request->password);
+        $change->changed_pass = '1';
+        $change->save();         
+        return view ('auth.login');
+
+        Auth::login($user);
+        
+        return redirect(RouteServiceProvider::HOME);  
+    }
+    public function firstTime()
+    {
+        $profile = DB::table('users')
+        ->where('users.id', '=' , Auth::user()->id )
+        ->select('users.*')
+        ->get();
+        
+         return view('auth.firstTimeLogin')
+         ->with('profile',$profile);
     }
 
     /**

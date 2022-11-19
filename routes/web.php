@@ -10,6 +10,7 @@ use App\Http\Controllers\IEMSWebsite;
 use App\Http\Controllers\AuthenticatedSessionController;
 use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,10 @@ Route::get('/', [IEMSWebsite::class, 'accessHome']); //access announcement table
 
 //for login/////////////////////
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
+
+//for first time log-n
+Route::get('/firstTime', [RegisteredUserController::class, 'firstTime'])->name('firstTime');
+Route::post('/updatePassword/{id}',[RegisteredUserController::class, 'updatePass'])->name('updatePass');
 
 //ROUTE FOR Dashboard According to User////////////////////////////////////////////////////////////////////////
 Route::get('/adminDashboard', [adminController::class, 'adminDashboard'])->name('adminDashboard');
