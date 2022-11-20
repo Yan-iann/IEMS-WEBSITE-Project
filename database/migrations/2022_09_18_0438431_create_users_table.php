@@ -22,6 +22,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->string('user_type');
+            $table->enum('changed_pass',['0','1'])->default('0');
         });
     }
 

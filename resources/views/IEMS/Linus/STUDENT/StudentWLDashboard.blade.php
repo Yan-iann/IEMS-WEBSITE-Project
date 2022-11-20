@@ -1,7 +1,17 @@
 @extends('layouts.S_Layout')
 @section('content')
     <div class="container-fluid">
+                                @if(Session::get('fail'))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('fail')}}
+                                </div>
+                                @endif
 
+                                @if(Session::get('sucess'))
+                                    <div class="alert alert-success">
+                                      {{ Session::get('sucess')}}
+                                    </div>
+                                @endif
         {{-- Page Name, and Burger Icon. AND Search Bar --}}
         <div class="col-12">
 

@@ -1,9 +1,21 @@
+
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            
+        
         </x-slot>
-       
+
+        @if(Session::get('fail'))
+        <div class="alert alert-danger">
+            {{ Session::get('fail')}}
+        </div>
+        @endif
+
+        @if(Session::get('sucess'))
+            <div class="alert alert-success">
+            {{ Session::get('sucess')}}
+            </div>
+        @endif
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
         <form method="POST" action="{{ route('updatePass',Auth::user()->id) }}">

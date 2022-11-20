@@ -40,7 +40,8 @@ class AuthenticatedSessionController extends Controller
                 return redirect()->route('adminDashboard');
             }
             else
-            return redirect()->route('firstTime');
+            return redirect()->route('firstTime')
+            ->with('fail','Password Change required for First Time Log In');
         }
         else if(Auth::user()->user_type == 'Faculty')
         {
@@ -49,7 +50,8 @@ class AuthenticatedSessionController extends Controller
                 return redirect()->route('facultyDashboard');
             }
             else
-            return redirect()->route('firstTime');
+            return redirect()->route('firstTime')
+            ->with('fail','Password Change required for First Time Log In');
             
         }
         else if(Auth::user()->user_type == 'Student')
@@ -59,7 +61,8 @@ class AuthenticatedSessionController extends Controller
                 return redirect()->route('studentDashboard');
             }
             else
-            return redirect()->route('firstTime');
+            return redirect()->route('firstTime')
+            ->with('fail','Password Change required for First Time Log In');
         }
     }
 

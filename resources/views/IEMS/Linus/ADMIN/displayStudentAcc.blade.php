@@ -5,6 +5,20 @@
             <i class='bx bx-menu'></i>
             <span class="text">Student Accounts</span>
         </div>
+    </div>
+
+
+    @if(Session::get('fail'))
+    <div class="alert alert-danger">
+        {{ Session::get('fail')}}
+    </div>
+    @endif
+
+    @if(Session::get('sucess'))
+        <div class="alert alert-success">
+          {{ Session::get('sucess')}}
+        </div>
+    @endif
 
         <div class="table-responsive">
             <table class="table">
@@ -22,15 +36,6 @@
             </table>
         </div>
         <!--end of search bar-->
-
-
-        <div class="row">
-            <div class="text-right">
-                <a href=""><i class="typcn typcn-document-add" id="addbutton" data-toggle="tooltip"
-                        data-placement="left" title="Add New Faculty Account"></i> </a>
-            </div>
-        </div>
-
 
         <br>
         <div class="table-responsive">
@@ -60,7 +65,8 @@
                                     data-bs-target="#ModalDeleteUser{{ $user->id }}"> <i
                                         class='bx bx-trash'></i></button>
                             </td>
-                        </tr>
+                        </tr> <!--end of table row-->
+                        
                         <!-- Edit User Modal-->
                         <form action="{{ route('updateUser', $user->id) }}" method="post" enctype="multipart/form-data">
                             <div class="modal fade" id="ModalEditUser{{ $user->id }}" tabindex="-1"
@@ -122,7 +128,9 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                         </form>
+
                         <!-- Delete Wildlife Modal-->
                         <form action="{{ route('deleteUser', $user->id) }}" method="get" enctype="multipart/form-data">
                             <div class="modal fade" id="ModalDeleteUser{{ $user->id }}" tabindex="-1"
@@ -136,7 +144,7 @@
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body border-0">
-                                            <p>Are you sure you want to delete this information card?</p>
+                                            <p>Are you sure you want to delete this User Account?</p>
                                         </div>
                                         <div class="modal-footer border-0">
                                             <button type="submit" class="btn btn-danger">Delete</button>
@@ -147,14 +155,13 @@
                                 </div>
                             </div>
                         </form>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
+                        <!--end of delete modal-->
 
-        <div class="container-fluid">
-        </div>
-        <!--end of container-->
+                    @endforeach
+                </tbody> <!--end of table body-->
+            </table> <!--end of table-->
+        </div><!--end of container-->
+        
 
         <a class="float" data-bs-toggle="modal" data-bs-target="#ModalAddUser">
             <i class="bx bx-plus my-float"></i>
@@ -168,7 +175,7 @@
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
                     <div class="modal-content">
                         <div class="modal-header border-0 text-center">
-                            <h5 class="modal-title  text-center">Add User Account</h5>
+                            <h5 class="modal-title  text-center">Add Student Account</h5>
                             <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
                         </div>
@@ -178,8 +185,7 @@
 
                                     <div class="col-12 col-md-4 col-lg-4">
                                         <label for="formGroupExampleInput" class="form-label">First Name</label>
-                                        <input type="input" class="form-control" placeholder="Enter First Name"
-                                            name="name">
+                                        <input type="input" class="form-control" placeholder="Enter First Name" name="name" required>
                                     </div>
 
                                     <div class="col-12 col-md-4 col-lg-4">
@@ -191,27 +197,17 @@
                                     <div class="col-12 col-md-4 col-lg-4">
                                         <label for="formGroupExampleInput" class="form-label">Last Name</label>
                                         <input type="input" placeholder="Enter Last Name" class="form-control"
-                                            name="last_name">
+                                            name="last_name" required>
                                     </div>
 
                                     <div class="col-12">
                                         {{-- Filler --}}
                                     </div>
 
-                                  
-
-
-
-                                    <div class="col-12 col-md-6">
-                                        <label for="formGroupExampleInput" class="form-label">Phone Number</label>
-                                        <input type="input" placeholder="Enter Phone Number" class="form-control"
-                                            name="phone_no">
-                                    </div>
-
                                     <div class="col-12 col-md-6">
                                         <label for="formGroupExampleInput" class="form-label">Email</label>
                                         <input type="email" name="email" class="form-control"
-                                            placeholder="Enter email ">
+                                            placeholder="Enter email" required>
                                     </div>
 
                                     <input type="hidden" class="form-control" placeholder="Enter user type "
@@ -224,18 +220,18 @@
                                     <div class="col-12">
                                         <label for="formGroupExampleInput" class="form-label">Password</label>
                                         <input type="input" name="password" class="form-control"
-                                            placeholder="Enter Password ">
+                                            placeholder="Enter Password " required>
                                     </div>
 
                                     <div class="modal-footer border-0">
-                                        <button type="submit" class="btn btn-info text-white">Submit</button>
+                                        <button type="submit" class="btn btn-info text-white">Create Account</button>
                                         <button type="button" class="btn btn-outline-info"
                                             data-bs-dismiss="modal">Cancel</button>
                                     </div>
-                                </div>
+                               
                             </div>
                         </div>
                     </div>
+            </div>
         </form>
-    </div>
 @endsection

@@ -1,7 +1,17 @@
 @extends('layouts.F_Layout')
 @section('content')
 <div class="container-fluid">
+                                @if(Session::get('fail'))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('fail')}}
+                                </div>
+                                @endif
 
+                                @if(Session::get('sucess'))
+                                    <div class="alert alert-success">
+                                      {{ Session::get('sucess')}}
+                                    </div>
+                                @endif
     <div class="col-12">
 
         <div class="row d-flex justify-content-around">
@@ -88,7 +98,7 @@
           <div class="modal-content  bg-light">
 
             <div class="modal-header border-0 text-center">
-              <h5 class="modal-title  text-center">Add Wildlife Information</h5>
+              <h5 class="modal-title  text-center">Add Critter Information</h5>
               <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -96,45 +106,45 @@
               <div class="container-fluid">
                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
                   <div class="col-12">
-                    <label for="wildlife_pic">Wildlife Picture:</label>
-                    <input type="file" id="wildlife_pic" class="form-control"  placeholder="Wildlife Picture" name="wildlife_pic">
+                    <label for="wildlife_pic">Critter Picture:</label>
+                    <input type="file" id="wildlife_pic" class="form-control"  placeholder="Wildlife Picture" name="wildlife_pic" required>
                   </div>
                   <div class="col-12">
                     <label for="formGroupExampleInput" class="form-label">Common Name</label>
-                    <input type="input" class="form-control"  placeholder="Enter Wildlife Name" name="wildlife_name">
+                    <input type="input" class="form-control"  placeholder="Enter Critter Name" name="wildlife_name" required>
                   </div>
                   <div class="col-12">
                     <label for="formGroupExampleInput" class="form-label">Scientific Name</label>
-                    <input type="input" class="form-control" placeholder="Enter Wildlife Scientific Name" name="wildlife_scientific_name" >
+                    <input type="input" class="form-control" placeholder="Enter Critter Scientific Name" name="wildlife_scientific_name" required>
                   </div>
                   <div class="col-12 col-md-4">
                     <label for="formGroupExampleInput2" class="form-label">Class</label>
-                    <input type="input" placeholder="Enter Wildlife Class" class="form-control" name="wildlife_class" >
+                    <input type="input" placeholder="Enter Critter Class" class="form-control" name="wildlife_class" required >
                   </div>
                   <div class="col-12 col-md-4">
                     <label for="formGroupExampleInput2" class="form-label">Order</label>
-                    <input type="input" class="form-control"  placeholder="Enter Wildlife Order" name="wildlife_order" >
+                    <input type="input" class="form-control"  placeholder="Enter Critter Order" name="wildlife_order" required >
                   </div>
                   <div class="col-12 col-md-4">
                     <label for="formGroupExampleInput2" class="form-label">Family</label>
-                    <input type="input" class="form-control" placeholder="Enter Wildlife Family" name="wildlife_family" >
+                    <input type="input" class="form-control" placeholder="Enter Critter Family" name="wildlife_family" required>
                   </div>
                   <div class="-12 col-md-4">
                     <label for="formGroupExampleInput2" class="form-label">Genus</label>
-                    <input type="input" class="form-control" placeholder="Enter Wildlife Genus"  name="wildlife_genus"  name="wildlife_genus" >
+                    <input type="input" class="form-control" placeholder="Enter Critter Genus"  name="wildlife_genus"  name="wildlife_genus" required>
                   </div>
                   <div class="col-12 col-md-4">
                     <label for="formGroupExampleInput2" class="form-label">Species</label>
-                    <input type="input" class="form-control" placeholder="Enter Wildlife Species"  name="wildlife_species" >
+                    <input type="input" class="form-control" placeholder="Enter Critter Species"  name="wildlife_species" required>
                   </div>
                   <div class="col-12">
                     <label for="formGroupExampleInput2" class="form-label">Location</label>
-                    <input type="input" class="form-control"  placeholder="Enter Wildlife Location" name="wildlife_location" >
+                    <input type="input" class="form-control"  placeholder="Enter Critter Location" name="wildlife_location" required>
                   </div>
 
                   <div class="col-12">
                     <label for="formGroupExampleInput2" class="form-label">Date Added</label>
-                    <input type="date" class="form-control"  placeholder="Enter Date" name="date_added" >
+                    <input type="date" class="form-control"  placeholder="Enter Date Added" name="date_added" required>
                   </div>
 
                     <!--Hidden Inputs-->
@@ -143,7 +153,7 @@
                     <input type="hidden" class="form-control"  name="wildlife_status" value="Approved">
                   <div class="col-12">
                     <label for="exampleFormControlinputarea1" class="form-label">Description</label>
-                    <textarea class="form-control" name="wildlife_desc" rows="3" placeholder="Enter Wildlife Description"></textarea>
+                    <textarea class="form-control" name="wildlife_desc" rows="3" placeholder="Enter Critter Description" required></textarea>
                   </div>
                   <div class="modal-footer border-0">
                     <button type="submit" class="btn btn-info text-white">Submit</button>

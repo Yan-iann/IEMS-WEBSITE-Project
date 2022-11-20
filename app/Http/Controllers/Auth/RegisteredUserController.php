@@ -30,18 +30,46 @@ class RegisteredUserController extends Controller
 
     public function updatePass(Request $request, $id)
     {
-        //$id = Auth::user()->id;
-        $change = User::find($id);
-        //$change->password = Hash::make($request->input('changed_pass'));
-        $change->password = Hash::make($request->password);
-        $change->changed_pass = '1';
-        $change->save();         
-        return view ('auth.login');
-
-        Auth::login($user);
-        
-        return redirect(RouteServiceProvider::HOME);  
+        $validator = Validator::make($request->all(), [
+            'password' => [
+                'required',
+                'confirmed',
+                'regex:/[a-z]/',      // must contain at least one lowercase letter
+                'regex:/[A-Z]/',      // must contain at least one uppercase letter
+                'regex:/[0-9]/',      // must contain at least one digit
+            ],
+            ]);
+            if($validator->fails())
+            {
+                return redirect()->back()
+                ->with('fail','Password Error');
+            }//if failed return back
+            else
+            {
+                $change = User::find($id);
+                $change->password = Hash::make($request->password);
+                $change->changed_pass = '1';
+                $change->save(); 
+                if(Auth::user()->user_type == 'Admin')
+                {
+                        return redirect()->route('adminDashboard')
+                        ->with('sucess','New Password Updated');
+                }
+                else if(Auth::user()->user_type == 'Faculty')
+                {
+                   
+                        return redirect()->route('facultyDashboard')
+                        ->with('sucess','New Password Updated'); 
+                }
+                else if(Auth::user()->user_type == 'Student')
+                {
+                    
+                        return redirect()->route('studentDashboard')
+                        ->with('sucess','New Password Updated'); 
+                }
+            }
     }
+
     public function firstTime()
     {
         $profile = DB::table('users')
