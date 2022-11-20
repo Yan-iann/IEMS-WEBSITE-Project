@@ -2,6 +2,16 @@
 @section('content')
     <div class="container-fluid">
         {{-- Page Name, and Burger Icon. AND Search Bar --}}
+                            @if(Session::get('fail'))
+                                    <div class="alert alert-danger">
+                                        {{ Session::get('fail')}}
+                                    </div>
+                             @endif
+                             @if(Session::get('sucess'))
+                                    <div class="alert alert-success">
+                                      {{ Session::get('sucess')}}
+                                    </div>
+                                @endif
         <div class="row d-flex justify-content-between">
 
             <div class="col-12 col-md-6 col-lg-6 order-sm-2 order-md-1">
@@ -128,13 +138,13 @@
                                 <div class="-12 col-md-4">
                                     <label for="formGroupExampleInput2" class="form-label">Reference Genus</label>
                                     <input type="input" class="form-control" placeholder="Enter Wildlife Genus"
-                                        name="wildlife_genus" name="wildlife_genus">
+                                        name="wildlife_genus" name="wildlife_genus"required>
                                 </div>
 
                                 <div class="-12 col-md-4">
                                     <label for="formGroupExampleInput2" class="form-label">Date Added</label>
                                     <input type="date" class="form-control" placeholder="Enter Date"
-                                        name="date_added" name="date_added">
+                                        name="date_added" name="date_added"required>
                                 </div>
 
 
@@ -146,7 +156,7 @@
 
                                 <div class="col-12">
                                     <label for="exampleFormControlinputarea1" class="form-label">Description</label>
-                                    <textarea class="form-control" name="wildlife_desc" rows="3" placeholder="Enter Wildlife Description"></textarea>
+                                    <textarea class="form-control" name="wildlife_desc" rows="3" placeholder="Enter Wildlife Description" required></textarea>
                                 </div>
                                 <div class="modal-footer border-0">
                                     <button type="submit" class="btn btn-info text-white">Submit</button>

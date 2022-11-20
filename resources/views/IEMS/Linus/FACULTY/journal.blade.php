@@ -4,6 +4,17 @@
 
         <div class="row d-flex justify-content-between">
             {{-- Page Name, and Burger Icon. AND Search Bar --}}
+                                @if(Session::get('fail'))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('fail')}}
+                                </div>
+                                @endif
+
+                                @if(Session::get('sucess'))
+                                    <div class="alert alert-success">
+                                      {{ Session::get('sucess')}}
+                                    </div>
+                                @endif
             <div class="col-12 col-md-6 col-lg-6 order-sm-2 order-md-1">
                 <div class="home-content">
                     <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center">
@@ -111,14 +122,14 @@
                                         <div class="col-12">
                                             <label for="formGroupExampleInput" class="form-label">Journal Title</label>
                                             <input type="input" class="form-control" placeholder="Enter journal Title"
-                                                name="journal_title">
+                                                name="journal_title" required>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12"><br>
                                             <label for="formGroupExampleInput" class="form-label">Journal Author</label>
                                             <input type="input" class="form-control" placeholder="Enter journal Author"
-                                                name="journal_author">
+                                                name="journal_author"required>
                                         </div>
                                     </div>
                                 </div>
@@ -126,41 +137,32 @@
                                 <div class="col-4">
                                     <label for="formGroupExampleInput2" class="form-label">Journal Reference</label>
                                     <input type="input" class="form-control" placeholder="Enter journal Reference"
-                                        name="journal_reference">
+                                        name="journal_reference"required>
                                 </div>
                                 <!--Column4-->
 
-                                <!--Column4-->
-                                <div class="col-4">
-                                    <label for="formGroupExampleInput2" class="form-label">Date Published</label>
-                                    <input type="date" class="form-control" placeholder="Enter Date Published"
-                                        name="date_published">
-                                </div>
-                                <div class="col-4">
-                                    <label for="formGroupExampleInput2" class="form-label">Date Added</label>
-                                    <input type="date" class="form-control" placeholder="Enter Date Published"
-                                        name="date_added">
-                                </div>
-                                <!--Form Group-->
-                                <div class="form-group">
-                                    <label for="wildlife_order">Journal Description:</label>
-                                    <input type="input" class="form-control" placeholder="Enter Journal Description"
-                                        name="journal_desc">
-                                </div>
-                                <!--Hidden Inputs-->
-                                <input type="hidden" class="form-control" name="journal_status" value="approved">
-                                <input type="hidden" class="form-control" name="info_type" value="journal_paper">
-                                <!--Footer-->
-                                <div class="modal-footer border-0">
-                                    <button type="submit" class="btn btn-info">Submit</button>
-                                    <button type="button" class="btn btn-outline-info"
-                                        data-bs-dismiss="modal">Cancel</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End Of Container Body-->
-                    </div>
-                    <!--End Of Modal Body-->
+                  <!--Column4-->
+                  <div class="col-4">
+                    <label for="formGroupExampleInput2" class="form-label">Date Published</label>
+                    <input type="date" class="form-control" placeholder="Enter Date Published" name="date_published" >
+                  </div>
+                  <div class="col-4">
+                    <label for="formGroupExampleInput2" class="form-label">Date Added</label>
+                    <input type="date" class="form-control" placeholder="Enter Date Published" name="date_added" >
+                  </div>
+                  <!--Form Group-->
+                  <div class="form-group">
+                    <label for="wildlife_order">Journal Description:</label>
+                    <input type="input" class="form-control"  placeholder="Enter Journal Description" name="journal_desc">
+                  </div>
+                  <!--Hidden Inputs-->
+                  <input type="hidden" class="form-control" name="journal_status" value="approved">
+                  <input type="hidden" class="form-control" name="info_type" value="journal_paper">
+                   <!--Footer-->
+                  <div class="modal-footer border-0">
+                    <button type="submit" class="btn btn-info">Submit</button>
+                    <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
+                  </div>
                 </div>
                 <!--End Of Modal Content-->
             </div>

@@ -196,7 +196,6 @@ class studentController extends Controller
             {
                 $filename = time().request()->file('anno_pic')->getClientOriginalName();
                 $path = request()->file('anno_pic')->move('storage/images',$filename);
-
                 $anno = [
                     'anno_title' => $request->anno_title,
                     'anno_author' => $request->anno_author,
@@ -206,10 +205,11 @@ class studentController extends Controller
                     'user_ID' => $request->user_ID,
                     'anno_pic' => $path,
                 ];
-                announcement::create($anno);
+                announcement::create($anno);    
                 $anno = announcement::where('user_ID', '=', Auth::user()->id )->get();
-                return view('IEMS.Linus.STUDENT.StudentReqDashboard')
-                ->with('announcement',$anno);
+                return redirect()->route('Student_request')
+                ->with('announcement',$anno)
+                ->with('sucess','Announcement Successfully Requested');
             }
 
     }
@@ -220,16 +220,19 @@ class studentController extends Controller
         $input = $request->all();
         $anno->update($input);
         $anno = announcement::where('user_ID', '=', Auth::user()->id )->get();
-        return view('IEMS.Linus.STUDENT.requestDashboard')->with('announcement',$anno);
+        return redirect()->route('Student_request')
+        ->with('announcement',$anno)
+        ->with('sucess','Announcement Request Updated Succesfully');
     }//end of updating request table
 
     public function deleteAnno($id)
     {
         announcement::destroy($id);
         $anno = announcement::where('user_ID', '=', Auth::user()->id )->get();
-        return view('IEMS.Linus.STUDENT.StudentReqDashboard')
-        ->with('announcement',$anno);
-    }//end of deleting user accounts
+        return redirect()->route('Student_request')
+        ->with('announcement',$anno)
+        ->with('sucess','Announcement Request Deleted Succesfully');
+    }//end of deleting annoucements accounts
 
     public function searchwildlife(Request $request)
     {   

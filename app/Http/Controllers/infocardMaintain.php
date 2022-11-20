@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\File;
+use Symfony\Component\Serializer\Serializer;
 use DB;
 
 class infocardMaintain extends Controller
@@ -209,8 +210,18 @@ class infocardMaintain extends Controller
 
         return redirect()->route('Faculty_request')
         ->with('announcement',$anno)
-        ->with('searchStatus',$searchStatus);
+        ->with('searchStatus',$searchStatus)
+        ->with('sucess','Announcement Modified');
     }//end of updating request table
+
+    public function deleteAnnoF($id)
+    {
+        announcement::destroy($id);
+        $anno = announcement::where('user_ID', '=', Auth::user()->id )->get();
+        return redirect()->route('Faculty_request')
+        ->with('announcement',$anno)
+        ->with('sucess','Announcement Deleted');
+    }//end of deleting user accounts
 
     public function Fprofile()
     {
@@ -226,38 +237,46 @@ class infocardMaintain extends Controller
 
     public function editFprofile(Request $request, $id)
     {
-        $profile = DB::table('users')
-        ->where('users.id', '=' , Auth::user()->id )
-        ->join('user_info','user_info.user_ID', "=" ,'users.id')
-        ->select('user_info.*','users.*')
-        ->get();
-
-        $user = user_info::find($id);
-        $user->name = $request->input('name');
-        $user->middle_name = $request->input('middle_name');
-        $user->last_name = $request->input('last_name');
-        $user->phone_no = $request->input('phone_no');
-        $user->rank = $request->input('rank');
-        $user->educational = $request->input('educational');
-        $user->specialty = $request->input('specialty');
-
-        if($request->hasfile('profile_pic'))
-        {
-            $path = 'storage/images'.$user->profile_pic;
-            if(FILE::exists($path))
+        $validator = Validator::make(request()->all(), [
+            'name' => 'required',
+            'last_name' => 'required',
+            'rank'  => 'required',
+            'specialty' => 'required',
+            'educational' => 'required',
+            'phone_no' => 'required',
+            ]);
+            if($validator->fails())
             {
-                FILE::delete($path);
-            }
-            $file = $request->file('profile_pic');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time(). '.'.$extention;
-            $file->move('storage/images',$filename);
-            $user->profile_pic = $filename;
-        }
-        $user->save();
-        return redirect()->route('Fprofile')
-        ->with('user', $user)
-        ->with('profile',$profile);
+                return redirect()->back()
+                ->with('fail','Please Provide All Information');
+            }//failed
+            else
+            {
+                $user = user_info::find($id);
+                $input = $request->all();
+                if($request->hasfile('profile_pic'))
+                {
+                    $path = $user["profile_pic"];
+                    if(FILE::exists($path))
+                    {
+                        FILE::delete($path);
+                    }//if there is picture already
+                    $filename = time().request()->file('profile_pic')->getClientOriginalName();
+                    $finalPath = request()->file('profile_pic')->move('storage/images',$filename);
+                    $input["profile_pic"] = $finalPath;
+                }
+                $user->update($input);
+
+                $profile = DB::table('users')
+                ->where('users.id', '=' , Auth::user()->id )
+                ->join('user_info','user_info.user_ID', "=" ,'users.id')
+                ->select('user_info.*','users.*')
+                ->get();
+
+                return redirect()->route('Fprofile')
+                ->with('profile',$profile)
+                ->with('sucess','Profile Updated Successfully');
+            }//sucess
     }
     //end of viewing infocards
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -310,8 +329,19 @@ class infocardMaintain extends Controller
             {
                 $wildlife = Wildlife::find($info_ID);
                 $input = $request->all();
-                $wildlife->update($input);
+                if($request->hasfile('wildlife_pic'))
+                {
+                    $path = $wildlife["wildlife_pic"];
+                    if(FILE::exists($path))
+                    {
+                        FILE::delete($path);
+                    }//if there is picture already
+                    $filename = time().request()->file('wildlife_pic')->getClientOriginalName();
+                    $finalPath = request()->file('wildlife_pic')->move('storage/images',$filename);
+                    $input["wildlife_pic"] = $finalPath;  
+                }//end of updating picture
 
+                $wildlife->update($input);
                 $searchClass = DB::table('wildlife')
                 ->select('wildlife.wildlife_class')
                 ->distinct('wildlife.wildlife_class')
@@ -357,6 +387,17 @@ class infocardMaintain extends Controller
             {
                 $wildlife = Wildlife::find($info_ID);
                 $input = $request->all();
+                if($request->hasfile('wildlife_pic'))
+                {
+                    $path = $wildlife["wildlife_pic"];
+                    if(FILE::exists($path))
+                    {
+                        FILE::delete($path);
+                    }//if there is picture already
+                    $filename = time().request()->file('wildlife_pic')->getClientOriginalName();
+                    $finalPath = request()->file('wildlife_pic')->move('storage/images',$filename);
+                    $input["wildlife_pic"] = $finalPath;  
+                }//end of updating picture
                 $wildlife->update($input);
 
                 $searchGenus = DB::table('wildlife')
@@ -381,27 +422,53 @@ class infocardMaintain extends Controller
     }
     public function updateRef(Request $request, $info_ID)
     {
-        $wildlife = Wildlife::find($info_ID);
-        $input = $request->all();
-        $wildlife->update($input);
+        $validator = Validator::make(request()->all(), [
+            'wildlife_name' => 'required',
+            'wildlife_scientific_name' => 'required',
+            'wildlife_genus' => 'required',
+            'wildlife_desc' => 'required',
+            ]);
+            if($validator->fails())
+            {
+                return redirect()->back()
+                ->with('fail','Please Provide All Information');
+            }//failed
+            else
+            {
+                $wildlife = Wildlife::find($info_ID);
+                $input = $request->all();
+                if($request->hasfile('wildlife_pic'))
+                {
+                    $path = $wildlife["wildlife_pic"];
+                    if(FILE::exists($path))
+                    {
+                        FILE::delete($path);
+                    }//if there is picture already
+                    $filename = time().request()->file('wildlife_pic')->getClientOriginalName();
+                    $finalPath = request()->file('wildlife_pic')->move('storage/images',$filename);
+                    $input["wildlife_pic"] = $finalPath;  
+                }//end of updating picture
+                $wildlife->update($input);
 
-        $searchGenus = DB::table('wildlife')
-        ->select('wildlife.wildlife_genus')
-        ->distinct('wildlife.wildlife_genus')
-        ->where('wildlife_type','Reference')
-        ->get();
+                $searchGenus = DB::table('wildlife')
+                ->select('wildlife.wildlife_genus')
+                ->distinct('wildlife.wildlife_genus')
+                ->where('wildlife_type','Reference')
+                ->get();
 
-        $searchDate = DB::table('wildlife')
-        ->select('wildlife.date_added')
-        ->distinct('wildlife.date_added')
-        ->where('wildlife_type','Reference')
-        ->get();
+                $searchDate = DB::table('wildlife')
+                ->select('wildlife.date_added')
+                ->distinct('wildlife.date_added')
+                ->where('wildlife_type','Reference')
+                ->get();
 
-        $wildlife = Wildlife::where('wildlife_type','Reference')->get();
-        return redirect()->route('refCollection')
-        ->with('wildlifes', $wildlife)
-        ->with('searchGenus', $searchGenus)
-        ->with('searchDate', $searchDate);
+                $wildlife = Wildlife::where('wildlife_type','Reference')->get();
+                return redirect()->route('refCollection')
+                ->with('wildlifes', $wildlife)
+                ->with('searchGenus', $searchGenus)
+                ->with('searchDate', $searchDate)
+                ->with('sucess','Whale Bone Information Updated Successfully');
+            }//sucess
     }
     public function editThesis($info_ID)
     {
@@ -429,7 +496,8 @@ class infocardMaintain extends Controller
         return redirect()->route('thesis')
         ->with('thesis',$thesis)
         ->with('searchRef',$searchRef)
-        ->with('searchAuthor',$searchAuthor);
+        ->with('searchAuthor',$searchAuthor)
+        ->with('sucess','Thesis Paper Information Updated Successfully');
     }
 
     public function editJournal($info_ID)
@@ -459,7 +527,8 @@ class infocardMaintain extends Controller
         return redirect()->route('journal')
         ->with('journal',$journal)
         ->with('searchDate',$searchDate)
-        ->with('searchRef',$searchRef);
+        ->with('searchRef',$searchRef)
+        ->with('sucess','Journal Article Information Updated Successfully');
     }
     //end of editing of infocards
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -487,11 +556,12 @@ class infocardMaintain extends Controller
         ->get();
 
         $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
-        return view ('IEMS.Linus.FACULTY.wildlife')
+        return redirect()->route('wildlife')
         ->with('wildlifes', $wildlife)
         ->with('searchClass', $searchClass)
         ->with('searchSpecie', $searchSpecie)
-        ->with('searchLoc', $searchLoc);
+        ->with('searchLoc', $searchLoc)
+        ->with('sucess','Critters Information Deleted Successfully');
     }
     public function deleteBone($info_ID)
     {
@@ -510,10 +580,11 @@ class infocardMaintain extends Controller
         ->get();
 
         $wildlife = Wildlife::where('wildlife_type','Bone')->get();
-        return view ('IEMS.Linus.FACULTY.boneCollection')
+        return redirect()->route('boneCollection')
         ->with('wildlifes', $wildlife)
         ->with('searchGenus', $searchGenus)
-        ->with('searchDate', $searchDate);
+        ->with('searchDate', $searchDate)
+        ->with('sucess','Whale Bone Information Deleted Succesfully');
     }
 
     public function deleteRef($info_ID)
@@ -533,10 +604,11 @@ class infocardMaintain extends Controller
         ->get();
 
         $wildlife = Wildlife::where('wildlife_type','Reference')->get();
-        return view ('IEMS.Linus.FACULTY.refCollection')
+        return redirect()->route('refCollection')
         ->with('wildlifes', $wildlife)
         ->with('searchGenus', $searchGenus)
-        ->with('searchDate', $searchDate);
+        ->with('searchDate', $searchDate)
+        ->with('sucess','Reference Information Deleted Succesfully');
     }
 
     public function deleteThesis($info_ID)
@@ -554,10 +626,11 @@ class infocardMaintain extends Controller
         ->get();
 
         $thesis = thesis_paper::all();
-        return view('IEMS.Linus.FACULTY.thesis')
+        return redirect()->route('thesis')
         ->with('thesis',$thesis)
         ->with('searchRef',$searchRef)
-        ->with('searchAuthor',$searchAuthor);
+        ->with('searchAuthor',$searchAuthor)
+        ->with('sucess','Thesis Paper Information Deleted Successfully');
     }
     public function deleteJournal($info_ID)
     {
@@ -574,10 +647,11 @@ class infocardMaintain extends Controller
 
 
         $journal = journal_article::all();
-        return view('IEMS.Linus.FACULTY.journal')
+        return redirect()->route('journal')
         ->with('journal',$journal)
         ->with('searchDate',$searchDate)
-        ->with('searchRef',$searchRef);
+        ->with('searchRef',$searchRef)
+        ->with('sucess','Journal Article Information Deleted Successfully');
     }
     //end of deleting infocards
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
