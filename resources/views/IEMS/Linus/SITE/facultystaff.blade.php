@@ -48,7 +48,14 @@
                         </div>
                     </div>
                 @endforeach
-                @foreach ($user as $item)
+
+
+                    </div>
+            </div>
+
+    </section>
+
+    @foreach ($user as $item)
                         {{-- View Faculty Details Modal --}}
                         <div class="modal fade" id="viewfacultydetails{{ $item->id }}" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="height: 80vh; padding:0px">
@@ -138,10 +145,6 @@
                             </div>
                         </div> {{-- End of Modal --}}
                         @endforeach
-                    </div>
-            </div>
-
-    </section>
 
     {{-- Contact Us Block --}}
     @include('IEMS\Linus.SITE.contact_block')

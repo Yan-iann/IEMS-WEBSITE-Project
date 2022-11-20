@@ -34,33 +34,7 @@
 
 
                 <article class="col-lg-8 order-lg-2 px-lg-5">
-                    <p>{{ $announcement->anno_content }}</p>
-
-
-
-                    <div class="pt-5 categories_tags ">
-
-                        <p>Tags:
-                            {{-- For loop paras tags here --}}
-                            <span class="lead" style="color: #1DA2D8">html, </span>
-                        </p>
-
-                        {{-- Related Values --}}
-                        <section class="related-posts">
-                            <h2 class="section-title mb-4" data-aos="fade-up">Other Posts</h2>
-                            <div class="row d-flex justify-content-evenly ">
-                                {{-- For Loop Other Posts up to 2 or 3 --}}
-                                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                                    <a href="#">
-                                        <h5 class="post-title">Front becomes an official Instagram</h5>
-                                    </a> <!-- Related Post Title -->
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-
-
-
+                    <p>{!! $announcement->anno_content !!}</p>
                 </article>
 
                 <div class="col-md-12 col-lg-1 order-lg-1">

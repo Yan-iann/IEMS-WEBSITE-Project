@@ -83,9 +83,9 @@
                                             <input type="date" class="form-control"  name="anno_date" value="{{ $item->anno_date}}">
                                           </div>
 
-                                          <div class="col-12 col-md-4">
+                                          <div class="col-12">
                                             <label for="formGroupExampleInput" class="form-label">Content</label>
-                                            <input type="input" name="anno_content" class="form-control" value="{{ $item->anno_content}}" >
+                                            <textarea class="form-control" id="editor" name="anno_content"  value="{!! $item->anno_content !!}" required></textarea>
                                           </div>
 
                                           <input type="hidden" class="form-control"  name="anno_status" value="unapproved">
@@ -136,7 +136,7 @@
         <i class="bx bx-plus my-float"></i>
       </a>
 
-<!-- Add User Modal-->
+<!-- Add Announcement Modal-->
 <form action="{{ route('storeAnno') }}" method="post" enctype="multipart/form-data">
 @csrf
 <div class="modal fade" id="ModalAddRequest" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -172,7 +172,7 @@
 
                 <div class="col-12 col-md-4">
                   <label for="formGroupExampleInput" class="form-label">Content</label>
-                  <input type="input" name="anno_content" class="form-control" placeholder="Enter content " >
+                  <textarea class="form-control" id="editor" name="anno_content"  placeholder="Enter Content" required>{!! $item->anno_content !!}</textarea>
                 </div>
 
                 <input type="hidden" class="form-control"  name="anno_status" value="unapproved">
