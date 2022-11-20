@@ -43,14 +43,14 @@ class infocardMaintain extends Controller
         ->distinct('wildlife.wildlife_location')
         ->where('wildlife_type','Zoo')
         ->get();
-        
+
         $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
         return view ('IEMS.Linus.FACULTY.wildlife')
         ->with('wildlifes', $wildlife)
         ->with('searchClass', $searchClass)
         ->with('searchSpecie', $searchSpecie)
         ->with('searchLoc', $searchLoc);
-      
+
     }
     public function thesis()
     {
@@ -231,7 +231,7 @@ class infocardMaintain extends Controller
         ->join('user_info','user_info.user_ID', "=" ,'users.id')
         ->select('user_info.*','users.*')
         ->get();
-        
+
         $user = user_info::find($id);
         $user->name = $request->input('name');
         $user->middle_name = $request->input('middle_name');
@@ -311,7 +311,7 @@ class infocardMaintain extends Controller
         ->distinct('wildlife.wildlife_location')
         ->where('wildlife_type','Zoo')
         ->get();
-        
+
         $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
         return redirect()->route('wildlife')
         ->with('wildlifes', $wildlife)
@@ -432,7 +432,7 @@ class infocardMaintain extends Controller
     public function deleteWildlife($info_ID)
     {
         Infocard::destroy($info_ID);
-          
+
         $searchClass = DB::table('wildlife')
         ->select('wildlife.wildlife_class')
         ->distinct('wildlife.wildlife_class')
@@ -450,7 +450,7 @@ class infocardMaintain extends Controller
         ->distinct('wildlife.wildlife_location')
         ->where('wildlife_type','Zoo')
         ->get();
-        
+
         $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
         return view ('IEMS.Linus.FACULTY.wildlife')
         ->with('wildlifes', $wildlife)
@@ -461,7 +461,7 @@ class infocardMaintain extends Controller
     public function deleteBone($info_ID)
     {
         Infocard::destroy($info_ID);
-          
+
         $searchGenus = DB::table('wildlife')
         ->select('wildlife.wildlife_genus')
         ->distinct('wildlife.wildlife_genus')
@@ -484,7 +484,7 @@ class infocardMaintain extends Controller
     public function deleteRef($info_ID)
     {
         Infocard::destroy($info_ID);
-          
+
        $searchGenus = DB::table('wildlife')
         ->select('wildlife.wildlife_genus')
         ->distinct('wildlife.wildlife_genus')
@@ -545,11 +545,11 @@ class infocardMaintain extends Controller
         ->with('searchRef',$searchRef);
     }
     //end of deleting infocards
-///////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //search infocards
     public function searchwildlife(Request $request)
-    {   
+    {
         $searchClass = DB::table('wildlife')
         ->select('wildlife.wildlife_class')
         ->distinct('wildlife.wildlife_class')
@@ -603,8 +603,8 @@ class infocardMaintain extends Controller
                                  ->where('wildlife_species','LIKE','%'.$request->wildlife_species.'%')
                                  ->where('wildlife_location','LIKE','%'.$request->wildlife_location.'%')
                                  ->where('wildlife_type','Zoo')
-                                 ->get();            
-         } 
+                                 ->get();
+         }
         if($request->searchWildlife)
         {
         $wildlife = Wildlife::where('wildlife_name','LIKE','%'.$request->searchWildlife.'%')
@@ -641,7 +641,7 @@ class infocardMaintain extends Controller
 
         $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
         //for search
-      
+
         //for class
         if($request->wildlife_class)
         {
@@ -678,7 +678,7 @@ class infocardMaintain extends Controller
                                 ->where('wildlife_species','LIKE','%'.$request->wildlife_species.'%')
                                 ->where('wildlife_location','LIKE','%'.$request->wildlife_location.'%')
                                 ->where('wildlife_type','Zoo')
-                                ->get();            
+                                ->get();
         }
 
         return view('IEMS.Linus.FACULTY.searchwildlife')
@@ -689,7 +689,7 @@ class infocardMaintain extends Controller
     }
 
     public function searchBone(Request $request)
-    {   
+    {
         $searchGenus = DB::table('wildlife')
         ->select('wildlife.wildlife_genus')
         ->distinct('wildlife.wildlife_genus')
@@ -716,7 +716,7 @@ class infocardMaintain extends Controller
                                  ->where('wildlife_type','Bone')
                                  ->get();
          }
-         
+
          //for genus and date
          if($request->wildlife_species && $request->date_added)
          {
@@ -725,7 +725,7 @@ class infocardMaintain extends Controller
                          ->where('wildlife_type','Bone')
                          ->get();
          }
-         
+
         if($request->searchBone)
         {
         $wildlife = Wildlife::where('wildlife_name','LIKE','%'.$request->searchBone.'%')
@@ -767,7 +767,7 @@ class infocardMaintain extends Controller
                                  ->where('wildlife_type','Bone')
                                  ->get();
          }
-         
+
          //for genus and date
          if($request->wildlife_species && $request->date_added)
          {
@@ -776,7 +776,7 @@ class infocardMaintain extends Controller
                          ->where('wildlife_type','Bone')
                          ->get();
          }
-         
+
         if($request->searchBone)
         {
         $wildlife = Wildlife::where('wildlife_name','LIKE','%'.$request->searchBone.'%')
@@ -790,7 +790,7 @@ class infocardMaintain extends Controller
     }
 
     public function searchRef(Request $request)
-    {   
+    {
         $searchGenus = DB::table('wildlife')
         ->select('wildlife.wildlife_genus')
         ->distinct('wildlife.wildlife_genus')
@@ -817,7 +817,7 @@ class infocardMaintain extends Controller
                                  ->where('wildlife_type','Reference')
                                  ->get();
          }
-         
+
          //for genus and date
          if($request->wildlife_species && $request->date_added)
          {
@@ -826,7 +826,7 @@ class infocardMaintain extends Controller
                          ->where('wildlife_type','Reference')
                          ->get();
          }
-         
+
         if($request->searchRef)
         {
         $wildlife = Wildlife::where('wildlife_name','LIKE','%'.$request->searchRef.'%')
@@ -868,7 +868,7 @@ class infocardMaintain extends Controller
                                  ->where('wildlife_type','Reference')
                                  ->get();
          }
-         
+
          //for genus and date
          if($request->wildlife_species && $request->date_added)
          {
@@ -877,7 +877,7 @@ class infocardMaintain extends Controller
                          ->where('wildlife_type','Reference')
                          ->get();
          }
-         
+
         return view ('IEMS.Linus.FACULTY.searchRefCollection')
         ->with('wildlifes', $wildlife)
         ->with('searchGenus', $searchGenus)
@@ -917,14 +917,14 @@ class infocardMaintain extends Controller
             $thesis = thesis_paper::where('thesis_title','LIKE','%'.$request->searchThesis.'%')
                                     ->get();
         }
-        
+
         return view('IEMS.Linus.FACULTY.searchThesis')
         ->with('thesis', $thesis)
         ->with('searchRef', $searchRef)
         ->with('searchAuthor', $searchAuthor);
     }
     public function advanceSearchThesis(Request $request)
-    {   
+    {
         $searchRef = DB::table('thesis_paper')
         ->select('thesis_paper.thesis_reference')
         ->distinct('thesis_paper.thesis_reference')
@@ -993,12 +993,12 @@ class infocardMaintain extends Controller
         ->with('journal', $journal)
         ->with('searchRef', $searchRef)
         ->with('searchDate', $searchDate);
-        
-        
+
+
     }
 
     public function advanceSearchJournal(Request $request)
-    {   
+    {
         $searchRef = DB::table('journal_article')
         ->select('journal_article.journal_reference')
         ->distinct('journal_article.journal_reference')
@@ -1010,7 +1010,7 @@ class infocardMaintain extends Controller
         ->get();
 
         $journal = journal_article::all();
-        
+
         if($request->journal_reference)
         {
             $journal = journal_article::where('journal_reference','LIKE','%'.$request->journal_reference.'%')
@@ -1035,7 +1035,7 @@ class infocardMaintain extends Controller
 
     public function searchReq(Request $request)
     {
-       
+
         $searchStatus = DB::table('announcement')
         ->select('announcement.anno_status')
         ->distinct('announcement.anno_status')
@@ -1051,7 +1051,7 @@ class infocardMaintain extends Controller
             ->where('anno_status','LIKE','%'.$request->anno_status.'%')
             ->get();
         }
-        
+
         if($request->searchRequest)
         {
             $anno = DB::table('users')
@@ -1066,13 +1066,13 @@ class infocardMaintain extends Controller
     }
 
     public function advanceSearchReq(Request $request)
-    {   
+    {
         $searchStatus = DB::table('announcement')
         ->select('announcement.anno_status')
         ->distinct('announcement.anno_status')
         ->get();
         //$anno = announcement::all();
-        
+
         if($request->anno_status)
         {
 
@@ -1086,17 +1086,23 @@ class infocardMaintain extends Controller
         ->with('searchStatus', $searchStatus);
     }
     //end of search//
-    
+
     //start of analysis
 
-    public function analysis()
+    public function countAnalysis()
     {
-        $wildlife = Wildlife::count();
-        $gradThesis = $thesis = thesis_paper::where('thesis_type','PostGraduate')->count();
+        $critter = $wildlife = wildlife::where('wildlife_type',"Zoo")->count();
+        $whalebone = $wildlife = wildlife::where('wildlife_type',"Bone")->count();
+        $reference = $wildlife = wildlife::where('wildlife_type',"Reference")->count();
+        $gradThesis = $thesis = thesis_paper::where('thesis_type','Graduate')->count();
         $undergradThesis = $thesis = thesis_paper::where('thesis_type','UnderGraduate')->count();
         $journal = journal_article::count();
+        $announcement = announcement::count();
 
-        return view('IEMS.Linus.FACULTY.fAnalytics',compact('wildlife','gradThesis','undergradThesis','journal'));
+        $doughnut = ['Critters' => $critter, 'Whalebones' => $whalebone, 'References' => $reference, 'GradTheses' => $gradThesis, 'UndergradTheses' => $undergradThesis, 'Journals' => $journal, 'Announcements' => $announcement ];
+
+
+        return view('IEMS.Linus.FACULTY.fAnalytics',compact('wildlife','gradThesis','undergradThesis','journal','critter','whalebone','reference','announcement','doughnut'));
     }
     //end of analysis
 

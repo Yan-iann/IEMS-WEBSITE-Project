@@ -91,7 +91,7 @@ Route::post('/A_editProfile/{id}',[adminController::class, 'editAprofile'])->nam
 
 
 //for analytics
-Route::get('/analytics',[infocardMaintain::class, 'analysis'])->name('analysis');
+Route::get('/analytics',[infocardMaintain::class, 'countAnalysis'])->name('analysis');
 
 //for request
 Route::get('/requestValidation',[infocardMaintain::class, 'request'])->name('Faculty_request');
