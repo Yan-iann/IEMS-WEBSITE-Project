@@ -1,6 +1,6 @@
 @extends('layouts.IEMS_Layout')
 @section('content')
-    <section class="mbr-section article" style="background-color: #1DA2d8; padding-top: 180px; padding-bottom: 180px;">
+    <section class="mbr-section article" style="background-color: #1DA2d8; padding-top: 180px; padding-bottom: 180px;" data-scroll-section>
 
         <div class="container">
             <div class="row d-flex justify-content-center">
@@ -16,7 +16,7 @@
 
 
     {{-- Courses Table --}}
-    <section class="section section-lg line-bottom-light" style="background-color: rgb(242,242,242s">
+    <section class="section section-lg line-bottom-light" style="background-color: rgb(242,242,242s" data-scroll-section>
         <div class="container mt-n10 mt-lg-n12 z-2" style="transform: translateY(-13rem)">
             <div class="row d-flex justify-content-center">
 

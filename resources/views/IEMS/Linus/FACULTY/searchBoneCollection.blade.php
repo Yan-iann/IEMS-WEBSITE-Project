@@ -9,7 +9,7 @@
                 <div class="home-content">
                     <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center">
                         <i class='bx bx-menu'></i>
-                        <span class="text">Bone Collection Search Results</span>
+                        <span class="text">Whale Bone Collection Search Results</span>
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-6">
@@ -44,7 +44,7 @@
                             <img class="card-img-top "src="{{ asset($item->wildlife_pic) }}" alt="Card image cap">
                             <div class="card-body bg-light text-primary">
                                 <h5 class="card-title text-center">{{ $item->wildlife_name }}</h5>
-                                <p class="card-text text-center">({{ $item->wildlife_scientific_name }})</p>
+                                <p class="card-text text-center fst-italic">({{ $item->wildlife_scientific_name }})</p>
                             </div>
                         </div>
                         @include('IEMS.Linus.FACULTY.editBoneCollection')
