@@ -1,8 +1,21 @@
 @extends('layouts.S_Layout')
 @section('content')
 <div class="container-fluid">
+
+                              @if(Session::get('fail'))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('fail')}}
+                                </div>
+                                @endif
+
+                                @if(Session::get('sucess'))
+                                    <div class="alert alert-success">
+                                      {{ Session::get('sucess')}}
+                                    </div>
+                                @endif
     <div class="home-content">
 
+                             
         <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center p-4">
             <i class='bx bx-menu'></i>
             <span class="text">Announcement Requests</span>
@@ -152,27 +165,27 @@
 
                <div class="col-12">
                   <label for="anno_pic">Announcement Cover:</label>
-                  <input type="file" id="anno_pic" class="form-control"  placeholder="Announcement Cover Photo" name="anno_pic">
+                  <input type="file" id="anno_pic" class="form-control"  placeholder="Announcement Cover Photo" name="anno_pic" required>
                 </div>
 
                 <div class="col-12">
                   <label for="formGroupExampleInput" class="form-label">Announcement Title</label>
-                  <input type="input" class="form-control"  placeholder="Enter Title" name="anno_title">
+                  <input type="input" class="form-control"  placeholder="Enter Title" name="anno_title" required>
                 </div>
 
                 <div class="col-12">
                   <label for="formGroupExampleInput" class="form-label">Announcement Author</label>
-                  <input type="input" class="form-control" placeholder="Enter Author" name="anno_author" >
+                  <input type="input" class="form-control" placeholder="Enter Author" name="anno_author" required>
                 </div>
 
                 <div class="col-12 col-md-4">
                   <label for="formGroupExampleInput" class="form-label">Announcement Date</label>
-                  <input type="date" class="form-control"  placeholder="Enter Date " name="anno_date" >
+                  <input type="date" class="form-control"  placeholder="Enter Date " name="anno_date" required>
                 </div>
 
                 <div class="col-12 col-md-4">
                   <label for="formGroupExampleInput" class="form-label">Content</label>
-                  <input type="input" name="anno_content" class="form-control" placeholder="Enter content " >
+                  <input type="input" name="anno_content" class="form-control" placeholder="Enter content " required >
                 </div>
 
                 <input type="hidden" class="form-control"  name="anno_status" value="unapproved">

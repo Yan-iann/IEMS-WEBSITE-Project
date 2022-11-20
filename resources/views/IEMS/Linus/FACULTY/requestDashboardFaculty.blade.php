@@ -1,7 +1,17 @@
 @extends('layouts.F_Layout')
 @section('content')
 <div class="conatiner-fluid">
+                              @if(Session::get('fail'))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('fail')}}
+                                </div>
+                                @endif
 
+                                @if(Session::get('sucess'))
+                                    <div class="alert alert-success">
+                                      {{ Session::get('sucess')}}
+                                    </div>
+                                @endif
   <div class="home-content">
 
     <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center p-4">
@@ -78,27 +88,27 @@
 
                                       <div class="col-12">
                                         <label for="formGroupExampleInput" class="form-label">Announcement Title</label>
-                                        <input type="input" class="form-control"  name="anno_title" value="{{ $item->anno_title}}">
+                                        <input type="input" class="form-control"  name="anno_title" value="{{ $item->anno_title}}" required>
                                       </div>
 
                                       <div class="col-12">
                                         <label for="formGroupExampleInput" class="form-label">Announcement Author</label>
-                                        <input type="input" class="form-control"  name="anno_author" value="{{ $item->anno_author}}" >
+                                        <input type="input" class="form-control"  name="anno_author" value="{{ $item->anno_author}}" required>
                                       </div>
 
                                       <div class="col-12 col-md-4">
                                         <label for="formGroupExampleInput" class="form-label">Announcement Date</label>
-                                        <input type="date" class="form-control"  name="anno_date" value="{{ $item->anno_date}}">
+                                        <input type="date" class="form-control"  name="anno_date" value="{{ $item->anno_date}}" required>
                                       </div>
 
                                       <div class="col-12 col-md-4">
                                         <label for="formGroupExampleInput" class="form-label">Content</label>
-                                        <input type="textarea" name="anno_content" class="form-control"  value="{{ $item->anno_content}}">
+                                        <input type="textarea" name="anno_content" class="form-control"  value="{{ $item->anno_content}}" required>
                                       </div>
 
                                       <div class="col-12 col-md-4">
                                         <label for="formGroupExampleInput" class="form-label">Status</label>
-                                        <input type="input" name="anno_status" class="form-control" value="{{ $item->anno_status}}" >
+                                        <input type="input" name="anno_status" class="form-control" value="{{ $item->anno_status}}" required>
                                         <select name="anno_status" id="anno_status">
                                             <option value="approve">approve</option>
                                             <option value="unapprove">unapprove</option>
@@ -121,7 +131,7 @@
                 </form>
 
                 <!-- Delete Announcement Modal-->
-                <form action="{{ route('deleteAnno',$item->anno_ID) }}" method="get" enctype="multipart/form-data">
+                <form action="{{ route('deleteAnnoF',$item->anno_ID) }}" method="get" enctype="multipart/form-data">
                       <div class="modal fade" id="ModalDeleteReq{{$item->anno_ID}}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                             {!! csrf_field() !!}
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">

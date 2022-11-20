@@ -3,6 +3,17 @@
 
 <div class="container-fluid">
   {{-- Page Name, and Burger Icon. AND Search Bar --}}
+                                @if(Session::get('fail'))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('fail')}}
+                                </div>
+                                @endif
+
+                                @if(Session::get('sucess'))
+                                    <div class="alert alert-success">
+                                      {{ Session::get('sucess')}}
+                                    </div>
+                                @endif
   <div class="col-12">
 
     <div class="row d-flex justify-content-around">
@@ -104,36 +115,36 @@
                     <div class="row">
                       <div class="col-12">
                         <label for="formGroupExampleInput" class="form-label">Journal Title</label>
-                        <input type="input" class="form-control" placeholder="Enter journal Title" name="journal_title">
+                        <input type="input" class="form-control" placeholder="Enter journal Title" name="journal_title" required>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-12"><br>
                         <label for="formGroupExampleInput" class="form-label">Journal Author</label>
-                        <input type="input" class="form-control" placeholder="Enter journal Author" name="journal_author" >
+                        <input type="input" class="form-control" placeholder="Enter journal Author" name="journal_author" required>
                       </div>
                     </div>
                   </div>
                    <!--Column4-->
                   <div class="col-4">
                     <label for="formGroupExampleInput2" class="form-label">Journal Reference</label>
-                    <input type="input" class="form-control" placeholder="Enter journal Reference" name="journal_reference" >
+                    <input type="input" class="form-control" placeholder="Enter journal Reference" name="journal_reference" required>
                   </div>
                   <!--Column4-->
 
                   <!--Column4-->
                   <div class="col-4">
                     <label for="formGroupExampleInput2" class="form-label">Date Published</label>
-                    <input type="date" class="form-control" placeholder="Enter Date Published" name="date_published" >
+                    <input type="date" class="form-control" placeholder="Enter Date Published" name="date_published" required>
                   </div>
                   <div class="col-4">
                     <label for="formGroupExampleInput2" class="form-label">Date Added</label>
-                    <input type="date" class="form-control" placeholder="Enter Date Published" name="date_added" >
+                    <input type="date" class="form-control" placeholder="Enter Date Published" name="date_added" required>
                   </div>
                   <!--Form Group-->
                   <div class="form-group">
                     <label for="wildlife_order">Journal Description:</label>
-                    <input type="input" class="form-control"  placeholder="Enter Journal Description" name="journal_desc">
+                    <input type="input" class="form-control"  placeholder="Enter Journal Description" name="journal_desc" required>
                   </div>
                   <!--Hidden Inputs-->
                   <input type="hidden" class="form-control" name="journal_status" value="approved">

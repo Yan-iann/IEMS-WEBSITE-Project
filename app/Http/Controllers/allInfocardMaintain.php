@@ -144,20 +144,22 @@ class allInfocardMaintain extends Controller
 
     public function storeDataRef(Request $request)
     {
-         $validator = Validator::make(request()->all(), [
-        'wildlife_name' => 'required',
-        'wildlife_scientific_name' => 'required',
-        'wildlife_desc' => 'required',
-        'wildlife_pic' => 'required',
-        'wildlife_status' => 'required',
-        'wildlife_type' => 'required',
-        'info_type' => 'required',
-        ]);
-    
+        $validator = Validator::make(request()->all(), [
+            'wildlife_pic' => 'required',
+            'wildlife_name' => 'required',
+            'wildlife_scientific_name' => 'required',
+            'wildlife_genus' => 'required',
+            'wildlife_desc' => 'required',
+            'date_added' => 'required',
+            'wildlife_status' => 'required',
+            'wildlife_type' => 'required',
+            'info_type' => 'required',
+            ]);
         if($validator->fails())
         {
-        return back()->withErrors($validator)->withInput()->with('error','Something went wrong. Please try again.');
-        }
+            return redirect()->back()
+            ->with('fail','Please Provide All Information');
+        }//failed
         else
         {
             $infocard = new Infocard;
@@ -187,7 +189,13 @@ class allInfocardMaintain extends Controller
                 return redirect()->route('refCollection')
                 ->with('wildlifes', $wildlife)
                 ->with('searchGenus', $searchGenus)
-                ->with('searchDate', $searchDate);
+                ->with('searchDate', $searchDate)
+                ->with('sucess','Reference Added Succesfully');
+            }
+            else
+            {
+                return redirect()->back()
+                ->with('fail','Infocard Not Saved');
             }
         }
     }//end of adding wildlife
@@ -201,11 +209,14 @@ class allInfocardMaintain extends Controller
         'thesis_type' => 'required',
         'date_published' => 'required',
         'date_added' => 'required',
-        'thesis_status' => 'required',
-        'info_type' => 'required',
         ]);
-    
-       
+        if($validator->fails())
+        {
+            return redirect()->back()
+            ->with('fail','Please Provide All Information');
+        }//failed
+        else
+        {
             $infocard = new Infocard;
             $infocard->info_type = $request->info_type;
             if($infocard->save())
@@ -228,8 +239,16 @@ class allInfocardMaintain extends Controller
                 return redirect()->route('thesis')
                 ->with('thesis',$thesis)
                 ->with('searchRef',$searchRef)
-                ->with('searchAuthor',$searchAuthor);
-            }     
+                ->with('searchAuthor',$searchAuthor)
+                ->with('sucess','Thesis Paper Added Succesfully');
+            }
+            else
+            {
+                return redirect()->back()
+                ->with('fail','Infocard Not Saved');
+            }    
+
+        }//sucess
         
     }//end of adding thesis
 
@@ -242,13 +261,11 @@ class allInfocardMaintain extends Controller
             'journal_desc' => 'required',
             'date_published' => 'required',
             'date_added' => 'required',
-            'journal_status' => 'required',
-            'info_type' => 'required',
             ]);
-        
             if($validator->fails())
             {
-            return back()->withErrors($validator)->withInput()->with('error','Something went wrong. Please try again.');
+                return redirect()->back()
+                ->with('fail','Please Provide All Information');
             }
             else
             {
@@ -275,8 +292,14 @@ class allInfocardMaintain extends Controller
                     return redirect()->route('journal')
                     ->with('journal',$journal)
                     ->with('searchDate',$searchDate)
-                    ->with('searchRef',$searchRef);
+                    ->with('searchRef',$searchRef)
+                    ->with('sucess','Journal Article Added Succesfully');
                 }
-            }
+                else
+                {
+                    return redirect()->back()
+                    ->with('fail','Infocard Not Saved'); 
+                }
+            }//sucess
     }//end of adding journal
 }

@@ -2,6 +2,18 @@
 @section('content')
 <div class="container-fluid">
      {{-- Page Name, and Burger Icon. AND Search Bar --}}
+
+                                @if(Session::get('fail'))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('fail')}}
+                                </div>
+                                @endif
+
+                                @if(Session::get('sucess'))
+                                    <div class="alert alert-success">
+                                      {{ Session::get('sucess')}}
+                                    </div>
+                                @endif
      <div class="col-12">
 
         <div class="row d-flex justify-content-around">
@@ -105,36 +117,37 @@
                   <div class="row">
                     <div class="col-12">
                       <label for="formGroupExampleInput" class="form-label">Thesis Title</label>
-                      <input type="input" class="form-control" placeholder="Enter Thesis Title" name="thesis_title">
+                      <input type="input" class="form-control" placeholder="Enter Thesis Title" name="thesis_title" required>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-12"><br>
                     <label for="formGroupExampleInput" class="form-label">Thesis Author</label>
-                    <input type="input" class="form-control" placeholder="Enter Thesis Author" name="thesis_author">
+                    <input type="input" class="form-control" placeholder="Enter Thesis Author" name="thesis_author" required>
                     </div>
                   </div>
                 </div>
                 <div class="col-4">
                   <label for="formGroupExampleInput2" class="form-label">Thesis Reference</label>
-                  <input type="input" class="form-control" placeholder="Enter Thesis Reference" name="thesis_reference" >
+                  <input type="input" class="form-control" placeholder="Enter Thesis Reference" name="thesis_reference" required>
                 </div>
                 <div class="col-4">
                   <label for="formGroupExampleInput2" class="form-label">Thesis Type</label>
-                  <input type="input" class="form-control" placeholder="Enter Thesis Type" name="thesis_type" >
+                  <input type="input" class="form-control" placeholder="Enter Thesis Type" name="thesis_type" required>
                 </div>
                 <div class="col-4">
                   <label for="formGroupExampleInput2" class="form-label">Date Published</label>
-                  <input type="date" class="form-control" placeholder="Enter Date Published" name="date_published" >
+                  <input type="date" class="form-control" placeholder="Enter Date Published" name="date_published" required>
                 </div>
 
                 <div class="col-4">
                   <label for="formGroupExampleInput2" class="form-label">Date Added</label>
-                  <input type="date" class="form-control" placeholder="Enter Date Published" name="date_added" >
+                  <input type="date" class="form-control" placeholder="Enter Date Published" name="date_added" required>
                 </div>
 
                 <input type="hidden" class="form-control" name="thesis_status" value="approved">
                 <input type="hidden" class="form-control" name="info_type" value="thesis_paper">
+                
                 <div class="modal-footer border-0">
                   <button type="submit" class="btn btn-info">Submit</button>
                   <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>

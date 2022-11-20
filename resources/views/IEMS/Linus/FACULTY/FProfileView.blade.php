@@ -1,6 +1,18 @@
 @extends('layouts.F_Layout')
 @section('content')
 
+                                @if(Session::get('fail'))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('fail')}}
+                                </div>
+                                @endif
+
+                                @if(Session::get('sucess'))
+                                    <div class="alert alert-success">
+                                      {{ Session::get('sucess')}}
+                                    </div>
+                                @endif
+
   <div class="container-fluid" style="height: 100%">
     <div class="home-content">
       <span class="text">Profile</span>
@@ -9,7 +21,7 @@
     <div class="container-fluid">
       <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
         <div class="col-12 col-lg-4">
-          <img style="width: 200px;"class="imageWildlife" src="{{ asset('storage/images/' .$item->profile_pic) }}" alt="No profile picture">
+          <img style="width: 200px;"class="imageWildlife" src="{{ asset($item->profile_pic) }}" alt="No profile picture">
         </div>
           <div class="col-12 col-lg-8">
             <div class="row g-1">
@@ -95,13 +107,13 @@
 
                                                     <div class="col-12">
                                                   <label for="profile">Profile Picture:</label>
-                                                  <input type="file" id="profile_pic" class="form-control"  placeholder="Profile Picture" name="profile_pic">
+                                                  <input type="file" id="profile_pic" class="form-control"  placeholder="Profile Picture" name="profile_pic" required>
                                                 </div>
                                                                 <div class="col-12">
                                                                     <label for="formGroupExampleInput"
                                                                         class="form-label">Name</label>
                                                                     <input type="text" class="form-control"
-                                                                        name="name" value="{{ $item->name }}">
+                                                                        name="name" value="{{ $item->name }}" required>
                                                                 </div>
 
                                                                 <div class="col-12">
@@ -116,21 +128,21 @@
                                                                     <label for="formGroupExampleInput"
                                                                         class="form-label">Last Name</label>
                                                                     <input type="text" class="form-control"
-                                                                        name="last_name" value="{{ $item->last_name }}">
+                                                                        name="last_name" value="{{ $item->last_name }}" required>
                                                                 </div>
 
                                                                 <div class="col-12">
                                                                     <label for="formGroupExampleInput"
                                                                         class="form-label">Rank</label>
                                                                     <input type="text" class="form-control"
-                                                                        name="rank" value="{{ $item->rank}}">
+                                                                        name="rank" value="{{ $item->rank}}" required>
                                                                 </div>
 
                                                                 <div class="col-12">
                                                                     <label for="formGroupExampleInput"
                                                                         class="form-label">Specialty</label>
                                                                     <input type="text" class="form-control"
-                                                                        name="specialty" value="{{ $item->specialty}}">
+                                                                        name="specialty" value="{{ $item->specialty}}" required>
                                                                 </div>
 
 
@@ -138,14 +150,14 @@
                                                                     <label for="formGroupExampleInput"
                                                                         class="form-label">Educational Attaintment</label>
                                                                     <input type="text" class="form-control"
-                                                                        name="educational" value="{{ $item->educational}}">
+                                                                        name="educational" value="{{ $item->educational}}" required>
                                                                 </div>
 
 
                                                         <div class="col-12 ">
                                                             <label for="formGroupExampleInput2" class="form-label">Phone Number</label>
                                                             <input type="input" class="form-control" name="phone_no"
-                                                                value="{{ $item ->phone_no }}">
+                                                                value="{{ $item ->phone_no }}" required>
                                                         </div>
 
 

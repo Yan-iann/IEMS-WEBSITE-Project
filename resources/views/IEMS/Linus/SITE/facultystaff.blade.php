@@ -37,7 +37,7 @@
                 @foreach ($user as $item)
                     <div class="col-6 col-md-2 col-lg-2" style="margin: 20px">
                         <div class="card bg-transparent" style="width: 18rem; border:none; cursor:default">
-                            <img src="{{ asset('storage/images/' .$item->profile_pic) }}" class="card-img-top" alt="...">
+                            <img src="{{ asset($item->profile_pic) }}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $item->name }}</h5> {{-- Name Of Faculty --}}
                                 <p class="card-text">{{ $item->rank }}</p> {{-- Rank Of Faculty --}}

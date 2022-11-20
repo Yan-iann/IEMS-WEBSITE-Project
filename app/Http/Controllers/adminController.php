@@ -150,26 +150,25 @@ class adminController extends Controller
                 ];
                 User::create($user);
                 $id = DB::table("users")->select("id")->orderBy('id','desc')->value('id');
-
                     if($request->hasfile('profile_pic'))
                     {
-                    
-                        $file = $request->file('profile_pic');
-                        $extention = $file->getClientOriginalExtension();
-                        $filename = time(). '.'.$extention;
-                        $file->move('storage/images',$filename);
-                        $userInfo = [
-                            'name' => $request->name,
-                            'middle_name' => $request->middle_name,
-                            'last_name' => $request->last_name,
-                            'rank'=> $request-> rank,
-                            'specialty'=> $request->specialty,
-                            'educational'=> $request->educational,
-                            'phone_no'=> $request->phone_no,
-                            'profile_pic' =>  $filename,
-                            'user_ID' => $id,
-                        ];
-                    } //if naay picture
+                        if($request->hasfile('profile_pic'))
+                        {
+                            $filename = time().request()->file('profile_pic')->getClientOriginalName();
+                            $finalPath = request()->file('profile_pic')->move('storage/images',$filename);
+                            $userInfo = [
+                                'name' => $request->name,
+                                'middle_name' => $request->middle_name,
+                                'last_name' => $request->last_name,
+                                'rank'=> $request-> rank,
+                                'specialty'=> $request->specialty,
+                                'educational'=> $request->educational,
+                                'phone_no'=> $request->phone_no,
+                                'profile_pic' =>  $finalPath,
+                                'user_ID' => $id,
+                            ];
+                        }
+                    } //if have picture
                     else
                     {
                         $userInfo = [
@@ -183,7 +182,6 @@ class adminController extends Controller
                             'user_ID' => $id,
                         ];
                     }//if walay picture
-
                         user_info::create($userInfo);
                         $user = User::all();
                         return redirect()->route('adminDashboard')
@@ -244,16 +242,14 @@ class adminController extends Controller
 
         if($request->hasfile('profile_pic'))
         {
-            $path = 'storage/images'.$user->profile_pic;
+            $path = $user["profile_pic"];
             if(FILE::exists($path))
             {
                 FILE::delete($path);
             }
-            $file = $request->file('profile_pic');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time(). '.'.$extention;
-            $file->move('storage/images',$filename);
-            $user->profile_pic = $filename;
+            $filename = time().request()->file('profile_pic')->getClientOriginalName();
+            $finalPath = request()->file('profile_pic')->move('storage/images',$filename);
+            $user["profile_pic"] = $finalPath;
         }
         $user->save();
         return redirect()->route('Aprofile')

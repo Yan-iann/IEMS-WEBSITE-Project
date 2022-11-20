@@ -2,6 +2,16 @@
 @section('content')
 <div class="container-fluid">
         {{-- Page Name, and Burger Icon. AND Search Bar --}}
+                            @if(Session::get('fail'))
+                                    <div class="alert alert-danger">
+                                        {{ Session::get('fail')}}
+                                    </div>
+                             @endif
+                             @if(Session::get('sucess'))
+                                    <div class="alert alert-success">
+                                      {{ Session::get('sucess')}}
+                                    </div>
+                                @endif
         <div class="col-12">
 
             <div class="row d-flex justify-content-around">
@@ -94,7 +104,7 @@
           <div class="modal-content  bg-light">
 
             <div class="modal-header border-0 text-center">
-              <h5 class="modal-title  text-center">Add Reference Collection Information</h5>
+              <h5 class="modal-title  text-center">Add Reference Information</h5>
               <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -103,27 +113,27 @@
                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
                   <div class="col-12">
                     <label for="wildlife_pic">Reference Picture:</label>
-                    <input type="file" id="wildlife_pic" class="form-control"  placeholder="Wildlife Picture" name="wildlife_pic">
+                    <input type="file" id="wildlife_pic" class="form-control"  placeholder="Wildlife Picture" name="wildlife_pic" required>
                   </div>
                   <div class="col-12">
                     <label for="formGroupExampleInput" class="form-label">Reference Name</label>
-                    <input type="input" class="form-control"  placeholder="Enter Wildlife Name" name="wildlife_name">
+                    <input type="input" class="form-control"  placeholder="Enter Wildlife Name" name="wildlife_name" required>
                   </div>
                   <div class="col-12">
                     <label for="formGroupExampleInput" class="form-label">Reference Scientific Name</label>
-                    <input type="input" class="form-control" placeholder="Enter Wildlife Scientific Name" name="wildlife_scientific_name" >
+                    <input type="input" class="form-control" placeholder="Enter Wildlife Scientific Name" name="wildlife_scientific_name" required>
                   </div>
 
 
 
                   <div class="-12 col-md-4">
                     <label for="formGroupExampleInput2" class="form-label">Reference Genus</label>
-                    <input type="input" class="form-control" placeholder="Enter Wildlife Genus"  name="wildlife_genus"  name="wildlife_genus" >
+                    <input type="input" class="form-control" placeholder="Enter Wildlife Genus"  name="wildlife_genus"  name="wildlife_genus" required>
                   </div>
 
                   <div class="-12 col-md-4">
                     <label for="formGroupExampleInput2" class="form-label">Date Added</label>
-                    <input type="date" class="form-control" placeholder="Enter Date"  name="date_added"  name="date_added" >
+                    <input type="date" class="form-control" placeholder="Enter Date"  name="date_added"  name="date_added" required>
                   </div>
 
 
@@ -135,7 +145,7 @@
 
                   <div class="col-12">
                     <label for="exampleFormControlinputarea1" class="form-label">Description</label>
-                    <textarea class="form-control" name="wildlife_desc" rows="3" placeholder="Enter Wildlife Description"></textarea>
+                    <textarea class="form-control" name="wildlife_desc" rows="3" placeholder="Enter Wildlife Description" required></textarea>
                   </div>
                   <div class="modal-footer border-0">
                     <button type="submit" class="btn btn-info text-white">Submit</button>

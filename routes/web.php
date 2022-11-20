@@ -91,6 +91,7 @@ Route::prefix('IEMSFaculty')->middleware('auth','isFaculty')->group(function(){
     Route::get('/requestValidation',[infocardMaintain::class, 'request'])->name('Faculty_request');
     Route::get('/advanceSearchRequest',[infocardMaintain::class, 'advanceSearchReq'])->name('advanceSearchReq');
     Route::post('/updateAnnouncementF/{id}',[infocardMaintain::class, 'updateAnnoF'])->name('updateAnnoF');
+    Route::get('/deleteAnnouncementF/{id}',[infocardMaintain::class, 'deleteAnnoF'])->name('deleteAnnoF');
     //for searching
     Route::get('/searchBone',[infocardMaintain::class, 'searchBone'])->name('searchBone');
     Route::get('/advanceSearchBone',[infocardMaintain::class, 'advanceSearchBone'])->name('advanceSearchBone');
