@@ -159,7 +159,7 @@
                                 <div class="row justify-content-center">
                                     <h4 class="col-12 subheader fst-italic fw-light" style="color: white">World-Class <br>
                                         Education</h4>
-                                    <p class=" col-9 lead text-break" style="word-wrap: break-word">Top of line resources
+                                    <p class=" col-9 lead text-break" style="word-wrap: break-word">Top of the line resources
                                         for learning to culture and grow the
                                         capabilites of students and researchers</p>
                                 </div>
@@ -197,11 +197,11 @@
                 <br>
 
                 <div class="col-12 col-md-6 col-lg-6">
-                    
+
                     <div class="wrapper">
                         @foreach ($announcement as $item)
                         {{-- Insert For Loop Here (start with last to first) --}}
-                        
+
                         <div class="item col-md-1 col-lg-1 order-lg-2 my-10">
 
                             <div class="card bg-dark text-white  align-text-bottom"
@@ -233,7 +233,7 @@
                         </div>
                         {{-- end Announcement Card Loop --}}
 
-                        
+
                         @endforeach
                         {{-- View Announcements Card --}}
                         <div class="item col-md-1 col-lg-1 order-lg-2 my-10">

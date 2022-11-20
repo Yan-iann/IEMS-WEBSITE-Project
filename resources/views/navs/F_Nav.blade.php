@@ -1,7 +1,7 @@
 <div class="sidebar close">
 
     {{-- Linus Logo Header --}}
-    <div class="logo-details">
+    <div class="logo-details mt-4">
         <a href="/"> <i class="mt-4"><img src="{{ URL::asset('img/Logo_linus_white.png') }}"></i> </a>
     </div>
 

@@ -1,6 +1,6 @@
 @extends('layouts.IEMS_Layout')
 @section('content')
-    <section class="mbr-section article" style="background-color: #1DA2d8; padding-top: 180px; padding-bottom: 180px;">
+    <section class="mbr-section article" style="background-color: #1DA2d8; padding-top: 180px; padding-bottom: 180px;" data-scroll-section>
 
         <div class="container">
             <div class="row d-flex justify-content-center">
@@ -16,7 +16,7 @@
 
     {{-- Fees Table --}}
     <section class="mbr-section article"
-        style="background-color: #FBFBFB; padding-top: 120px; padding-bottom:120px; object-fit:cover;">
+        style="background-color: #FBFBFB; padding-top: 120px; padding-bottom:120px; object-fit:cover;" data-scroll-section>
         <div class="container">
             <div class="row d-flex justify-content-center">
 
@@ -247,7 +247,7 @@
 
     {{-- Notes --}}
     <section class="mbr-section article"
-    style="background-color: rgb(242, 242, 242); padding-top: 120px; padding-bottom:120px; object-fit:cover;">
+    style="background-color: rgb(242, 242, 242); padding-top: 120px; padding-bottom:120px; object-fit:cover;" data-scroll-section>
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-12 d-flex align-items-center" style="padding:10px">

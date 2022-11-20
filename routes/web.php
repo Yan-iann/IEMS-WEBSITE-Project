@@ -27,7 +27,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 Route::get('/', [IEMSWebsite::class, 'accessHome']); //access announcement table
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
 
-Route::prefix('IEMS')->middleware('auth','isAdmin','isFaculty','isStudent')->group(function(){ 
+Route::prefix('IEMS')->middleware('auth','isAdmin','isFaculty','isStudent')->group(function(){
     Route::get('/firstTime', [RegisteredUserController::class, 'firstTime'])->name('firstTime');
     Route::post('/updatePassword/{id}',[RegisteredUserController::class, 'updatePass'])->name('updatePass');
 });
@@ -86,7 +86,7 @@ Route::prefix('IEMSFaculty')->middleware('auth','isFaculty')->group(function(){
     Route::get('/A_profile',[adminController::class, 'Aprofile'])->name('Aprofile');
     Route::post('/A_editProfile/{id}',[adminController::class, 'editAprofile'])->name('editAprofile');
     //for analytics
-    Route::get('/analytics',[infocardMaintain::class, 'analysis'])->name('analysis');
+    Route::get('/analytics',[infocardMaintain::class, 'countAnalysis'])->name('analysis');
     //for request
     Route::get('/requestValidation',[infocardMaintain::class, 'request'])->name('Faculty_request');
     Route::get('/advanceSearchRequest',[infocardMaintain::class, 'advanceSearchReq'])->name('advanceSearchReq');

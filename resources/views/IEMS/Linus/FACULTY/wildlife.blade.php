@@ -66,6 +66,10 @@
         </a>
       </div><!--end of class container fluid-->
    </section>
+
+
+
+
 <!-- Delete Wildlife Modal-->
 @foreach($wildlifes as $item)
 <form action="{{ route('deleteWildlife',$item->info_ID) }}" method="get" enctype="multipart/form-data">
@@ -89,6 +93,10 @@
       </div>
 </form>
 @endforeach
+
+
+
+
 
 <!-- Add Wildlife Modal-->
 <form action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
@@ -151,10 +159,12 @@
                     <input type="hidden" class="form-control" name="info_type" value="wildlife">
                     <input type="hidden" class="form-control" name="wildlife_type" value="Zoo">
                     <input type="hidden" class="form-control"  name="wildlife_status" value="Approved">
+
                   <div class="col-12">
                     <label for="exampleFormControlinputarea1" class="form-label">Description</label>
                     <textarea class="form-control" name="wildlife_desc" rows="3" placeholder="Enter Critter Description" required></textarea>
                   </div>
+
                   <div class="modal-footer border-0">
                     <button type="submit" class="btn btn-info text-white">Submit</button>
                     <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
