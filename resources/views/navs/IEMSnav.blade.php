@@ -38,7 +38,7 @@
                 <li class="nav-item" style="padding:5px">
                     <a class="nav-link font-weight-bold" href="/announcement">Announcements</a>
                 </li>
-                <li class="nav-item" style="padding:5px">
+                <li class="nav-item" style="padding:5px" hidden>
                     <a class="nav-link font-weight-bold" href="/contact-us">Contact Us</a>
                 </li>
             </ul>
