@@ -8,43 +8,43 @@
         <h5 class="modal-title  text-center">Reference Details</h5>
         <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      
+
       <div class="modal-body">
         <div class="container-fluid">
           <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
-            
+
             <div class="col-12 col-lg-4 ">
             <label for="wildlife_pic">Bone Picture:</label>
             <input type="file" id="wildlife_pic" class="form-control"  placeholder="{{ asset($item->wildlife_pic) }}" name="wildlife_pic">
-            </div> 
+            </div>
 
             <div class="col-12 col-lg-8">
               <div class="row">
                 <div class="col-12">
-              <label for="formGroupExampleInput" class="form-label">Bone Name</label>
+              <label for="formGroupExampleInput" class="form-label">Common Name</label>
               <input type="text" class="form-control"  name="wildlife_name" value="{{ $item->wildlife_name}}">
               </div>
               </div>
-            
+
 
             <div class="row">
               <div class="col-12"><br>
-                <label for="formGroupExampleInput" class="form-label">Bone Scientific Name</label>
+                <label for="formGroupExampleInput" class="form-label">Scientific Name</label>
                 <input type="text" class="form-control" name="wildlife_scientific_name" value="{{ $item->wildlife_scientific_name}}">
               </div>
             </div>
           </div>
 
             <div class="col-12 col-lg-4">
-              <label for="formGroupExampleInput2" class="form-label">Bone Genus</label>  <h2 class="detailsView"></h2 class="detailsView">
+              <label for="formGroupExampleInput2" class="form-label">Genus</label>  <h2 class="detailsView"></h2 class="detailsView">
               <input type="text" class="form-control" name="wildlife_genus" value="{{ $item->wildlife_genus}}">
             </div>
 
-         
+
             <div class="col-12 col-lg-4">
               <!-- -->
             </div>
-            
+
             <div class="col-12">
               <label for="exampleFormControlTextarea1" class="form-label">Description</label><h2 class="detailsView"></h2 class="detailsView">
               <textarea class="form-control" name="wildlife_desc" rows="3" >{{ $item->wildlife_desc}}</textarea>

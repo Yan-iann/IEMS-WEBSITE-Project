@@ -18,7 +18,7 @@
                     action="{{ route('searchRef') }}">
                     <div class="input-group">
                         <input type="search" name="searchRef" class="form-control mr-sm2"
-                            placeholder="Search Reference Collection">
+                            placeholder="Search Reference Name">
                         <div class="input-group-btn">
                             <div class="btn-group" role="group">
                                 <div class="dropdown dropdown-lg">
@@ -105,26 +105,42 @@
                             <div class="container-fluid">
                                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
 
+                                    {{-- Genus Filter --}}
                                     <div class="col-12">
-                                        <label class="focus-label">Bone Genus:</label>
-                                        <select class="select floating" id="" name="wildlife_genus">
-                                            <option></option>
-                                            @foreach ($searchGenus as $item)
-                                                <option value="{{ $item->wildlife_genus }}">{{ $item->wildlife_genus }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                        <div class="row d-flex justify-content-between">
+                                            <div class="col-6">
+                                                <label class="focus-label">Genus:</label>
+                                            </div>
+                                            <div class="col-6">
+                                                <select class="select floating p-1" id="" name="wildlife_genus">
+                                                    <option></option>
+                                                    @foreach ($searchGenus as $item)
+                                                        <option value="{{ $item->wildlife_genus }}">
+                                                            {{ $item->wildlife_genus }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div class="col-12">
-                                        <label class="focus-label">Bone Added Date:</label>
-                                        <select class="select floating" id="" name="date_added">
-                                            <option></option>
-                                            @foreach ($searchDate as $item)
-                                                <option value="{{ $item->date_added }}">{{ $item->date_added }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
+
+                                    {{--    Date Added
+                  <div class="col-12">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-6">
+                  <label class="focus-label">Bone Added Date:</label>
+                        </div>
+                        <div class="col-6">
+                    <select class="select floating" id="" name="date_added">
+                      <option></option>
+                      @foreach ($searchDate as $item)
+                      <option value="{{ $item->date_added }}">{{$item->date_added}}</option>
+                      @endforeach
+                    </select>
+                        </div>
+                    </div>
+                  </div> --}}
 
 
                                     <div class="modal-footer border-0">

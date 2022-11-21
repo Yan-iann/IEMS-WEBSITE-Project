@@ -15,7 +15,6 @@
             <div class="col-12 col-md-6 col-lg-6 order-sm-1 order-md-2">
                 <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get"
                     action="{{ route('G_searchJournal') }}">
-                    {{-- uhm di pani sure ?? --}}
                     <div class="input-group">
                         <input type="search" name="searchJournal" class="form-control mr-sm2"
                             placeholder="Search Journal Article Title">
