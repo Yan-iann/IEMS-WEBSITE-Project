@@ -2,16 +2,19 @@
 @section('content')
 <div class="container-fluid">
 {{-- Page Name, and Burger Icon. AND Search Bar --}}
-<div class="col-12">
+<div class="row d-flex justify-content-between">
+    <div class="col-12 col-md-6 col-lg-6 order-sm-2 order-md-1">
 
-    <div class="row d-flex justify-content-around">
         <div class="home-content">
             <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center">
                 <i class='bx bx-menu'></i>
                 <span class="text">Reference Collection</span>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-6">
+        </div>
+    </div>
+
+            <div class="col-12 col-md-6 col-lg-6 order-sm-1 order-md-2">
                 <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('G_searchRef') }}">
                     {{-- uhm di pani sure ?? --}}
                     <div class="input-group">
@@ -31,14 +34,14 @@
             </div>
         </div>
     </div>
-</div>
+
 
 {{-- Information Cards --}}
 <section class="col-12">
       <div class="container-fluid">
         <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
           @foreach($wildlifes as $item)
-          <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
+          <div class="col-12 col-md-4 col-lg-3 d-flex align-items-stretch">
             <div class="card " style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#ModalWildlife{{$item->info_ID}}">
               <img class="card-img-top "src="{{ asset($item->wildlife_pic) }}" alt="Card image cap">
                 <div class="card-body bg-light text-primary">
@@ -100,7 +103,7 @@
           </div>
         </div>
       </div>
-</form><!--end of form-->  
+</form><!--end of form-->
 
 </div>
 @endsection

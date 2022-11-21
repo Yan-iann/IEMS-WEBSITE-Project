@@ -11,9 +11,9 @@
 
             <h1 class="display-2 text-white text-wrap lh-1" style="font-family: 'Playfair Display', serif" data-scroll
                 data-scroll-speed="1.5" data-scroll-direction="horizontal">
-                A
-                <span class="fst-italic" style="font-family: 'Playfair Display', serif">global leader</span>
-                in
+                the
+                <span class="fst-italic" style="font-family: 'Playfair Display', serif">institute</span>
+                of
             </h1>
 
             <h1 class="display-2 text-white text-wrap lh-1" style="font-family: 'Playfair Display', serif" data-scroll
@@ -25,10 +25,10 @@
 
             <h1 class="display-2 text-white text-wrap lh-1"style="font-family: 'Playfair Display', serif" data-scroll
                 data-scroll-speed="1.5" data-scroll-direction="horizontal">
-                research <span class="fst-italic " style="font-family: 'Playfair Display', serif">and</span> education
+                <span class="fst-italic " style="font-family: 'Playfair Display', serif">sciences</span>
             </h1>
 
-            <h2 class="lead text-white fw-bold mt-4">“Excellentiam, Scientia, et Mares”</h2>
+            <h2 class="lead text-white fst-italic mt-4">“Excellentiam, Scientia, et Mares”</h2>
         </div>
 
     </div>

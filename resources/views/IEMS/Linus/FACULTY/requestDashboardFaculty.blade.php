@@ -196,7 +196,7 @@
 
                   <div class="col-12 col-md-4">
                     <label for="formGroupExampleInput" class="form-label">Content</label>
-                    <input type="input" name="anno_content" class="form-control" placeholder="Enter content " >
+                    <input type="input" id="editor" name="anno_content" class="form-control" placeholder="Enter content " >
                   </div>
 
                   <input type="hidden" class="form-control"  name="anno_status" value="unapproved">
