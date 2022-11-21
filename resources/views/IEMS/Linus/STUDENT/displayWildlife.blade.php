@@ -59,10 +59,6 @@
               <h5 class="detailsView">{{ $item->wildlife_species}}</h5 class="detailsView">
             </div>
 
-            <div class="col-12 col-lg-4">
-              <label for="formGroupExampleInput2" class="form-label">Information ID</label>
-              <h5 class="detailsView">{{ $item->info_ID}}</h5 class="detailsView">
-            </div>
 
             <div class="col-12 col-lg-4">
               <label for="formGroupExampleInput2" class="form-label">Location</label>
