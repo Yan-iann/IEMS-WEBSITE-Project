@@ -33,14 +33,14 @@
         @include('IEMS\Linus.SITE.footer')
     </div>
 
+
+
+</body>
     {{-- Locomotive Script --}}
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="{{ URL::asset('js/locomotive.js') }}"></script>
 
     {{-- Navbar Script --}}
     <script src="{{ URL::asset('js/iems_nav.js') }}"></script>
-
-</body>
-
 
 </html>

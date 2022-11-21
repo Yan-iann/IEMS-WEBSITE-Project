@@ -21,14 +21,13 @@
         </div>
     @endif
             <br>
-            <div class="table-responsive">
+            <div class="table">
                 <table class="table table-hover mg-b-0 text-center" id="maintables">
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Password</th>
                             <th>User Type</th>
                         </tr>
                     </thead>
@@ -38,7 +37,6 @@
                                 <td class="align-middle">{{ $user->id }}</td>
                                 <td class="align-middle">{{ $user->name }}</td>
                                 <td class="align-middle">{{ $user->email }}</td>
-                                <td class="align-middle">{{ $user->password }}</td>
                                 <td class="align-middle">{{ $user->user_type }}</td>
                             </tr>
                         @endforeach

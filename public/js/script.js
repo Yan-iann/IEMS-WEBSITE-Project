@@ -13,4 +13,6 @@
   });
 
 
-
+  window.addEventListener("load", (event) => {
+    scroll.update();
+  });
