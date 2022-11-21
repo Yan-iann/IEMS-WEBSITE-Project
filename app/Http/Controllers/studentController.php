@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Validator;
 use App\Models\user_info;
 use App\Models\User;
-use App\Models\wildlife;
+use App\Models\Wildlife;
 use App\Models\thesis_paper;
 use App\Models\journal_article;
 use App\Models\announcement;
@@ -732,35 +732,42 @@ class studentController extends Controller
 
     public function editSprofile(Request $request, $id)
     {
-        $profile = DB::table('users')
-        ->where('users.id', '=' , Auth::user()->id )
-        ->join('user_info','user_info.user_ID', "=" ,'users.id')
-        ->select('user_info.*','users.*')
-        ->get();
-        
-        $user = user_info::find($id);
-        $user->name = $request->input('name');
-        $user->middle_name = $request->input('middle_name');
-        $user->last_name = $request->input('last_name');
-        $user->phone_no = $request->input('phone_no');
-
-        if($request->hasfile('profile_pic'))
-        {
-            $path = 'storage/images'.$user->profile_pic;
-            if(FILE::exists($path))
+        $validator = Validator::make(request()->all(), [
+            'name' => 'required',
+            'last_name' => 'required',
+            ]);
+            if($validator->fails())
             {
-                FILE::delete($path);
-            }
-            $file = $request->file('profile_pic');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time(). '.'.$extention;
-            $file->move('storage/images',$filename);
-            $user->profile_pic = $filename;
-        }
-        $user->save();
-        return redirect()->route('Sprofile')
-        ->with('user', $user)
-        ->with('profile',$profile);
+                return redirect()->back()
+                ->with('fail','Please Provide All Information');
+            }//failed
+            else
+            {
+                $user = user_info::find($id);
+                $input = $request->all();
+                if($request->hasfile('profile_pic'))
+                {
+                    $path = $user["profile_pic"];
+                    if(FILE::exists($path))
+                    {
+                        FILE::delete($path);
+                    }//if there is picture already
+                    $filename = time().request()->file('profile_pic')->getClientOriginalName();
+                    $finalPath = request()->file('profile_pic')->move('storage/images',$filename);
+                    $input["profile_pic"] = $finalPath;
+                }
+                $user->update($input);
+
+                $profile = DB::table('users')
+                ->where('users.id', '=' , Auth::user()->id )
+                ->join('user_info','user_info.user_ID', "=" ,'users.id')
+                ->select('user_info.*','users.*')
+                ->get();
+
+                return redirect()->route('Sprofile')
+                ->with('profile',$profile)
+                ->with('sucess','Profile Updated Successfully');
+            }//sucess
     }
     //end of search
 

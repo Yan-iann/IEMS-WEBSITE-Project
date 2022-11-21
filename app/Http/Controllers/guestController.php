@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Validator;
 use App\Models\user_info;
 use App\Models\User;
-use App\Models\wildlife;
+use App\Models\Wildlife;
 use App\Models\thesis_paper;
 use App\Models\journal_article;
 use App\Models\announcement;
