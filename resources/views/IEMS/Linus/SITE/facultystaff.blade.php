@@ -65,7 +65,7 @@
 
                                         {{-- Faculty Photo Section --}}
                                         <div class="col-md-6 d-flex p-0">
-                                        <img src="{{ asset('storage/images/'.$item->profile_pic) }}" class="card-img-top" alt="...">
+                                        <img src="{{ asset($item->profile_pic) }}" class="card-img-top" alt="...">
                                         </div> {{-- End of Faculty Photo Section --}}
 
                                         {{-- Faculty Details Section --}}
