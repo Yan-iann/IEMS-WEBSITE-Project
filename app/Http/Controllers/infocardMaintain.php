@@ -231,10 +231,42 @@ class infocardMaintain extends Controller
         ->select('user_info.*','users.email')
         ->get();
 
-        return view ('IEMS.Linus.FACULTY.FProfileView')
-        ->with('profile',$profile);
-    }
+        $password = DB::table('users')
+        ->where('users.id', '=' , Auth::user()->id )
+        ->select('users.*')
+        ->get();
 
+        return view ('IEMS.Linus.FACULTY.FProfileView')
+        ->with('profile',$profile)
+        ->with('password',$password);
+    }
+    public function updatePassFaculty(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'password' => [
+                'required',
+                'confirmed',
+                'regex:/[a-z]/',      // must contain at least one lowercase letter
+                'regex:/[A-Z]/',      // must contain at least one uppercase letter
+                'regex:/[0-9]/',      // must contain at least one digit
+            ],
+            ]);
+            if($validator->fails())
+            {
+                return redirect()->back()
+                ->with('fail','Password Error');
+            }//if failed return back
+            else
+            {
+                $change = User::find($id);
+                $change->password = Hash::make($request->password);
+                $change->changed_pass = '1';
+                $change->save(); 
+                return redirect()->route('Fprofile')
+                    ->with('sucess','New Password Updated');
+                
+            }
+    }
     public function editFprofile(Request $request, $id)
     {
         $validator = Validator::make(request()->all(), [
@@ -676,7 +708,8 @@ class infocardMaintain extends Controller
         ->distinct('wildlife.wildlife_location')
         ->where('wildlife_type','Zoo')
         ->get();
-         //for class
+
+        $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
          if($request->wildlife_class)
          {
              $wildlife = Wildlife::where('wildlife_class','LIKE','%'.$request->wildlife_class.'%')
@@ -811,7 +844,7 @@ class infocardMaintain extends Controller
         ->where('wildlife_type','Bone')
         ->get();
 
-         //for genus
+         $wildlife = Wildlife::where('wildlife_type','Bone')->get();
          if($request->wildlife_genus)
          {
              $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
@@ -862,7 +895,7 @@ class infocardMaintain extends Controller
         ->where('wildlife_type','Bone')
         ->get();
 
-         //for genus
+        $wildlife = Wildlife::where('wildlife_type','Bone')->get();
          if($request->wildlife_genus)
          {
              $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
@@ -912,7 +945,7 @@ class infocardMaintain extends Controller
         ->where('wildlife_type','Reference')
         ->get();
 
-         //for genus
+        $wildlife = Wildlife::where('wildlife_type','Reference')->get();
          if($request->wildlife_genus)
          {
              $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
@@ -963,7 +996,7 @@ class infocardMaintain extends Controller
         ->where('wildlife_type','Reference')
         ->get();
 
-         //for genus
+        $wildlife = Wildlife::where('wildlife_type','Reference')->get();
          if($request->wildlife_genus)
          {
              $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
@@ -1151,7 +1184,6 @@ class infocardMaintain extends Controller
         ->get();
 
         $anno = announcement::all();
-
         if($request->anno_status)
         {
 
@@ -1180,7 +1212,7 @@ class infocardMaintain extends Controller
         ->select('announcement.anno_status')
         ->distinct('announcement.anno_status')
         ->get();
-        //$anno = announcement::all();
+        $anno = announcement::all();
 
         if($request->anno_status)
         {

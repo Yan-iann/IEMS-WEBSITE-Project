@@ -253,7 +253,9 @@ class studentController extends Controller
         ->distinct('wildlife.wildlife_location')
         ->where('wildlife_type','Zoo')
         ->get();
-         //for class
+         
+        $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
+
          if($request->wildlife_class)
          {
              $wildlife = Wildlife::where('wildlife_class','LIKE','%'.$request->wildlife_class.'%')
@@ -537,7 +539,7 @@ class studentController extends Controller
         ->where('wildlife_type','Bone')
         ->get();
 
-         //for genus
+          $wildlife = Wildlife::where('wildlife_type','Bone')->get();
          if($request->wildlife_genus)
          {
              $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
@@ -588,7 +590,7 @@ class studentController extends Controller
         ->where('wildlife_type','Bone')
         ->get();
 
-         //for genus
+        $wildlife = Wildlife::where('wildlife_type','Bone')->get();
          if($request->wildlife_genus)
          {
              $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
@@ -637,7 +639,7 @@ class studentController extends Controller
         ->where('wildlife_type','Reference')
         ->get();
 
-         //for genus
+        $wildlife = Wildlife::where('wildlife_type','Reference')->get();
          if($request->wildlife_genus)
          {
              $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
@@ -688,7 +690,7 @@ class studentController extends Controller
         ->where('wildlife_type','Reference')
         ->get();
 
-         //for genus
+        $wildlife = Wildlife::where('wildlife_type','Reference')->get();
          if($request->wildlife_genus)
          {
              $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
@@ -726,8 +728,43 @@ class studentController extends Controller
         ->select('user_info.*','users.email')
         ->get();
 
+        $password = DB::table('users')
+        ->where('users.id', '=' , Auth::user()->id )
+        ->select('users.*')
+        ->get();
+
+
         return view ('IEMS.Linus.STUDENT.SProfileView')
-        ->with('profile',$profile);
+        ->with('profile',$profile)
+        ->with('password',$password);
+    }
+
+    public function updatePassStudent(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'password' => [
+                'required',
+                'confirmed',
+                'regex:/[a-z]/',      // must contain at least one lowercase letter
+                'regex:/[A-Z]/',      // must contain at least one uppercase letter
+                'regex:/[0-9]/',      // must contain at least one digit
+            ],
+            ]);
+            if($validator->fails())
+            {
+                return redirect()->back()
+                ->with('fail','Password Error');
+            }//if failed return back
+            else
+            {
+                $change = User::find($id);
+                $change->password = Hash::make($request->password);
+                $change->changed_pass = '1';
+                $change->save(); 
+                return redirect()->route('Sprofile')
+                    ->with('sucess','New Password Updated');
+                
+            }
     }
 
     public function editSprofile(Request $request, $id)
@@ -768,6 +805,17 @@ class studentController extends Controller
                 ->with('profile',$profile)
                 ->with('sucess','Profile Updated Successfully');
             }//sucess
+    }
+
+    public function searchRequest(Request $request)
+    {   
+        $announcement = announcement::all();
+        if($request->searchReq)
+        $announcement = announcement::where('anno_title','LIKE','%'.$request->searchReq.'%')
+                            ->get();
+
+        return view ('IEMS.Linus.STUDENT.searchRequest')
+        ->with('announcement', $announcement);
     }
     //end of search
 
