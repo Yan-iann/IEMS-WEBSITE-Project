@@ -17,7 +17,7 @@
                     action="{{ route('G_searchJournal') }}">
                     <div class="input-group">
                         <input type="search" name="searchJournal" class="form-control mr-sm2"
-                            placeholder="Search Journal Article">
+                            placeholder="Search Journal Article Title">
                         <div class="input-group-btn">
                             <div class="btn-group" role="group">
                                 <div class="dropdown dropdown-lg">
@@ -65,7 +65,7 @@
         <form action="{{ route('G_advanceSearchJournal') }}" method="GET" enctype="multipart/form-data">
             {!! csrf_field() !!}
             <div class="modal fade" id="ModalSearch" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                     <div class="modal-content  bg-light">
 
                         <div class="modal-header border-0 text-center">
@@ -78,26 +78,42 @@
                             <div class="container-fluid">
                                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
 
+
+                                    {{-- Refernce Filter --}}
                                     <div class="col-12">
-                                        <label class="focus-label">Journal Reference:</label>
-                                        <select class="select floating" id="" name="journal_reference">
-                                            <option></option>
-                                            @foreach ($searchRef as $item)
-                                                <option value="{{ $item->journal_reference }}">
-                                                    {{ $item->journal_reference }}</option>
-                                            @endforeach
-                                        </select>
+                                        <div class="row d-flex justify-content-between">
+                                            <div class="col-6">
+                                                <label class="focus-label">Reference:</label>
+                                            </div>
+                                            <div class="col-6">
+                                                <select class="select floating p-1" id="" name="journal_reference">
+                                                    <option></option>
+                                                    @foreach ($searchRef as $item)
+                                                        <option value="{{ $item->journal_reference }}">
+                                                            {{ $item->journal_reference }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
 
+                                    {{-- Published Filter --}}
                                     <div class="col-12">
-                                        <label class="focus-label">Date Published:</label>
-                                        <select class="select floating" id="" name="date_published">
-                                            <option></option>
-                                            @foreach ($searchDate as $item)
-                                                <option value="{{ $item->date_published }}">{{ $item->date_published }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                        <div class="row d-flex justify-content-between">
+                                            <div class="col-6">
+                                                <label class="focus-label">Date Published:</label>
+                                            </div>
+                                            <div class="col-6">
+                                                <select class="select floating p-1" id="" name="date_published">
+                                                    <option></option>
+                                                    @foreach ($searchDate as $item)
+                                                        <option value="{{ $item->date_published }}">
+                                                            {{ $item->date_published }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div class="modal-footer border-0">
