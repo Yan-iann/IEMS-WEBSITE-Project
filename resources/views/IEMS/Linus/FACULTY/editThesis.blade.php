@@ -8,24 +8,24 @@
               <h5 class="modal-title  text-center">Thesis Paper Details</h5>
               <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            
+
             <div class="modal-body">
               <div class="container-fluid">
                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
 
-                
+
                     <div class="col-12">
                     <label for="formGroupExampleInput" class="form-label">Thesis Title</label>
                     <input type="text" class="form-control"  name="thesis_title" value="{{ $item->thesis_title}}">
                     </div>
-                    
-                
+
+
                     <div class="col-12">
-                      <label for="formGroupExampleInput" class="form-label">Thesis Author/s</label>
+                      <label for="formGroupExampleInput" class="form-label">Thesis Author</label>
                       <input type="text" class="form-control" name="thesis_author" value="{{ $item->thesis_author}}">
                     </div>
-                  
-              
+
+
 
                   <div class="col-12">
                     <label for="formGroupExampleInput2" class="form-label">Thesis Reference</label>

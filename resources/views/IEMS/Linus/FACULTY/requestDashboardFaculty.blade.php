@@ -14,8 +14,7 @@
                                 @endif
 
   <div class="home-content">
-
-    <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center p-4">
+    <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center">
         <i class='bx bx-menu'></i>
         <span class="text">Announcement Requests</span>
     </div>
@@ -108,13 +107,12 @@
 
                                       <div class="col-12">
                                         <label for="formGroupExampleInput" class="form-label">Content</label>
-                                        <input type="textarea" name="anno_content" class="form-control"  value="{{ $item->anno_content}}">
+                                        <textarea rows="3" name="anno_content" id="editor"class="form-control"  value="{!!$item->anno_content!!}"></textarea>
                                       </div>
 
                                       <div class="col-12 col-md-4">
                                         <label for="formGroupExampleInput" class="form-label">Status</label>
-                                        <input type="input" name="anno_status" class="form-control" value="{{ $item->anno_status}}" required>
-                                        <select name="anno_status" id="anno_status">
+                                        <select name="anno_status" id="anno_status" class="form-control" value="{{ $item->anno_status}}" required>
                                             <option value="approve">approve</option>
                                             <option value="unapprove">unapprove</option>
                                         </select>

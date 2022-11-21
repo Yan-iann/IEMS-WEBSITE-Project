@@ -2,14 +2,20 @@
 @section('content')
 <div class="conatiner-fluid">
 
-  <div class="home-content">
+
+    <div class="row d-flex justify-content-between">
+        <div class="col-12 col-md-6 col-lg-6 order-sm-2 order-md-1">
+
+            <div class="home-content">
 
     <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center p-4">
         <i class='bx bx-menu'></i>
-        <span class="text">Announcement Search Results</span>
+        <span class="text">Announcements</span>
     </div>
+            </div>
+        </div>
 
-    <div class="col-12 col-md-5 col-lg-5">
+    <div class="col-12 col-md-5 col-lg-5 order-sm-1 order-md-2">
         <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get"
             action="{{ route('searchReq') }}">
             <div class="input-group">
@@ -58,7 +64,7 @@
 
                     <td class="align-middle">
                             <button type="button" class="btn btn-info" style="color:white"data-bs-toggle="modal" data-bs-target="#ModalEditReq{{ $item->anno_ID }}"><i class='bx bxs-edit' ></i></button>
-                            <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#ModalDeleteReq{{ $item->anno_ID }}"> <i class='bx bx-trash' ></i></button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#ModalDeleteReq{{ $item->anno_ID }}"> <i class='bx bx-trash' ></i></button>
                     </td>
                 </tr>
                 <!-- Edit Announcement Modal-->
@@ -140,7 +146,7 @@
                         </div>
                       </div>
                 </form>
-            
+
               @endforeach
 
         </tbody>

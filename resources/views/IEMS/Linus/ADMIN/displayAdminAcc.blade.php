@@ -7,15 +7,16 @@
             <span class="text">Admin Account</span>
         </div>
     </div>
-        <br>
-        <div class="table-responsive">
+
+
+
+        <div class="table">
             <table class="table table-hover mg-b-0 text-center" id="maintables">
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Password</th>
                         <th>User Type</th>
                         <th>Action</th>
                     </tr>
@@ -26,7 +27,6 @@
                             <td class="align-middle">{{ $user->id }}</td>
                             <td class="align-middle">{{ $user->name }}</td>
                             <td class="align-middle">{{ $user->email }}</td>
-                            <td class="align-middle">{{ $user->password }}</td>
                             <td class="align-middle">{{ $user->user_type }}</td>
                             <td class="align-middle">
                                 <button type="button" class="btn btn-info" data-bs-toggle="modal"
@@ -98,7 +98,7 @@
                                     </div>
                                 </div>
                        </form>
-                        <!--end of edit modal-->  
+                        <!--end of edit modal-->
 
                         <!-- Delete Wildlife Modal-->
                         <form action="{{ route('deleteUser', $user->id) }}" method="get" enctype="multipart/form-data">

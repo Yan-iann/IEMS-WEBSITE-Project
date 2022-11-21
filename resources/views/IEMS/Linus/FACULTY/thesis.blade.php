@@ -3,17 +3,17 @@
     <div class="container-fluid">
         {{-- Page Name, and Burger Icon. AND Search Bar --}}
 
-                                @if(Session::get('fail'))
-                                <div class="alert alert-danger">
-                                    {{ Session::get('fail')}}
-                                </div>
-                                @endif
+        @if (Session::get('fail'))
+            <div class="alert alert-danger">
+                {{ Session::get('fail') }}
+            </div>
+        @endif
 
-                                @if(Session::get('sucess'))
-                                    <div class="alert alert-success">
-                                      {{ Session::get('sucess')}}
-                                    </div>
-                                @endif
+        @if (Session::get('sucess'))
+            <div class="alert alert-success">
+                {{ Session::get('sucess') }}
+            </div>
+        @endif
         <div class="row d-flex justify-content-between">
             <div class="col-12 col-md-6 col-lg-6 order-sm-2 order-md-1">
                 <div class="home-content">
@@ -29,7 +29,7 @@
                     action="{{ route('searchThesis') }}">
                     <div class="input-group">
                         <input type="search" name="searchThesis" class="form-control mr-sm2"
-                            placeholder="Search Title Title">
+                            placeholder="Search for Title">
                         <div class="input-group-btn">
                             <div class="btn-group" role="group">
                                 <div class="dropdown dropdown-lg">
@@ -104,63 +104,72 @@
         <!-- Add Thesis Modal-->
         <form action="{{ route('storeThesis') }}" method="POST" enctype="multipart/form-data">
 
-  <div class="modal fade" id="ModalAddThesis" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-    {!! csrf_field() !!}
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-        <div class="modal-content">
-          <div class="modal-header border-0 text-center">
-            <h5 class="modal-title  text-center">Add Thesis Paper Information</h5>
-            <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="container-fluid">
-              <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
-                <div class="col-8">
-                  <div class="row">
-                    <div class="col-12">
-                      <label for="formGroupExampleInput" class="form-label">Thesis Title</label>
-                      <input type="input" class="form-control" placeholder="Enter Thesis Title" name="thesis_title">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12"><br>
-                    <label for="formGroupExampleInput" class="form-label">Thesis Author</label>
-                    <input type="input" class="form-control" placeholder="Enter Thesis Author" name="thesis_author">
-                    </div>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <label for="formGroupExampleInput2" class="form-label">Thesis Reference</label>
-                  <input type="input" class="form-control" placeholder="Enter Thesis Reference" name="thesis_reference" >
-                </div>
-                <div class="col-4">
-                  <label for="formGroupExampleInput2" class="form-label">Thesis Type</label>
-                  <input type="input" class="form-control" placeholder="Enter Thesis Type" name="thesis_type" >
-                </div>
-                <div class="col-4">
-                  <label for="formGroupExampleInput2" class="form-label">Date Published</label>
-                  <input type="date" class="form-control" placeholder="Enter Date Published" name="date_published" >
-                </div>
+            <div class="modal fade" id="ModalAddThesis" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                {!! csrf_field() !!}
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header border-0 text-center">
+                            <h5 class="modal-title  text-center">Add Thesis Paper Information</h5>
+                            <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
+                                    <div class="col-8">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <label for="formGroupExampleInput" class="form-label">Thesis Title</label>
+                                                <input type="input" class="form-control" placeholder="Enter Thesis Title"
+                                                    name="thesis_title">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12"><br>
+                                                <label for="formGroupExampleInput" class="form-label">Thesis
+                                                    Author</label>
+                                                <input type="input" class="form-control"
+                                                    placeholder="Enter Thesis Author" name="thesis_author">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="formGroupExampleInput2" class="form-label">Thesis Reference</label>
+                                        <input type="input" class="form-control" placeholder="Enter Thesis Reference"
+                                            name="thesis_reference">
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="formGroupExampleInput2" class="form-label">Thesis Type</label>
+                                        <input type="input" class="form-control" placeholder="Enter Thesis Type"
+                                            name="thesis_type">
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="formGroupExampleInput2" class="form-label">Date Published</label>
+                                        <input type="date" class="form-control" placeholder="Enter Date Published"
+                                            name="date_published">
+                                    </div>
 
-                <div class="col-4">
-                  <label for="formGroupExampleInput2" class="form-label">Date Added</label>
-                  <input type="date" class="form-control" placeholder="Enter Date Published" name="date_added" >
-                </div>
+                                    <div class="col-4">
+                                        <label for="formGroupExampleInput2" class="form-label">Date Added</label>
+                                        <input type="date" class="form-control" placeholder="Enter Date Published"
+                                            name="date_added">
+                                    </div>
 
-                <input type="hidden" class="form-control" name="thesis_status" value="approved">
-                <input type="hidden" class="form-control" name="info_type" value="thesis_paper">
-                <div class="modal-footer border-0">
-                  <button type="submit" class="btn btn-info">Submit</button>
-                  <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
-                </div>
-            </div>
+                                    <input type="hidden" class="form-control" name="thesis_status" value="approved">
+                                    <input type="hidden" class="form-control" name="info_type" value="thesis_paper">
+                                    <div class="modal-footer border-0">
+                                        <button type="submit" class="btn btn-info">Submit</button>
+                                        <button type="button" class="btn btn-outline-info"
+                                            data-bs-dismiss="modal">Cancel</button>
+                                    </div>
+                                </div>
         </form>
 
         <!--advance search-->
         <form action="{{ route('advanceSearchThesis') }}" method="GET" enctype="multipart/form-data">
             {!! csrf_field() !!}
             <div class="modal fade" id="ModalSearch" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                     <div class="modal-content  bg-light">
 
                         <div class="modal-header border-0 text-center">
@@ -173,28 +182,46 @@
                             <div class="container-fluid">
                                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
 
-                                    <div class="col-12">
-                                        <label class="focus-label">Thesis Author:</label>
-                                        <select class="select floating" id="" name="thesis_author">
-                                            <option></option>
-                                            @foreach ($searchAuthor as $item)
-                                                <option value="{{ $item->thesis_author }}">{{ $item->thesis_author }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                    {{-- Author Filter --}}
+                                    <div class="col-12 mt-2">
+                                        <div class="row d-flex justify-content-between">
+                                            <div class="col-6">
+                                                <label class="focus-label">Author:</label>
+                                            </div>
+                                            <div class="col-6">
+                                                <select class="select floating p-1" id="" name="thesis_author">
+                                                    <option></option>
+                                                    @foreach ($searchAuthor as $item)
+                                                        <option value="{{ $item->thesis_author }}">
+                                                            {{ $item->thesis_author }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                                <div class="col-6">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
+                                    {{-- Reference Filter --}}
                                     <div class="col-12">
-                                        <label class="focus-label">Thesis Reference:</label>
-                                        <select class="select floating" id="" name="thesis_reference">
-                                            <option></option>
-                                            @foreach ($searchRef as $item)
-                                                <option value="{{ $item->thesis_reference }}">
-                                                    {{ $item->thesis_reference }}</option>
-                                            @endforeach
-                                        </select>
+                                        <div class="row d-flex justify-content-between">
+                                            <div class="col-6">
+                                                <label class="focus-label">Reference:</label>
+                                            </div>
+                                            <div class="col-6">
+                                                <select class="select floating p-1" id=""
+                                                    name="thesis_reference">
+                                                    <option></option>
+                                                    @foreach ($searchRef as $item)
+                                                        <option value="{{ $item->thesis_reference }}">
+                                                            {{ $item->thesis_reference }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
-
                                     <div class="modal-footer border-0">
                                         <button type="submit" class="btn btn-info text-white">Search</button>
                                         <button type="button" class="btn btn-outline-info"

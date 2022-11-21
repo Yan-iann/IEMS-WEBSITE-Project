@@ -18,7 +18,7 @@
                 action="{{ route('searchThesis') }}">
                 <div class="input-group">
                     <input type="search" name="searchThesis" class="form-control mr-sm2"
-                        placeholder="Search Title Title">
+                        placeholder="Search Title">
                     <div class="input-group-btn">
                         <div class="btn-group" role="group">
                             <div class="dropdown dropdown-lg">
@@ -101,26 +101,44 @@
             <div class="modal-body">
               <div class="container-fluid">
                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
+                                {{-- Author Filter --}}
+                                <div class="col-12 mt-2">
+                                    <div class="row d-flex justify-content-between">
+                                        <div class="col-6">
+                                            <label class="focus-label">Author:</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <select class="select floating p-1" id="" name="thesis_author">
+                                                <option></option>
+                                                @foreach ($searchAuthor as $item)
+                                                    <option value="{{ $item->thesis_author }}">{{ $item->thesis_author }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            <div class="col-6">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                  <div class="col-12">
-                  <label class="focus-label">Thesis Author:</label>
-                    <select class="select floating" id="" name="thesis_author">
-                      <option></option>
-                      @foreach($searchAuthor as $item)
-                      <option value="{{ $item->thesis_author }}">{{$item->thesis_author}}</option>
-                      @endforeach
-                    </select>
-                  </div>
-
-                  <div class="col-12">
-                  <label class="focus-label">Thesis Reference:</label>
-                    <select class="select floating" id="" name="thesis_reference">
-                      <option></option>
-                      @foreach($searchRef as $item)
-                      <option value="{{ $item->thesis_reference }}">{{$item->thesis_reference}}</option>
-                      @endforeach
-                    </select>
-                  </div>
+                                {{-- Reference Filter --}}
+                                        <div class="col-12">
+                                            <div class="row d-flex justify-content-between">
+                                                <div class="col-6">
+                                                    <label class="focus-label">Reference:</label>
+                                                </div>
+                                                <div class="col-6">
+                                                    <select class="select floating p-1" id="" name="thesis_reference">
+                                                        <option></option>
+                                                        @foreach ($searchRef as $item)
+                                                            <option value="{{ $item->thesis_reference }}">
+                                                                {{ $item->thesis_reference }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
 
                   <div class="modal-footer border-0">
                     <button type="submit" class="btn btn-info text-white">Search</button>

@@ -13,15 +13,20 @@
                                       {{ Session::get('sucess')}}
                                     </div>
                                 @endif
+                                <div class="row d-flex justify-content-between">
+                                    <div class="col-12 col-md-6 col-lg-6 order-sm-2 order-md-1">
+
     <div class="home-content">
 
-                             
+
         <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center p-4">
             <i class='bx bx-menu'></i>
             <span class="text">Announcement Requests</span>
         </div>
+    </div>
+                                    </div>
 
-        <div class="col-12 col-md-5 col-lg-5">
+        <div class="col-12 col-md-5 col-lg-5 order-sm-1 order-md-2">
             <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get"
                 action="">
                 <div class="input-group">
@@ -41,6 +46,8 @@
         </div>
 
       </div>
+
+</div>
 
       <div class="table-responsive" style="overflow: hidden">
         <table class="table table-hover mg-b-0 text-center" id="maintables">
@@ -63,8 +70,8 @@
                         <td class="align-middle">{{ $item->anno_date }}</td>
                         <td class="align-middle">{{ $item->anno_status }}</td>
                         <td class="align-middle">
-                                <button type="button" class="btn btn-info" style="color:white"data-bs-toggle="modal" data-bs-target="#ModalEditReq{{ $item->anno_ID }}"><i class='bx bxs-edit' ></i></button>
-                                <button type="button" class="btn btn-info" style="color:white"data-bs-toggle="modal" data-bs-target="#ModalDeleteReq{{ $item->anno_ID }}"> <i class='bx bx-trash' ></i></button>
+                                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#ModalEditReq{{ $item->anno_ID }}"><i class='bx bxs-edit' ></i></button>
+                                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#ModalDeleteReq{{ $item->anno_ID }}"> <i class='bx bx-trash' ></i></button>
                         </td>
                     </tr>
                     <!-- Edit Announcement Modal-->
@@ -96,9 +103,9 @@
                                             <input type="date" class="form-control"  name="anno_date" value="{{ $item->anno_date}}">
                                           </div>
 
-                                          <div class="col-12">
+                                          <div class="col-12 form-group">
                                             <label for="formGroupExampleInput" class="form-label">Content</label>
-                                            <textarea class="form-control" id="editor" name="anno_content"  value="{!! $item->anno_content !!}" required></textarea>
+                                            <textarea id="editor" name="anno_content"  value="{!! $item->anno_content !!}" ></textarea>
                                           </div>
 
                                           <input type="hidden" class="form-control"  name="anno_status" value="unapproved">
@@ -183,9 +190,9 @@
                   <input type="date" class="form-control"  placeholder="Enter Date " name="anno_date" required>
                 </div>
 
-                <div class="col-12 col-md-4">
+                <div class="col-12 ">
                   <label for="formGroupExampleInput" class="form-label">Content</label>
-                  <input type="input" name="anno_content" class="form-control" placeholder="Enter content " required >
+                  <textarea id="editor"name="anno_content" class="form-control"required ></textarea>
                 </div>
 
                 <input type="hidden" class="form-control"  name="anno_status" value="unapproved">

@@ -50,101 +50,102 @@
                 @endforeach
 
 
-                    </div>
             </div>
+        </div>
 
     </section>
 
     @foreach ($user as $item)
-                        {{-- View Faculty Details Modal --}}
-                        <div class="modal fade" id="viewfacultydetails{{ $item->id }}" tabindex="-1" role="dialog"
-                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="height: 80vh; padding:0px">
-                            <div class="modal-dialog modal-xl modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="row no-gutters">
+        {{-- View Faculty Details Modal --}}
+        <div class="modal fade" id="viewfacultydetails{{ $item->id }}" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="height: 80vh; padding:0px">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="row no-gutters">
 
-                                        {{-- Faculty Photo Section --}}
-                                        <div class="col-md-6 d-flex p-0">
-                                        <img src="{{ asset($item->profile_pic) }}" class="card-img-top" alt="...">
-                                        </div> {{-- End of Faculty Photo Section --}}
+                        {{-- Faculty Photo Section --}}
+                        <div class="col-md-6 d-flex p-0">
+                            <div class="modal-body  img d-flex img text-center d-flex align-items-center"
+                                style="background-image: url('{{ asset($item->profile_pic) }}');  {{-- Photo in background image--}}
+                            background-size:cover;background-repeat: no-repeat; background-blend-mode: multiply; background-position: center">
+                            </div>
+                        </div> {{-- End of Faculty Photo Section --}}
 
-                                        {{-- Faculty Details Section --}}
-                                        <div class="col-md-6 d-flex p-0">
-                                            <div class="modal-body  align-items-center"
-                                                style="background-color:rgb(242, 242, 242)">
+                        {{-- Faculty Details Section --}}
+                        <div class="col-md-6 d-flex p-0">
+                            <div class="modal-body  align-items-center" style="background-color:rgb(242, 242, 242)">
 
-                                                {{-- Exit Modal --}}
-                                                <div class="modal-header p-0" style="border:none">
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
+                                {{-- Exit Modal --}}
+                                <div class="modal-header p-0" style="border:none">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
 
-                                                {{-- Faculty Details --}}
-                                                <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l ">
+                                {{-- Faculty Details --}}
+                                <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l ">
 
-                                                    {{-- Name Of Faculty --}}
-                                                    <div class="col-12">
-                                                        <label class="form-label">Name</label>
-                                                        <h3>{{ $item->name }}</h3>
-                                                    </div>
+                                    {{-- Name Of Faculty --}}
+                                    <div class="col-12">
+                                        <label class="form-label">Name</label>
+                                        <h3>{{ $item->name }}</h3>
+                                    </div>
 
-                                                    {{-- Rank --}}
-                                                    <div class="col-12   col-lg-6">
-                                                        <label class="form-label">Rank</label>
-                                                        <h3>{{ $item->rank }}</h5>
-                                                    </div>
+                                    {{-- Rank --}}
+                                    <div class="col-12   col-lg-6">
+                                        <label class="form-label">Rank</label>
+                                        <h3>{{ $item->rank }}</h5>
+                                    </div>
 
-                                                    {{-- Specialty --}}
-                                                    <div class="col-12 col-lg-6">
-                                                        <label class="form-label">Specialty</label>
-                                                        <h3>{{ $item->specialty }}</h3>
-                                                    </div>
+                                    {{-- Specialty --}}
+                                    <div class="col-12 col-lg-6">
+                                        <label class="form-label">Specialty</label>
+                                        <h3>{{ $item->specialty }}</h3>
+                                    </div>
 
-                                                    {{-- Educational Attainment --}}
-                                                    <div class="col-12">
-                                                        <label class="form-label">Highest Educational Attainment</label>
-                                                        {{-- insert foreach here para sa educational attainment alone --}}
-                                                        {{--
+                                    {{-- Educational Attainment --}}
+                                    <div class="col-12">
+                                        <label class="form-label">Highest Educational Attainment</label>
+                                        {{-- insert foreach here para sa educational attainment alone --}}
+                                        {{--
                                                             <ul style:"list-style-type: square">
                                                                 foreach //educational attainment//
                                                                 <li> increment sa educational attainment </li>
                                                                 endforeach
                                                             --}}
-                                                        <h5>{{ $item->educational }}</h5>
-                                                    </div>
-
-                                                    {{-- Contact Details --}}
-                                                    <div class=" col-12 d-flex justify-content-between">
-
-                                                        <div class="col-12 col-lg-4">
-                                                            <p class="text-muted">{{ $item->email }}</p>
-                                                            {{-- Email --}}
-                                                        </div>
-
-                                                        <div class="col-12 col-lg-4">
-                                                            <p class="text-muted">{{ $item->phone_no }}</p>
-                                                            {{-- Contact Number --}}
-                                                        </div>
-                                                    </div>
-
-                                                </div> {{-- end of Faculty Details --}}
-
-
-                                                {{-- Close Modal Button --}}
-                                                <div class="modal-footer" style="border: none">
-                                                    <button type="button" class="btn btn-info"
-                                                        data-bs-dismiss="modal">Close</button>
-                                                </div>
-
-
-                                            </div>
-                                        </div> {{-- End of Faculty Details Section --}}
-
+                                        <h5>{{ $item->educational }}</h5>
                                     </div>
+
+                                    {{-- Contact Details --}}
+                                    <div class=" col-12 d-flex justify-content-between">
+
+                                        <div class="col-12 col-lg-4">
+                                            <p class="text-muted">{{ $item->email }}</p>
+                                            {{-- Email --}}
+                                        </div>
+
+                                        <div class="col-12 col-lg-4">
+                                            <p class="text-muted">{{ $item->phone_no }}</p>
+                                            {{-- Contact Number --}}
+                                        </div>
+                                    </div>
+
+                                </div> {{-- end of Faculty Details --}}
+
+
+                                {{-- Close Modal Button --}}
+                                <div class="modal-footer" style="border: none">
+                                    <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
                                 </div>
+
+
                             </div>
-                        </div> {{-- End of Modal --}}
-                        @endforeach
+                        </div> {{-- End of Faculty Details Section --}}
+
+                    </div>
+                </div>
+            </div>
+        </div> {{-- End of Modal --}}
+    @endforeach
 
     {{-- Contact Us Block --}}
     @include('IEMS.Linus.SITE.contact_block')
