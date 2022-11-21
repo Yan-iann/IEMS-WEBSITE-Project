@@ -78,6 +78,7 @@
                         <div class="container-fluid">
                             <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
 
+                                {{-- Genus Filter --}}
                                 <div class="col-12">
                                     <div class="row d-flex justify-content-between">
                                         <div class="col-6">
