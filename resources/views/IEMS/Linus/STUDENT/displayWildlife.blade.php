@@ -20,49 +20,49 @@
             <div class="col-12 col-lg-8">
               <div class="row">
                 <div class="col-12">
-              <label for="formGroupExampleInput" class="form-label">Wildlife Name</label>
-              <h3 class="detailsView">{{ $item->wildlife_name}}</h5 class="detailsView">
+                    <label for="formGroupExampleInput" class="form-label">Scientific Name</label>
+                    <h3 class="detailsView" style="font-style: italic;">{{ $item->wildlife_scientific_name}}</h5>
               </div>
               </div>
 
 
             <div class="row">
               <div class="col-12 col-lg-12"><br>
-                <label for="formGroupExampleInput" class="form-label">Scientific Name</label>
-                <h3 class="detailsView" style="font-style: italic;">{{ $item->wildlife_scientific_name}}</h5 class="detailsView">
+                <label for="formGroupExampleInput" class="form-label">Common Name</label>
+                <h3 class="detailsView">{{ $item->wildlife_name}}</h5>
               </div>
             </div>
           </div>
 
             <div class="col-12 col-lg-4">
               <label for="formGroupExampleInput2" class="form-label">Class</label>
-              <h5 class="detailsView">{{ $item->wildlife_class}}</h5 class="detailsView">
+              <h5 class="detailsView">{{ $item->wildlife_class}}</h5>
             </div>
 
             <div class="col-12 col-lg-4">
               <label for="formGroupExampleInput2" class="form-label">Order</label>
-              <h5 class="detailsView">{{ $item->wildlife_order}}</h5 class="detailsView">
+              <h5 class="detailsView">{{ $item->wildlife_order}}</h5>
             </div>
 
             <div class="col-12 col-lg-4">
               <label for="formGroupExampleInput2" class="form-label">Family</label>
-              <h5 class="detailsView">{{ $item->wildlife_family}}</h5 class="detailsView">
+              <h5 class="detailsView">{{ $item->wildlife_family}}</h5>
             </div>
 
             <div class="col-12 col-lg-4">
               <label for="formGroupExampleInput2" class="form-label">Genus</label>
-              <h5 class="detailsView">{{ $item->wildlife_genus}}</h5 class="detailsView">
+              <h5 class="detailsView">{{ $item->wildlife_genus}}</h5>
             </div>
 
             <div class="col-12 col-lg-4">
               <label for="formGroupExampleInput2" class="form-label">Specie</label>
-              <h5 class="detailsView">{{ $item->wildlife_species}}</h5 class="detailsView">
+              <h5 class="detailsView">{{ $item->wildlife_species}}</h5>
             </div>
 
 
             <div class="col-12 col-lg-4">
               <label for="formGroupExampleInput2" class="form-label">Location</label>
-              <h5 class="location">{{ $item->wildlife_location}}</h5 class="detailsView">
+              <h5 class="location">{{ $item->wildlife_location}}</h5>
             </div>
 
             <div class="col-12 col-lg-12">

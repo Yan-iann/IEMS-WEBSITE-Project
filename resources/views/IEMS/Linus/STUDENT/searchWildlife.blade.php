@@ -43,8 +43,8 @@
                             data-bs-target="#ModalWildlife{{ $item->info_ID }}">
                             <img class="card-img-top "src="{{ asset($item->wildlife_pic) }}" alt="Card image cap">
                             <div class="card-body bg-light text-primary">
-                                <h5 class="card-title text-center">{{ $item->wildlife_name }}</h5>
-                                <p class="card-text text-center">({{ $item->wildlife_scientific_name }})</p>
+                                <h5 class="card-title text-center fst-italic">{{ $item->wildlife_scientific_name }}</h5>
+                                <p class="card-text text-center">{{ $item->wildlife_name }}</p>
                             </div>
                         </div>
 
@@ -65,7 +65,7 @@
 <form action="{{ route('S_advanceSearchWildlife') }}" method="GET" enctype="multipart/form-data">
       {!! csrf_field() !!}
       <div class="modal fade" id="ModalSearch" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content  bg-light">
 
             <div class="modal-header border-0 text-center">
@@ -77,35 +77,66 @@
               <div class="container-fluid">
                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
 
-                  <div class="col-12">
-                  <label class="focus-label">Critter Class:</label>
-                    <select class="select floating" id="" name="wildlife_class">
-                      <option></option>
-                      @foreach($searchClass as $item)
-                      <option value="{{ $item->wildlife_class }}">{{$item->wildlife_class}}</option>
-                      @endforeach
-                    </select>
-                  </div>
 
-                  <div class="col-12">
-                  <label class="focus-label">Critter Specie:</label>
-                    <select class="select floating" id="" name="wildlife_species">
-                      <option></option>
-                      @foreach($searchSpecie as $item)
-                      <option value="{{ $item->wildlife_species }}">{{$item->wildlife_species}}</option>
-                      @endforeach
-                    </select>
-                  </div>
 
-                  <div class="col-12">
-                  <label class="focus-label">Wildlife Location:</label>
-                    <select class="select floating" id="" name="wildlife_location">
-                      <option></option>
-                      @foreach($searchLoc as $item)
-                      <option value="{{ $item->wildlife_location }}">{{$item->wildlife_location}}</option>
-                      @endforeach
-                    </select>
-                  </div>
+                                {{-- Class Filter --}}
+                                <div class="col-12">
+                                    <div class="row d-flex justify-content-between">
+                                        <div class="col-6">
+                                            <label class="focus-label">Class:</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <select class="select floating p-1" id="" name="wildlife_class">
+                                                <option></option>
+                                                @foreach ($searchClass as $item)
+                                                    <option value="{{ $item->wildlife_class }}">{{ $item->wildlife_class }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                {{-- Species Filter --}}
+                                <div class="col-12">
+                                    <div class="row d-flex justify-content-between">
+                                        <div class="col-6">
+                                            <label class="focus-label">Species:</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <select class="select floating p-1" id="" name="wildlife_species">
+                                                <option></option>
+                                                @foreach ($searchSpecie as $item)
+                                                    <option value="{{ $item->wildlife_species }}">
+                                                        {{ $item->wildlife_species }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                {{-- Critter Location Filter --}}
+                                <div class="col-12">
+                                    <div class="row d-flex justify-content-between">
+                                        <div class="col-6">
+                                            <label class="focus-label">Location:</label>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <select class="select floating p-1" id="" name="wildlife_location">
+                                                <option></option>
+                                                @foreach ($searchLoc as $item)
+                                                    <option value="{{ $item->wildlife_location }}">
+                                                        {{ $item->wildlife_location }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
 
                   <div class="modal-footer border-0">
                     <button type="submit" class="btn btn-info text-white">Search</button>

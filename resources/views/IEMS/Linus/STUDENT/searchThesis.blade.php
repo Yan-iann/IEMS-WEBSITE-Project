@@ -62,7 +62,7 @@
             <form action="{{ route('S_advanceSearchThesis') }}" method="GET" enctype="multipart/form-data">
                 {!! csrf_field() !!}
                 <div class="modal fade" id="ModalSearch" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content  bg-light">
 
                             <div class="modal-header border-0 text-center">
@@ -75,26 +75,45 @@
                                 <div class="container-fluid">
                                     <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
 
-                                        <div class="col-12">
-                                            <label class="focus-label">Thesis Author:</label>
-                                            <select class="select floating" id="" name="thesis_author">
-                                                <option></option>
-                                                @foreach ($searchAuthor as $item)
-                                                    <option value="{{ $item->thesis_author }}">
-                                                        {{ $item->thesis_author }}</option>
-                                                @endforeach
-                                            </select>
+                                        {{-- Author Filter --}}
+                                        <div class="col-12 mt-2">
+                                            <div class="row d-flex justify-content-between">
+                                                <div class="col-6">
+                                                    <label class="focus-label">Author:</label>
+                                                </div>
+                                                <div class="col-6">
+                                                    <select class="select floating p-1" id="" name="thesis_author">
+                                                        <option></option>
+                                                        @foreach ($searchAuthor as $item)
+                                                            <option value="{{ $item->thesis_author }}">
+                                                                {{ $item->thesis_author }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                    <div class="col-6">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
 
+                                        {{-- Reference Filter --}}
                                         <div class="col-12">
-                                            <label class="focus-label">Thesis Reference:</label>
-                                            <select class="select floating" id="" name="thesis_reference">
-                                                <option></option>
-                                                @foreach ($searchRef as $item)
-                                                    <option value="{{ $item->thesis_reference }}">
-                                                        {{ $item->thesis_reference }}</option>
-                                                @endforeach
-                                            </select>
+                                            <div class="row d-flex justify-content-between">
+                                                <div class="col-6">
+                                                    <label class="focus-label">Reference:</label>
+                                                </div>
+                                                <div class="col-6">
+                                                    <select class="select floating p-1" id=""
+                                                        name="thesis_reference">
+                                                        <option></option>
+                                                        @foreach ($searchRef as $item)
+                                                            <option value="{{ $item->thesis_reference }}">
+                                                                {{ $item->thesis_reference }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <div class="modal-footer border-0">

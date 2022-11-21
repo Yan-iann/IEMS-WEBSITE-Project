@@ -42,8 +42,8 @@
                             data-bs-target="#ModalWildlife{{ $item->info_ID }}">
                             <img class="card-img-top "src="{{ asset($item->wildlife_pic) }}" alt="Card image cap">
                             <div class="card-body bg-light text-primary">
-                                <h5 class="card-title text-center">{{ $item->wildlife_name }}</h5>
-                                <p class="card-text text-center">({{ $item->wildlife_scientific_name }})</p>
+                                <h5 class="card-title text-center fst-italic">{{ $item->wildlife_scientific_name }}</h5>
+                                <p class="card-text text-center">{{ $item->wildlife_name }}</p>
                             </div>
                         </div>
 
@@ -60,7 +60,7 @@
 <form action="{{ route('S_advanceSearchBone') }}" method="GET" enctype="multipart/form-data">
       {!! csrf_field() !!}
       <div class="modal fade" id="ModalSearch" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content  bg-light">
 
             <div class="modal-header border-0 text-center">
@@ -72,25 +72,40 @@
               <div class="container-fluid">
                 <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
 
-                  <div class="col-12">
-                  <label class="focus-label">Bone Genus:</label>
-                    <select class="select floating" id="" name="wildlife_genus">
-                      <option></option>
-                      @foreach($searchGenus as $item)
-                      <option value="{{ $item->wildlife_genus }}">{{$item->wildlife_genus}}</option>
-                      @endforeach
-                    </select>
-                  </div>
+                    {{-- Genus Filter --}}
+                    <div class="col-12">
+                        <div class="row d-flex justify-content-between">
+                            <div class="col-6">
+                                <label class="focus-label">Genus:</label>
+                            </div>
+                            <div class="col-6">
+                                <select class="select floating p-1" id="" name="wildlife_genus">
+                                    <option></option>
+                                    @foreach ($searchGenus as $item)
+                                        <option value="{{ $item->wildlife_genus }}">{{ $item->wildlife_genus }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+{{--
+                    <div class="col-12">
+                        <div class="row d-flex justify-content-between">
+                            <div class="col-6">
+                                <label class="focus-label">Bone Added Date:</label>
+                            </div>
+                            <div class="col-6">
+                                <select class="select floating" id="" name="date_added">
+                                    <option></option>
+                                    @foreach ($searchDate as $item)
+                                        <option value="{{ $item->date_added }}">{{ $item->date_added }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div> --}}
 
-                  <div class="col-12">
-                  <label class="focus-label">Bone Added Date:</label>
-                    <select class="select floating" id="" name="date_added">
-                      <option></option>
-                      @foreach($searchDate as $item)
-                      <option value="{{ $item->date_added }}">{{$item->date_added}}</option>
-                      @endforeach
-                    </select>
-                  </div>
 
 
                   <div class="modal-footer border-0">
