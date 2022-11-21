@@ -67,14 +67,12 @@
                         {{-- Faculty Photo Section --}}
                         <div class="col-md-6 d-flex p-0">
                             <div class="modal-body  img d-flex img text-center d-flex align-items-center"
-                                style="background-image: url('{{ asset('$item->profile_pic')}}');  {{-- Photo in background image--}}
+                                style="background-image: url('{{ asset($item->profile_pic) }}');  {{-- Photo in background image--}}
                                 background-size:cover;background-repeat: no-repeat; background-blend-mode: multiply;
                                 background-position: center">
-                            {{-- <img src="{{ asset($item->profile_pic) }}" class="modal-body" alt="..."> --}}
+                                <img src="{{ asset($item->profile_pic) }}" class="modal-body" alt="...">
                             </div>
                         </div> {{-- End of Faculty Photo Section --}}
-
-
 
 
                         {{-- Faculty Details Section --}}

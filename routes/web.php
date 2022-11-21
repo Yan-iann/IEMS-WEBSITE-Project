@@ -135,6 +135,7 @@ Route::prefix('IEMSStudent')->middleware('auth','isStudent')->group(function(){
     Route::get('/S_profile',[studentController::class, 'Sprofile'])->name('Sprofile');
     Route::post('/S_editProfile/{id}',[studentController::class, 'editSprofile'])->name('editSprofile');
     Route::post('/updatePasswordStudent/{id}',[studentController::class, 'updatePassStudent'])->name('updatePassStudent');
+    Route::get('/S_searchRequest',[studentController::class, 'searchRequest'])->name('searchRequest');
 });
 
 //FOR GUEST///////////////////////////////////////////////////////////////////////////////////////////////////////

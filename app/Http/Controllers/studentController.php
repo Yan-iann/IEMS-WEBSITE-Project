@@ -804,6 +804,17 @@ class studentController extends Controller
                 ->with('sucess','Profile Updated Successfully');
             }//sucess
     }
+
+    public function searchRequest(Request $request)
+    {   
+        $announcement = announcement::all();
+        if($request->searchReq)
+        $announcement = announcement::where('anno_title','LIKE','%'.$request->searchReq.'%')
+                            ->get();
+
+        return view ('IEMS.Linus.STUDENT.searchRequest')
+        ->with('announcement', $announcement);
+    }
     //end of search
 
 }
