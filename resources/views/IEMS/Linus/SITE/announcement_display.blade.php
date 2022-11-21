@@ -15,7 +15,7 @@
                         By {{ $announcement->anno_author }}
                         <!-- Author -->
                         <span class="mx-3">&bullet;</span>
-                        on {{ $announcement->anno_date }}
+                        {{ $announcement->anno_date }}
                     </p> <!-- Date Published -->
 
                     <img src="{{ asset($announcement->anno_pic) }}" alt="featured image"
@@ -51,4 +51,7 @@
             </div>
         </div>
     </section>
+
+        {{-- contact block --}}
+        @include('IEMS.Linus.SITE.contact_block')
     @endsection

@@ -23,7 +23,7 @@
                 {{-- Other Announcement up to 6 --}}
                 @foreach ($announcement as $item)
                     <div class="col-12 col-md-6 col-lg-4  mb-lg-5">
-                        <div class="card shadow bg-white border-gray-300 p-4 rounded">
+                        <div class="card shadow bg-white border-gray-300 p-4 rounded" style="cursor:default">
                             <img src="{{ asset($item->anno_pic) }}" class="card-img-top rounded" alt="Image Cap">
                             {{-- Image --}}
                             <div class="card-body p-0 pt-4">
@@ -67,4 +67,7 @@
             </div>
         </div>
     </section>
+
+    {{-- contact block --}}
+    @include('IEMS.Linus.SITE.contact_block')
 @endsection

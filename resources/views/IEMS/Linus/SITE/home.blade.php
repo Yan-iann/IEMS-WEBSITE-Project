@@ -206,7 +206,7 @@
                             <div class="item col-md-1 col-lg-1 order-lg-2 my-10 m-0">
 
                                 <div class="card bg-dark text-white  align-text-bottom"
-                                    style="width:36rem; height: 90vh; object-fit:cover">
+                                    style="width:36rem; height: 90vh; object-fit:cover;cursor:default">
 
                                     <img src="{{ asset($item->anno_pic) }}" class="card-img-top"
                                         style="width:36rem; height: 90vh; object-fit:cover" alt="Announcement">
@@ -239,7 +239,7 @@
                         {{-- View Announcements Card --}}
                         <div class="item col-md-1 col-lg-1 order-lg-2 my-10 m-0">
                             <div class="card align-text-bottom border-dark"
-                                style="background:#e5e5e5; width:36rem; height: 90vh; object-fit:cover;">
+                                style="background:#e5e5e5; width:36rem; height: 90vh; object-fit:cover;cursor:default">
                                 <div class="card-img-overlay d-flex flex-column justify-content-end">
                                     <h2 class="display-3 card-title" style=" font-family: 'Playfair Display', serif;">Keep
                                         looking?</h5>
