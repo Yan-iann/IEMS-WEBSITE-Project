@@ -89,7 +89,7 @@
                                             <label class="focus-label">Class:</label>
                                         </div>
                                         <div class="col-6">
-                                            <select class="select floating p-1" id="" name="wildlife_class">
+                                            <select class="select floating" id="" name="wildlife_class">
                                                 <option></option>
                                                 @foreach ($searchClass as $item)
                                                     <option value="{{ $item->wildlife_class }}">{{ $item->wildlife_class }}
