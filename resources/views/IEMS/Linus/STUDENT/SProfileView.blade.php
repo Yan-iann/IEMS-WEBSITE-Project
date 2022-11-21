@@ -1,5 +1,16 @@
 @extends('layouts.S_Layout')
 @section('content')
+                                @if(Session::get('fail'))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('fail')}}
+                                </div>
+                                @endif
+
+                                @if(Session::get('sucess'))
+                                    <div class="alert alert-success">
+                                      {{ Session::get('sucess')}}
+                                    </div>
+                                @endif
 
   <div class="container-fluid" >
     <div class="home-content">
@@ -9,7 +20,7 @@
     <div class="container-fluid">
       <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">   
         <div class="col-12 col-lg-4"> 
-          <img style="width: 200px;"class="imageWildlife" src="{{ asset('storage/images/' .$item->profile_pic) }}" alt="No profile picture">   
+          <img style="width: 200px;"class="imageWildlife" src="{{ asset($item->profile_pic) }}" alt="No profile picture">   
         </div>
           <div class="col-12 col-lg-8">
             <div class="row g-1">
@@ -28,11 +39,6 @@
                 <h3>{{$item->last_name}}</h3>
               </div>
 
-              <div class="col-12  col-lg-7">
-                <label for="formGroupExampleInput" class="form-label">Phone Number</label>
-                <h3>{{$item->phone_no}}</h3>
-              </div>
-
               <div class="col-12"><br>
               </div>
               <div class="col-12"><br>
@@ -45,10 +51,7 @@
               <div class="col-12"><br>
                 <!-- Filler -->
               </div>
-              <div class="col-12"><br>
-                <label for="formGroupExampleInput" class="form-label">Password</label>
-                <h3>*********</h3>
-              </div>
+  
             </div><!--end og row 1-->
           </div><!--end og col 1-->
             <!--Modal Footer-->
@@ -86,7 +89,7 @@
                                                                     <label for="formGroupExampleInput"
                                                                         class="form-label">Name</label>
                                                                     <input type="text" class="form-control"
-                                                                        name="name" value="{{ $item->name }}">
+                                                                        name="name" value="{{ $item->name }}" required>
                                                                 </div>
 
                                                                 <div class="col-12">
@@ -101,14 +104,14 @@
                                                                     <label for="formGroupExampleInput"
                                                                         class="form-label">Last Name</label>
                                                                     <input type="text" class="form-control"
-                                                                        name="last_name" value="{{ $item->last_name }}">
+                                                                        name="last_name" value="{{ $item->last_name }}" required>
                                                                 </div>
 
 
                                                         <div class="col-12 ">
-                                                            <label for="formGroupExampleInput2" class="form-label">Phone Number</label>
-                                                            <input type="input" class="form-control" name="phone_no"
-                                                                value="{{ $item ->phone_no }}">
+                                                            <label for="formGroupExampleInput2" class="form-label">Email Address</label>
+                                                            <input type="input" class="form-control" name="email"
+                                                                value="{{ $item ->email }}" readonly>
                                                         </div>
 
 

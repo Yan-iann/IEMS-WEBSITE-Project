@@ -219,42 +219,73 @@ class adminController extends Controller
         ->select('user_info.*','users.email')
         ->get();
 
+
         return view ('IEMS.Linus.ADMIN.AProfileView')
         ->with('profile',$profile);
     }
 
     public function editAprofile(Request $request, $id)
     {
-        $profile = DB::table('users')
-        ->where('users.id', '=' , Auth::user()->id )
-        ->join('user_info','user_info.user_ID', "=" ,'users.id')
-        ->select('user_info.*','users.*')
-        ->get();
-        
-        $user = user_info::find($id);
-        $user->name = $request->input('name');
-        $user->middle_name = $request->input('middle_name');
-        $user->last_name = $request->input('last_name');
-        $user->phone_no = $request->input('phone_no');
-        $user->rank = $request->input('rank');
-        $user->educational = $request->input('educational');
-        $user->specialty = $request->input('specialty');
-
-        if($request->hasfile('profile_pic'))
-        {
-            $path = $user["profile_pic"];
-            if(FILE::exists($path))
+        $validator = Validator::make(request()->all(), [
+            'name' => 'required',
+            'last_name' => 'required',
+            ]);
+            if($validator->fails())
             {
-                FILE::delete($path);
-            }
-            $filename = time().request()->file('profile_pic')->getClientOriginalName();
-            $finalPath = request()->file('profile_pic')->move('storage/images',$filename);
-            $user["profile_pic"] = $finalPath;
-        }
-        $user->save();
-        return redirect()->route('Aprofile')
-        ->with('user', $user)
-        ->with('profile',$profile);
+                return redirect()->back()
+                ->with('fail','Please Provide All Information');
+            }//failed
+            else
+            {
+                $user = user_info::find($id);
+                $input = $request->all();
+                if($request->hasfile('profile_pic'))
+                {
+                    $path = $user["profile_pic"];
+                    if(FILE::exists($path))
+                    {
+                        FILE::delete($path);
+                    }//if there is picture already
+                    $filename = time().request()->file('profile_pic')->getClientOriginalName();
+                    $finalPath = request()->file('profile_pic')->move('storage/images',$filename);
+                    $input["profile_pic"] = $finalPath;
+                }
+                $user->update($input);
+
+                $profile = DB::table('users')
+                ->where('users.id', '=' , Auth::user()->id )
+                ->join('user_info','user_info.user_ID', "=" ,'users.id')
+                ->select('user_info.*','users.*')
+                ->get();
+
+                return redirect()->route('Aprofile')
+                ->with('profile',$profile)
+                ->with('sucess','Profile Updated Successfully');
+            }//sucess
+    }
+    //end of viewing infocards
+    public function searchFaculty(Request $request)
+    {
+        $user = User::where('user_type','Faculty')->get();
+
+        if($request->searchFaculty)
+        $user = User::where('name','LIKE','%'.$request->searchFaculty.'%')
+               ->where('user_type','Faculty')
+               ->get();
+
+        return view('IEMS.Linus.ADMIN.searchFacultyUser')
+        ->with('user', $user);
+    }
+    public function searchStudent(Request $request)
+    {
+        $user = User::where('user_type','Student')
+                    ->get();
+        if($request->searchStudent)
+        $user = User::where('name','LIKE','%'.$request->searchStudent.'%')
+                            ->where('user_type','Student')
+                            ->get();
+        return view('IEMS.Linus.ADMIN.searchStudentUser')
+        ->with('user', $user);
     }
     
 }

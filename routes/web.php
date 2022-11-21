@@ -41,6 +41,10 @@ Route::prefix('IEMSAdmin')->middleware('auth','isAdmin')->group(function(){
     Route::get('/AdminAccounts', [adminController::class, 'adminAccounts'])->name('adminAccounts');
     Route::get('/facultyAccounts', [adminController::class, 'adminFacultyAccounts'])->name('adminFacultyAccounts');
     Route::get('/studentAccounts', [adminController::class, 'adminStudentAccounts'])->name('adminStudentAccounts');
+    Route::get('/A_profile',[adminController::class, 'Aprofile'])->name('Aprofile');
+    Route::post('/A_editProfile/{id}',[adminController::class, 'editAprofile'])->name('editAprofile');
+    Route::get('/A_searchFaculty',[adminController::class, 'searchFaculty'])->name('searchFaculty');
+    Route::get('/A_searchStudent',[adminController::class, 'searchStudent'])->name('searchStudent');
 });
 
 Route::prefix('IEMSFaculty')->middleware('auth','isFaculty')->group(function(){
@@ -81,10 +85,8 @@ Route::prefix('IEMSFaculty')->middleware('auth','isFaculty')->group(function(){
     //for profile
     Route::get('/profile',[infocardMaintain::class, 'Fprofile'])->name('Fprofile');
     Route::post('/editProfile/{id}',[infocardMaintain::class, 'editFprofile'])->name('editFprofile');
-    Route::get('/S_profile',[studentController::class, 'Sprofile'])->name('Sprofile');
-    Route::post('/S_editProfile/{id}',[studentController::class, 'editSprofile'])->name('editSprofile');
-    Route::get('/A_profile',[adminController::class, 'Aprofile'])->name('Aprofile');
-    Route::post('/A_editProfile/{id}',[adminController::class, 'editAprofile'])->name('editAprofile');
+    
+    
     //for analytics
     Route::get('/analytics',[infocardMaintain::class, 'countAnalysis'])->name('analysis');
     //for request
@@ -128,6 +130,8 @@ Route::prefix('IEMSStudent')->middleware('auth','isStudent')->group(function(){
     Route::get('/S_advanceSearchBone',[studentController::class, 'advanceSearchBone'])->name('S_advanceSearchBone');
     Route::get('/S_searchRef',[studentController::class, 'searchRef'])->name('S_searchRef');
     Route::get('/S_advanceSearchRef',[studentController::class, 'advanceSearchRef'])->name('S_advanceSearchRef');
+    Route::get('/S_profile',[studentController::class, 'Sprofile'])->name('Sprofile');
+    Route::post('/S_editProfile/{id}',[studentController::class, 'editSprofile'])->name('editSprofile');
 });
 
 //FOR GUEST///////////////////////////////////////////////////////////////////////////////////////////////////////

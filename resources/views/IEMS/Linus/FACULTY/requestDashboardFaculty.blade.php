@@ -7,7 +7,11 @@
                                 </div>
                                 @endif
 
-    <div class="row d-flex justify-content-between">
+                                @if(Session::get('sucess'))
+                                    <div class="alert alert-success">
+                                      {{ Session::get('sucess')}}
+                                    </div>
+                                @endif
 
   <div class="home-content">
 
@@ -16,7 +20,6 @@
         <span class="text">Announcement Requests</span>
     </div>
   </div>
-        </div>
 
     <div class="col-12 col-md-5 col-lg-5 order-sm-1 order-md-2">
         <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get"
@@ -38,7 +41,6 @@
     </div>
 
   </div>
-</div>
 
 
 {{-- Annoucnement Table --}}

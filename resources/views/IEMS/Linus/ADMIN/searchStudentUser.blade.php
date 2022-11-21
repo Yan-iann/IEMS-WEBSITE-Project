@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="home-content">
             <i class='bx bx-menu'></i>
-            <span class="text">Student Accounts</span>
+            <span class="text">Student Accounts Search Results</span>
         </div>
     </div>
 
@@ -38,6 +38,8 @@
         <!--end of search bar-->
 
         <br>
+        @if($user->count())
+                    @foreach ($user as $user)
         <div class="table-responsive">
             <table class="table table-hover mg-b-0 text-center" id="maintables">
                 <thead>
@@ -51,7 +53,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($user as $user)
+                    
                         <tr>
                             <td class="align-middle">{{ $user->id }}</td>
                             <td class="align-middle">{{ $user->name }}</td>
@@ -158,6 +160,10 @@
                         <!--end of delete modal-->
 
                     @endforeach
+                    @else
+                    <br>
+                    <h3>No records found</h3>
+                    @endif
                 </tbody> <!--end of table body-->
             </table> <!--end of table-->
         </div><!--end of container-->

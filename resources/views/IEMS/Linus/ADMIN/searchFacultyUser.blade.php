@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="home-content">
             <i class='bx bx-menu'></i>
-            <span class="text">Faculty Accounts</span>
+            <span class="text">Faculty Accounts Search Results</span>
         </div>
     </div>
 
@@ -24,7 +24,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('searchFaculty') }}">
+                        <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="">
                             <td></td>
                             <td></td>
                             <td><input type="search" name="searchFaculty" class="form-control mr-sm2" placeholder="Search Faculty Name Account"></td>
@@ -35,7 +35,8 @@
             </table>
         </div>
         <!--end of search bar-->
-
+        @if($user->count())
+        @foreach ($user as $user)
         <div class="table-responsive">
             <table class="table table-hover mg-b-0 text-center" id="maintables">
                 <thead>
@@ -49,7 +50,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($user as $user)
+                   
                         <tr>
                             <td class="align-middle">{{ $user->id }}</td>
                             <td class="align-middle">{{ $user->name }}</td>
@@ -149,6 +150,10 @@
                         </form>
                         <!--end of delete modal-->
                     @endforeach
+                    @else
+                        <br>
+                        <h3>No records found</h3>
+                    @endif
                 </tbody>
             </table>
         </div>
