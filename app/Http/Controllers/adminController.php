@@ -219,9 +219,14 @@ class adminController extends Controller
         ->select('user_info.*','users.email')
         ->get();
 
+        $password = DB::table('users')
+        ->where('users.id', '=' , Auth::user()->id )
+        ->select('users.*')
+        ->get();
 
         return view ('IEMS.Linus.ADMIN.AProfileView')
-        ->with('profile',$profile);
+        ->with('profile',$profile)
+        ->with('password',$password);
     }
 
     public function editAprofile(Request $request, $id)
@@ -263,7 +268,35 @@ class adminController extends Controller
                 ->with('sucess','Profile Updated Successfully');
             }//sucess
     }
-    //end of viewing infocards
+
+    public function updatePassAdmin(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'password' => [
+                'required',
+                'confirmed',
+                'regex:/[a-z]/',      // must contain at least one lowercase letter
+                'regex:/[A-Z]/',      // must contain at least one uppercase letter
+                'regex:/[0-9]/',      // must contain at least one digit
+            ],
+            ]);
+            if($validator->fails())
+            {
+                return redirect()->back()
+                ->with('fail','Password Error');
+            }//if failed return back
+            else
+            {
+                $change = User::find($id);
+                $change->password = Hash::make($request->password);
+                $change->changed_pass = '1';
+                $change->save(); 
+                return redirect()->route('Aprofile')
+                    ->with('sucess','New Password Updated');
+                
+            }
+    }
+   
     public function searchFaculty(Request $request)
     {
         $user = User::where('user_type','Faculty')->get();

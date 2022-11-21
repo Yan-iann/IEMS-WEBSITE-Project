@@ -49,11 +49,6 @@
                             </div>
 
                             <div class="col-12  col-lg-6">
-                                <label for="formGroupExampleInput" class="form-label">Phone Number</label>
-                                <h3>{{ $item->phone_no }}</h3>
-                            </div>
-
-                            <div class="col-12  col-lg-6">
                                 <label for="formGroupExampleInput" class="form-label">Email</label>
                                 <h3>{{ Auth::user()->email }}</h3>
                             </div>
@@ -81,6 +76,12 @@
                                     <i class='bx bxs-edit'></i>
                                     Edit Profile
                                 </button>
+
+                                <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                                          data-bs-target="#ModalEditPass{{ $item->id }}">
+                                          <i class='bx bxs-edit'> </i>
+                                          Change Password
+                                      </button>
                             </div>
                         </div>
                         <!--end og row 1-->
@@ -154,6 +155,52 @@
                     </div>
                 </div>
             </form>
+
+            <form action="{{ route('updatePassStudent', $item->id) }}" method="post" enctype="multipart/form-data">
+  
+  <div class="modal fade" id="ModalEditPass{{ $item->id }}" tabindex="-1"
+      aria-labelledby="ModalLabel" aria-hidden="true">
+      {!! csrf_field() !!}
+      <div class="modal-dialog modal-dialog-centered modUal-dialog-scrollable modal-lg">
+          <div class="modal-content  bg-light">
+
+              <div class="modal-header border-0 text-center">
+                  <h5 class="modal-title  text-center">Change Password</h5>
+                  <button type="button" class="btn-close btn-info bg-info"
+                      data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <div class="container-fluid">
+                      <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
+
+                                  <div class="col-12">
+                                      <label for="formGroupExampleInput"
+                                          class="form-label">New Password</label>
+                                      <input id="password" type="password" class="form-control"
+                                          name="password"  required autocomplete="new-password">
+                                  </div>
+
+                                  <div class="col-12">
+                                      <label for="formGroupExampleInput"
+                                          class="form-label">Confirm Password</label>
+                                      <input id="password_confirmation" type="password" class="form-control"
+                                      name="password_confirmation" required>
+                                  </div>
+
+                                <div class="modal-footer border-0">
+                                    <button type="submit" class="btn btn-info"
+                                        style="color:white">Change Password</button>
+                                    <button type="button" class="btn btn-outline-info"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                </div>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</form>
         @endforeach
     </div>
 @endsection

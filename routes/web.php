@@ -45,6 +45,7 @@ Route::prefix('IEMSAdmin')->middleware('auth','isAdmin')->group(function(){
     Route::post('/A_editProfile/{id}',[adminController::class, 'editAprofile'])->name('editAprofile');
     Route::get('/A_searchFaculty',[adminController::class, 'searchFaculty'])->name('searchFaculty');
     Route::get('/A_searchStudent',[adminController::class, 'searchStudent'])->name('searchStudent');
+    Route::post('/updatePasswordAdmin/{id}',[adminController::class, 'updatePassAdmin'])->name('updatePassAdmin');
 });
 
 Route::prefix('IEMSFaculty')->middleware('auth','isFaculty')->group(function(){
@@ -85,6 +86,7 @@ Route::prefix('IEMSFaculty')->middleware('auth','isFaculty')->group(function(){
     //for profile
     Route::get('/profile',[infocardMaintain::class, 'Fprofile'])->name('Fprofile');
     Route::post('/editProfile/{id}',[infocardMaintain::class, 'editFprofile'])->name('editFprofile');
+    Route::post('/updatePasswordFaculty/{id}',[infocardMaintain::class, 'updatePassFaculty'])->name('updatePassFaculty');
     
     
     //for analytics
@@ -132,6 +134,7 @@ Route::prefix('IEMSStudent')->middleware('auth','isStudent')->group(function(){
     Route::get('/S_advanceSearchRef',[studentController::class, 'advanceSearchRef'])->name('S_advanceSearchRef');
     Route::get('/S_profile',[studentController::class, 'Sprofile'])->name('Sprofile');
     Route::post('/S_editProfile/{id}',[studentController::class, 'editSprofile'])->name('editSprofile');
+    Route::post('/updatePasswordStudent/{id}',[studentController::class, 'updatePassStudent'])->name('updatePassStudent');
 });
 
 //FOR GUEST///////////////////////////////////////////////////////////////////////////////////////////////////////
