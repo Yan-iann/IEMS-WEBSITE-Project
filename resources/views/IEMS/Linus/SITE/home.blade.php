@@ -7,26 +7,26 @@
         style="background-image: url('img/Home_Banner.png'); background-size:cover;
         background-repeat: no-repeat; background-blend-mode: multiply; background-position: center">
         <div class="content text-center ">
-            <h2 class="lead text-white  my-4 fw-bold">SU IEMS</h2>
 
-            <h1 class="display-2 text-white text-wrap lh-1" style="font-family: 'Playfair Display', serif" data-scroll
-                data-scroll-speed="1.5" data-scroll-direction="horizontal">
-                the
-                <span class="fst-italic" style="font-family: 'Playfair Display', serif">institute</span>
-                of
-            </h1>
-
-            <h1 class="display-2 text-white text-wrap lh-1" style="font-family: 'Playfair Display', serif" data-scroll
+            <h1 class="display-3 text-white text-wrap lh-1 fst-italic" style="font-family: 'Playfair Display', serif" data-scroll
                 data-scroll-speed="-1.5" data-scroll-direction="horizontal">
-                <span class="text-decoration-underline" style="font-family: 'Playfair Display', serif">environment</span>
-                and
-                <span class="text-decoration-underline" style="font-family: 'Playfair Display', serif">marine</span>
-            </h1>
+                the institute   of</h1>
 
-            <h1 class="display-2 text-white text-wrap lh-1"style="font-family: 'Playfair Display', serif" data-scroll
-                data-scroll-speed="1.5" data-scroll-direction="horizontal">
+            <h1 class="display-3 text-white text-wrap lh-1 fst-italic" style="font-family: 'Playfair Display', serif" data-scroll
+            data-scroll-speed="1.5" data-scroll-direction="horizontal">
+
+            <span class="text-decoration-underline" style="font-family: 'Playfair Display', serif">environmental</span>
+            and
+        </h1>
+
+            <h1 class="display-3 text-white text-wrap lh-1 fst-italic" style="font-family: 'Playfair Display', serif" data-scroll
+                data-scroll-speed="-1.5" data-scroll-direction="horizontal">
+
+                <span class="text-decoration-underline" style="font-family: 'Playfair Display', serif">marine</span>
                 <span class="fst-italic " style="font-family: 'Playfair Display', serif">sciences</span>
             </h1>
+
+
 
             <h2 class="lead text-white fst-italic mt-4">“Excellentiam, Scientia, et Mares”</h2>
         </div>
@@ -159,7 +159,8 @@
                                 <div class="row justify-content-center">
                                     <h4 class="col-12 subheader fst-italic fw-light" style="color: white">World-Class <br>
                                         Education</h4>
-                                    <p class=" col-9 lead text-break" style="word-wrap: break-word">Top of the line resources
+                                    <p class=" col-9 lead text-break" style="word-wrap: break-word">Top of the line
+                                        resources
                                         for learning to culture and grow the
                                         capabilites of students and researchers</p>
                                 </div>
@@ -200,43 +201,43 @@
 
                     <div class="wrapper">
                         @foreach ($announcement as $item)
-                        {{-- Insert For Loop Here (start with last to first) --}}
+                            {{-- Insert For Loop Here (start with last to first) --}}
 
-                        <div class="item col-md-1 col-lg-1 order-lg-2 my-10">
+                            <div class="item col-md-1 col-lg-1 order-lg-2 my-10 m-0">
 
-                            <div class="card bg-dark text-white  align-text-bottom"
-                                style="width:36rem; height: 90vh; object-fit:cover">
+                                <div class="card bg-dark text-white  align-text-bottom"
+                                    style="width:36rem; height: 90vh; object-fit:cover">
 
-                                <img src="{{ asset($item->anno_pic) }}" class="card-img-top"
-                                    style="width:36rem; height: 90vh; object-fit:cover" alt="Announcement">
-                                {{-- Photo --}}
+                                    <img src="{{ asset($item->anno_pic) }}" class="card-img-top"
+                                        style="width:36rem; height: 90vh; object-fit:cover" alt="Announcement">
+                                    {{-- Photo --}}
 
-                                <div class="card-img-overlay d-flex flex-column justify-content-end">
+                                    <div class="card-img-overlay d-flex flex-column justify-content-end">
 
-                                    <h3 class="card-text fst-italic">{{ $item->anno_date }}</h3>
+                                        <h3 class="card-text fst-italic">{{ $item->anno_date }}</h3>
 
-                                    <h2 class="display-3 card-title" style=" font-family: 'Playfair Display', serif;">
-                                        {{ $item->anno_title }}
-                                    </h2>
+                                        <h2 class="display-3 card-title" style=" font-family: 'Playfair Display', serif;">
+                                            {{ $item->anno_title }}
+                                        </h2>
 
-                                    <p class="lead card-text"> {{ $item->anno_author }}</p> {{-- Author et.al --}}
+                                        <p class="lead card-text"> {{ $item->anno_author }}</p> {{-- Author et.al --}}
 
-                                    <div class="col-12">
-                                        <p style="color: transparent"> Filler Text </p>
+                                        <div class="col-12">
+                                            <p style="color: transparent"> Filler Text </p>
+                                        </div>
+
+                                        <p><a class="btn btn-lg btn-light"
+                                                href="{{ route('accessAnnouncementDisplay', $item->anno_ID) }}">Read
+                                                Announcement</a>
+                                        </p> {{-- Display Announcement Page --}}
                                     </div>
-
-                                    <p><a class="btn btn-lg btn-light" href="{{ route('accessAnnouncementDisplay', $item->anno_ID) }}">Read Announcement</a>
-                                    </p> {{-- Display Announcement Page --}}
                                 </div>
+
                             </div>
-
-                        </div>
-                        {{-- end Announcement Card Loop --}}
-
-
+                            {{-- end Announcement Card Loop --}}
                         @endforeach
                         {{-- View Announcements Card --}}
-                        <div class="item col-md-1 col-lg-1 order-lg-2 my-10">
+                        <div class="item col-md-1 col-lg-1 order-lg-2 my-10 m-0">
                             <div class="card align-text-bottom border-dark"
                                 style="background:#e5e5e5; width:36rem; height: 90vh; object-fit:cover;">
                                 <div class="card-img-overlay d-flex flex-column justify-content-end">
@@ -247,7 +248,9 @@
                                         <div class="col-12">
                                             <p style="color: transparent"> Filler Text </p>
                                         </div>
-                                        <p><a class="btn btn-lg btn-dark" href="{{ route('accessAnnouncementDisplay', $item->anno_ID) }}">View All Announcements</a>
+                                        <p><a class="btn btn-lg btn-dark"
+                                                href="/announcement">View All
+                                                Announcements</a>
                                         </p>
                                 </div>
                             </div>
