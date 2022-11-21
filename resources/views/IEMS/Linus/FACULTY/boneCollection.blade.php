@@ -2,6 +2,8 @@
 @section('content')
 
     <div class="container-fluid">
+
+        <div class="row d-flex justify-content-between">
         {{-- Page Name, and Burger Icon. AND Search Bar --}}
                              @if(Session::get('fail'))
                                     <div class="alert alert-danger">
@@ -13,16 +15,16 @@
                                       {{ Session::get('sucess')}}
                                     </div>
                                 @endif
-        <div class="col-12">
-
-            <div class="row d-flex justify-content-around">
+            <div class="col-12 col-md-6 col-lg-6 order-sm-2 order-md-1">
                 <div class="home-content">
                     <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center">
                         <i class='bx bx-menu'></i>
-                        <span class="text">Bone Collection</span>
+                        <span class="text">Whale Bone Collection</span>
                     </div>
+                </div>
+            </div>
 
-                    <div class="col-12 col-md-6 col-lg-6">
+                    <div class="col-12 col-md-6 col-lg-6 order-sm-1 order-md-2">
                         <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('searchBone') }}">
                             <div class="input-group">
                                 <input type="search" name="searchBone" class="form-control mr-sm2"
@@ -41,15 +43,13 @@
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
-
         {{-- informationcards --}}
+        <section class="col-12">
         <div class="container-fluid">
             <div class="row g-5 m-4 p-0 d-flex align-items-stretch g-l">
                 @foreach ($wildlifes as $item)
-                    <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
-                        <div class="card border-dark" style="width: 18rem;" data-bs-toggle="modal"
+                    <div class="col-12 col-md-4 col-lg-3 d-flex align-items-stretch">
+                        <div class="card" style="width: 18rem;" data-bs-toggle="modal"
                             data-bs-target="#ModalWildlife{{ $item->info_ID }}">
                             <img class="card-img-top "src="{{ asset($item->wildlife_pic) }}" alt="Card image cap">
                             <div class="card-body bg-light text-primary">
@@ -69,6 +69,7 @@
             </a>
         </div>
         <!--end of class container fluid-->
+        </section>
 
         <!-- Delete Wildlife Modal-->
         @foreach ($wildlifes as $item)
@@ -158,7 +159,7 @@
 </div>
 </div>
         </form> <!--end of form-->
-       
+
 <!--advance search-->
 <form action="{{ route('advanceSearchBone') }}" method="GET" enctype="multipart/form-data">
       {!! csrf_field() !!}
@@ -206,5 +207,5 @@
           </div>
         </div>
       </div>
-</form><!--end of form-->  
+</form><!--end of form-->
 @endsection

@@ -1,25 +1,24 @@
 @extends('layouts.F_Layout')
 @section('content')
-<div class="conatiner-fluid">
+<div class="container-fluid">
                               @if(Session::get('fail'))
                                 <div class="alert alert-danger">
                                     {{ Session::get('fail')}}
                                 </div>
                                 @endif
 
-                                @if(Session::get('sucess'))
-                                    <div class="alert alert-success">
-                                      {{ Session::get('sucess')}}
-                                    </div>
-                                @endif
+    <div class="row d-flex justify-content-between">
+
   <div class="home-content">
 
     <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center p-4">
         <i class='bx bx-menu'></i>
         <span class="text">Announcement Requests</span>
     </div>
+  </div>
+        </div>
 
-    <div class="col-12 col-md-5 col-lg-5">
+    <div class="col-12 col-md-5 col-lg-5 order-sm-1 order-md-2">
         <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get"
             action="{{ route('searchReq') }}">
             <div class="input-group">
@@ -41,6 +40,8 @@
   </div>
 </div>
 
+
+{{-- Annoucnement Table --}}
 <div class="table-responsive" style="overflow: hidden">
     <table class="table table-hover mg-b-0 text-center" id="maintables" >
         <thead>
@@ -48,8 +49,8 @@
             <th>Request ID</th>
             <th>Title</th>
             <th>Author</th>
-            <th>Date Published</th>
-            <th>Requested By</th>
+            <th >Date Published</th>
+            <th >Requested By</th>
             <th>Status</th>
 
 
@@ -57,7 +58,7 @@
         </tr>
         </thead>
         <tbody>
-              
+
                 @foreach ($announcement as $item)
                 <tr>
                     <td class="align-middle">{{ $item->anno_ID }}</td>
@@ -68,10 +69,12 @@
                     <td class="align-middle">{{ $item->anno_status }}</td>
 
                     <td class="align-middle">
-                            <button type="button" class="btn btn-info" style="color:white"data-bs-toggle="modal" data-bs-target="#ModalEditReq{{ $item->anno_ID }}"><i class='bx bxs-edit' ></i></button>
-                            <button type="button" class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#ModalDeleteReq{{ $item->anno_ID }}"> <i class='bx bx-trash' ></i></button>
+                            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#ModalEditReq{{ $item->anno_ID }}"><i class='bx bxs-edit' ></i></button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#ModalDeleteReq{{ $item->anno_ID }}"> <i class='bx bx-trash' ></i></button>
                     </td>
                 </tr>
+
+
                 <!-- Edit Announcement Modal-->
                 <form action="{{ route('updateAnnoF',$item->anno_ID) }}" method="post" enctype="multipart/form-data">
                   @csrf
@@ -101,9 +104,9 @@
                                         <input type="date" class="form-control"  name="anno_date" value="{{ $item->anno_date}}" required>
                                       </div>
 
-                                      <div class="col-12 col-md-4">
+                                      <div class="col-12">
                                         <label for="formGroupExampleInput" class="form-label">Content</label>
-                                        <input type="textarea" name="anno_content" class="form-control"  value="{{ $item->anno_content}}" required>
+                                        <input type="textarea" name="anno_content" class="form-control"  value="{{ $item->anno_content}}">
                                       </div>
 
                                       <div class="col-12 col-md-4">
@@ -151,7 +154,7 @@
                         </div>
                       </div>
                 </form>
-                
+
               @endforeach
 
         </tbody>

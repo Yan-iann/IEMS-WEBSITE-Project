@@ -507,5 +507,5 @@
     {{-- End of COS --}}
 
     {{-- Contact Us Block --}}
-    @include('IEMS\Linus.SITE.contact_block')
+    @include('IEMS.Linus.SITE.contact_block')
 @endsection
