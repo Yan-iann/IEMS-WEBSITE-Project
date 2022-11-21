@@ -14,31 +14,31 @@
                                 @endif
 
 
-<body>
-  <div class="home-section" style="height: 100%">
+
+  <div class="container-fluid" style="height: 100%">
     <div class="home-content">
+        <i class='bx bx-menu'></i>
       <span class="text">Profile</span>
     </div>
-  </div>
     @foreach($profile as $item)
     <div class="container-fluid">
-      <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">   
-        <div class="col-12 col-lg-4"> 
-          <img style="width: 200px;"class="imageWildlife" src="{{ asset($item->profile_pic) }}" alt="No profile picture">   
+      <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
+        <div class="col-12 col-lg-4">
+          <img style="width: 200px;"class="imageWildlife" src="{{ asset($item->profile_pic) }}" alt="No profile picture">
         </div>
           <div class="col-12 col-lg-8">
             <div class="row g-1">
-              <div class="col-12  col-lg-7">
+              <div class="col-12  col-lg-4">
                 <label for="formGroupExampleInput" class="form-label">FirstName</label>
                 <h3>{{$item->name}}</h3>
               </div>
 
-              <div class="col-12  col-lg-7">
+              <div class="col-12  col-lg-4">
                 <label for="formGroupExampleInput" class="form-label">Middle Name</label>
                 <h3>{{$item->middle_name}}</h3>
               </div>
 
-              <div class="col-12  col-lg-7">
+              <div class="col-12  col-lg-4">
                 <label for="formGroupExampleInput" class="form-label">Last Name</label>
                 <h3>{{$item->last_name}}</h3>
               </div>
@@ -49,22 +49,26 @@
                 <label for="formGroupExampleInput" class="form-label">Email</label>
                 <h3>{{ Auth::user()->email }}</h3>
               </div>
+
               <div class="col-12"><br>
                 <!-- Filler -->
-              </div> 
+              </div>
               <div class="col-12"><br>
                 <!-- Filler -->
               </div>
 
+            <div class="col-12" >
+                <button type="button" class="btn btn-info" data-bs-toggle="modal"
+                                          data-bs-target="#ModalEditProf{{ $item->id }}">
+                                          <i class='bx bxs-edit'> </i>
+                                          Edit Profile
+                                      </button>
+
+              </div>
+
             </div><!--end og row 1-->
           </div><!--end og col 1-->
-            <!--Modal Footer-->
-            <div class="modal-footer border-0" style="padding-right: 25px;">
-              <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                                        data-bs-target="#ModalEditProf{{ $item->id }}"><i
-                                            class='bx bxs-edit'>Edit Profile</i></button>
-             
-            </div>
+
       </div>
     </div><!--end of container-->
 
@@ -132,5 +136,5 @@
                                 </div>
                             </form>
 @endforeach
-</body>
+  </div>
 @endsection
