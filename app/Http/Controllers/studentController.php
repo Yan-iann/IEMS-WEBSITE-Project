@@ -253,7 +253,9 @@ class studentController extends Controller
         ->distinct('wildlife.wildlife_location')
         ->where('wildlife_type','Zoo')
         ->get();
-         //for class
+         
+        $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
+
          if($request->wildlife_class)
          {
              $wildlife = Wildlife::where('wildlife_class','LIKE','%'.$request->wildlife_class.'%')
@@ -537,7 +539,7 @@ class studentController extends Controller
         ->where('wildlife_type','Bone')
         ->get();
 
-         //for genus
+          $wildlife = Wildlife::where('wildlife_type','Bone')->get();
          if($request->wildlife_genus)
          {
              $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
@@ -588,7 +590,7 @@ class studentController extends Controller
         ->where('wildlife_type','Bone')
         ->get();
 
-         //for genus
+        $wildlife = Wildlife::where('wildlife_type','Bone')->get();
          if($request->wildlife_genus)
          {
              $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
@@ -637,7 +639,7 @@ class studentController extends Controller
         ->where('wildlife_type','Reference')
         ->get();
 
-         //for genus
+        $wildlife = Wildlife::where('wildlife_type','Reference')->get();
          if($request->wildlife_genus)
          {
              $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
@@ -688,7 +690,7 @@ class studentController extends Controller
         ->where('wildlife_type','Reference')
         ->get();
 
-         //for genus
+        $wildlife = Wildlife::where('wildlife_type','Reference')->get();
          if($request->wildlife_genus)
          {
              $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')

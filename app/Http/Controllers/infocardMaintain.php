@@ -708,7 +708,8 @@ class infocardMaintain extends Controller
         ->distinct('wildlife.wildlife_location')
         ->where('wildlife_type','Zoo')
         ->get();
-         //for class
+
+        $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
          if($request->wildlife_class)
          {
              $wildlife = Wildlife::where('wildlife_class','LIKE','%'.$request->wildlife_class.'%')
@@ -843,7 +844,7 @@ class infocardMaintain extends Controller
         ->where('wildlife_type','Bone')
         ->get();
 
-         //for genus
+         $wildlife = Wildlife::where('wildlife_type','Bone')->get();
          if($request->wildlife_genus)
          {
              $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
@@ -894,7 +895,7 @@ class infocardMaintain extends Controller
         ->where('wildlife_type','Bone')
         ->get();
 
-         //for genus
+        $wildlife = Wildlife::where('wildlife_type','Bone')->get();
          if($request->wildlife_genus)
          {
              $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
@@ -944,7 +945,7 @@ class infocardMaintain extends Controller
         ->where('wildlife_type','Reference')
         ->get();
 
-         //for genus
+        $wildlife = Wildlife::where('wildlife_type','Reference')->get();
          if($request->wildlife_genus)
          {
              $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
@@ -995,7 +996,7 @@ class infocardMaintain extends Controller
         ->where('wildlife_type','Reference')
         ->get();
 
-         //for genus
+        $wildlife = Wildlife::where('wildlife_type','Reference')->get();
          if($request->wildlife_genus)
          {
              $wildlife = Wildlife::where('wildlife_genus','LIKE','%'.$request->wildlife_genus.'%')
@@ -1183,7 +1184,6 @@ class infocardMaintain extends Controller
         ->get();
 
         $anno = announcement::all();
-
         if($request->anno_status)
         {
 
@@ -1212,7 +1212,7 @@ class infocardMaintain extends Controller
         ->select('announcement.anno_status')
         ->distinct('announcement.anno_status')
         ->get();
-        //$anno = announcement::all();
+        $anno = announcement::all();
 
         if($request->anno_status)
         {
