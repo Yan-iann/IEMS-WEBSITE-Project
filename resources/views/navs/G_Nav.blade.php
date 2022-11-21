@@ -30,9 +30,9 @@
               <i class='bx bxs-chevron-down arrow' ></i>
             </div>
             <ul class="sub-menu">
-              <li><a class="link_name" href="{{ route('G_boneCollection') }}">Museum</a></li>
-              <li><a href="{{ route('G_boneCollection') }}">Bones</a></li>
-              <li><a href="{{ route('G_refCollection') }}">References</a></li>
+              <li>Museum</li>
+              <li><a href="{{ route('G_boneCollection') }}">whale Bone</a></li>
+              <li><a href="{{ route('G_refCollection') }}">Reference</a></li>
             </ul>
       </li>
       <!--end of Museum Bar-->
@@ -47,9 +47,9 @@
               <i class='bx bxs-chevron-down arrow' ></i>
             </div>
             <ul class="sub-menu">
-              <li><a class="link_name" href="{{ route('Guest_thesis') }}">Thesis Papers</a></li>
-              <li><a href="{{ route('G_gradThesis') }}">Post Graduate</a></li>
-              <li><a href="{{ route('G_undergradThesis') }}">Under Graduate</a></li>
+              <li>Thesis Papers</li>
+              <li><a href="{{ route('G_gradThesis') }}">Graduate</a></li>
+              <li><a href="{{ route('G_undergradThesis') }}">Undergraduate</a></li>
             </ul>
       </li>
       <!--end of Thesis Paper-->

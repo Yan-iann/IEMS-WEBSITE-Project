@@ -40,8 +40,8 @@
                 <i class='bx bxs-chevron-down arrow'></i>
             </div>
             <ul class="sub-menu">
-                <li><a class="link_name" href="{{ route('boneCollection') }}">Museum</a></li>
-                <li><a href="{{ route('boneCollection') }}">Bone</a></li>
+                <li>Museum</li>
+                <li><a href="{{ route('boneCollection') }}">Whale Bone</a></li>
                 <li><a href="{{ route('refCollection') }}">Reference</a></li>
             </ul>
         </li>
@@ -57,9 +57,9 @@
                 <i class='bx bxs-chevron-down arrow'></i>
             </div>
             <ul class="sub-menu">
-                <li><a class="link_name" href="{{ route('thesis') }}">Thesis Papers</a></li>
+                <li>Thesis Papers</li>
                 <li><a href="{{ route('gradThesis') }}">Graduate</a></li>
-                <li><a href="{{ route('undergradThesis') }}">Under Graduate</a></li>
+                <li><a href="{{ route('undergradThesis') }}">Undergraduate</a></li>
             </ul>
         </li>
         <!--end of Thesis Paper-->
@@ -104,9 +104,11 @@
         <!--Profile-->
         <li>
             <div class="profile-details">
-                <div class="profile-content">
-                    <img src="{{Auth::user()->profile_pic}}">
-                </div>
+                <a href="{{ route('Fprofile') }}">
+                    <div class="profile-content">
+                        <img src="{{ Auth::user()->profile_pic }}">
+                    </div>
+                </a>
                 <div class="name-job">
                     <a href="{{ route('Fprofile') }}">
                         <div class="profile_name">{{ Auth::user()->name }}
