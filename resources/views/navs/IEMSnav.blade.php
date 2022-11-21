@@ -23,7 +23,7 @@
                     <a class="nav-link font-weight-bold " href="/exhibit">Exhibit</a>
                 </li>
                 <li class="nav-item" style="padding:5px">
-                    <a class="nav-link font-weight-bold" href="#">Fishery</a>
+                    <a class="nav-link font-weight-bold" href="/construction">Fishery</a>
                 </li>
                 <li class="nav-item dropdown" style="padding:5px">
                     <a class="nav-link dropdown-toggle font-weight-bold text-s" data-bs-toggle="dropdown">About</a>

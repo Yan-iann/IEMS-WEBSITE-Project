@@ -85,8 +85,8 @@ Route::prefix('IEMSFaculty')->middleware('auth','isFaculty')->group(function(){
     //for profile
     Route::get('/profile',[infocardMaintain::class, 'Fprofile'])->name('Fprofile');
     Route::post('/editProfile/{id}',[infocardMaintain::class, 'editFprofile'])->name('editFprofile');
-    
-    
+
+
     //for analytics
     Route::get('/analytics',[infocardMaintain::class, 'countAnalysis'])->name('analysis');
     //for request
@@ -166,6 +166,7 @@ Route::get('/announcement',[IEMSWebsite::class, 'accessAnnouncement']); //access
 Route::get('/announcementDisplay/{anno_ID}',[IEMSWebsite::class, 'accessAnnouncementDisplay'])->name('accessAnnouncementDisplay'); // access announcement
 Route::get('contact-us', [ContactController::class, 'index']);
 Route::post('contact-us', [ContactController::class, 'store'])->name('contact-us.store');
+Route::get('/construction',[IEMSWebsite::class,'underConstruction']);
 require __DIR__.'/auth.php';
 
 

@@ -15,7 +15,7 @@
                     </div>
 
                     <div class="col-md-6 text-left order-sm-2 order-md-1 order-lg-1">
-                        <h1 class=" display-2 subheader fst-italic">The Online Exhibit</h1>
+                        <h1 class=" display-2 subheader fst-italic" data-scroll data-scroll-speed="1.5" data-scroll-direction="horizontal">The Online Exhibit</h1>
                         <p class="lead">The Institute of Environmental and Marine Sciences offers
                             a wide range of wildlife information garnered by the department’s
                             students and faculty.

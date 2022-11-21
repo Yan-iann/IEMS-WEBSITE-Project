@@ -27,7 +27,10 @@
 </head>
 
 <body>
+
+
     <div data-scroll-container class="container-fluid m-0 p-0">
+
         @include('navs.IEMSnav')
         @yield('content')
         @include('IEMS\Linus.SITE.footer')

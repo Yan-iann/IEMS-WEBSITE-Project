@@ -8,19 +8,19 @@
         background-repeat: no-repeat; background-blend-mode: multiply; background-position: center">
         <div class="content text-center ">
 
-            <h1 class="display-3 text-white text-wrap lh-1 fst-italic" style="font-family: 'Playfair Display', serif" data-scroll
-                data-scroll-speed="-1.5" data-scroll-direction="horizontal">
-                the institute   of</h1>
+            <h1 class="display-3 text-white text-wrap lh-1 fst-italic" style="font-family: 'Playfair Display', serif"
+                data-scroll data-scroll-speed="-1.5" data-scroll-direction="horizontal">
+                the institute of</h1>
 
-            <h1 class="display-3 text-white text-wrap lh-1 fst-italic" style="font-family: 'Playfair Display', serif" data-scroll
-            data-scroll-speed="1.5" data-scroll-direction="horizontal">
+            <h1 class="display-3 text-white text-wrap lh-1 fst-italic" style="font-family: 'Playfair Display', serif"
+                data-scroll data-scroll-speed="1.5" data-scroll-direction="horizontal">
 
-            <span class="text-decoration-underline" style="font-family: 'Playfair Display', serif">environmental</span>
-            and
-        </h1>
+                <span class="text-decoration-underline" style="font-family: 'Playfair Display', serif">environmental</span>
+                and
+            </h1>
 
-            <h1 class="display-3 text-white text-wrap lh-1 fst-italic" style="font-family: 'Playfair Display', serif" data-scroll
-                data-scroll-speed="-1.5" data-scroll-direction="horizontal">
+            <h1 class="display-3 text-white text-wrap lh-1 fst-italic" style="font-family: 'Playfair Display', serif"
+                data-scroll data-scroll-speed="-1.5" data-scroll-direction="horizontal">
 
                 <span class="text-decoration-underline" style="font-family: 'Playfair Display', serif">marine</span>
                 <span class="fst-italic " style="font-family: 'Playfair Display', serif">sciences</span>
@@ -34,6 +34,15 @@
     </div>
 
 
+    <section data-scroll-section class="mbr-section article"
+        style="background-color: #bb1017; padding-top: 18px; padding-bottom:1px; object-fit:cover ">
+        <div class="container-fluid">
+            <div class="row d-flex align-items-center text-center justify-content-center">
+                <p data-scroll data-scroll-speed="-5" data-scroll-direction="horizontal" class="text-white fst-italic fw-light">This is the <span class=" fw-bold">official</span> Silliman University Insitution of Environmental and
+                    Marine Sciences website</p>
+            </div>
+        </div>
+    </section>
 
 
     <section data-scroll-section class="mbr-section article"
@@ -191,7 +200,7 @@
                     style="padding-bottom: 50px">
                     <p class="lead m-0 fw-bold" style="padding-bottom: 20px">Announcements</p>
                     <h1 class="display-2 subheader fst-italic lh-1"
-                        style="color:#1da2d8; font-family: 'Playfair Display', serif; padding-bottom: 20px">See What's
+                        style="color:#1da2d8; font-family: 'Playfair Display', serif; padding-bottom: 20px" data-scroll data-scroll-speed="1.5" data-scroll-direction="horizontal">See What's
                         Happening</h1>
                     <p class="lead">Check out the different events thats is going around the college today </p>
                 </div>
@@ -248,8 +257,7 @@
                                         <div class="col-12">
                                             <p style="color: transparent"> Filler Text </p>
                                         </div>
-                                        <p><a class="btn btn-lg btn-dark"
-                                                href="/announcement">View All
+                                        <p><a class="btn btn-lg btn-dark" href="/announcement">View All
                                                 Announcements</a>
                                         </p>
                                 </div>
@@ -392,7 +400,7 @@
             <div class="row justify-content-around">
                 <div class="col-lg-4 mb-lg-0">
 
-                    <h1 class="mb-4 subheader " data-scroll data-scroll-speed="1.5">Frequently Asked Questions</h1>
+                    <h1 class="mb-4 subheader " data-scroll data-scroll-speed="1.5" data-scroll-direction="horizontal">Frequently Asked Questions</h1>
                     <div class="line my-3"></div>
                     <p data-scroll data-scroll-speed="1.9">
                         Here are some common queries that are usually asked by everyone.

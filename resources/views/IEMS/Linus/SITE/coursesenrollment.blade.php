@@ -67,7 +67,7 @@
                                             </p>
 
                                             {{-- Duration of Course --}}
-                                            <p class="text-muted">Years of Study: 2</p>
+                                            <p class="text-muted">Years of Study: 4</p>
                                         </li>
                                         {{-- End Course Item --}}
 

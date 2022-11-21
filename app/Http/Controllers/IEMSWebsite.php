@@ -75,4 +75,8 @@ class IEMSWebsite extends Controller
         return view('IEMS.Linus.SITE.announcement_display')->with('announcement',$anno);
     }
 
+    function underConstruction(){
+        return view('IEMS.Linus.SITE.construction');
+    }
+
 }
