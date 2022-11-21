@@ -48,6 +48,16 @@
                                 name="password"
                                 required autocomplete="current-password" />
             </div>
+
+            <div class="flex items-center justify-end mt-4">
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                        {{ __('Dont Have An Account? Register Here') }}
+                    </a>
+
+                <x-primary-button class="ml-3">
+                    {{ __('Log in') }}
+                </x-primary-button>
+            </div>
             <br>
                 <x-primary-button class="ml-4">
                     {{ __('Log in') }}
