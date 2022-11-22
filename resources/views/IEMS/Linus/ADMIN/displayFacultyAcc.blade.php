@@ -26,10 +26,10 @@
             </div>
 
             <div class="col-12 col-md-6 col-lg-6 order-sm-1 order-md-2">
-                <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="">
+                <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('searchFaculty' }}">
                     {{-- Routeafter Search --}}
                     <div class="input-group">
-                        <input type="search" name="" class="form-control mr-sm2"
+                        <input type="search" name="searchFaculty" class="form-control mr-sm2"
                             placeholder="Search Faculy Account Name">
                         <div class="input-group-btn">
                             <div class="btn-group" role="group">
