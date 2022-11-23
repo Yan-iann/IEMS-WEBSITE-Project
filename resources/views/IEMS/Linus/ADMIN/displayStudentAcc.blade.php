@@ -29,14 +29,11 @@
                     {{-- Routeafter Search --}}
                     <div class="input-group">
                         <input type="search" name="" class="form-control mr-sm2"
-                            placeholder="Search Faculy Account Name">
+                            placeholder="Search Student Account Name">
                         <div class="input-group-btn">
                             <div class="btn-group" role="group">
                                 {{-- Filter Modal Button --}}
-                                <div class="dropdown dropdown-lg">
-                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
-                                        data-bs-target="#ModalSearch"><i class='bx bx-filter-alt'></i></button>
-                                </div>
+                                
                                 {{-- Search Button --}}
                                 <button class="btn btn-info " type="submit">Search</button>
                             </div>
