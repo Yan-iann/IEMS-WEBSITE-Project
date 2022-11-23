@@ -33,7 +33,7 @@
 
         @include('navs.IEMSnav')
         @yield('content')
-        @include('IEMS\Linus.SITE.footer')
+        @include('IEMS.Linus.SITE.footer')
     </div>
 
 

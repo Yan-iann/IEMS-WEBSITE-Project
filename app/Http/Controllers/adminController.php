@@ -127,7 +127,7 @@ class adminController extends Controller
             'rank' => 'required',
             'specialty' => 'required',
             'phone_no' => 'required',
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string','max:255', 'unique:users'],
             'password' => [
                 'required', 
                 'regex:/[a-z]/',      // must contain at least one lowercase letter

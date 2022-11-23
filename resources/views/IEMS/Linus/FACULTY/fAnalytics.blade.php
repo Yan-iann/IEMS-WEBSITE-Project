@@ -21,7 +21,7 @@
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-6">
-                        <div class="card">
+                        <div class="card normcard">
                             <div class="card-body">
                                 <h6 class="card-subtitle mb-2 text-muted">Graduate Thesis Papers</h6>
                                 <h1> {{ $gradThesis }}</h1>
@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-6">
-                        <div class="card">
+                        <div class="card normcard">
                             <div class="card-body">
                                 <h6 class="card-subtitle mb-2 text-muted">Undergraduate Thesis Papers</h6>
                                 <h1> {{ $undergradThesis }}</h1>
@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-6">
-                        <div class="card">
+                        <div class="card normcard">
                             <div class="card-body">
                                 <h6 class="card-subtitle mb-2 text-muted">Journal Articles</h6>
                                 <h1> {{ $journal }}</h1>
@@ -49,7 +49,7 @@
 
 
                     <div class="col-12 col-md-6 col-lg-6">
-                        <div class="card">
+                        <div class="card normcard">
                             <div class="card-body">
                                 <h6 class="card-subtitle mb-2 text-muted">Whale Bone</h6>
                                 <h1> {{ $whalebone }}</h1>
@@ -59,7 +59,7 @@
 
 
                     <div class="col-12 col-md-6 col-lg-6">
-                        <div class="card">
+                        <div class="card normcard">
                             <div class="card-body">
                                 <h6 class="card-subtitle mb-2 text-muted">Reference</h6>
                                 <h1> {{ $reference }}</h1>
@@ -82,7 +82,7 @@
             <div class="col-12 col-md-6 col-lg-6">
                 <div class="row">
                     <div class="col-12 col-md-12 col-lg-12">
-                        <div class="card">
+                        <div class="card normcard">
                             <div class="card-body">
                                 <div id="chartContainer" style="height: 20rem; width:100%"></div>
                                 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>

@@ -66,7 +66,7 @@
 
             <div class="col-12 col-lg-12">
               <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-              <p class="detailsView">{{ $item->wildlife_desc}}</p >
+              <p class="detailsView"> {{ $item->wildlife_desc}} </p >
 
             </div>
 

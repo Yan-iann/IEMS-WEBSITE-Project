@@ -19,21 +19,24 @@
                 <div class="home-content">
                     <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center">
                         <i class='bx bx-menu'></i>
-                        <span class="text">Student Accounts</span>
+                        <span class="text">StudentAccounts</span>
                     </div>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-6 order-sm-1 order-md-2">
-                <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="">
+                <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('searchStudent') }}">
                     {{-- Routeafter Search --}}
                     <div class="input-group">
-                        <input type="search" name="" class="form-control mr-sm2"
+                        <input type="search" name="searchStudent" class="form-control mr-sm2"
                             placeholder="Search Student Account Name">
                         <div class="input-group-btn">
                             <div class="btn-group" role="group">
                                 {{-- Filter Modal Button --}}
-                                
+                                <div class="dropdown dropdown-lg">
+                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
+                                        data-bs-target="#ModalSearch"><i class='bx bx-filter-alt'></i></button>
+                                </div>
                                 {{-- Search Button --}}
                                 <button class="btn btn-info " type="submit">Search</button>
                             </div>
@@ -49,7 +52,7 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>User Name</th>
                     <th>Email</th>
                    
                     <th>User Type</th>

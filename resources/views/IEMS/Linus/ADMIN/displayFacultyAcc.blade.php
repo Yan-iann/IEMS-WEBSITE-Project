@@ -51,7 +51,7 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>User Name</th>
                     <th>Email</th>
                     <th>User Type</th>
                     <th>Action</th>
@@ -275,12 +275,15 @@
                                     <input type="input" placeholder="Enter Phone Number" class="form-control"
                                         name="phone_no" required>
                                 </div>
-
-                                <div class="col-12 col-md-6">
-                                    <label for="formGroupExampleInput" class="form-label">Email</label>
-                                    <input type="email" name="email" class="form-control" placeholder="Enter email"
-                                        required>
+                            
+                                
+                                <div class="input-group mb-3">
+                                  <input type="text" name="email" class="form-control" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="basic-addon2">
+                                  <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">@su.edu.ph</span>
+                                  </div>
                                 </div>
+                                
 
                                 <input type="hidden" class="form-control" name="user_type" value="Faculty">
 
