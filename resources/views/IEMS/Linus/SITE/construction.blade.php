@@ -15,10 +15,10 @@ style="background-color: rgb(242, 242, 242); padding-top: 120px; padding-bottom:
             </p>
         </div>
 
-        <div class="col-12 col-md-12 col-lg-6 ">
-            <img src="{{ URL::asset('img/Construction_art.svg') }}">
+    <!--    <div class="col-12 col-md-12 col-lg-6 ">
+            <img src="{{ URL::asset('img/Construction_art.png') }}">
         </div>
-
+-->
 
     </div>
 

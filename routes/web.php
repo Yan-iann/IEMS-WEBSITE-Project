@@ -46,6 +46,8 @@ Route::prefix('IEMSAdmin')->middleware('auth','isAdmin')->group(function(){
     Route::get('/A_searchFaculty',[adminController::class, 'searchFaculty'])->name('searchFaculty');
     Route::get('/A_searchStudent',[adminController::class, 'searchStudent'])->name('searchStudent');
     Route::post('/updatePasswordAdmin/{id}',[adminController::class, 'updatePassAdmin'])->name('updatePassAdmin');
+    Route::post('/resetPasswordFaculty/{id}',[adminController::class, 'resetPasswordFaculty'])->name('resetPasswordFaculty');
+    Route::post('/updatePasswordStudent/{id}',[adminController::class, 'resetPasswordStudent'])->name('resetPasswordStudent');
 });
 
 Route::prefix('IEMSFaculty')->middleware('auth','isFaculty')->group(function(){

@@ -16,3 +16,11 @@
   window.addEventListener("load", (event) => {
     scroll.update();
   });
+  
+ 
+    $(document).ready(function()
+     {
+        $("#emailAdd").append("@su.edu.ph");               
+      });
+                                    
+                  

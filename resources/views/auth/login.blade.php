@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-           
+
         </x-slot>
 
         <!-- Session Status -->
@@ -9,7 +9,7 @@
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
-        
+
         @if(Session::get('fail'))
         <div class="alert alert-danger">
             {{ Session::get('fail')}}
@@ -22,10 +22,9 @@
             </div>
         @endif
 
-        <div class="block mt-1">
-                    <center><span class="ml-2 text-lg text-blue-600">{{ __('Welcome!') }}</span><br>
-                    <center><span class="ml-2 text-sm text-black-600">{{ __('A library of wildlife information awaits you') }}</span><br><br>
-                </label>
+        <div class="block mt-1 mb-3">
+                    <h1 class="display-4 subheader" >Welcome!</h1>
+                    <p> A whole library of information awaits you.</p>
             </div>
 
 
@@ -49,19 +48,11 @@
                                 required autocomplete="current-password" />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
-                        {{ __('Dont Have An Account? Register Here') }}
-                    </a>
 
-                <x-primary-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-primary-button>
-            </div>
             <br>
-                <x-primary-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-primary-button>
+                <button  class="btn btn-info">
+                    Login
+                </button>
             </div>
         </form>
     </x-auth-card>

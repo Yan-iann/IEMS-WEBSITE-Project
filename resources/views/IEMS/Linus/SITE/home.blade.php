@@ -38,7 +38,7 @@
         style="background-color: #bb1017; padding-top: 18px; padding-bottom:1px; object-fit:cover ">
         <div class="container-fluid">
             <div class="row d-flex align-items-center text-center justify-content-center">
-                <p data-scroll data-scroll-speed="-5" data-scroll-direction="horizontal" class="text-white fst-italic fw-light">This is the <span class=" fw-bold">official</span> Silliman University Insitution of Environmental and
+                <p data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal" class="text-white fst-italic fw-light">This is the <span class=" fw-bold">official</span> Silliman University Insitution of Environmental and
                     Marine Sciences website</p>
             </div>
         </div>
@@ -418,13 +418,15 @@
                                 <button class="btn-link" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
                                     aria-controls="panelsStayOpen-collapseOne">
-                                    Accordion Item #1
+                                    Do I need a divers license to enroll in marine-related courses?
                                 </button>
                             </p>
                             <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
                                 aria-labelledby="panelsStayOpen-headingOne">
                                 <div class="accordion-body">
-                                    Answers to accordion heading 1
+                                    No. Although it is encouraged, it not a necessity for a student
+                                    to have a diving license as these lessons will be taught during
+                                    one of the classes.
                                 </div>
                             </div>
                         </div>
@@ -433,13 +435,15 @@
                                 <button class="btn-link collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
                                     aria-controls="panelsStayOpen-collapseTwo">
-                                    Accordion Item #2
+                                    When is the enrollment?
                                 </button>
                             </p>
                             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
                                 aria-labelledby="panelsStayOpen-headingTwo">
                                 <div class="accordion-body">
-                                    Answers to accordion heading 1
+                                    Enrollment period vary from school year to school year. To check when are the
+                                    enrollment periods for the upcoming school year, head on over to su.edu.ph to
+                                    check the schedule.
                                 </div>
                             </div>
                         </div>
@@ -448,13 +452,14 @@
                                 <button class="btn-link collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
                                     aria-controls="panelsStayOpen-collapseThree">
-                                    Accordion Item #3
+                                    Is the museums open for walk-in visits?
                                 </button>
                             </p>
                             <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
                                 aria-labelledby="panelsStayOpen-headingThree">
                                 <div class="accordion-body">
-                                    Answers to accordion heading 1
+                                    Yes! Tours are always available. Email us at iems@su.edu.ph and we'll accomodate
+                                    you accordingly. Walk-in visits are also very welcomed.
                                 </div>
                             </div>
                         </div>
@@ -474,7 +479,7 @@
                 <div class="col-3 d-none d-lg-block">
                     <div class="image-stack">
                         <div class="image-stack__item image-stack__item--bottom" data-scroll data-scroll-speed="0.9">
-                            <img src="{{ URL::asset('img/CTA_upperleft.jpg') }}" alt="Outreach">
+                            <img src="{{ URL::asset('img/CTA_upperleft.JPG') }}" alt="Outreach">
                         </div>
 
                         <div class="image-stack__item image-stack__item--top">
@@ -506,7 +511,7 @@
 
                         <div class="image-stack__item image-stack__item--top2" style="transform: translateY(10rem)"
                             data-scroll data-scroll-speed="1.5">
-                            <img src="{{ URL::asset('img/CTA_Lowerright.jpg') }}" alt="Coral">
+                            <img src="{{ URL::asset('img/CTA_lowerright.jpg') }}" alt="Coral">
                         </div>
                     </div>
                 </div>

@@ -23,7 +23,7 @@
     menubar: false,
     setup: (editor) => {
       // Apply the focus effect
-      editor.on("init", () => {
+      editor.on("change", () => {
       editor.getContainer().style.transition = "border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out";
         });
       editor.on("focus", () => { (editor.getContainer().style.boxShadow = "0 0 0 .2rem rgba(0, 123, 255, .25)"),

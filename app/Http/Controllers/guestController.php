@@ -80,8 +80,8 @@ class guestController extends Controller
         ->distinct('thesis_paper.thesis_author')
         ->get();
 
-        $thesis = thesis_paper::where('thesis_type','PostGraduate')->get();
-        return view('IEMS\Linus.GUEST.GuestThesisDashboard')
+        $thesis = thesis_paper::where('thesis_type','Graduate')->get();
+        return view('IEMS.Linus.GUEST.GuestThesisDashboard')
         ->with('thesis',$thesis)
         ->with('searchRef',$searchRef)
         ->with('searchAuthor',$searchAuthor);
@@ -99,7 +99,7 @@ class guestController extends Controller
         ->get();
 
         $thesis = thesis_paper::where('thesis_type','UnderGraduate')->get();
-        return view('IEMS\Linus.GUEST.GuestThesisDashboard')
+        return view('IEMS.Linus.GUEST.GuestThesisDashboard')
         ->with('thesis',$thesis)
         ->with('searchRef',$searchRef)
         ->with('searchAuthor',$searchAuthor);
@@ -184,6 +184,8 @@ class guestController extends Controller
         ->distinct('wildlife.wildlife_location')
         ->where('wildlife_type','Zoo')
         ->get();
+        
+         $wildlife = Wildlife::where('wildlife_type','Zoo')->get();
          //for class
          if($request->wildlife_class)
          {
@@ -228,7 +230,7 @@ class guestController extends Controller
                             ->where('wildlife_type','Zoo')
                             ->get();
         }
-        return view('IEMS.Linus.GUEST.searchwildlife')
+        return view('IEMS.Linus.GUEST.searchWildlife')
         ->with('wildlife', $wildlife)
         ->with('searchClass', $searchClass)
         ->with('searchSpecie', $searchSpecie)
@@ -298,7 +300,7 @@ class guestController extends Controller
                                 ->get();            
         }
 
-        return view('IEMS.Linus.GUEST.searchwildlife')
+        return view('IEMS.Linus.GUEST.searchWildlife')
         ->with('wildlife', $wildlife)
         ->with('searchClass', $searchClass)
         ->with('searchSpecie', $searchSpecie)

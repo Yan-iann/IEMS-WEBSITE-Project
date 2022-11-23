@@ -18,7 +18,7 @@ padding-bottom: 180px; height:75vh" data-scroll-section>
 
                         <div class="image-stack__item image-stack__item--bottom3" data-scroll data-scroll-speed="-1"
                             data-scroll-direction="horizontal">
-                            <img src="{{ URL::asset('img/College_header2.jpg') }}" alt="Divers" style="width:60%">
+                            <img src="{{ URL::asset('img/college_header2.jpg') }}" alt="Divers" style="width:60%">
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ padding-bottom: 180px; height:75vh" data-scroll-section>
                     <div class="row d-flex justify-content-center align-items-center ">
 
                         <div class="col-12 col-md-6 col-lg-6 mb-5 d-flex justify-content-end order-sm-1">
-                            <img src="{{ URL::asset('img/college_desc1.jpg') }}" alt="Divers">
+                            <img src="{{ URL::asset('img/College_desc1.jpg') }}" alt="Divers">
                         </div>
 
 
@@ -95,7 +95,7 @@ padding-bottom: 180px; height:75vh" data-scroll-section>
 
                         <div
                             class="col-12 col-md-6 col-lg-6 mb-5 d-flex justify-content-end order-sm-1 order-lg-2 order-md-2">
-                            <img src="{{ URL::asset('img/college_desc2.jpg') }}" alt="Divers">
+                            <img src="{{ URL::asset('img/College_desc2.jpg') }}" alt="Divers">
                         </div>
 
                         <div class="mx-auto">
@@ -107,7 +107,7 @@ padding-bottom: 180px; height:75vh" data-scroll-section>
                     <div class="row d-flex justify-content-center align-items-center ">
 
                         <div class="col-6 mb-5 d-flex justify-content-end order-sm-1" style="padding:20px">
-                            <img src="{{ URL::asset('img/college_desc3.jpg') }}" alt="Divers" style="width: 100%">
+                            <img src="{{ URL::asset('img/College_desc3.jpg') }}" alt="Divers" style="width: 100%">
                         </div>
 
 

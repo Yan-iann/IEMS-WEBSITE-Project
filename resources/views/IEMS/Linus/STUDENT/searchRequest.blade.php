@@ -101,7 +101,7 @@
 
                                           <div class="col-12 form-group">
                                             <label for="formGroupExampleInput" class="form-label">Content</label>
-                                            <textarea id="editor" name="anno_content"  value="{!! $item->anno_content !!}" ></textarea>
+                                            <textarea id="editor" name="anno_content"  value="{!! $item->anno_content !!}" > </textarea>
                                           </div>
 
                                           <input type="hidden" class="form-control"  name="anno_status" value="unapproved">
@@ -188,7 +188,7 @@
 
                 <div class="col-12 ">
                   <label for="formGroupExampleInput" class="form-label">Content</label>
-                  <textarea id="editor"name="anno_content" class="form-control"required ></textarea>
+                  <textarea id="editor"name="anno_content" class="form-control"required > </textarea>
                 </div>
 
                 <input type="hidden" class="form-control"  name="anno_status" value="unapproved">

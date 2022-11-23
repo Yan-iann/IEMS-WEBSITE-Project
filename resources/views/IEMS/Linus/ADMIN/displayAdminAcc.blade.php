@@ -15,7 +15,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Name</th>
+                        <th>User Name</th>
                         <th>Email</th>
                         <th>User Type</th>
                         <th>Action</th>
@@ -43,7 +43,7 @@
                                         <div class="modal-content  bg-light">
 
                                             <div class="modal-header border-0 text-center">
-                                                <h5 class="modal-title  text-center">User Account Details</h5>
+                                                <h5 class="modal-title  text-center">Admin Account Details</h5>
                                                 <button type="button" class="btn-close btn-info bg-info"
                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
@@ -70,16 +70,9 @@
                                                                     <label for="formGroupExampleInput2" class="form-label">User
                                                                         Type</label>
                                                                     <input type="text" class="form-control" name="user_type"
-                                                                        value="{{ $user->user_type }}">
+                                                                        value="{{ $user->user_type }}" readonly>
                                                                 </div>
 
-
-                                                        <div class="col-12 ">
-                                                            <label for="formGroupExampleInput2" class="form-label">User
-                                                                Password</label>
-                                                            <input type="password" class="form-control" name="password"
-                                                                value="{{ $user->password }}">
-                                                        </div>
 
                                                         <input type="hidden" class="form-control" name="changed_pass" value= "0">
 

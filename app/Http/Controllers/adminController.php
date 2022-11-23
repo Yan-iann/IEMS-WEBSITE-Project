@@ -127,7 +127,7 @@ class adminController extends Controller
             'rank' => 'required',
             'specialty' => 'required',
             'phone_no' => 'required',
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string','max:255', 'unique:users'],
             'password' => [
                 'required', 
                 'regex:/[a-z]/',      // must contain at least one lowercase letter
@@ -319,6 +319,62 @@ class adminController extends Controller
                             ->get();
         return view('IEMS.Linus.ADMIN.searchStudentUser')
         ->with('user', $user);
+    }
+
+    public function resetPasswordFaculty(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'password' => [
+                'required',
+                'confirmed',
+                'regex:/[a-z]/',      // must contain at least one lowercase letter
+                'regex:/[A-Z]/',      // must contain at least one uppercase letter
+                'regex:/[0-9]/',      // must contain at least one digit
+            ],
+            ]);
+            if($validator->fails())
+            {
+                return redirect()->back()
+                ->with('fail','Password Error');
+            }//if failed return back
+            else
+            {
+                $change = User::find($id);
+                $change->password = Hash::make($request->password);
+                $change->changed_pass = '0';
+                $change->save(); 
+                return redirect()->route('adminFacultyAccounts')
+                    ->with('sucess','Password Reset Succesfully');
+                
+            }
+    }
+
+    public function resetPasswordStudent(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'password' => [
+                'required',
+                'confirmed',
+                'regex:/[a-z]/',      // must contain at least one lowercase letter
+                'regex:/[A-Z]/',      // must contain at least one uppercase letter
+                'regex:/[0-9]/',      // must contain at least one digit
+            ],
+            ]);
+            if($validator->fails())
+            {
+                return redirect()->back()
+                ->with('fail','Password Error');
+            }//if failed return back
+            else
+            {
+                $change = User::find($id);
+                $change->password = Hash::make($request->password);
+                $change->changed_pass = '0';
+                $change->save(); 
+                return redirect()->route('adminStudentAccounts')
+                    ->with('sucess','Password Reset Succesfully');
+                
+            }
     }
     
 }

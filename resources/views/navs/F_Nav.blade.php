@@ -104,11 +104,7 @@
         <!--Profile-->
         <li>
             <div class="profile-details">
-                <a href="{{ route('Fprofile') }}">
-                    <div class="profile-content">
-                        <img src="{{ Auth::user()->profile_pic }}">
-                    </div>
-                </a>
+                <div class="profile-content"></div>
                 <div class="name-job">
                     <a href="{{ route('Fprofile') }}">
                         <div class="profile_name">{{ Auth::user()->name }}

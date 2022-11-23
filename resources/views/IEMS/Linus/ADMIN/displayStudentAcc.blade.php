@@ -19,24 +19,21 @@
                 <div class="home-content">
                     <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center">
                         <i class='bx bx-menu'></i>
-                        <span class="text">Student Accounts</span>
+                        <span class="text">StudentAccounts</span>
                     </div>
                 </div>
             </div>
 
             <div class="col-12 col-md-6 col-lg-6 order-sm-1 order-md-2">
-                <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="">
+                <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('searchStudent') }}">
                     {{-- Routeafter Search --}}
                     <div class="input-group">
-                        <input type="search" name="" class="form-control mr-sm2"
-                            placeholder="Search Faculy Account Name">
+                        <input type="search" name="searchStudent" class="form-control mr-sm2"
+                            placeholder="Search Student Account Name">
                         <div class="input-group-btn">
                             <div class="btn-group" role="group">
                                 {{-- Filter Modal Button --}}
-                                <div class="dropdown dropdown-lg">
-                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
-                                        data-bs-target="#ModalSearch"><i class='bx bx-filter-alt'></i></button>
-                                </div>
+                                
                                 {{-- Search Button --}}
                                 <button class="btn btn-info " type="submit">Search</button>
                             </div>
@@ -52,9 +49,9 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>User Name</th>
                     <th>Email</th>
-                    <th>Password</th>
+                   
                     <th>User Type</th>
                     <th>Action</th>
                 </tr>
@@ -65,7 +62,7 @@
                         <td class="align-middle">{{ $user->id }}</td>
                         <td class="align-middle">{{ $user->name }}</td>
                         <td class="align-middle">{{ $user->email }}</td>
-                        <td class="align-middle">{{ $user->password }}</td>
+                       
                         <td class="align-middle">{{ $user->user_type }}</td>
                         <td class="align-middle">
                             <button type="button" class="btn btn-info" data-bs-toggle="modal"
@@ -76,8 +73,8 @@
                     </tr>
                     <!--end of table row-->
 
-                    <!-- Edit User Modal-->
-                    <form action="{{ route('updateUser', $user->id) }}" method="post" enctype="multipart/form-data">
+                   <!-- Edit User Modal-->
+                   <form action="{{ route('updateUser', $user->id) }}" method="post" enctype="multipart/form-data">
                         <div class="modal fade" id="ModalEditUser{{ $user->id }}" tabindex="-1"
                             aria-labelledby="ModalLabel" aria-hidden="true">
                             {!! csrf_field() !!}
@@ -85,7 +82,7 @@
                                 <div class="modal-content  bg-light">
 
                                     <div class="modal-header border-0 text-center">
-                                        <h5 class="modal-title  text-center">User Account Details</h5>
+                                        <h5 class="modal-title  text-center">Student Account Details</h5>
                                         <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
@@ -94,50 +91,85 @@
                                             <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
 
                                                 <div class="col-12">
-                                                    <label for="formGroupExampleInput" class="form-label">User
-                                                        Name</label>
+                                                    <label for="formGroupExampleInput" class="form-label">User Name</label>
                                                     <input type="text" class="form-control" name="name"
                                                         value="{{ $user->name }}">
-
-                                                    <div class="col-12">
-                                                        <label for="formGroupExampleInput" class="form-label">User
-                                                            Email</label>
-                                                        <input type="text" class="form-control" name="email"
-                                                            value="{{ $user->email }}">
-                                                    </div>
-
-                                                    <div class="col-12 col-lg-4">
-                                                        <label for="formGroupExampleInput2" class="form-label">User
-                                                            Type</label>
-                                                        <input type="text" class="form-control" name="user_type"
-                                                            value="{{ $user->user_type }}">
-                                                    </div>
-
-                                                    <div class="col-12">
-                                                        {{-- Filler Collumn --}}
-                                                    </div>
-
-                                                    <div class="col-12">
-                                                        <label for="formGroupExampleInput2" class="form-label">User
-                                                            Password</label>
-                                                        <input type="password" class="form-control" name="password"
-                                                            value="{{ $user->password }}">
-                                                    </div>
-
-                                                    <div class="modal-footer border-0">
-                                                        <button type="submit" class="btn btn-info"
-                                                            style="color:white">Update</button>
-                                                        <button type="button" class="btn btn-outline-info"
-                                                            data-bs-dismiss="modal">Cancel</button>
-                                                    </div>
-
                                                 </div>
+                                                <div class="col-4">
+                                                    <label for="formGroupExampleInput2" class="form-label">User Type</label>
+                                                    <input type="text" class="form-control" name="user_type"
+                                                        value="{{ $user->user_type }}">
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <label for="formGroupExampleInput" class="form-label">Email
+                                                        Address</label>
+                                                    <input type="text" class="form-control" name="email"
+                                                        value="{{ $user->email }}">
+                                                </div>
+
+                        
+                                                <input type="hidden" class="form-control" name="changed_pass" value="0">
+                                                <div class="modal-footer border-0">
+                                                    <button type="submit" class="btn btn-info"
+                                                        style="color:white">Update</button>
+                                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                                            data-bs-target="#ModalEditPass{{ $user->id }}">
+                                                            <i class='bx bxs-edit'> </i>
+                                                            Reset Password
+                                                        </button>
+                                                    <button type="button" class="btn btn-outline-info"
+                                                        data-bs-dismiss="modal">Cancel</button>
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </form>
+                    <!--end of edit modal-->
+
+                    <form action="{{ route('resetPasswordStudent', $user->id) }}" method="post" enctype="multipart/form-data">
+                        <div class="modal fade" id="ModalEditPass{{ $user->id }}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                        {!! csrf_field() !!}
+                            <div class="modal-dialog modal-dialog-centered modUal-dialog-scrollable modal-lg">
+                                <div class="modal-content  bg-light">
+                                    <div class="modal-header border-0 text-center">
+                                        <h5 class="modal-title  text-center">Reset Password</h5>
+                                        <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid">
+                                                <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
+
+                                                    <div class="col-12">
+                                                        <label for="formGroupExampleInput"
+                                                            class="form-label">Default Password</label>
+                                                        <input id="password" type="input" class="form-control"
+                                                            name="password"  required autocomplete="new-password">
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <label for="formGroupExampleInput"
+                                                            class="form-label">Confirm Password</label>
+                                                        <input id="password_confirmation" type="input" class="form-control"
+                                                        name="password_confirmation" required>
+                                                    </div>
+
+                                                    <div class="modal-footer border-0">
+                                                        <button type="submit" class="btn btn-info"
+                                                            style="color:white">Change Password</button>
+                                                        <button type="button" class="btn btn-outline-info"
+                                                            data-bs-dismiss="modal">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                     </form>
 
                     <!-- Delete Wildlife Modal-->

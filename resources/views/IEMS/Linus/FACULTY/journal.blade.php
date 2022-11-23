@@ -174,7 +174,7 @@
     <form action="{{ route('advanceSearchJournal') }}" method="GET" enctype="multipart/form-data">
         {!! csrf_field() !!}
         <div class="modal fade" id="ModalSearch" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
                 <div class="modal-content  bg-light">
 
                     <div class="modal-header border-0 text-center">

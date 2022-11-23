@@ -85,7 +85,7 @@ class infocardMaintain extends Controller
         ->distinct('thesis_paper.thesis_author')
         ->get();
 
-        $thesis = thesis_paper::where('thesis_type','PostGraduate')->get();
+        $thesis = thesis_paper::where('thesis_type','Graduate')->get();
         return view('IEMS.Linus.FACULTY.thesis')
         ->with('thesis',$thesis)
         ->with('searchRef',$searchRef)

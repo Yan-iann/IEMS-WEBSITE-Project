@@ -1,4 +1,4 @@
-@extends('IEMS\Linus.SITE.home')
+@extends('IEMS.Linus.SITE.home')
 @section('content')
     <section class="mbr-section article" style="background-color: #1DA2d8; padding-top: 180px; padding-bottom: 180px;"
         data-scroll-section>
