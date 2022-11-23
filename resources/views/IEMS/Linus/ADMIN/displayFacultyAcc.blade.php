@@ -26,7 +26,7 @@
             </div>
 
             <div class="col-12 col-md-6 col-lg-6 order-sm-1 order-md-2">
-                <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('searchFaculty' }}">
+                <form style="text-align: center;"class="form-inline my-2 my-lg=0" type="get" action="{{ route('searchFaculty') }}">
                     {{-- Routeafter Search --}}
                     <div class="input-group">
                         <input type="search" name="searchFaculty" class="form-control mr-sm2"
@@ -34,10 +34,7 @@
                         <div class="input-group-btn">
                             <div class="btn-group" role="group">
                                 {{-- Filter Modal Button --}}
-                                <div class="dropdown dropdown-lg">
-                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
-                                        data-bs-target="#ModalSearch"><i class='bx bx-filter-alt'></i></button>
-                                </div>
+                                
                                 {{-- Search Button --}}
                                 <button class="btn btn-info " type="submit">Search</button>
                             </div>
@@ -109,16 +106,16 @@
                                                         value="{{ $user->email }}">
                                                 </div>
 
-                                                <div class="col-12 ">
-                                                    <label for="formGroupExampleInput2" class="form-label">User
-                                                        Password</label>
-                                                    <input type="password" class="form-control" name="password"
-                                                        value="{{ $user->password }}">
-                                                </div>
+                        
                                                 <input type="hidden" class="form-control" name="changed_pass" value="0">
                                                 <div class="modal-footer border-0">
                                                     <button type="submit" class="btn btn-info"
                                                         style="color:white">Update</button>
+                                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                                            data-bs-target="#ModalEditPass{{ $user->id }}">
+                                                            <i class='bx bxs-edit'> </i>
+                                                            Reset Password
+                                                        </button>
                                                     <button type="button" class="btn btn-outline-info"
                                                         data-bs-dismiss="modal">Cancel</button>
                                                 </div>
@@ -131,7 +128,48 @@
                         </div>
                     </form>
                     <!--end of edit modal-->
+                    
+                    <form action="{{ route('resetPasswordFaculty', $user->id) }}" method="post" enctype="multipart/form-data">
+                        <div class="modal fade" id="ModalEditPass{{ $user->id }}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                        {!! csrf_field() !!}
+                            <div class="modal-dialog modal-dialog-centered modUal-dialog-scrollable modal-lg">
+                                <div class="modal-content  bg-light">
+                                    <div class="modal-header border-0 text-center">
+                                        <h5 class="modal-title  text-center">Reset Password</h5>
+                                        <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid">
+                                                <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
 
+                                                    <div class="col-12">
+                                                        <label for="formGroupExampleInput"
+                                                            class="form-label">Default Password</label>
+                                                        <input id="password" type="input" class="form-control"
+                                                            name="password"  required autocomplete="new-password">
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <label for="formGroupExampleInput"
+                                                            class="form-label">Confirm Password</label>
+                                                        <input id="password_confirmation" type="input" class="form-control"
+                                                        name="password_confirmation" required>
+                                                    </div>
+
+                                                    <div class="modal-footer border-0">
+                                                        <button type="submit" class="btn btn-info"
+                                                            style="color:white">Change Password</button>
+                                                        <button type="button" class="btn btn-outline-info"
+                                                            data-bs-dismiss="modal">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </form>
+                
                     <!-- Delete Wildlife Modal-->
                     <form action="{{ route('deleteUser', $user->id) }}" method="get" enctype="multipart/form-data">
                         <div class="modal fade" id="ModalDeleteUser{{ $user->id }}" tabindex="-1"
@@ -266,5 +304,6 @@
                     </div>
                 </div>
     </form>
+
     </div>
 @endsection
