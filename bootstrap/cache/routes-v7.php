@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::oVm7eyO7FDYfgGkB',
+            '_route' => 'generated::nGvdbXZI5xDGXvXX',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::xTco9dbnJwEsXMXy',
+            '_route' => 'generated::5CS4cObAa7alTQOy',
           ),
           1 => NULL,
           2 => 
@@ -122,7 +122,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::pvoJJ8UlLl3SfpkB',
+            '_route' => 'generated::lSlJeZsRYbcFsc09',
           ),
           1 => NULL,
           2 => 
@@ -159,7 +159,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::r3YLpIAbc4TyPSbH',
+            '_route' => 'generated::74l9eVYob0gBjtMx',
           ),
           1 => NULL,
           2 => 
@@ -912,6 +912,326 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'searchRef',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSFaculty/w_sortNameD' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'sortNameDesc',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSFaculty/w_sortNameA' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'sortNameAsc',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSFaculty/w_sortDateD' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dateAddedDesc',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSFaculty/w_sortDateA' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dateAddedAsc',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSFaculty/t_titleD' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'titleDesc',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSFaculty/t_titleA' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'titleAsc',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSFaculty/t_dateD' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'datePubDesc',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSFaculty/t_dateA' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'datePubAsc',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSFaculty/t_authorD' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'authorDesc',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSFaculty/t_authorA' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'authorAsc',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSFaculty/j_titleD' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'j_titleDesc',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSFaculty/j_titleA' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'j_titleAsc',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSFaculty/j_dateD' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'j_datePubDesc',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSFaculty/j_dateA' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'j_datePubAsc',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSFaculty/j_authorD' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'j_authorDesc',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSFaculty/j_authorA' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'j_authorAsc',
           ),
           1 => NULL,
           2 => 
@@ -1690,7 +2010,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::rL0HfC5hV6bx3c5f',
+            '_route' => 'generated::kmIW2NSoaEU3ubXs',
           ),
           1 => NULL,
           2 => 
@@ -1710,7 +2030,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::SlLBnOZtd8OAKUzA',
+            '_route' => 'generated::gvCNCNwLSzLluNQf',
           ),
           1 => NULL,
           2 => 
@@ -1730,7 +2050,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::0MVAiAN5nnj5ZMH8',
+            '_route' => 'generated::CiDEo5h9mkNdrup6',
           ),
           1 => NULL,
           2 => 
@@ -1750,7 +2070,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::8YsHvibm7YeGqOaH',
+            '_route' => 'generated::12tVl5PEA6aRm4Ow',
           ),
           1 => NULL,
           2 => 
@@ -1770,7 +2090,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::9KNXvubBDAVI1lIM',
+            '_route' => 'generated::N2ySuMFehFjif22k',
           ),
           1 => NULL,
           2 => 
@@ -1790,7 +2110,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::CpHu5P7J14wVIgXs',
+            '_route' => 'generated::aNabJ1kV5eTPtldP',
           ),
           1 => NULL,
           2 => 
@@ -1810,7 +2130,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::j4SvQXMOhBX5ZPdO',
+            '_route' => 'generated::yVzn6LD1r5CnnFgm',
           ),
           1 => NULL,
           2 => 
@@ -1830,7 +2150,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::DfuT2V2vmUU70qF4',
+            '_route' => 'generated::gd2k1eADpVbsspLh',
           ),
           1 => NULL,
           2 => 
@@ -1866,7 +2186,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::hwvcmpYJPZK9x7L6',
+            '_route' => 'generated::Gr2kdTzqBA3rC2lZ',
           ),
           1 => NULL,
           2 => 
@@ -1903,7 +2223,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Lw0f1E8bLEdBA6D1',
+            '_route' => 'generated::OCFpmFAbA6OFfu8p',
           ),
           1 => NULL,
           2 => 
@@ -2033,7 +2353,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::4826ArAe3aJta4GI',
+            '_route' => 'generated::G0l6SW7zJSARAyvT',
           ),
           1 => NULL,
           2 => 
@@ -2853,7 +3173,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::oVm7eyO7FDYfgGkB' => 
+    'generated::nGvdbXZI5xDGXvXX' => 
     array (
       'methods' => 
       array (
@@ -2874,7 +3194,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::oVm7eyO7FDYfgGkB',
+        'as' => 'generated::nGvdbXZI5xDGXvXX',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2999,7 +3319,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::xTco9dbnJwEsXMXy' => 
+    'generated::5CS4cObAa7alTQOy' => 
     array (
       'methods' => 
       array (
@@ -3022,7 +3342,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::xTco9dbnJwEsXMXy',
+        'as' => 'generated::5CS4cObAa7alTQOy',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3038,7 +3358,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::pvoJJ8UlLl3SfpkB' => 
+    'generated::lSlJeZsRYbcFsc09' => 
     array (
       'methods' => 
       array (
@@ -3059,7 +3379,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::pvoJJ8UlLl3SfpkB',
+        'as' => 'generated::lSlJeZsRYbcFsc09',
       ),
       'fallback' => false,
       'defaults' => 
@@ -5627,6 +5947,630 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'sortNameDesc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSFaculty/w_sortNameD',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isFaculty',
+        ),
+        'uses' => 'App\\Http\\Controllers\\infocardMaintain@sortNameDesc',
+        'controller' => 'App\\Http\\Controllers\\infocardMaintain@sortNameDesc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSFaculty',
+        'where' => 
+        array (
+        ),
+        'as' => 'sortNameDesc',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'sortNameAsc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSFaculty/w_sortNameA',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isFaculty',
+        ),
+        'uses' => 'App\\Http\\Controllers\\infocardMaintain@sortNameAsc',
+        'controller' => 'App\\Http\\Controllers\\infocardMaintain@sortNameAsc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSFaculty',
+        'where' => 
+        array (
+        ),
+        'as' => 'sortNameAsc',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'dateAddedDesc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSFaculty/w_sortDateD',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isFaculty',
+        ),
+        'uses' => 'App\\Http\\Controllers\\infocardMaintain@dateAddedDesc',
+        'controller' => 'App\\Http\\Controllers\\infocardMaintain@dateAddedDesc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSFaculty',
+        'where' => 
+        array (
+        ),
+        'as' => 'dateAddedDesc',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'dateAddedAsc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSFaculty/w_sortDateA',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isFaculty',
+        ),
+        'uses' => 'App\\Http\\Controllers\\infocardMaintain@dateAddedAsc',
+        'controller' => 'App\\Http\\Controllers\\infocardMaintain@dateAddedAsc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSFaculty',
+        'where' => 
+        array (
+        ),
+        'as' => 'dateAddedAsc',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'titleDesc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSFaculty/t_titleD',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isFaculty',
+        ),
+        'uses' => 'App\\Http\\Controllers\\infocardMaintain@titleDesc',
+        'controller' => 'App\\Http\\Controllers\\infocardMaintain@titleDesc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSFaculty',
+        'where' => 
+        array (
+        ),
+        'as' => 'titleDesc',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'titleAsc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSFaculty/t_titleA',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isFaculty',
+        ),
+        'uses' => 'App\\Http\\Controllers\\infocardMaintain@titleAsc',
+        'controller' => 'App\\Http\\Controllers\\infocardMaintain@titleAsc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSFaculty',
+        'where' => 
+        array (
+        ),
+        'as' => 'titleAsc',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'datePubDesc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSFaculty/t_dateD',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isFaculty',
+        ),
+        'uses' => 'App\\Http\\Controllers\\infocardMaintain@datePubDesc',
+        'controller' => 'App\\Http\\Controllers\\infocardMaintain@datePubDesc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSFaculty',
+        'where' => 
+        array (
+        ),
+        'as' => 'datePubDesc',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'datePubAsc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSFaculty/t_dateA',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isFaculty',
+        ),
+        'uses' => 'App\\Http\\Controllers\\infocardMaintain@datePubAsc',
+        'controller' => 'App\\Http\\Controllers\\infocardMaintain@datePubAsc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSFaculty',
+        'where' => 
+        array (
+        ),
+        'as' => 'datePubAsc',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'authorDesc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSFaculty/t_authorD',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isFaculty',
+        ),
+        'uses' => 'App\\Http\\Controllers\\infocardMaintain@authorDesc',
+        'controller' => 'App\\Http\\Controllers\\infocardMaintain@authorDesc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSFaculty',
+        'where' => 
+        array (
+        ),
+        'as' => 'authorDesc',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'authorAsc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSFaculty/t_authorA',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isFaculty',
+        ),
+        'uses' => 'App\\Http\\Controllers\\infocardMaintain@authorAsc',
+        'controller' => 'App\\Http\\Controllers\\infocardMaintain@authorAsc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSFaculty',
+        'where' => 
+        array (
+        ),
+        'as' => 'authorAsc',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'j_titleDesc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSFaculty/j_titleD',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isFaculty',
+        ),
+        'uses' => 'App\\Http\\Controllers\\infocardMaintain@j_titleDesc',
+        'controller' => 'App\\Http\\Controllers\\infocardMaintain@j_titleDesc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSFaculty',
+        'where' => 
+        array (
+        ),
+        'as' => 'j_titleDesc',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'j_titleAsc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSFaculty/j_titleA',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isFaculty',
+        ),
+        'uses' => 'App\\Http\\Controllers\\infocardMaintain@j_titleAsc',
+        'controller' => 'App\\Http\\Controllers\\infocardMaintain@j_titleAsc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSFaculty',
+        'where' => 
+        array (
+        ),
+        'as' => 'j_titleAsc',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'j_datePubDesc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSFaculty/j_dateD',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isFaculty',
+        ),
+        'uses' => 'App\\Http\\Controllers\\infocardMaintain@j_datePubDesc',
+        'controller' => 'App\\Http\\Controllers\\infocardMaintain@j_datePubDesc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSFaculty',
+        'where' => 
+        array (
+        ),
+        'as' => 'j_datePubDesc',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'j_datePubAsc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSFaculty/j_dateA',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isFaculty',
+        ),
+        'uses' => 'App\\Http\\Controllers\\infocardMaintain@j_datePubAsc',
+        'controller' => 'App\\Http\\Controllers\\infocardMaintain@j_datePubAsc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSFaculty',
+        'where' => 
+        array (
+        ),
+        'as' => 'j_datePubAsc',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'j_authorDesc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSFaculty/j_authorD',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isFaculty',
+        ),
+        'uses' => 'App\\Http\\Controllers\\infocardMaintain@j_authorDesc',
+        'controller' => 'App\\Http\\Controllers\\infocardMaintain@j_authorDesc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSFaculty',
+        'where' => 
+        array (
+        ),
+        'as' => 'j_authorDesc',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'j_authorAsc' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSFaculty/j_authorA',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isFaculty',
+        ),
+        'uses' => 'App\\Http\\Controllers\\infocardMaintain@j_authorAsc',
+        'controller' => 'App\\Http\\Controllers\\infocardMaintain@j_authorAsc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSFaculty',
+        'where' => 
+        array (
+        ),
+        'as' => 'j_authorAsc',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'studentDashboard' => 
     array (
       'methods' => 
@@ -7227,7 +8171,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::rL0HfC5hV6bx3c5f' => 
+    'generated::kmIW2NSoaEU3ubXs' => 
     array (
       'methods' => 
       array (
@@ -7248,7 +8192,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::rL0HfC5hV6bx3c5f',
+        'as' => 'generated::kmIW2NSoaEU3ubXs',
       ),
       'fallback' => false,
       'defaults' => 
@@ -7264,7 +8208,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::SlLBnOZtd8OAKUzA' => 
+    'generated::gvCNCNwLSzLluNQf' => 
     array (
       'methods' => 
       array (
@@ -7285,7 +8229,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::SlLBnOZtd8OAKUzA',
+        'as' => 'generated::gvCNCNwLSzLluNQf',
       ),
       'fallback' => false,
       'defaults' => 
@@ -7301,7 +8245,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::0MVAiAN5nnj5ZMH8' => 
+    'generated::CiDEo5h9mkNdrup6' => 
     array (
       'methods' => 
       array (
@@ -7322,7 +8266,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::0MVAiAN5nnj5ZMH8',
+        'as' => 'generated::CiDEo5h9mkNdrup6',
       ),
       'fallback' => false,
       'defaults' => 
@@ -7338,7 +8282,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::8YsHvibm7YeGqOaH' => 
+    'generated::12tVl5PEA6aRm4Ow' => 
     array (
       'methods' => 
       array (
@@ -7359,7 +8303,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::8YsHvibm7YeGqOaH',
+        'as' => 'generated::12tVl5PEA6aRm4Ow',
       ),
       'fallback' => false,
       'defaults' => 
@@ -7375,7 +8319,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::9KNXvubBDAVI1lIM' => 
+    'generated::N2ySuMFehFjif22k' => 
     array (
       'methods' => 
       array (
@@ -7396,7 +8340,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::9KNXvubBDAVI1lIM',
+        'as' => 'generated::N2ySuMFehFjif22k',
       ),
       'fallback' => false,
       'defaults' => 
@@ -7412,7 +8356,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::CpHu5P7J14wVIgXs' => 
+    'generated::aNabJ1kV5eTPtldP' => 
     array (
       'methods' => 
       array (
@@ -7433,7 +8377,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::CpHu5P7J14wVIgXs',
+        'as' => 'generated::aNabJ1kV5eTPtldP',
       ),
       'fallback' => false,
       'defaults' => 
@@ -7449,7 +8393,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::j4SvQXMOhBX5ZPdO' => 
+    'generated::yVzn6LD1r5CnnFgm' => 
     array (
       'methods' => 
       array (
@@ -7470,7 +8414,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::j4SvQXMOhBX5ZPdO',
+        'as' => 'generated::yVzn6LD1r5CnnFgm',
       ),
       'fallback' => false,
       'defaults' => 
@@ -7523,7 +8467,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::DfuT2V2vmUU70qF4' => 
+    'generated::gd2k1eADpVbsspLh' => 
     array (
       'methods' => 
       array (
@@ -7544,7 +8488,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::DfuT2V2vmUU70qF4',
+        'as' => 'generated::gd2k1eADpVbsspLh',
       ),
       'fallback' => false,
       'defaults' => 
@@ -7596,7 +8540,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::hwvcmpYJPZK9x7L6' => 
+    'generated::Gr2kdTzqBA3rC2lZ' => 
     array (
       'methods' => 
       array (
@@ -7617,7 +8561,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::hwvcmpYJPZK9x7L6',
+        'as' => 'generated::Gr2kdTzqBA3rC2lZ',
       ),
       'fallback' => false,
       'defaults' => 
@@ -7671,7 +8615,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Lw0f1E8bLEdBA6D1' => 
+    'generated::OCFpmFAbA6OFfu8p' => 
     array (
       'methods' => 
       array (
@@ -7692,7 +8636,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::Lw0f1E8bLEdBA6D1',
+        'as' => 'generated::OCFpmFAbA6OFfu8p',
       ),
       'fallback' => false,
       'defaults' => 
@@ -7708,7 +8652,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::r3YLpIAbc4TyPSbH' => 
+    'generated::74l9eVYob0gBjtMx' => 
     array (
       'methods' => 
       array (
@@ -7729,7 +8673,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::r3YLpIAbc4TyPSbH',
+        'as' => 'generated::74l9eVYob0gBjtMx',
       ),
       'fallback' => false,
       'defaults' => 
@@ -8049,7 +8993,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::4826ArAe3aJta4GI' => 
+    'generated::G0l6SW7zJSARAyvT' => 
     array (
       'methods' => 
       array (
@@ -8070,7 +9014,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::4826ArAe3aJta4GI',
+        'as' => 'generated::G0l6SW7zJSARAyvT',
       ),
       'fallback' => false,
       'defaults' => 

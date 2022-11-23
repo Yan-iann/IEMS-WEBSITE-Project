@@ -110,6 +110,23 @@ Route::prefix('IEMSFaculty')->middleware('auth','isFaculty')->group(function(){
     Route::get('/advanceSearchJournal',[infocardMaintain::class, 'advanceSearchJournal'])->name('advanceSearchJournal');
     Route::get('/advanceSearchRef',[infocardMaintain::class, 'advanceSearchRef'])->name('advanceSearchRef');
     Route::get('/searchRef',[infocardMaintain::class, 'searchRef'])->name('searchRef');
+    Route::get('/w_sortNameD',[infocardMaintain::class, 'sortNameDesc'])->name('sortNameDesc');
+    Route::get('/w_sortNameA',[infocardMaintain::class, 'sortNameAsc'])->name('sortNameAsc');
+    Route::get('/w_sortDateD',[infocardMaintain::class, 'dateAddedDesc'])->name('dateAddedDesc');
+    Route::get('/w_sortDateA',[infocardMaintain::class, 'dateAddedAsc'])->name('dateAddedAsc');
+    Route::get('/t_titleD',[infocardMaintain::class, 'titleDesc'])->name('titleDesc');
+    Route::get('/t_titleA',[infocardMaintain::class, 'titleAsc'])->name('titleAsc');
+    Route::get('/t_dateD',[infocardMaintain::class, 'datePubDesc'])->name('datePubDesc');
+    Route::get('/t_dateA',[infocardMaintain::class, 'datePubAsc'])->name('datePubAsc');
+    Route::get('/t_authorD',[infocardMaintain::class, 'authorDesc'])->name('authorDesc');
+    Route::get('/t_authorA',[infocardMaintain::class, 'authorAsc'])->name('authorAsc');
+
+    Route::get('/j_titleD',[infocardMaintain::class, 'j_titleDesc'])->name('j_titleDesc');
+    Route::get('/j_titleA',[infocardMaintain::class, 'j_titleAsc'])->name('j_titleAsc');
+    Route::get('/j_dateD',[infocardMaintain::class, 'j_datePubDesc'])->name('j_datePubDesc');
+    Route::get('/j_dateA',[infocardMaintain::class, 'j_datePubAsc'])->name('j_datePubAsc');
+    Route::get('/j_authorD',[infocardMaintain::class, 'j_authorDesc'])->name('j_authorDesc');
+    Route::get('/j_authorA',[infocardMaintain::class, 'j_authorAsc'])->name('j_authorAsc');
 });
 
 Route::prefix('IEMSStudent')->middleware('auth','isStudent')->group(function(){
