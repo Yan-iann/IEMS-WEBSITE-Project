@@ -144,7 +144,7 @@
 
     <form action="{{ route('updatePassAdmin', $item->id) }}" method="post" enctype="multipart/form-data">
   
-  <div class="modal fade" id="ModalEditPass{{ $item->id }}" tabindex="-1"
+    <div class="modal fade" id="ModalEditPass{{ $item->id }}" tabindex="-1"
       aria-labelledby="ModalLabel" aria-hidden="true">
       {!! csrf_field() !!}
       <div class="modal-dialog modal-dialog-centered modUal-dialog-scrollable modal-lg">
