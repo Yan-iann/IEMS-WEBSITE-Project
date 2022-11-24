@@ -818,5 +818,381 @@ class studentController extends Controller
         ->with('announcement', $announcement);
     }
     //end of search
+    public function sortNameDesc()
+    {
+       
+        $searchClass = DB::table('wildlife')
+        ->select('wildlife.wildlife_class')
+        ->distinct('wildlife.wildlife_class')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchSpecie = DB::table('wildlife')
+        ->select('wildlife.wildlife_species')
+        ->distinct('wildlife.wildlife_species')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchLoc = DB::table('wildlife')
+        ->select('wildlife.wildlife_location')
+        ->distinct('wildlife.wildlife_location')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $studentDashboard = Wildlife::where('wildlife_type','Zoo')
+        ->orderBy('wildlife_name','DESC')
+        ->get();
+        return view ('IEMS.Linus.STUDENT.StudentWLDashboard')
+        ->with('studentDashboard', $studentDashboard)
+        ->with('searchClass', $searchClass)
+        ->with('searchSpecie', $searchSpecie)
+        ->with('searchLoc', $searchLoc);
+    }
+    
+    public function sortNameAsc()
+    {
+       
+        $searchClass = DB::table('wildlife')
+        ->select('wildlife.wildlife_class')
+        ->distinct('wildlife.wildlife_class')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchSpecie = DB::table('wildlife')
+        ->select('wildlife.wildlife_species')
+        ->distinct('wildlife.wildlife_species')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchLoc = DB::table('wildlife')
+        ->select('wildlife.wildlife_location')
+        ->distinct('wildlife.wildlife_location')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $wildlife = Wildlife::where('wildlife_type','Zoo')
+        ->orderBy('wildlife_name','ASC')
+        ->get();
+        return view ('IEMS.Linus.STUDENT.StudentWLDashboard')
+        ->with('studentDashboard', $wildlife)
+        ->with('searchClass', $searchClass)
+        ->with('searchSpecie', $searchSpecie)
+        ->with('searchLoc', $searchLoc);
+    }
+
+    public function dateAddedDesc()
+    {
+       
+        $searchClass = DB::table('wildlife')
+        ->select('wildlife.wildlife_class')
+        ->distinct('wildlife.wildlife_class')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchSpecie = DB::table('wildlife')
+        ->select('wildlife.wildlife_species')
+        ->distinct('wildlife.wildlife_species')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchLoc = DB::table('wildlife')
+        ->select('wildlife.wildlife_location')
+        ->distinct('wildlife.wildlife_location')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $wildlife = Wildlife::where('wildlife_type','Zoo')
+        ->orderBy('wildlife_name','DESC')
+        ->get();
+        return view ('IEMS.Linus.STUDENT.StudentWLDashboard')
+        ->with('studentDashboard', $wildlife)
+        ->with('searchClass', $searchClass)
+        ->with('searchSpecie', $searchSpecie)
+        ->with('searchLoc', $searchLoc);
+    }
+
+    public function dateAddedAsc()
+    {
+       
+        $searchClass = DB::table('wildlife')
+        ->select('wildlife.wildlife_class')
+        ->distinct('wildlife.wildlife_class')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchSpecie = DB::table('wildlife')
+        ->select('wildlife.wildlife_species')
+        ->distinct('wildlife.wildlife_species')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $searchLoc = DB::table('wildlife')
+        ->select('wildlife.wildlife_location')
+        ->distinct('wildlife.wildlife_location')
+        ->where('wildlife_type','Zoo')
+        ->get();
+
+        $wildlife = Wildlife::where('wildlife_type','Zoo')
+        ->orderBy('wildlife_name','Asc')
+        ->get();
+        return view ('IEMS.Linus.STUDENT.StudentWLDashboard')
+        ->with('studentDashboard', $wildlife)
+        ->with('searchClass', $searchClass)
+        ->with('searchSpecie', $searchSpecie)
+        ->with('searchLoc', $searchLoc);
+    }
+
+    public function titleDesc()
+    {
+       
+        $searchRef = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_reference')
+        ->get();
+
+        $searchAuthor = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_author')
+        ->distinct('thesis_paper.thesis_author')
+        ->get();
+
+        $thesis = thesis_paper::orderBy('thesis_title','DESC')
+        ->select('thesis_paper.*')
+        ->get();
+
+        return view('IEMS.Linus.STUDENT.StudentThesisDashboard')
+        ->with('thesis',$thesis)
+        ->with('searchRef',$searchRef)
+        ->with('searchAuthor',$searchAuthor);
+    }
+    public function titleAsc()
+    {
+       
+        $searchRef = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_reference')
+        ->get();
+
+        $searchAuthor = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_author')
+        ->distinct('thesis_paper.thesis_author')
+        ->get();
+
+        $thesis = thesis_paper::orderBy('thesis_title','ASC')
+        ->select('thesis_paper.*')
+        ->get();
+        return view('IEMS.Linus.STUDENT.StudentThesisDashboard')
+        ->with('thesis',$thesis)
+        ->with('searchRef',$searchRef)
+        ->with('searchAuthor',$searchAuthor);
+    }
+
+    public function datePubDesc()
+    {
+       
+        $searchRef = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_reference')
+        ->get();
+
+        $searchAuthor = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_author')
+        ->distinct('thesis_paper.thesis_author')
+        ->get();
+
+        $thesis = thesis_paper::orderBy('date_published','DESC')
+        ->select('thesis_paper.*')
+        ->get();
+        return view('IEMS.Linus.STUDENT.StudentThesisDashboard')
+        ->with('thesis',$thesis)
+        ->with('searchRef',$searchRef)
+        ->with('searchAuthor',$searchAuthor);
+    }
+    public function datePubAsc()
+    {
+       
+        $searchRef = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_reference')
+        ->get();
+
+        $searchAuthor = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_author')
+        ->distinct('thesis_paper.thesis_author')
+        ->get();
+
+        $thesis = thesis_paper::orderBy('date_published','ASC')
+        ->select('thesis_paper.*')
+        ->get();
+        return view('IEMS.Linus.STUDENT.StudentThesisDashboard')
+        ->with('thesis',$thesis)
+        ->with('searchRef',$searchRef)
+        ->with('searchAuthor',$searchAuthor);
+    }
+
+    public function authorDesc()
+    {
+       
+        $searchRef = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_reference')
+        ->get();
+
+        $searchAuthor = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_author')
+        ->distinct('thesis_paper.thesis_author')
+        ->get();
+
+        $thesis = thesis_paper::orderBy('thesis_author','DESC')
+        ->select('thesis_paper.*')
+        ->get();
+        return view('IEMS.Linus.STUDENT.StudentThesisDashboard')
+        ->with('thesis',$thesis)
+        ->with('searchRef',$searchRef)
+        ->with('searchAuthor',$searchAuthor);
+    }
+    public function authorAsc()
+    {
+       
+        $searchRef = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_reference')
+        ->distinct('thesis_paper.thesis_reference')
+        ->get();
+
+        $searchAuthor = DB::table('thesis_paper')
+        ->select('thesis_paper.thesis_author')
+        ->distinct('thesis_paper.thesis_author')
+        ->get();
+
+        $thesis = thesis_paper::orderBy('thesis_author','ASC')
+        ->select('thesis_paper.*')
+        ->get();
+        return view('IEMS.Linus.STUDENT.StudentThesisDashboard')
+        ->with('thesis',$thesis)
+        ->with('searchRef',$searchRef)
+        ->with('searchAuthor',$searchAuthor);
+    }
+
+    public function j_titleDesc()
+    {
+        $searchRef = DB::table('journal_article')
+        ->select('journal_article.journal_reference')
+        ->distinct('journal_article.journal_reference')
+        ->get();
+
+        $searchDate = DB::table('journal_article')
+        ->select('journal_article.date_published')
+        ->distinct('journal_article.date_published')
+        ->get();
+
+
+        $journal = journal_article::orderBy('journal_title','DESC')
+        ->get();
+        return view('IEMS.Linus.STUDENT.StudentJournalDashboard')
+        ->with('journal',$journal)
+        ->with('searchDate',$searchDate)
+        ->with('searchRef',$searchRef);
+    }
+    public function j_titleAsc()
+    {
+        $searchRef = DB::table('journal_article')
+        ->select('journal_article.journal_reference')
+        ->distinct('journal_article.journal_reference')
+        ->get();
+
+        $searchDate = DB::table('journal_article')
+        ->select('journal_article.date_published')
+        ->distinct('journal_article.date_published')
+        ->get();
+
+
+        $journal = journal_article::orderBy('journal_title','ASC')
+        ->get();
+        return view('IEMS.Linus.STUDENT.StudentJournalDashboard')
+        ->with('journal',$journal)
+        ->with('searchDate',$searchDate)
+        ->with('searchRef',$searchRef);
+    }
+
+    public function j_datePubDesc()
+    {
+        $searchRef = DB::table('journal_article')
+        ->select('journal_article.journal_reference')
+        ->distinct('journal_article.journal_reference')
+        ->get();
+
+        $searchDate = DB::table('journal_article')
+        ->select('journal_article.date_published')
+        ->distinct('journal_article.date_published')
+        ->get();
+
+
+        $journal = journal_article::orderBy('date_published','DESC')
+        ->get();
+        return view('IEMS.Linus.STUDENT.StudentJournalDashboard')
+        ->with('journal',$journal)
+        ->with('searchDate',$searchDate)
+        ->with('searchRef',$searchRef);
+    }
+
+    public function j_datePubAsc()
+    {
+        $searchRef = DB::table('journal_article')
+        ->select('journal_article.journal_reference')
+        ->distinct('journal_article.journal_reference')
+        ->get();
+
+        $searchDate = DB::table('journal_article')
+        ->select('journal_article.date_published')
+        ->distinct('journal_article.date_published')
+        ->get();
+
+
+        $journal = journal_article::orderBy('date_published','ASC')
+        ->get();
+        return view('IEMS.Linus.STUDENT.StudentJournalDashboard')
+        ->with('journal',$journal)
+        ->with('searchDate',$searchDate)
+        ->with('searchRef',$searchRef);
+    }
+    public function j_authorDesc()
+    {
+        $searchRef = DB::table('journal_article')
+        ->select('journal_article.journal_reference')
+        ->distinct('journal_article.journal_reference')
+        ->get();
+
+        $searchDate = DB::table('journal_article')
+        ->select('journal_article.date_published')
+        ->distinct('journal_article.date_published')
+        ->get();
+
+
+        $journal = journal_article::orderBy('journal_author','DESC')
+        ->get();
+        return view('IEMS.Linus.STUDENT.StudentJournalDashboard')
+        ->with('journal',$journal)
+        ->with('searchDate',$searchDate)
+        ->with('searchRef',$searchRef);
+    }
+    public function j_authorAsc()
+    {
+        $searchRef = DB::table('journal_article')
+        ->select('journal_article.journal_reference')
+        ->distinct('journal_article.journal_reference')
+        ->get();
+
+        $searchDate = DB::table('journal_article')
+        ->select('journal_article.date_published')
+        ->distinct('journal_article.date_published')
+        ->get();
+
+
+        $journal = journal_article::orderBy('journal_author','ASC')
+        ->get();
+        return view('IEMS.Linus.STUDENT.StudentJournalDashboard')
+        ->with('journal',$journal)
+        ->with('searchDate',$searchDate)
+        ->with('searchRef',$searchRef);
+    }
 
 }

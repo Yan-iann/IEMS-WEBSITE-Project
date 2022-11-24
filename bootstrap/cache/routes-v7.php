@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::nGvdbXZI5xDGXvXX',
+            '_route' => 'generated::iDeRp6tBF5p4CnXB',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::5CS4cObAa7alTQOy',
+            '_route' => 'generated::HqurSfG0QJk9D6lc',
           ),
           1 => NULL,
           2 => 
@@ -122,7 +122,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::lSlJeZsRYbcFsc09',
+            '_route' => 'generated::ug6X7pNfvZH4DHPZ',
           ),
           1 => NULL,
           2 => 
@@ -159,7 +159,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::74l9eVYob0gBjtMx',
+            '_route' => 'generated::EdsOBVBu87UrQxky',
           ),
           1 => NULL,
           2 => 
@@ -1664,6 +1664,326 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/IEMSStudent/w_sortNameD_S' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'sortNameDesc_S',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSStudent/w_sortNameA_S' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'sortNameAsc_S',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSStudent/w_sortDateD_S' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dateAddedDesc_S',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSStudent/w_sortDateA_S' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dateAddedAsc_S',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSStudent/t_titleD_S' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'titleDesc_S',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSStudent/t_titleA_S' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'titleAsc_S',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSStudent/t_dateD_S' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'datePubDesc_S',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSStudent/t_dateA_S' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'datePubAsc_S',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSStudent/t_authorD_S' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'authorDesc_S',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSStudent/t_authorA_S' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'authorAsc_S',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSStudent/j_titleD_S' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'j_titleDesc_S',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSStudent/j_titleA_S' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'j_titleAsc_S',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSStudent/j_dateD_S' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'j_datePubDesc_S',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSStudent/j_dateA_S' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'j_datePubAsc_S',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSStudent/j_authorD_S' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'j_authorDesc_S',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/IEMSStudent/j_authorA_S' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'j_authorAsc_S',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/dashboardGuest' => 
       array (
         0 => 
@@ -2004,13 +2324,333 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/w_sortNameD_G' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'sortNameDesc_G',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/w_sortNameA_G' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'sortNameAsc_G',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/w_sortDateD_G' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dateAddedDesc_G',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/w_sortDateA_G' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'dateAddedAsc_G',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/t_titleD_G' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'titleDesc_G',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/t_titleA_G' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'titleAsc_G',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/t_dateD_G' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'datePubDesc_G',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/t_dateA_G' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'datePubAsc_G',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/t_authorD_G' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'authorDesc_G',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/t_authorA_G' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'authorAsc_G',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/j_titleD_G' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'j_titleDesc_G',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/j_titleA_G' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'j_titleAsc_G',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/j_dateD_G' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'j_datePubDesc_G',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/j_dateA_G' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'j_datePubAsc_G',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/j_authorD_G' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'j_authorDesc_G',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/j_authorA_G' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'j_authorAsc_G',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/college' => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'generated::kmIW2NSoaEU3ubXs',
+            '_route' => 'generated::W3auqdIO08xfShtV',
           ),
           1 => NULL,
           2 => 
@@ -2030,7 +2670,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::gvCNCNwLSzLluNQf',
+            '_route' => 'generated::BIcm851Y7O95io88',
           ),
           1 => NULL,
           2 => 
@@ -2050,7 +2690,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::CiDEo5h9mkNdrup6',
+            '_route' => 'generated::f8gMkgxTuCqEvE8a',
           ),
           1 => NULL,
           2 => 
@@ -2070,7 +2710,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::12tVl5PEA6aRm4Ow',
+            '_route' => 'generated::3lJfUg5v946m1fsg',
           ),
           1 => NULL,
           2 => 
@@ -2090,7 +2730,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::N2ySuMFehFjif22k',
+            '_route' => 'generated::kqKJMitS2IWhE9vS',
           ),
           1 => NULL,
           2 => 
@@ -2110,7 +2750,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::aNabJ1kV5eTPtldP',
+            '_route' => 'generated::WuxgVcJs7rYQs9BK',
           ),
           1 => NULL,
           2 => 
@@ -2130,7 +2770,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::yVzn6LD1r5CnnFgm',
+            '_route' => 'generated::s2C1y4cha3dVDUtL',
           ),
           1 => NULL,
           2 => 
@@ -2150,7 +2790,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::gd2k1eADpVbsspLh',
+            '_route' => 'generated::qYlmeiqXBXELOuv7',
           ),
           1 => NULL,
           2 => 
@@ -2186,7 +2826,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Gr2kdTzqBA3rC2lZ',
+            '_route' => 'generated::HueElSWAN37WGdCl',
           ),
           1 => NULL,
           2 => 
@@ -2223,7 +2863,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::OCFpmFAbA6OFfu8p',
+            '_route' => 'generated::V8oaYWWIcTDxQSmA',
           ),
           1 => NULL,
           2 => 
@@ -2353,7 +2993,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::G0l6SW7zJSARAyvT',
+            '_route' => 'generated::ryGfbxLHS3L9Rw06',
           ),
           1 => NULL,
           2 => 
@@ -3173,7 +3813,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::nGvdbXZI5xDGXvXX' => 
+    'generated::iDeRp6tBF5p4CnXB' => 
     array (
       'methods' => 
       array (
@@ -3194,7 +3834,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::nGvdbXZI5xDGXvXX',
+        'as' => 'generated::iDeRp6tBF5p4CnXB',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3319,7 +3959,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::5CS4cObAa7alTQOy' => 
+    'generated::HqurSfG0QJk9D6lc' => 
     array (
       'methods' => 
       array (
@@ -3342,7 +3982,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::5CS4cObAa7alTQOy',
+        'as' => 'generated::HqurSfG0QJk9D6lc',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3358,7 +3998,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::lSlJeZsRYbcFsc09' => 
+    'generated::ug6X7pNfvZH4DHPZ' => 
     array (
       'methods' => 
       array (
@@ -3379,7 +4019,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::lSlJeZsRYbcFsc09',
+        'as' => 'generated::ug6X7pNfvZH4DHPZ',
       ),
       'fallback' => false,
       'defaults' => 
@@ -7542,6 +8182,630 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'sortNameDesc_S' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSStudent/w_sortNameD_S',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isStudent',
+        ),
+        'uses' => 'App\\Http\\Controllers\\studentController@sortNameDesc',
+        'controller' => 'App\\Http\\Controllers\\studentController@sortNameDesc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSStudent',
+        'where' => 
+        array (
+        ),
+        'as' => 'sortNameDesc_S',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'sortNameAsc_S' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSStudent/w_sortNameA_S',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isStudent',
+        ),
+        'uses' => 'App\\Http\\Controllers\\studentController@sortNameAsc',
+        'controller' => 'App\\Http\\Controllers\\studentController@sortNameAsc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSStudent',
+        'where' => 
+        array (
+        ),
+        'as' => 'sortNameAsc_S',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'dateAddedDesc_S' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSStudent/w_sortDateD_S',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isStudent',
+        ),
+        'uses' => 'App\\Http\\Controllers\\studentController@dateAddedDesc',
+        'controller' => 'App\\Http\\Controllers\\studentController@dateAddedDesc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSStudent',
+        'where' => 
+        array (
+        ),
+        'as' => 'dateAddedDesc_S',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'dateAddedAsc_S' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSStudent/w_sortDateA_S',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isStudent',
+        ),
+        'uses' => 'App\\Http\\Controllers\\studentController@dateAddedAsc',
+        'controller' => 'App\\Http\\Controllers\\studentController@dateAddedAsc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSStudent',
+        'where' => 
+        array (
+        ),
+        'as' => 'dateAddedAsc_S',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'titleDesc_S' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSStudent/t_titleD_S',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isStudent',
+        ),
+        'uses' => 'App\\Http\\Controllers\\studentController@titleDesc',
+        'controller' => 'App\\Http\\Controllers\\studentController@titleDesc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSStudent',
+        'where' => 
+        array (
+        ),
+        'as' => 'titleDesc_S',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'titleAsc_S' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSStudent/t_titleA_S',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isStudent',
+        ),
+        'uses' => 'App\\Http\\Controllers\\studentController@titleAsc',
+        'controller' => 'App\\Http\\Controllers\\studentController@titleAsc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSStudent',
+        'where' => 
+        array (
+        ),
+        'as' => 'titleAsc_S',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'datePubDesc_S' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSStudent/t_dateD_S',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isStudent',
+        ),
+        'uses' => 'App\\Http\\Controllers\\studentController@datePubDesc',
+        'controller' => 'App\\Http\\Controllers\\studentController@datePubDesc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSStudent',
+        'where' => 
+        array (
+        ),
+        'as' => 'datePubDesc_S',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'datePubAsc_S' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSStudent/t_dateA_S',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isStudent',
+        ),
+        'uses' => 'App\\Http\\Controllers\\studentController@datePubAsc',
+        'controller' => 'App\\Http\\Controllers\\studentController@datePubAsc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSStudent',
+        'where' => 
+        array (
+        ),
+        'as' => 'datePubAsc_S',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'authorDesc_S' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSStudent/t_authorD_S',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isStudent',
+        ),
+        'uses' => 'App\\Http\\Controllers\\studentController@authorDesc',
+        'controller' => 'App\\Http\\Controllers\\studentController@authorDesc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSStudent',
+        'where' => 
+        array (
+        ),
+        'as' => 'authorDesc_S',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'authorAsc_S' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSStudent/t_authorA_S',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isStudent',
+        ),
+        'uses' => 'App\\Http\\Controllers\\studentController@authorAsc',
+        'controller' => 'App\\Http\\Controllers\\studentController@authorAsc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSStudent',
+        'where' => 
+        array (
+        ),
+        'as' => 'authorAsc_S',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'j_titleDesc_S' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSStudent/j_titleD_S',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isStudent',
+        ),
+        'uses' => 'App\\Http\\Controllers\\studentController@j_titleDesc',
+        'controller' => 'App\\Http\\Controllers\\studentController@j_titleDesc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSStudent',
+        'where' => 
+        array (
+        ),
+        'as' => 'j_titleDesc_S',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'j_titleAsc_S' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSStudent/j_titleA_S',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isStudent',
+        ),
+        'uses' => 'App\\Http\\Controllers\\studentController@j_titleAsc',
+        'controller' => 'App\\Http\\Controllers\\studentController@j_titleAsc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSStudent',
+        'where' => 
+        array (
+        ),
+        'as' => 'j_titleAsc_S',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'j_datePubDesc_S' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSStudent/j_dateD_S',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isStudent',
+        ),
+        'uses' => 'App\\Http\\Controllers\\studentController@j_datePubDesc',
+        'controller' => 'App\\Http\\Controllers\\studentController@j_datePubDesc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSStudent',
+        'where' => 
+        array (
+        ),
+        'as' => 'j_datePubDesc_S',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'j_datePubAsc_S' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSStudent/j_dateA_S',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isStudent',
+        ),
+        'uses' => 'App\\Http\\Controllers\\studentController@j_datePubAsc',
+        'controller' => 'App\\Http\\Controllers\\studentController@j_datePubAsc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSStudent',
+        'where' => 
+        array (
+        ),
+        'as' => 'j_datePubAsc_S',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'j_authorDesc_S' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSStudent/j_authorD_S',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isStudent',
+        ),
+        'uses' => 'App\\Http\\Controllers\\studentController@j_authorDesc',
+        'controller' => 'App\\Http\\Controllers\\studentController@j_authorDesc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSStudent',
+        'where' => 
+        array (
+        ),
+        'as' => 'j_authorDesc_S',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'j_authorAsc_S' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'IEMSStudent/j_authorA_S',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+          2 => 'isStudent',
+        ),
+        'uses' => 'App\\Http\\Controllers\\studentController@j_authorAsc',
+        'controller' => 'App\\Http\\Controllers\\studentController@j_authorAsc',
+        'namespace' => NULL,
+        'prefix' => '/IEMSStudent',
+        'where' => 
+        array (
+        ),
+        'as' => 'j_authorAsc_S',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'guestDashboard' => 
     array (
       'methods' => 
@@ -8171,7 +9435,599 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::kmIW2NSoaEU3ubXs' => 
+    'sortNameDesc_G' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'w_sortNameD_G',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\guestController@sortNameDesc',
+        'controller' => 'App\\Http\\Controllers\\guestController@sortNameDesc',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'sortNameDesc_G',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'sortNameAsc_G' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'w_sortNameA_G',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\guestController@sortNameAsc',
+        'controller' => 'App\\Http\\Controllers\\guestController@sortNameAsc',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'sortNameAsc_G',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'dateAddedDesc_G' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'w_sortDateD_G',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\guestController@dateAddedDesc',
+        'controller' => 'App\\Http\\Controllers\\guestController@dateAddedDesc',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'dateAddedDesc_G',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'dateAddedAsc_G' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'w_sortDateA_G',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\guestController@dateAddedAsc',
+        'controller' => 'App\\Http\\Controllers\\guestController@dateAddedAsc',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'dateAddedAsc_G',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'titleDesc_G' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 't_titleD_G',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\guestController@titleDesc',
+        'controller' => 'App\\Http\\Controllers\\guestController@titleDesc',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'titleDesc_G',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'titleAsc_G' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 't_titleA_G',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\guestController@titleAsc',
+        'controller' => 'App\\Http\\Controllers\\guestController@titleAsc',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'titleAsc_G',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'datePubDesc_G' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 't_dateD_G',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\guestController@datePubDesc',
+        'controller' => 'App\\Http\\Controllers\\guestController@datePubDesc',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'datePubDesc_G',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'datePubAsc_G' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 't_dateA_G',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\guestController@datePubAsc',
+        'controller' => 'App\\Http\\Controllers\\guestController@datePubAsc',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'datePubAsc_G',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'authorDesc_G' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 't_authorD_G',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\guestController@authorDesc',
+        'controller' => 'App\\Http\\Controllers\\guestController@authorDesc',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'authorDesc_G',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'authorAsc_G' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 't_authorA_G',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\guestController@authorAsc',
+        'controller' => 'App\\Http\\Controllers\\guestController@authorAsc',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'authorAsc_G',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'j_titleDesc_G' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'j_titleD_G',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\guestController@j_titleDesc',
+        'controller' => 'App\\Http\\Controllers\\guestController@j_titleDesc',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'j_titleDesc_G',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'j_titleAsc_G' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'j_titleA_G',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\guestController@j_titleAsc',
+        'controller' => 'App\\Http\\Controllers\\guestController@j_titleAsc',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'j_titleAsc_G',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'j_datePubDesc_G' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'j_dateD_G',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\guestController@j_datePubDesc',
+        'controller' => 'App\\Http\\Controllers\\guestController@j_datePubDesc',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'j_datePubDesc_G',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'j_datePubAsc_G' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'j_dateA_G',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\guestController@j_datePubAsc',
+        'controller' => 'App\\Http\\Controllers\\guestController@j_datePubAsc',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'j_datePubAsc_G',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'j_authorDesc_G' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'j_authorD_G',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\guestController@j_authorDesc',
+        'controller' => 'App\\Http\\Controllers\\guestController@j_authorDesc',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'j_authorDesc_G',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'j_authorAsc_G' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'j_authorA_G',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\guestController@j_authorAsc',
+        'controller' => 'App\\Http\\Controllers\\guestController@j_authorAsc',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'j_authorAsc_G',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'generated::W3auqdIO08xfShtV' => 
     array (
       'methods' => 
       array (
@@ -8192,7 +10048,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::kmIW2NSoaEU3ubXs',
+        'as' => 'generated::W3auqdIO08xfShtV',
       ),
       'fallback' => false,
       'defaults' => 
@@ -8208,7 +10064,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::gvCNCNwLSzLluNQf' => 
+    'generated::BIcm851Y7O95io88' => 
     array (
       'methods' => 
       array (
@@ -8229,7 +10085,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::gvCNCNwLSzLluNQf',
+        'as' => 'generated::BIcm851Y7O95io88',
       ),
       'fallback' => false,
       'defaults' => 
@@ -8245,7 +10101,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::CiDEo5h9mkNdrup6' => 
+    'generated::f8gMkgxTuCqEvE8a' => 
     array (
       'methods' => 
       array (
@@ -8266,7 +10122,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::CiDEo5h9mkNdrup6',
+        'as' => 'generated::f8gMkgxTuCqEvE8a',
       ),
       'fallback' => false,
       'defaults' => 
@@ -8282,7 +10138,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::12tVl5PEA6aRm4Ow' => 
+    'generated::3lJfUg5v946m1fsg' => 
     array (
       'methods' => 
       array (
@@ -8303,7 +10159,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::12tVl5PEA6aRm4Ow',
+        'as' => 'generated::3lJfUg5v946m1fsg',
       ),
       'fallback' => false,
       'defaults' => 
@@ -8319,7 +10175,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::N2ySuMFehFjif22k' => 
+    'generated::kqKJMitS2IWhE9vS' => 
     array (
       'methods' => 
       array (
@@ -8340,7 +10196,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::N2ySuMFehFjif22k',
+        'as' => 'generated::kqKJMitS2IWhE9vS',
       ),
       'fallback' => false,
       'defaults' => 
@@ -8356,7 +10212,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::aNabJ1kV5eTPtldP' => 
+    'generated::WuxgVcJs7rYQs9BK' => 
     array (
       'methods' => 
       array (
@@ -8377,7 +10233,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::aNabJ1kV5eTPtldP',
+        'as' => 'generated::WuxgVcJs7rYQs9BK',
       ),
       'fallback' => false,
       'defaults' => 
@@ -8393,7 +10249,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::yVzn6LD1r5CnnFgm' => 
+    'generated::s2C1y4cha3dVDUtL' => 
     array (
       'methods' => 
       array (
@@ -8414,7 +10270,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::yVzn6LD1r5CnnFgm',
+        'as' => 'generated::s2C1y4cha3dVDUtL',
       ),
       'fallback' => false,
       'defaults' => 
@@ -8467,7 +10323,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::gd2k1eADpVbsspLh' => 
+    'generated::qYlmeiqXBXELOuv7' => 
     array (
       'methods' => 
       array (
@@ -8488,7 +10344,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::gd2k1eADpVbsspLh',
+        'as' => 'generated::qYlmeiqXBXELOuv7',
       ),
       'fallback' => false,
       'defaults' => 
@@ -8540,7 +10396,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::Gr2kdTzqBA3rC2lZ' => 
+    'generated::HueElSWAN37WGdCl' => 
     array (
       'methods' => 
       array (
@@ -8561,7 +10417,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::Gr2kdTzqBA3rC2lZ',
+        'as' => 'generated::HueElSWAN37WGdCl',
       ),
       'fallback' => false,
       'defaults' => 
@@ -8615,7 +10471,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::OCFpmFAbA6OFfu8p' => 
+    'generated::V8oaYWWIcTDxQSmA' => 
     array (
       'methods' => 
       array (
@@ -8636,7 +10492,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::OCFpmFAbA6OFfu8p',
+        'as' => 'generated::V8oaYWWIcTDxQSmA',
       ),
       'fallback' => false,
       'defaults' => 
@@ -8652,7 +10508,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::74l9eVYob0gBjtMx' => 
+    'generated::EdsOBVBu87UrQxky' => 
     array (
       'methods' => 
       array (
@@ -8673,7 +10529,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::74l9eVYob0gBjtMx',
+        'as' => 'generated::EdsOBVBu87UrQxky',
       ),
       'fallback' => false,
       'defaults' => 
@@ -8993,7 +10849,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::G0l6SW7zJSARAyvT' => 
+    'generated::ryGfbxLHS3L9Rw06' => 
     array (
       'methods' => 
       array (
@@ -9014,7 +10870,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::G0l6SW7zJSARAyvT',
+        'as' => 'generated::ryGfbxLHS3L9Rw06',
       ),
       'fallback' => false,
       'defaults' => 

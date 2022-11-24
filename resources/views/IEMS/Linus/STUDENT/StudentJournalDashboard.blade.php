@@ -24,6 +24,10 @@
                                     <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
                                         data-bs-target="#ModalSearch"><i class='bx bx-filter-alt'></i></button>
                                 </div>
+                                <div class="dropdown dropdown-lg">
+                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
+                                        data-bs-target="#ModalSort"><i class='bx bx-filter-alt'></i></button>
+                                </div>  
                                 <button class="btn btn-info " type="submit">Search</button>
                             </div>
                         </div>
@@ -124,4 +128,64 @@
         </div>
     </form>
     <!--end of form-->
+
+    <div class="modal fade" id="ModalSort" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content  bg-light">
+
+                    <div class="modal-header border-0 text-center">
+                        <h5 class="modal-title  text-center">Sort Options</h5>
+                        <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
+
+
+
+                                {{-- Sort --}}
+                                <div class="col-12">
+                                    <div class="row d-flex justify-content-between">
+                                        <div class="col-6">
+                                            <label class="focus-label">Sort By Title:</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <a href="{{ route('j_titleDesc_S') }}"><i class="fas fa-sort"></i>Desc</a>
+                                            <a href="{{ route('j_titleAsc_S') }}" ><i class="fas fa-sort"></i>Asc</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row d-flex justify-content-between">
+                                        <div class="col-6">
+                                            <label class="focus-label">Sort By Date Published:</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <a href="{{ route('j_datePubDesc_S') }}" ><i class="fas fa-sort"></i>Desc</a>
+                                            <a href="{{ route('j_datePubAsc_S') }}" ><i class="fas fa-sort"></i>Asc</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row d-flex justify-content-between">
+                                        <div class="col-6">
+                                            <label class="focus-label">Sort By Author:</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <a href="{{ route('j_authorDesc_S') }}" ><i class="fas fa-sort"></i>Desc</a>
+                                            <a href="{{ route('j_authorAsc_S') }}" ><i class="fas fa-sort"></i>Asc</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 @endsection

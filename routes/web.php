@@ -110,6 +110,7 @@ Route::prefix('IEMSFaculty')->middleware('auth','isFaculty')->group(function(){
     Route::get('/advanceSearchJournal',[infocardMaintain::class, 'advanceSearchJournal'])->name('advanceSearchJournal');
     Route::get('/advanceSearchRef',[infocardMaintain::class, 'advanceSearchRef'])->name('advanceSearchRef');
     Route::get('/searchRef',[infocardMaintain::class, 'searchRef'])->name('searchRef');
+
     Route::get('/w_sortNameD',[infocardMaintain::class, 'sortNameDesc'])->name('sortNameDesc');
     Route::get('/w_sortNameA',[infocardMaintain::class, 'sortNameAsc'])->name('sortNameAsc');
     Route::get('/w_sortDateD',[infocardMaintain::class, 'dateAddedDesc'])->name('dateAddedDesc');
@@ -155,6 +156,24 @@ Route::prefix('IEMSStudent')->middleware('auth','isStudent')->group(function(){
     Route::post('/S_editProfile/{id}',[studentController::class, 'editSprofile'])->name('editSprofile');
     Route::post('/updatePasswordStudent/{id}',[studentController::class, 'updatePassStudent'])->name('updatePassStudent');
     Route::get('/S_searchRequest',[studentController::class, 'searchRequest'])->name('searchRequest');
+
+    Route::get('/w_sortNameD_S',[studentController::class, 'sortNameDesc'])->name('sortNameDesc_S');
+    Route::get('/w_sortNameA_S',[studentController::class, 'sortNameAsc'])->name('sortNameAsc_S');
+    Route::get('/w_sortDateD_S',[studentController::class, 'dateAddedDesc'])->name('dateAddedDesc_S');
+    Route::get('/w_sortDateA_S',[studentController::class, 'dateAddedAsc'])->name('dateAddedAsc_S');
+    Route::get('/t_titleD_S',[studentController::class, 'titleDesc'])->name('titleDesc_S');
+    Route::get('/t_titleA_S',[studentController::class, 'titleAsc'])->name('titleAsc_S');
+    Route::get('/t_dateD_S',[studentController::class, 'datePubDesc'])->name('datePubDesc_S');
+    Route::get('/t_dateA_S',[studentController::class, 'datePubAsc'])->name('datePubAsc_S');
+    Route::get('/t_authorD_S',[studentController::class, 'authorDesc'])->name('authorDesc_S');
+    Route::get('/t_authorA_S',[studentController::class, 'authorAsc'])->name('authorAsc_S');
+
+    Route::get('/j_titleD_S',[studentController::class, 'j_titleDesc'])->name('j_titleDesc_S');
+    Route::get('/j_titleA_S',[studentController::class, 'j_titleAsc'])->name('j_titleAsc_S');
+    Route::get('/j_dateD_S',[studentController::class, 'j_datePubDesc'])->name('j_datePubDesc_S');
+    Route::get('/j_dateA_S',[studentController::class, 'j_datePubAsc'])->name('j_datePubAsc_S');
+    Route::get('/j_authorD_S',[studentController::class, 'j_authorDesc'])->name('j_authorDesc_S');
+    Route::get('/j_authorA_S',[studentController::class, 'j_authorAsc'])->name('j_authorAsc_S');
 });
 
 //FOR GUEST///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -177,6 +196,25 @@ Route::get('/G_searchBone',[guestController::class, 'searchBone'])->name('G_sear
 Route::get('/G_advanceSearchBone',[guestController::class, 'advanceSearchBone'])->name('G_advanceSearchBone');
 Route::get('/G_searchRef',[guestController::class, 'searchRef'])->name('G_searchRef');
 Route::get('/G_advanceSearchRef',[guestController::class, 'advanceSearchRef'])->name('G_advanceSearchRef');
+
+Route::get('/w_sortNameD_G',[guestController::class, 'sortNameDesc'])->name('sortNameDesc_G');
+Route::get('/w_sortNameA_G',[guestController::class, 'sortNameAsc'])->name('sortNameAsc_G');
+Route::get('/w_sortDateD_G',[guestController::class, 'dateAddedDesc'])->name('dateAddedDesc_G');
+Route::get('/w_sortDateA_G',[guestController::class, 'dateAddedAsc'])->name('dateAddedAsc_G');
+Route::get('/t_titleD_G',[guestController::class, 'titleDesc'])->name('titleDesc_G');
+Route::get('/t_titleA_G',[guestController::class, 'titleAsc'])->name('titleAsc_G');
+Route::get('/t_dateD_G',[guestController::class, 'datePubDesc'])->name('datePubDesc_G');
+Route::get('/t_dateA_G',[guestController::class, 'datePubAsc'])->name('datePubAsc_G');
+Route::get('/t_authorD_G',[guestController::class, 'authorDesc'])->name('authorDesc_G');
+Route::get('/t_authorA_G',[guestController::class, 'authorAsc'])->name('authorAsc_G');
+
+Route::get('/j_titleD_G',[guestController::class, 'j_titleDesc'])->name('j_titleDesc_G');
+Route::get('/j_titleA_G',[guestController::class, 'j_titleAsc'])->name('j_titleAsc_G');
+Route::get('/j_dateD_G',[guestController::class, 'j_datePubDesc'])->name('j_datePubDesc_G');
+Route::get('/j_dateA_G',[guestController::class, 'j_datePubAsc'])->name('j_datePubAsc_G');
+Route::get('/j_authorD_G',[guestController::class, 'j_authorDesc'])->name('j_authorDesc_G');
+Route::get('/j_authorA_G',[guestController::class, 'j_authorAsc'])->name('j_authorAsc_G');
+
 
 //SITE ///////////////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/college',[IEMSWebsite::class, 'accessCollege']);
