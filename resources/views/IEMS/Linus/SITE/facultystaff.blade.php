@@ -20,7 +20,7 @@
         style="background-color: rgb(242, 242, 242); padding-top: 120px; padding-bottom:120px; object-fit:cover;"
         data-scroll-section>
         <div class="container-fluid">
-            <div class="row  d-flex justify-content-center">
+            <div class="row d-flex justify-content-center">
 
                 {{-- Heading --}}
                 <div class="col-12 text-center mb-5">
@@ -34,20 +34,28 @@
                 </div>
 
                 {{-- Card --}}
-                @foreach ($user as $item)
-                    <div class="col-6 col-md-2 col-lg-2" style="margin: 20px">
-                        <div class="card bg-transparent" style="width: 18rem; border:none; cursor:default">
-                            <img src="{{ asset($item->profile_pic) }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $item->name }}</h5> {{-- Name Of Faculty --}}
-                                <p class="card-text">{{ $item->rank }}</p> {{-- Rank Of Faculty --}}
-                                <button type="button" data-bs-toggle="modal"
-                                    data-bs-target="#viewfacultydetails{{ $item->id }}" class="btn btn-info">View
-                                    Details</button>
-                            </div>
+                <div class="col-12">
+                    <div class="container-fluid">
+                        <div class="row gap-5 d-flex justify-content-center">
+                            @foreach ($user as $item)
+                                <div class="col-6 col-md-2 col-lg-2">
+                                    <div class="card bg-transparent" style="border:none; cursor:default">
+                                        <img src="{{ asset($item->profile_pic) }}" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ $item->name }} {{ $item->middle_name }}
+                                                {{ $item->last_name }}</h5> {{-- Name Of Faculty --}}
+                                            <p class="card-text">{{ $item->rank }}</p> {{-- Rank Of Faculty --}}
+                                            <button type="button" data-bs-toggle="modal"
+                                                data-bs-target="#viewfacultydetails{{ $item->id }}"
+                                                class="btn btn-info">View
+                                                Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
-                @endforeach
+                </div>
 
 
             </div>
@@ -67,10 +75,10 @@
                         {{-- Faculty Photo Section --}}
                         <div class="col-md-6 d-flex p-0">
                             <div class="modal-body  img d-flex img text-center d-flex align-items-center"
-                                style="background-image: url('{{ asset($item->profile_pic) }}');  {{-- Photo in background image--}}
+                                style="background-image: url('{{ asset($item->profile_pic) }}');  {{-- Photo in background image --}}
                                 background-size:cover;background-repeat: no-repeat; background-blend-mode: multiply;
                                 background-position: center">
-                                <img src="{{ asset($item->profile_pic) }}" class="modal-body" alt="...">
+                                {{-- <img src="{{ asset($item->profile_pic) }}" class="modal-body" alt="..."> --}}
                             </div>
                         </div> {{-- End of Faculty Photo Section --}}
 
@@ -91,7 +99,7 @@
                                     {{-- Name Of Faculty --}}
                                     <div class="col-12">
                                         <label class="form-label">Name</label>
-                                        <h3>{{ $item->name }}</h3>
+                                        <h3>{{ $item->name }}  {{ $item->middle_name }} {{ $item->last_name }}</h3>
                                     </div>
 
                                     {{-- Rank --}}
@@ -123,12 +131,12 @@
                                     <div class=" col-12 d-flex justify-content-between">
 
                                         <div class="col-12 col-lg-4">
-                                            <p class="text-muted">{{ $item->email }}</p>
+                                            <p class="text-muted"><i class="bx bx-envelope"> {{ $item->email }}</i></p>
                                             {{-- Email --}}
                                         </div>
 
-                                        <div class="col-12 col-lg-4">
-                                            <p class="text-muted">{{ $item->phone_no }}</p>
+                                        <div class="col-12 col-lg-4" >
+                                            <p class="text-muted align-text-centeralign-text-center"><i class="bx bx-phone"> {{ $item->phone_no }}</i></p>
                                             {{-- Contact Number --}}
                                         </div>
                                     </div>

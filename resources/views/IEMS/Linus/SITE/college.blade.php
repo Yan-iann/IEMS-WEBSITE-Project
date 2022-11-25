@@ -56,7 +56,7 @@ padding-bottom: 180px; height:75vh" data-scroll-section>
 
 
 
-                        <div class="col-12 col-md-6 col-lg-6 d-flex justify-content-start align-items-center order-sm-2">
+                        <div class="col-12 col-md-6 col-lg-6 d-flex justify-content-start align-items-center order-sm-2 text-justify">
                             <p class="lead">
                                 Silliman University Marine Laboratory (SUML) was established as a research facility of the
                                 University in 1974,
@@ -76,10 +76,10 @@ padding-bottom: 180px; height:75vh" data-scroll-section>
 
 
                 <div class="col-12" style="margin-bottom: 50px">
-                    <div class="row d-flex justify-content-center align-items-center ">
+                    <div class="row d-flex justify-content-center align-items-center text-justify">
 
                         <div
-                            class="col-12 col-md-6 col-lg-6 d-flex justify-content-start align-items-center order-sm-2 order-lg-1 order-md-1">
+                            class="col-12 col-md-6 col-lg-6 d-flex justify-content-start align-items-center order-sm-2 order-lg-1 order-md-1 text-justify">
                             <p class="lead">
                                 The new building houses four laboratories: marine botany, biochemistry, and genetics,
                                 invertebrate
@@ -106,13 +106,13 @@ padding-bottom: 180px; height:75vh" data-scroll-section>
                 <div class="col-12">
                     <div class="row d-flex justify-content-center align-items-center ">
 
-                        <div class="col-6 mb-5 d-flex justify-content-end order-sm-1" style="padding:20px">
+                        <div class="col-12 col-md-6 mb-5 d-flex justify-content-end order-sm-1" style="padding:20px">
                             <img src="{{ URL::asset('img/College_desc3.jpg') }}" alt="Divers" style="width: 100%">
                         </div>
 
 
 
-                        <div class="col-6 d-flex justify-content-start align-items-center order-sm-2" style="padding:20px">
+                        <div class="col-12 col-md-6 d-flex justify-content-start align-items-center order-sm-2" style="padding:20px">
                             <p class="lead">
                                 On August 25, 2009, the buildings and grounds of SUML were renamed Dr. Angel C. Alcala
                                 Environment
@@ -156,7 +156,7 @@ padding-bottom: 180px; height:75vh" data-scroll-section>
 
                 <div class="col-12" style="margin-bottom:30vh">
                     <div class="row d-flex align-items-center">
-                        <div class="col-12 col-md-6 col-lg-6 p-5 sticky-top">
+                        <div class="col-12 col-md-6 col-lg-6 p-5">
                             <h1 class=" text-black display-3 subheader">Vision</h1>
                             <p class="lead">To become a global leader in environmental and marine research
                                 and education, producing competent and responsible graduates trained within the
@@ -164,15 +164,15 @@ padding-bottom: 180px; height:75vh" data-scroll-section>
                             </p>
                         </div>
 
-                        <div class="col-12 col-md-6 col-lg-6">
-                            <img src="{{ URL::asset('img/College_vision.jpg') }}" alt="Fish">
+                        <div class="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
+                            <img src="{{ URL::asset('img/College_vision.jpg') }}" alt="survey" style="width:80%">
                         </div>
                     </div>
                 </div>
 
                 <div class="col-12">
                     <div class="row d-flex align-items-start justify-content-around">
-                        <div class="col-12 col-md-6 col-lg-6 p-5 sticky-top d-flex justify-content-end">
+                        <div class="col-12 col-md-6 col-lg-6 p-5d-flex justify-content-end">
                             <h1 class=" text-black display-3 subheader">Mission</h1>
                         </div>
 
