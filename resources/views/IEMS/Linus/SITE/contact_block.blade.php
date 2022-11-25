@@ -60,7 +60,7 @@
    {{-- SU COA --}}
    <section data-scroll-section class="mbr-section article"
        style=" padding-top: 50px; padding-bottom: 50px; opacity: 80%;
-      background-image:linear-gradient(0deg, #000000a7,  #000000a7), url('img/SUCOA.jpg'); background-size:cover;
+      background-image:linear-gradient(0deg, #000000a7,  #000000a7), url('img/Contact_su.jpg'); background-size:cover;
         background-repeat: no-repeat; background-blend-mode: multiply; background-position: center;">
        <div class="container">
            <div class="row d-flex justify-content-center text-center align-items-center">

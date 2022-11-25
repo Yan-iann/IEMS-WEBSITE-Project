@@ -7,6 +7,12 @@
                 class="d-inline-block align-text-top">
         </a>
 
+        {{-- SU Logo --}}
+        <a class="navbar-brand justify-content-center mx-auto" href="https://su.edu.ph" target="_blank">
+            <img src="{{ URL::asset('img/Logo_SU.png') }}" alt="" width="65" height="65"
+                class="d-inline-block align-text-top">
+        </a>
+
         {{-- Menu Icon --}}
         <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button"
             data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
