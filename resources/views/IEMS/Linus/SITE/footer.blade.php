@@ -9,25 +9,25 @@
 
             <ul class="list-unstyled text-light footer-link-list pt-2">
                 <li>
-                    <i class="fas fa-map-marker-alt fa-fw"></i>
+                    <i class="bx bx-map-pin"></i>
                     Dumaguete City 6200
                 </li>
                 <li>
-                    <i class="fa fa-phone fa-fw"></i>
+                    <i class="bx bx-phone"></i>
                     <a class="text-decoration-none" href="tel:+639354209002">+63 935 420 9002</a>
                 </li>
                 <li>
-                    <i class="fa fa-envelope fa-fw"></i>
+                    <i class="bx bx-envelope"></i>
                     <a class="text-decoration-none" href="mailto:iems@su.edu.ph">iems@su.edu.ph</a>
                 </li>
             </ul>
         </div>
 
         <div class="col-lg-4">
-          <div class="widget">
+          <div class="widget text-justify">
             <h3 class="text-white ">About</h3>
-            <p class="text-white">Silliman University's very own institution dedicated to
-                the study of environemntal and marine sciences. Boasting multiple facilites that
+            <p class="text-white text-justify">Silliman University's very own institution dedicated to
+                the study of environmental and marine sciences. Boasting multiple facilites that
                 help our constituents and community to better understand and care for the environent
             </p>
           </div>

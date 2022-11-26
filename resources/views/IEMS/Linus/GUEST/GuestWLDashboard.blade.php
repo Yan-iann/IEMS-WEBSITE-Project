@@ -30,7 +30,7 @@
 
                                 <div class="dropdown dropdown-lg">
                                     <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
-                                        data-bs-target="#ModalSort"><i class='bx bx-filter-alt'></i></button>
+                                        data-bs-target="#ModalSort"><i class='bx bx-sort'></i></button>
                                 </div>
                                 <button class="btn btn-info " type="submit">Search</button>
                             </div>

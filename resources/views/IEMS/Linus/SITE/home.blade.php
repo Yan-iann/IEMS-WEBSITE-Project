@@ -8,18 +8,18 @@
         background-repeat: no-repeat; background-blend-mode: multiply; background-position: center">
         <div class="content text-center ">
 
-            <h1 class="display-3 text-white text-wrap lh-1 fst-italic" style="font-family: 'Playfair Display', serif"
+            <h1 class="display-2 text-white text-wrap lh-1 fst-italic" style="font-family: 'Playfair Display', serif"
                 data-scroll data-scroll-speed="-1.5" data-scroll-direction="horizontal">
                 the institute of</h1>
 
-            <h1 class="display-3 text-white text-wrap lh-1 fst-italic" style="font-family: 'Playfair Display', serif"
+            <h1 class="display-2 text-white text-wrap lh-1 fst-italic" style="font-family: 'Playfair Display', serif"
                 data-scroll data-scroll-speed="1.5" data-scroll-direction="horizontal">
 
                 <span class="text-decoration-underline" style="font-family: 'Playfair Display', serif">environmental</span>
                 and
             </h1>
 
-            <h1 class="display-3 text-white text-wrap lh-1 fst-italic" style="font-family: 'Playfair Display', serif"
+            <h1 class="display-2 text-white text-wrap lh-1 fst-italic" style="font-family: 'Playfair Display', serif"
                 data-scroll data-scroll-speed="-1.5" data-scroll-direction="horizontal">
 
                 <span class="text-decoration-underline" style="font-family: 'Playfair Display', serif">marine</span>
@@ -38,7 +38,7 @@
         style="background-color: #bb1017; padding-top: 18px; padding-bottom:1px; object-fit:cover ">
         <div class="container-fluid">
             <div class="row d-flex align-items-center text-center justify-content-center">
-                <p data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal" class="text-white fst-italic fw-light">This is the <span class=" fw-bold">official</span> Silliman University Insitution of Environmental and
+                <p data-scroll data-scroll-speed="-1" data-scroll-direction="horizontal" class="text-white fst-italic fw-light">This is the <span class=" fw-bold">official</span> Silliman University Insitution of Environmental and
                     Marine Sciences website</p>
             </div>
         </div>
@@ -46,7 +46,7 @@
 
 
     <section data-scroll-section class="mbr-section article"
-        style="background-color: #1da2d8; padding-top: 120px; padding-bottom:120px; object-fit:cover ">
+        style="background-color: #1da2d8; padding-top: 120px; padding-bottom:100px; object-fit:cover ">
         <div class="container-fluid">
             <div class="row">
 
@@ -60,13 +60,13 @@
                     </h1>
                 </div>
 
-                <div class="col-md-12 col-lg-4 mb-5 mt-5 order-lg-2">
+                <div class="col-md-12 col-lg-4 mb-5 mt-6 order-lg-2">
                     <div class="image-stack">
                         <div class="image-stack__item image-stack__item--bottom" data-scroll data-scroll-speed="0.5">
                             <img src="{{ URL::asset('img/Home_Info1.jpg') }}" alt="Fish">
                         </div>
 
-                        <div class="image-stack__item image-stack__item--top" data-scroll data-scroll-speed="2.5">
+                        <div class="image-stack__item image-stack__item--top" data-scroll data-scroll-speed="1.5">
                             <img src="{{ URL::asset('img/Home_Info2.jpg') }}" alt="Divers">
                         </div>
                     </div>

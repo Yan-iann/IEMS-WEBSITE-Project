@@ -4,9 +4,9 @@
 
         <div class="container">
             <div class="row d-flex justify-content-center">
-                <div class="col-md-6 text-center ">
+                <div class="col-md-6  text-center">
                     <h1 class=" text-white display-2 subheader">Rates</h1>
-                    <h1 class="lead">Collaboration and Benchmarking Fees
+                    <h1 class="lead">Collaboration and Fees
                     </h1>
                 </div>
             </div>
@@ -20,7 +20,7 @@
         <div class="container">
             <div class="row d-flex justify-content-center">
 
-                {{-- Heading --}}
+                {{-- Heading
                 <div class="col-12 text-center" style="margin-bottom: 150px">
                     <p class=" fw-bold mb-0" style="color: #252525">
                         Equipment
@@ -29,24 +29,24 @@
                     <h1 class="subheader fst-italic fw-light m-0" style="color: #1DA2D8">
                         Rates and Fees
                     </h1>
-                </div>
+                </div> --}}
 
                 {{-- Bench fee Table --}}
                 <div class="col-12" style="margin-bottom:50vh">
-                    <div class="row d-flex align-items-center">
+                    <div class="row d-flex align-items-center ">
 
-                        <div class="col-12 col-md-6 col-lg-4" style="padding-right:30px">
+                        <div class="col-12 mt-3">
                             <div class="row">
                                 <h1 class=" display-3 subheader">Bench Fees</h1>
-                                <p class="lead">The usage of the bench rates as follows
+                                <p class="lead">The usage of the bench fees as follows
                                 </p>
                             </div>
                         </div>
 
-                        <div class="col-12 col-md-6 col-lg-8">
+                        <div class="col-12">
                             <div class="row d-flex align-items-center">
 
-                                <table style="width: 100%">
+                                <table style="width: 95%">
                                     <thead>
                                         <tr>
                                             <th rowspan=2>&nbsp;</th>
@@ -95,18 +95,18 @@
 
 
                 {{-- Diving Equipment --}}
-                <div class="col-12" style="margin-bottom:50vh">
-                    <div class="row d-flex align-items-center">
+                <div class="col-12"  style="margin-bottom:50vh">
+                    <div class="row d-flex align-items-center ">
 
-                        <div class="col-12 col-md-6 col-lg-4" style="padding-right:30px">
+                        <div class="col-12 mt-3">
                             <div class="row">
-                                <h1 class=" display-3 subheader">Diving Equipment</h1>
+                                <h1 class=" display-3 subheader">Diving Equipment Rental Fees</h1>
                                 <p class="lead">The usage of the diving equipment rates (daily) as follows
                                 </p>
                             </div>
                         </div>
 
-                        <div class="col-12 col-md-6 col-lg-8">
+                        <div class="col-12">
                             <div class="row d-flex align-items-center">
 
                                 <table style="width: 95%; ">
@@ -189,17 +189,17 @@
 
                 {{-- Others --}}
                 <div class="col-12" style="margin-bottom:10vh">
-                    <div class="row d-flex align-items-center">
+                    <div class="row d-flex align-items-center ">
 
-                        <div class="col-12 col-md-6 col-lg-4" style="padding-right:30px">
+                        <div class="col-12 mt-3">
                             <div class="row">
-                                <h1 class=" display-3 subheader">Others</h1>
-                                <p class="lead">Other Equipment that's also available
+                                <h1 class=" display-3 subheader">Other Equipment Rates</h1>
+                                <p class="lead">List of other equipment that's available for rental
                                 </p>
                             </div>
                         </div>
 
-                        <div class="col-12 col-md-6 col-lg-8">
+                        <div class="col-12">
                             <div class="row d-flex align-items-center">
 
                                 <table style="width: 95%;">
