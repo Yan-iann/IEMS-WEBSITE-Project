@@ -13,6 +13,8 @@
                 {{ Session::get('sucess') }}
             </div>
         @endif
+
+        
         {{-- Page Name, and Burger Icon. AND Search Bar --}}
         <div class="row d-flex justify-content-between">
             <div class="col-12 col-md-6 col-lg-6 order-sm-2 order-md-1">
@@ -251,9 +253,14 @@
 
                                 <div class="col-12 col-md-6">
                                     <label for="formGroupExampleInput" class="form-label">Email</label>
-                                    <input type="email" name="email" class="form-control" placeholder="Enter email"
+                                    <input type="email" name="email" class="form-control" placeholder="example@su.edu.ph"
                                         required>
                                 </div>
+                                @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
 
                                 <input type="hidden" class="form-control" placeholder="Enter user type "
                                     name="user_type" value="Student">

@@ -14,6 +14,12 @@
                 {{ Session::get('sucess') }}
             </div>
         @endif
+
+        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
         {{-- Page Name, and Burger Icon. AND Search Bar --}}
         <div class="row d-flex justify-content-between">
             <div class="col-12 col-md-6 col-lg-6 order-sm-2 order-md-1">
@@ -278,11 +284,16 @@
                             
                                 
                                 <div class="input-group mb-3">
-                                  <input type="text" name="email" class="form-control" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="basic-addon2">
+                                  <input type="text" name="email" class="form-control" placeholder="example@su.edu.ph" aria-label="Enter Email" aria-describedby="basic-addon2">
                                   <div class="input-group-append">
                                     <span class="input-group-text" id="basic-addon2">@su.edu.ph</span>
                                   </div>
                                 </div>
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                 
 
                                 <input type="hidden" class="form-control" name="user_type" value="Faculty">

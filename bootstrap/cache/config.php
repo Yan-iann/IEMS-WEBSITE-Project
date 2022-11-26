@@ -503,11 +503,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'mailhog',
-        'port' => '1025',
-        'encryption' => NULL,
-        'username' => NULL,
-        'password' => NULL,
+        'host' => 'smtp.gmail.com',
+        'port' => '465',
+        'encryption' => 'ssl',
+        'username' => 'iemssu2022@gmail.com',
+        'password' => 'icsxcszqfrvwrqab',
         'timeout' => NULL,
         'local_domain' => NULL,
       ),
@@ -547,10 +547,19 @@
         ),
       ),
     ),
+    'stream' => 
+    array (
+      'ssl' => 
+      array (
+        'allow_self_signed' => true,
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+      ),
+    ),
     'from' => 
     array (
-      'address' => 'hello@example.com',
-      'name' => 'Laravel',
+      'address' => 'iemssu2022@gmail.com',
+      'name' => 'IEMSADMIN',
     ),
     'markdown' => 
     array (
