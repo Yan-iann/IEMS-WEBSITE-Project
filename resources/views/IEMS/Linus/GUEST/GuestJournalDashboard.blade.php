@@ -22,13 +22,14 @@
                             <div class="btn-group" role="group">
                                 <div class="dropdown dropdown-lg">
                                     <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
-                                        data-bs-target="#ModalSearch"><i class='bx bx-filter-alt'></i></button>
+                                        data-bs-target="#ModalSearch" title="Filter"><i
+                                            class='bx bx-filter-alt'></i></button>
                                 </div>
 
                                 <div class="dropdown dropdown-lg">
                                     <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
-                                        data-bs-target="#ModalSort"><i class='bx bx-filter-alt'></i></button>
-                                </div>  
+                                        data-bs-target="#ModalSort" title="Sort"><i class='bx bx-sort'></i></button>
+                                </div>
                                 <button class="btn btn-info " type="submit">Search</button>
                             </div>
                         </div>
@@ -148,36 +149,99 @@
                                 {{-- Sort --}}
                                 <div class="col-12">
                                     <div class="row d-flex justify-content-between">
+                                        {{-- Label --}}
                                         <div class="col-6">
                                             <label class="focus-label">Sort By Title:</label>
                                         </div>
+                                        {{-- Options --}}
                                         <div class="col-6">
-                                            <a href="{{ route('j_titleDesc_G') }}"><i class="fas fa-sort"></i>Desc</a>
-                                            <a href="{{ route('j_titleAsc_G') }}" ><i class="fas fa-sort"></i>Asc</a>
+                                            <div class="input-group-btn">
+                                                <div class="btn-group" role="group">
+                                                    <div class="dropdown dropdown-lg">
+                                                        <a href="{{ route('j_titleDesc_G') }}">
+                                                            <button type="button" class="btn btn-outline-dark"
+                                                                title="Descending">
+                                                                <i class='bx bx-sort-a-z'></i> Desc
+                                                            </button>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="dropdown dropdown-lg">
+                                                        <a href="{{ route('j_titleAsc_G') }}">
+                                                            <button type="button" class="btn btn-outline-dark"
+                                                                title="Ascending">
+                                                                <i class='bx bx-sort-z-a'></i> Asc
+                                                            </button>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="row d-flex justify-content-between">
-                                        <div class="col-6">
-                                            <label class="focus-label">Sort By Date Published:</label>
-                                        </div>
-                                        <div class="col-6">
-                                            <a href="{{ route('j_datePubDesc_G') }}" ><i class="fas fa-sort"></i>Desc</a>
-                                            <a href="{{ route('j_datePubAsc_G') }}" ><i class="fas fa-sort"></i>Asc</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-12">
-                                    <div class="row d-flex justify-content-between">
+                                        {{-- Label --}}
                                         <div class="col-6">
                                             <label class="focus-label">Sort By Author:</label>
                                         </div>
+                                        {{-- Options --}}
                                         <div class="col-6">
-                                            <a href="{{ route('j_authorDesc_G') }}" ><i class="fas fa-sort"></i>Desc</a>
-                                            <a href="{{ route('j_authorAsc_G') }}" ><i class="fas fa-sort"></i>Asc</a>
+                                            <div class="input-group-btn">
+                                                <div class="btn-group" role="group">
+                                                    <div class="dropdown dropdown-lg">
+                                                        <a href="{{ route('j_authorDesc_G') }}">
+                                                            <button type="button" class="btn btn-outline-dark"
+                                                                title="Descending">
+                                                                <i class='bx bx-sort-a-z'></i> Desc
+                                                            </button>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="dropdown dropdown-lg">
+                                                        <a href="{{ route('j_authorAsc_G') }}">
+                                                            <button type="button" class="btn btn-outline-dark"
+                                                                title="Ascending">
+                                                                <i class='bx bx-sort-z-a'></i> Asc
+                                                            </button>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row d-flex justify-content-between">
+                                        {{-- Label --}}
+                                        <div class="col-6">
+                                            <label class="focus-label">Sort By Date Published:</label>
+                                        </div>
+                                        {{-- Options --}}
+                                        <div class="col-6">
+                                            <div class="input-group-btn">
+                                                <div class="btn-group" role="group">
+                                                    <div class="dropdown dropdown-lg">
+                                                        <a href="{{ route('j_datePubDesc_G') }}">
+                                                            <button type="button" class="btn btn-outline-dark"
+                                                                title="Descending">
+                                                                <i class='bx bx-sort-down'></i> Desc
+                                                            </button>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="dropdown dropdown-lg">
+                                                        <a href="{{ route('j_datePubAsc_G') }}">
+                                                            <button type="button" class="btn btn-outline-dark"
+                                                                title="Ascending">
+                                                                <i class='bx bx-sort-up'></i> Asc
+                                                            </button>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
