@@ -12,7 +12,7 @@
     <script type="text/javascript" src="{{ URL::asset('js/script.js') }}"></script>
 
     {{-- Locomotive Scroll --}}
-    <link rel="stylesheet" href="{{ asset('css/locomotive-scroll.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/locomotive-scroll.css') }}"> --}}
 
 
     {{-- Bootstrap --}}
@@ -27,7 +27,8 @@
 </head>
 
 <body>
-
+    <div id="top">
+    </div>
 
     <div data-scroll-container class="container-fluid m-0 p-0">
 
@@ -36,14 +37,16 @@
         @include('IEMS.Linus.SITE.footer')
     </div>
 
-
+    <a class="float" href="#top" data-scroll data-scroll-target="top">
+        <i class='bx bxs-chevron-up-circle my-float'></i>
+    </a>
 
 </body>
-    {{-- Locomotive Script --}}
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-    <script src="{{ URL::asset('js/locomotive.js') }}"></script>
+{{-- Locomotive Script --}}
+{{-- <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script> --}}
+{{-- <script src="{{ URL::asset('js/locomotive.js') }}"></script> --}}
 
-    {{-- Navbar Script --}}
-    <script src="{{ URL::asset('js/iems_nav.js') }}"></script>
+{{-- Navbar Script --}}
+<script src="{{ URL::asset('js/iems_nav.js') }}"></script>
 
 </html>

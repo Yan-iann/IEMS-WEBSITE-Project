@@ -1,5 +1,6 @@
 <!-- Navbar  -->
-<nav id="navbar"class="navbar fixed-top navbar-expand-lg navbar-light justify-content-center p-16" data-scroll-section>
+<nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-light justify-content-center p-16" data-scroll-section
+    data-scroll-section-sticky data-scroll-target="top">
     <div class="container p-6">
         {{-- IEMS Logo --}}
         <a class="navbar-brand justify-content-center mx-auto" href="/">
@@ -29,7 +30,7 @@
                     <a class="nav-link font-weight-bold " href="/exhibit">Exhibit</a>
                 </li>
                 <li class="nav-item" style="padding:5px">
-                    <a class="nav-link font-weight-bold" href="/construction">Fishery</a>
+                    <a class="nav-link font-weight-bold" href="/construction" hidden>Fishery</a>
                 </li>
                 <li class="nav-item dropdown" style="padding:5px">
                     <a class="nav-link dropdown-toggle font-weight-bold text-s" data-bs-toggle="dropdown">About</a>
@@ -38,7 +39,8 @@
                         <li><a class="dropdown-item" href="/enrollment">Enrollment</a></li>
                         <li><a class="dropdown-item" href="/facilities">Facilities</a></li>
                         <li><a class="dropdown-item" href="/rates">Rates</a></li>
-                        <li><a class="dropdown-item" href="/facultystaff">Faculty and Staff</a></li>
+                        <li><a class="dropdown-item" href="/facultystaff">Faculty & Staff</a></li>
+                        <li><a class="dropdown-item" href="/visionmission">Vision & Mission</a></li>
                     </ul>
                 </li>
                 <li class="nav-item" style="padding:5px">
@@ -48,6 +50,9 @@
                     <a class="nav-link font-weight-bold" href="/contact-us">Contact Us</a>
                 </li>
             </ul>
+        </div>
+
+        <div class="mx-auto">
         </div>
     </div>
 </nav>

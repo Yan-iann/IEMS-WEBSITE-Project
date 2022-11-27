@@ -79,4 +79,8 @@ class IEMSWebsite extends Controller
         return view('IEMS.Linus.SITE.construction');
     }
 
+    function accessVision(){
+        return view('IEMS.Linus.SITE.visionmission');
+    }
+
 }

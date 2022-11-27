@@ -8,6 +8,7 @@
         background-repeat: no-repeat; background-blend-mode: multiply; background-position: center">
         <div class="content text-center ">
 
+            <h2 class="lead text-white mt-4">Silliman University</h2>
             <h1 class="display-2 text-white text-wrap lh-1 fst-italic" style="font-family: 'Playfair Display', serif"
                 data-scroll data-scroll-speed="-1.5" data-scroll-direction="horizontal">
                 the institute of</h1>
@@ -38,7 +39,9 @@
         style="background-color: #bb1017; padding-top: 18px; padding-bottom:1px; object-fit:cover ">
         <div class="container-fluid">
             <div class="row d-flex align-items-center text-center justify-content-center">
-                <p data-scroll data-scroll-speed="-1" data-scroll-direction="horizontal" class="text-white fst-italic fw-light">This is the <span class=" fw-bold">official</span> Silliman University Insitution of Environmental and
+                <p data-scroll data-scroll-speed="-1" data-scroll-direction="horizontal"
+                    class="text-white fst-italic fw-light">This is the <span class=" fw-bold">official</span> Silliman
+                    University Insitution of Environmental and
                     Marine Sciences website</p>
             </div>
         </div>
@@ -89,7 +92,7 @@
                 </div>
 
 
-                <div class="col-12 col-md-12 col-xl-4 order-lg-1 d-none d-lg-block" style="margin-top: 300px">
+                <div class="col-12 col-md-12 col-xl-4 order-lg-1 d-none d-lg-block" style="margin-top: 190px">
                     <div class="row d-flex justify-content-center align-items-end">
                         <div class="col-12 m-15" style="padding-bottom: 50px" data-aos="fade-up" data-aos-delay="0">
                             <div class="text text-center" style="padding-left: 40px;padding-right:40px">
@@ -200,7 +203,8 @@
                     style="padding-bottom: 50px">
                     <p class="lead m-0 fw-bold" style="padding-bottom: 20px">Announcements</p>
                     <h1 class="display-2 subheader fst-italic lh-1"
-                        style="color:#1da2d8; font-family: 'Playfair Display', serif; padding-bottom: 20px" data-scroll data-scroll-speed="1.5" data-scroll-direction="horizontal">See What's
+                        style="color:#1da2d8; font-family: 'Playfair Display', serif; padding-bottom: 20px" data-scroll
+                        data-scroll-speed="1.5" data-scroll-direction="horizontal">See What's
                         Happening</h1>
                     <p class="lead">Check out the different events thats is going around the college today </p>
                 </div>
@@ -293,6 +297,8 @@
                     aria-label="Slide 5"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
                     aria-label="Slide 6"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6"
+                    aria-label="Slide 7"></button>
             </div>
 
             {{-- Carousel-Inner Container --}}
@@ -305,7 +311,7 @@
                     <div class="container">
                         <div class="carousel-caption">
                             <h1 class="subheader  text-white fst-italic fw-light">The College</h1>
-                            <p>History, Vision, & Mission</p>
+                            <p>History of how we became to be</p>
                             <p><a class="btn btn-lg btn-light" href="/college">Learn more</a></p>
                         </div>
                     </div>
@@ -371,6 +377,18 @@
                     </div>
                 </div>
 
+                {{-- Carousel Item 7 --}}
+                <div class="carousel-item"
+                    style="background-image: linear-gradient(0deg, #00000034,  #00000034),url('img/Carousel_Vision.jpg'); background-size:cover;background-repeat: no-repeat; background-blend-mode: multiply; background-position:center; ">
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1 class="subheader  text-white fst-italic fw-light">Vision & Mission</h1>
+                            <p>The goals of what the college strive for</p>
+                            <p><a class="btn btn-lg btn-light" href="/visionmission">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+
             </div> {{-- End Carousel-Inner Container --}}
 
             {{-- Slider Buttons --}}
@@ -400,7 +418,8 @@
             <div class="row justify-content-around">
                 <div class="col-lg-4 mb-lg-0">
 
-                    <h1 class="mb-4 subheader " data-scroll data-scroll-speed="1.5" data-scroll-direction="horizontal">Frequently Asked Questions</h1>
+                    <h1 class="mb-4 subheader " data-scroll data-scroll-speed="1.5" data-scroll-direction="horizontal">
+                        Frequently Asked Questions</h1>
                     <div class="line my-3"></div>
                     <p data-scroll data-scroll-speed="1.9">
                         Here are some common queries that are usually asked by everyone.
@@ -489,7 +508,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-12 col-lg-6 " style="z-index: 1">
-                    <h1 class="col-12 display-2 subheader" style="font-family: 'Playfair Display', serif;">
+                    <h1 class="col-12 display-3 subheader" style="font-family: 'Playfair Display', serif;">
                         Become a student today
                     </h1>
 

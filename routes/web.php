@@ -228,7 +228,5 @@ Route::get('/announcementDisplay/{anno_ID}',[IEMSWebsite::class, 'accessAnnounce
 Route::get('contact-us', [ContactController::class, 'index']);
 Route::post('contact-us', [ContactController::class, 'store'])->name('contact-us.store');
 Route::get('/construction',[IEMSWebsite::class,'underConstruction']);
+Route::get('/visionmission',[IEMSWebsite::class,'accessVision']);
 require __DIR__.'/auth.php';
-
-
-
