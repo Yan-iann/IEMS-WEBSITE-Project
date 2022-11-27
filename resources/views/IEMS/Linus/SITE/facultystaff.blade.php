@@ -73,7 +73,7 @@
 
 
                         {{-- Faculty Photo Section --}}
-                        <div class="col-12 col-md-6 d-flex p-0 ">
+                        <div class="col-12 col-md-6 d-flex p-0 d-sm-none">
                             <div class="modal-body text-center align-items-center"
                                 style="background-image: url('{{ asset($item->profile_pic) }}');  {{-- Photo in background image --}}
                                 background-size:cover;background-repeat: no-repeat; background-blend-mode: multiply;
