@@ -40,7 +40,7 @@
                         <li><a class="dropdown-item" href="/facilities">Facilities</a></li>
                         <li><a class="dropdown-item" href="/rates">Rates</a></li>
                         <li><a class="dropdown-item" href="/facultystaff">Faculty & Staff</a></li>
-                        <li><a class="dropdown-item" href="/visionmission">Vision & Mission</a></li>
+                        <li><a class="dropdown-item" href="/vision">Vision & Mission</a></li>
                     </ul>
                 </li>
                 <li class="nav-item" style="padding:5px">

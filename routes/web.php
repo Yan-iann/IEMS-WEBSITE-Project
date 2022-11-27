@@ -219,6 +219,7 @@ Route::get('/j_authorA_G',[guestController::class, 'j_authorAsc'])->name('j_auth
 //SITE ///////////////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/college',[IEMSWebsite::class, 'accessCollege']);
 Route::get('/enrollment',[IEMSWebsite::class, 'accessEnrollment']);
+Route::get('/vision',[IEMSWebsite::class, 'accessVision']);
 Route::get('/facilities',[IEMSWebsite::class, 'accessFacilities']);
 Route::get('/exhibit',[IEMSWebsite::class, 'accessLinus']);
 Route::get('/rates',[IEMSWebsite::class, 'accessRates']);
@@ -228,5 +229,4 @@ Route::get('/announcementDisplay/{anno_ID}',[IEMSWebsite::class, 'accessAnnounce
 Route::get('contact-us', [ContactController::class, 'index']);
 Route::post('contact-us', [ContactController::class, 'store'])->name('contact-us.store');
 Route::get('/construction',[IEMSWebsite::class,'underConstruction']);
-Route::get('/visionmission',[IEMSWebsite::class,'accessVision']);
 require __DIR__.'/auth.php';

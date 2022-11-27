@@ -73,8 +73,8 @@
 
 
                         {{-- Faculty Photo Section --}}
-                        <div class="col-md-6 d-flex p-0">
-                            <div class="modal-body  img d-flex img text-center d-flex align-items-center"
+                        <div class="col-12 col-md-6 d-flex p-0 ">
+                            <div class="modal-body text-center align-items-center"
                                 style="background-image: url('{{ asset($item->profile_pic) }}');  {{-- Photo in background image --}}
                                 background-size:cover;background-repeat: no-repeat; background-blend-mode: multiply;
                                 background-position: center">
@@ -84,7 +84,7 @@
 
 
                         {{-- Faculty Details Section --}}
-                        <div class="col-md-6 d-flex p-0">
+                        <div class="col-12 col-md-6 d-flex p-0">
                             <div class="modal-body  align-items-center" style="background-color:rgb(242, 242, 242)">
 
                                 {{-- Exit Modal --}}
@@ -99,7 +99,7 @@
                                     {{-- Name Of Faculty --}}
                                     <div class="col-12">
                                         <label class="form-label">Name</label>
-                                        <h3>{{ $item->name }}  {{ $item->middle_name }} {{ $item->last_name }}</h3>
+                                        <h3>{{ $item->name }} {{ $item->middle_name }} {{ $item->last_name }}</h3>
                                     </div>
 
                                     {{-- Rank --}}
@@ -117,27 +117,30 @@
                                     {{-- Educational Attainment --}}
                                     <div class="col-12">
                                         <label class="form-label">Highest Educational Attainment</label>
-                                        {{-- insert foreach here para sa educational attainment alone --}}
-                                        {{--
-                                                            <ul style:"list-style-type: square">
-                                                                foreach //educational attainment//
-                                                                <li> increment sa educational attainment </li>
-                                                                endforeach
-                                                            --}}
                                         <h5>{{ $item->educational }}</h5>
+                                        <p muted><a style="color:grey; font-size:10px"
+                                                href="https://su.edu.ph/schools-colleges/institute-of-environmental-and-marine-sciences/#1496906704183-21f58a96-bb753162-a29b">
+                                                click here to see educational background
+                                            </a></p>
                                     </div>
 
                                     {{-- Contact Details --}}
-                                    <div class=" col-12 d-flex justify-content-between">
+                                    <div class=" col-12">
+                                        <div class="row  d-flex justify-content-between">
 
-                                        <div class="col-12 col-lg-4">
-                                            <p class="text-muted"><i class="bx bx-envelope"> {{ $item->email }}</i></p>
-                                            {{-- Email --}}
-                                        </div>
+                                            <div class="col-12 col-lg-8">
+                                                <p class="text-muted align-text-center"><i class="bx bx-envelope">
+                                                        {{ $item->email }}</i>
+                                                </p>
+                                                {{-- Email --}}
+                                            </div>
 
-                                        <div class="col-12 col-lg-4" >
-                                            <p class="text-muted align-text-centeralign-text-center"><i class="bx bx-phone"> {{ $item->phone_no }}</i></p>
-                                            {{-- Contact Number --}}
+                                            <div class="col-12 col-lg-4">
+                                                <p class="text-muted align-text-center"><i class="bx bx-phone">
+                                                        {{ $item->phone_no }}</i></p>
+                                                {{-- Contact Number --}}
+                                            </div>
+
                                         </div>
                                     </div>
 

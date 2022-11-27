@@ -60,6 +60,10 @@ class IEMSWebsite extends Controller
         return view('IEMS.Linus.SITE.rates');
     }
 
+    function accessVision(){
+        return view('IEMS.Linus.SITE.visionmission');
+    }
+
     public function accessAnnouncement()
     {
         $anno = DB::table('announcement')
@@ -77,10 +81,6 @@ class IEMSWebsite extends Controller
 
     function underConstruction(){
         return view('IEMS.Linus.SITE.construction');
-    }
-
-    function accessVision(){
-        return view('IEMS.Linus.SITE.visionmission');
     }
 
 }
