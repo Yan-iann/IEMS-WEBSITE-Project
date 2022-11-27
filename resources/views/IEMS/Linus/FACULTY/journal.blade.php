@@ -4,17 +4,17 @@
 
         <div class="row d-flex justify-content-between">
             {{-- Page Name, and Burger Icon. AND Search Bar --}}
-                                @if(Session::get('fail'))
-                                <div class="alert alert-danger">
-                                    {{ Session::get('fail')}}
-                                </div>
-                                @endif
+            @if (Session::get('fail'))
+                <div class="alert alert-danger">
+                    {{ Session::get('fail') }}
+                </div>
+            @endif
 
-                                @if(Session::get('sucess'))
-                                    <div class="alert alert-success">
-                                      {{ Session::get('sucess')}}
-                                    </div>
-                                @endif
+            @if (Session::get('sucess'))
+                <div class="alert alert-success">
+                    {{ Session::get('sucess') }}
+                </div>
+            @endif
             <div class="col-12 col-md-6 col-lg-6 order-sm-2 order-md-1">
                 <div class="home-content">
                     <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center">
@@ -34,11 +34,12 @@
                             <div class="btn-group" role="group">
                                 <div class="dropdown dropdown-lg">
                                     <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
-                                        data-bs-target="#ModalSearch"><i class='bx bx-filter-alt'></i></button>
+                                        data-bs-target="#ModalSearch" title="Filter"><i
+                                            class='bx bx-filter-alt'></i></button>
                                 </div>
                                 <div class="dropdown dropdown-lg">
                                     <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
-                                        data-bs-target="#ModalSort"><i class='bx bx-filter-alt'></i></button>
+                                        data-bs-target="#ModalSort" title="Sort"><i class='bx bx-sort'></i></button>
                                 </div>
 
                                 <button class="btn btn-info " type="submit">Search</button>
@@ -146,35 +147,40 @@
                                 </div>
                                 <!--Column4-->
 
-                  <!--Column4-->
-                  <div class="col-4">
-                    <label for="formGroupExampleInput2" class="form-label">Date Published</label>
-                    <input type="date" class="form-control" placeholder="Enter Date Published" name="date_published" >
-                  </div>
-                  <div class="col-4">
-                    <label for="formGroupExampleInput2" class="form-label">Date Added</label>
-                    <input type="date" class="form-control" placeholder="Enter Date Published" name="date_added" >
-                  </div>
-                  <!--Form Group-->
-                  <div class="form-group">
-                    <label for="wildlife_order">Journal Description:</label>
-                    <input type="input" class="form-control"  placeholder="Enter Journal Description" name="journal_desc">
-                  </div>
-                  <!--Hidden Inputs-->
-                  <input type="hidden" class="form-control" name="journal_status" value="approved">
-                  <input type="hidden" class="form-control" name="info_type" value="journal_paper">
-                   <!--Footer-->
-                  <div class="modal-footer border-0">
-                    <button type="submit" class="btn btn-info">Submit</button>
-                    <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Cancel</button>
-                  </div>
+                                <!--Column4-->
+                                <div class="col-4">
+                                    <label for="formGroupExampleInput2" class="form-label">Date Published</label>
+                                    <input type="date" class="form-control" placeholder="Enter Date Published"
+                                        name="date_published">
+                                </div>
+                                <div class="col-4">
+                                    <label for="formGroupExampleInput2" class="form-label">Date Added</label>
+                                    <input type="date" class="form-control" placeholder="Enter Date Published"
+                                        name="date_added">
+                                </div>
+                                <!--Form Group-->
+                                <div class="form-group">
+                                    <label for="wildlife_order">Journal Description:</label>
+                                    <input type="input" class="form-control" placeholder="Enter Journal Description"
+                                        name="journal_desc">
+                                </div>
+                                <!--Hidden Inputs-->
+                                <input type="hidden" class="form-control" name="journal_status" value="approved">
+                                <input type="hidden" class="form-control" name="info_type" value="journal_paper">
+                                <!--Footer-->
+                                <div class="modal-footer border-0">
+                                    <button type="submit" class="btn btn-info">Submit</button>
+                                    <button type="button" class="btn btn-outline-info"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                            <!--End Of Modal Content-->
+                        </div>
+                    </div>
                 </div>
-                <!--End Of Modal Content-->
+                <!--End Of Modal-->
             </div>
         </div>
-</div>     <!--End Of Modal-->
-</div>
-</div>
     </form>
 
     <!--advance search-->
@@ -194,8 +200,8 @@
                         <div class="container-fluid">
                             <div class="row g-4 m-4 p-0 d-flex align-items-stretch">
 
-                                 {{-- Refernce Filter --}}
-                                 <div class="col-12">
+                                {{-- Refernce Filter --}}
+                                <div class="col-12">
                                     <div class="row d-flex justify-content-between">
                                         <div class="col-6">
                                             <label class="focus-label">Reference:</label>
@@ -246,62 +252,123 @@
     <!--end of form-->
 
     <div class="modal fade" id="ModalSort" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                <div class="modal-content  bg-light">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content  bg-light">
 
-                    <div class="modal-header border-0 text-center">
-                        <h5 class="modal-title  text-center">Sort Options</h5>
-                        <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
+                <div class="modal-header border-0 text-center">
+                    <h5 class="modal-title  text-center">Sort Options</h5>
+                    <button type="button" class="btn-close btn-info bg-info" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
 
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
 
+                            {{-- Sort --}}
+                            <div class="col-12">
+                                <div class="row d-flex justify-content-between">
+                                    {{-- Label --}}
+                                    <div class="col-6">
+                                        <label class="focus-label">Sort By Title:</label>
+                                    </div>
+                                    {{-- Options --}}
+                                    <div class="col-6">
+                                        <div class="input-group-btn">
+                                            <div class="btn-group" role="group">
+                                                <div class="dropdown dropdown-lg">
+                                                    <a href="{{ route('j_titleDesc') }}">
+                                                        <button type="button" class="btn btn-outline-dark"
+                                                            title="Descending">
+                                                            <i class='bx bx-sort-a-z'></i> Desc
+                                                        </button>
+                                                    </a>
+                                                </div>
 
-
-                                {{-- Sort --}}
-                                <div class="col-12">
-                                    <div class="row d-flex justify-content-between">
-                                        <div class="col-6">
-                                            <label class="focus-label">Sort By Title:</label>
-                                        </div>
-                                        <div class="col-6">
-                                            <a href="{{ route('j_titleDesc') }}"><i class="fas fa-sort"></i>Desc</a>
-                                            <a href="{{ route('j_titleAsc') }}" ><i class="fas fa-sort"></i>Asc</a>
+                                                <div class="dropdown dropdown-lg">
+                                                    <a href="{{ route('j_titleAsc') }}">
+                                                        <button type="button" class="btn btn-outline-dark"
+                                                            title="Ascending">
+                                                            <i class='bx bx-sort-z-a'></i> Asc
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-12">
-                                    <div class="row d-flex justify-content-between">
-                                        <div class="col-6">
-                                            <label class="focus-label">Sort By Date Published:</label>
-                                        </div>
-                                        <div class="col-6">
-                                            <a href="{{ route('j_datePubDesc') }}" ><i class="fas fa-sort"></i>Desc</a>
-                                            <a href="{{ route('j_datePubAsc') }}" ><i class="fas fa-sort"></i>Asc</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-12">
-                                    <div class="row d-flex justify-content-between">
-                                        <div class="col-6">
-                                            <label class="focus-label">Sort By Author:</label>
-                                        </div>
-                                        <div class="col-6">
-                                            <a href="{{ route('j_authorDesc') }}" ><i class="fas fa-sort"></i>Desc</a>
-                                            <a href="{{ route('j_authorAsc') }}" ><i class="fas fa-sort"></i>Asc</a>
-                                        </div>
-                                    </div>
-                                </div>
-
                             </div>
+
+                            <div class="col-12">
+                                <div class="row d-flex justify-content-between">
+                                    {{-- Label --}}
+                                    <div class="col-6">
+                                        <label class="focus-label">Sort By Author:</label>
+                                    </div>
+                                    {{-- Options --}}
+                                    <div class="col-6">
+                                        <div class="input-group-btn">
+                                            <div class="btn-group" role="group">
+                                                <div class="dropdown dropdown-lg">
+                                                    <a href="{{ route('j_authorDesc') }}">
+                                                        <button type="button" class="btn btn-outline-dark"
+                                                            title="Descending">
+                                                            <i class='bx bx-sort-a-z'></i> Desc
+                                                        </button>
+                                                    </a>
+                                                </div>
+
+                                                <div class="dropdown dropdown-lg">
+                                                    <a href="{{ route('j_authorAsc') }}">
+                                                        <button type="button" class="btn btn-outline-dark"
+                                                            title="Ascending">
+                                                            <i class='bx bx-sort-z-a'></i> Asc
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="row d-flex justify-content-between">
+                                    {{-- Label --}}
+                                    <div class="col-6">
+                                        <label class="focus-label">Sort By Date Published:</label>
+                                    </div>
+                                    {{-- Options --}}
+                                    <div class="col-6">
+                                        <div class="input-group-btn">
+                                            <div class="btn-group" role="group">
+                                                <div class="dropdown dropdown-lg">
+                                                    <a href="{{ route('j_datePubDesc') }}">
+                                                        <button type="button" class="btn btn-outline-dark"
+                                                            title="Descending">
+                                                            <i class='bx bx-sort-down'></i> Desc
+                                                        </button>
+                                                    </a>
+                                                </div>
+
+                                                <div class="dropdown dropdown-lg">
+                                                    <a href="{{ route('j_datePubAsc') }}">
+                                                        <button type="button" class="btn btn-outline-dark"
+                                                            title="Ascending">
+                                                            <i class='bx bx-sort-up'></i> Asc
+                                                        </button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 @endsection

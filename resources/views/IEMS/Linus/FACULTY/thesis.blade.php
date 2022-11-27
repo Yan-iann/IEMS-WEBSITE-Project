@@ -34,12 +34,13 @@
                             <div class="btn-group" role="group">
                                 <div class="dropdown dropdown-lg">
                                     <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
-                                        data-bs-target="#ModalSearch"><i class='bx bx-filter-alt'></i></button>
+                                        data-bs-target="#ModalSearch" title="Filter"><i
+                                            class='bx bx-filter-alt'></i></button>
                                 </div>
 
                                 <div class="dropdown dropdown-lg">
                                     <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
-                                        data-bs-target="#ModalSort"><i class='bx bx-filter-alt'></i></button>
+                                        data-bs-target="#ModalSort" title="Sort"><i class='bx bx-sort'></i></button>
                                 </div>
                                 <button class="btn btn-info " type="submit">Search</button>
                             </div>
@@ -125,8 +126,8 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <label for="formGroupExampleInput" class="form-label">Thesis Title</label>
-                                                <input type="input" class="form-control" placeholder="Enter Thesis Title"
-                                                    name="thesis_title">
+                                                <input type="input" class="form-control"
+                                                    placeholder="Enter Thesis Title" name="thesis_title">
                                             </div>
                                         </div>
                                         <div class="row">
@@ -168,11 +169,11 @@
                                             data-bs-dismiss="modal">Cancel</button>
                                     </div>
                                 </div>
-                                </div>
-</div>
-</div>
-</div>
-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
 
         <!--advance search-->
@@ -261,39 +262,106 @@
 
 
 
+
                                 {{-- Sort --}}
+                                {{-- Title --}}
                                 <div class="col-12">
                                     <div class="row d-flex justify-content-between">
+                                        {{-- Label --}}
                                         <div class="col-6">
                                             <label class="focus-label">Sort By Title:</label>
                                         </div>
+                                        {{-- Options --}}
                                         <div class="col-6">
-                                            <a href="{{ route('titleDesc') }}"><i class="fas fa-sort"></i>Desc</a>
-                                            <a href="{{ route('titleAsc') }}" ><i class="fas fa-sort"></i>Asc</a>
+                                            <div class="input-group-btn">
+                                                <div class="btn-group" role="group">
+                                                    <div class="dropdown dropdown-lg">
+                                                        <a href="{{ route('titleDesc') }}">
+                                                            <button type="button" class="btn btn-outline-dark"
+                                                                title="Descending">
+                                                                <i class='bx bx-sort-a-z'></i> Desc
+                                                            </button>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="dropdown dropdown-lg">
+                                                        <a href="{{ route('titleAsc') }}">
+                                                            <button type="button" class="btn btn-outline-dark"
+                                                                title="Ascending">
+                                                                <i class='bx bx-sort-z-a'></i> Asc
+                                                            </button>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
+                                {{-- Author --}}
                                 <div class="col-12">
                                     <div class="row d-flex justify-content-between">
-                                        <div class="col-6">
-                                            <label class="focus-label">Sort By Date Published:</label>
-                                        </div>
-                                        <div class="col-6">
-                                            <a href="{{ route('datePubDesc') }}" ><i class="fas fa-sort"></i>Desc</a>
-                                            <a href="{{ route('datePubAsc') }}" ><i class="fas fa-sort"></i>Asc</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-12">
-                                    <div class="row d-flex justify-content-between">
+                                        {{-- Label --}}
                                         <div class="col-6">
                                             <label class="focus-label">Sort By Author:</label>
                                         </div>
+                                        {{-- Options --}}
                                         <div class="col-6">
-                                            <a href="{{ route('authorDesc') }}" ><i class="fas fa-sort"></i>Desc</a>
-                                            <a href="{{ route('authorAsc') }}" ><i class="fas fa-sort"></i>Asc</a>
+                                            <div class="input-group-btn">
+                                                <div class="btn-group" role="group">
+                                                    <div class="dropdown dropdown-lg">
+                                                        <a href="{{ route('authorDesc') }}">
+                                                            <button type="button" class="btn btn-outline-dark"
+                                                                title="Descending">
+                                                                <i class='bx bx-sort-a-z'></i> Desc
+                                                            </button>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="dropdown dropdown-lg">
+                                                        <a href="{{ route('authorAsc') }}">
+                                                            <button type="button" class="btn btn-outline-dark"
+                                                                title="Ascending">
+                                                                <i class='bx bx-sort-z-a'></i> Asc
+                                                            </button>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- Date --}}
+                                <div class="col-12">
+                                    <div class="row d-flex justify-content-between">
+                                        {{-- Label --}}
+                                        <div class="col-6">
+                                            <label class="focus-label">Sort By Date Published:</label>
+                                        </div>
+                                        {{-- Options --}}
+                                        <div class="col-6">
+                                            <div class="input-group-btn">
+                                                <div class="btn-group" role="group">
+                                                    <div class="dropdown dropdown-lg">
+                                                        <a href="{{ route('datePubDesc') }}">
+                                                            <button type="button" class="btn btn-outline-dark"
+                                                                title="Descending">
+                                                                <i class='bx bx-sort-down'></i> Desc
+                                                            </button>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="dropdown dropdown-lg">
+                                                        <a href="{{ route('datePubAsc') }}">
+                                                            <button type="button" class="btn btn-outline-dark"
+                                                                title="Ascending">
+                                                                <i class='bx bx-sort-up'></i> Asc
+                                                            </button>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
