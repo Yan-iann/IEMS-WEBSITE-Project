@@ -53,7 +53,9 @@
 
             </div>
             <button class="bi bi-eye-slash" id="togglePassword" type="button"></button>
-
+            <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                {{ __('Dont Have An Account? Register Here') }}
+            </a>
 
             <br>
             <button class="btn btn-info">
