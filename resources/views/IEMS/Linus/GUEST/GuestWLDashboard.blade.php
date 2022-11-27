@@ -171,31 +171,70 @@
 
                     <div class="modal-body">
                         <div class="container-fluid">
-                            <div class="row g-4 m-4 p-0 d-flex align-items-stretch g-l">
+                            <div class="row g-4 m-4 p-0 d-flex align-items-stretch justify-content-center">
 
 
 
-                                {{-- Sort --}}
+                                {{-- Sort Options --}}
+
+                                {{-- Alphabetical --}}
                                 <div class="col-12">
                                     <div class="row d-flex justify-content-between">
                                         <div class="col-6">
                                             <label class="focus-label">Sort By Name:</label>
                                         </div>
                                         <div class="col-6">
-                                            <a href="{{ route('sortNameDesc_G') }}"><i class="fas fa-sort"></i>Desc</a>
-                                            <a href="{{ route('sortNameAsc_G') }}" ><i class="fas fa-sort"></i>Asc</a>
+                                            <div class="input-group-btn">
+                                                <div class="btn-group" role="group">
+                                                    <div class="dropdown dropdown-lg">
+                                                        <a href="{{ route('sortNameDesc_G') }}">
+                                                            <button type="button" class="btn btn-outline-dark" title="Descending">
+                                                                <i class='bx bx-sort-a-z'></i> Desc
+                                                            </button>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="dropdown dropdown-lg">
+                                                        <a href="{{ route('sortNameAsc_G') }}">
+                                                            <button type="button" class="btn btn-outline-dark" title="Ascending">
+                                                                <i class='bx bx-sort-z-a'></i> Asc
+                                                            </button>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
+
+
+                                {{-- Date --}}
                                 <div class="col-12">
                                     <div class="row d-flex justify-content-between">
                                         <div class="col-6">
                                             <label class="focus-label">Sort By Date Added:</label>
                                         </div>
-                                        <div class="col-6">
-                                            <a href="{{ route('dateAddedDesc_G') }}" ><i class="fas fa-sort"></i>Desc</a>
-                                            <a href="{{ route('dateAddedAsc_G') }}" ><i class="fas fa-sort"></i>Asc</a>
+                                        <div class="col-6 d-flex align-items-center">
+                                            <div class="input-group-btn">
+                                                <div class="btn-group" role="group">
+                                                    <div class="dropdown dropdown-lg">
+                                                        <a href="{{ route('dateAddedDesc_G') }}">
+                                                            <button type="button" class="btn btn-outline-dark" title="Descending">
+                                                                <i class='bx bx-sort-down'></i> Desc
+                                                            </button>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="dropdown dropdown-lg">
+                                                        <a href="{{ route('dateAddedAsc_G') }}">
+                                                            <button type="button" class="btn btn-outline-dark" title="Ascending">
+                                                                <i class='bx bx-sort-up'></i> Asc
+                                                            </button>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
