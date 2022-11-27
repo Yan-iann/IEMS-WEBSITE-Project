@@ -1,5 +1,4 @@
-<div class="modal fade m-3" id="ModalWildlife{{ $item->info_ID }}" tabindex="-1" aria-labelledby="ModalLabel"
-    aria-hidden="true">
+<div class="modal fade m-3" id="ModalWildlife{{ $item->info_ID }}" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
         <div class="modal-content  bg-light">
 
@@ -51,10 +50,8 @@
             </div>
             <div class="modal-footer border-0">
 
-                <button type="button" class="btn btn-info" style="color:white"data-bs-toggle="modal"
-                    data-bs-target="#ModalEditWl{{ $item->info_ID }}">Edit</button>
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                    data-bs-target="#ModalDeleteWl{{ $item->info_ID }}">Delete</button>
+                <button type="button" class="btn btn-info" style="color:white" data-bs-toggle="modal" data-bs-target="#ModalEditWl{{ $item->info_ID }}">Edit</button>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ModalDeleteWl{{ $item->info_ID }}">Delete</button>
 
             </div>
         </div>

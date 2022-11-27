@@ -11,12 +11,8 @@ use App\Models\Wildlife;
 use App\Models\thesis_paper;
 use App\Models\journal_article;
 use App\Models\announcement;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
 
@@ -600,6 +596,7 @@ class studentController extends Controller
             ->get();
 
         $wildlife = Wildlife::where('wildlife_type', 'Reference')->get();
+
         if ($request->wildlife_genus) {
             $wildlife = Wildlife::where('wildlife_genus', 'LIKE', '%' . $request->wildlife_genus . '%')
                 ->where('wildlife_type', 'Reference')
@@ -646,7 +643,8 @@ class studentController extends Controller
             ->where('wildlife_type', 'Reference')
             ->get();
 
-        $wildlife = Wildlife::where('wildlife_type', 'Reference')->get();
+        $wildlife = Wildlife::where('wildlife_type', 'Reference')
+            ->get();
         if ($request->wildlife_genus) {
             $wildlife = Wildlife::where('wildlife_genus', 'LIKE', '%' . $request->wildlife_genus . '%')
                 ->where('wildlife_type', 'Reference')
@@ -795,6 +793,58 @@ class studentController extends Controller
             ->with('searchLoc', $searchLoc);
     }
 
+    public function sortNameDescB_S()
+    {
+
+        $searchGenus = DB::table('wildlife')
+            ->select('wildlife.wildlife_genus')
+            ->distinct('wildlife.wildlife_genus')
+            ->where('wildlife_type', 'Bone')
+            ->get();
+
+        $searchDate = DB::table('wildlife')
+            ->select('wildlife.date_added')
+            ->distinct('wildlife.date_added')
+            ->where('wildlife_type', 'Bone')
+            ->get();
+
+        $wildlife = Wildlife::where('wildlife_type', 'Bone')
+            ->orderBy('wildlife_name', 'DESC')
+            ->get();
+
+        return view('IEMS.Linus.STUDENT.StudentBoneCollection')
+            ->with('wildlifes', $wildlife)
+            ->with('searchGenus', $searchGenus)
+            ->with('searchDate', $searchDate);
+    }
+    public function sortNameDescR_S()
+    {
+
+        $searchGenus = DB::table('wildlife')
+            ->select('wildlife.wildlife_genus')
+            ->distinct('wildlife.wildlife_genus')
+            ->where('wildlife_type', 'Reference')
+            ->get();
+
+        $searchDate = DB::table('wildlife')
+            ->select('wildlife.date_added')
+            ->distinct('wildlife.date_added')
+            ->where('wildlife_type', 'Reference')
+            ->get();
+
+
+        $wildlife = Wildlife::where('wildlife_type', 'Reference')
+            ->orderBy('wildlife_name', 'DESC')
+            ->get();
+
+        return view('IEMS.Linus.STUDENT.StudentRefCollection')
+            ->with('wildlifes', $wildlife)
+            ->with('searchGenus', $searchGenus)
+            ->with('searchDate', $searchDate);
+    }
+
+
+
     public function sortNameAsc()
     {
 
@@ -824,6 +874,56 @@ class studentController extends Controller
             ->with('searchClass', $searchClass)
             ->with('searchSpecie', $searchSpecie)
             ->with('searchLoc', $searchLoc);
+    }
+    public function sortNameAscB_S()
+    {
+
+        $searchGenus = DB::table('wildlife')
+            ->select('wildlife.wildlife_genus')
+            ->distinct('wildlife.wildlife_genus')
+            ->where('wildlife_type', 'Bone')
+            ->get();
+
+        $searchDate = DB::table('wildlife')
+            ->select('wildlife.date_added')
+            ->distinct('wildlife.date_added')
+            ->where('wildlife_type', 'Bone')
+            ->get();
+
+
+
+        $wildlife = Wildlife::where('wildlife_type', 'Bone')
+            ->orderBy('wildlife_name', 'ASC')
+            ->get();
+
+        return view('IEMS.Linus.STUDENT.StudentBoneCollection')
+            ->with('wildlifes', $wildlife)
+            ->with('searchGenus', $searchGenus)
+            ->with('searchDate', $searchDate);
+    }
+    public function sortNameAscR_S()
+    {
+
+        $searchGenus = DB::table('wildlife')
+            ->select('wildlife.wildlife_genus')
+            ->distinct('wildlife.wildlife_genus')
+            ->where('wildlife_type', 'Reference')
+            ->get();
+
+        $searchDate = DB::table('wildlife')
+            ->select('wildlife.date_added')
+            ->distinct('wildlife.date_added')
+            ->where('wildlife_type', 'Reference')
+            ->get();
+
+        $wildlife = Wildlife::where('wildlife_type', 'Reference')
+            ->orderBy('wildlife_name', 'ASC')
+            ->get();
+
+        return view('IEMS.Linus.STUDENT.StudentRefCollection')
+            ->with('wildlifes', $wildlife)
+            ->with('searchGenus', $searchGenus)
+            ->with('searchDate', $searchDate);
     }
 
     public function dateAddedDesc()
@@ -857,6 +957,53 @@ class studentController extends Controller
             ->with('searchLoc', $searchLoc);
     }
 
+    public function dateAddedDescB_S()
+    {
+
+        $searchGenus = DB::table('wildlife')
+            ->select('wildlife.wildlife_genus')
+            ->distinct('wildlife.wildlife_genus')
+            ->where('wildlife_type', 'Bone')
+            ->get();
+
+        $searchDate = DB::table('wildlife')
+            ->select('wildlife.date_added')
+            ->distinct('wildlife.date_added')
+            ->where('wildlife_type', 'Bone')
+            ->get();
+
+        $wildlife = Wildlife::where('wildlife_type', 'Bone')
+            ->orderBy('wildlife_name', 'DESC')
+            ->get();
+        return view('IEMS.Linus.STUDENT.StudentBoneCollection')
+            ->with('wildlifes', $wildlife)
+            ->with('searchGenus', $searchGenus)
+            ->with('searchDate', $searchDate);
+    }
+    public function dateAddedDescR_S()
+    {
+
+        $searchGenus = DB::table('wildlife')
+            ->select('wildlife.wildlife_genus')
+            ->distinct('wildlife.wildlife_genus')
+            ->where('wildlife_type', 'Reference')
+            ->get();
+
+        $searchDate = DB::table('wildlife')
+            ->select('wildlife.date_added')
+            ->distinct('wildlife.date_added')
+            ->where('wildlife_type', 'Reference')
+            ->get();
+
+        $wildlife = Wildlife::where('wildlife_type', 'Reference')
+            ->orderBy('wildlife_name', 'DESC')
+            ->get();
+        return view('IEMS.Linus.STUDENT.StudentRefCollection')
+            ->with('wildlifes', $wildlife)
+            ->with('searchGenus', $searchGenus)
+            ->with('searchDate', $searchDate);
+    }
+
     public function dateAddedAsc()
     {
 
@@ -886,6 +1033,52 @@ class studentController extends Controller
             ->with('searchClass', $searchClass)
             ->with('searchSpecie', $searchSpecie)
             ->with('searchLoc', $searchLoc);
+    }
+    public function dateAddedAscB_S()
+    {
+
+        $searchGenus = DB::table('wildlife')
+            ->select('wildlife.wildlife_genus')
+            ->distinct('wildlife.wildlife_genus')
+            ->where('wildlife_type', 'Bone')
+            ->get();
+
+        $searchDate = DB::table('wildlife')
+            ->select('wildlife.date_added')
+            ->distinct('wildlife.date_added')
+            ->where('wildlife_type', 'Bone')
+            ->get();
+
+        $wildlife = Wildlife::where('wildlife_type', 'Bone')
+            ->orderBy('wildlife_name', 'ASC')
+            ->get();
+        return view('IEMS.Linus.STUDENT.StudentBoneCollection')
+            ->with('wildlifes', $wildlife)
+            ->with('searchGenus', $searchGenus)
+            ->with('searchDate', $searchDate);
+    }
+    public function dateAddedAscR_S()
+    {
+
+        $searchGenus = DB::table('wildlife')
+            ->select('wildlife.wildlife_genus')
+            ->distinct('wildlife.wildlife_genus')
+            ->where('wildlife_type', 'Reference')
+            ->get();
+
+        $searchDate = DB::table('wildlife')
+            ->select('wildlife.date_added')
+            ->distinct('wildlife.date_added')
+            ->where('wildlife_type', 'Reference')
+            ->get();
+
+        $wildlife = Wildlife::where('wildlife_type', 'Reference')
+            ->orderBy('wildlife_name', 'Asc')
+            ->get();
+        return view('IEMS.Linus.Student.StudentRefCollection')
+            ->with('wildlifes', $wildlife)
+            ->with('searchGenus', $searchGenus)
+            ->with('searchDate', $searchDate);
     }
 
     public function titleDesc()

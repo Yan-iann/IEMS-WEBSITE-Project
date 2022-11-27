@@ -2,8 +2,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "html.format.unformatted": "",
-    "html.format.extraLiners": "",
-    "[blade]": {
-        "editor.defaultFormatter": "shufo.vscode-blade-formatter"
-    }
+    "html.format.extraLiners": ""
 }
