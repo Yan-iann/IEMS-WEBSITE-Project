@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Validator;
+use Illuminate\Support\Facades\Validator;
 use App\Models\user_info;
 use App\Models\User;
 use App\Models\Wildlife;
@@ -20,7 +20,7 @@ use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\File;
 use Symfony\Component\Serializer\Serializer;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class infocardMaintain extends Controller
 {

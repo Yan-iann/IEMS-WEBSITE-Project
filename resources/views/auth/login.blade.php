@@ -50,6 +50,7 @@
                     {{ __('Forgot your password?') }}
                 </a>
                 @endif
+
             </div>
             <button class="bi bi-eye-slash" id="togglePassword" type="button"></button>
 
