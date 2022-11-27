@@ -267,14 +267,15 @@ Route::get('/j_authorA_G', [guestController::class, 'j_authorAsc'])->name('j_aut
 
 
 //SITE ///////////////////////////////////////////////////////////////////////////////////////////////////
-Route::get('/college', [IEMSWebsite::class, 'accessCollege']);
-Route::get('/enrollment', [IEMSWebsite::class, 'accessEnrollment']);
-Route::get('/facilities', [IEMSWebsite::class, 'accessFacilities']);
-Route::get('/exhibit', [IEMSWebsite::class, 'accessLinus']);
-Route::get('/rates', [IEMSWebsite::class, 'accessRates']);
-Route::get('/facultystaff', [IEMSWebsite::class, 'accessFacultyStaff']); //access faculty table
-Route::get('/announcement', [IEMSWebsite::class, 'accessAnnouncement']); //access announcement table
-Route::get('/announcementDisplay/{anno_ID}', [IEMSWebsite::class, 'accessAnnouncementDisplay'])->name('accessAnnouncementDisplay'); // access announcement
+Route::get('/college',[IEMSWebsite::class, 'accessCollege']);
+Route::get('/enrollment',[IEMSWebsite::class, 'accessEnrollment']);
+Route::get('/vision',[IEMSWebsite::class, 'accessVision']);
+Route::get('/facilities',[IEMSWebsite::class, 'accessFacilities']);
+Route::get('/exhibit',[IEMSWebsite::class, 'accessLinus']);
+Route::get('/rates',[IEMSWebsite::class, 'accessRates']);
+Route::get('/facultystaff',[IEMSWebsite::class, 'accessFacultyStaff']); //access faculty table
+Route::get('/announcement',[IEMSWebsite::class, 'accessAnnouncement']); //access announcement table
+Route::get('/announcementDisplay/{anno_ID}',[IEMSWebsite::class, 'accessAnnouncementDisplay'])->name('accessAnnouncementDisplay'); // access announcement
 Route::get('contact-us', [ContactController::class, 'index']);
 Route::post('contact-us', [ContactController::class, 'store'])->name('contact-us.store');
 Route::get('/construction', [IEMSWebsite::class, 'underConstruction']);

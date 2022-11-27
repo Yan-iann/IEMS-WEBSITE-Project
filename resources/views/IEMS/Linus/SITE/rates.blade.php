@@ -1,6 +1,7 @@
 @extends('layouts.IEMS_Layout')
 @section('content')
-    <section class="mbr-section article" style="background-color: #1DA2d8; padding-top: 180px; padding-bottom: 180px;" data-scroll-section>
+    <section class="mbr-section article" style="background-color: #1DA2d8; padding-top: 180px; padding-bottom: 180px;"
+        data-scroll-section>
 
         <div class="container">
             <div class="row d-flex justify-content-center">
@@ -37,8 +38,8 @@
 
                         <div class="col-12 mt-3">
                             <div class="row">
-                                <h1 class=" display-3 subheader">Bench Fees</h1>
-                                <p class="lead">The usage of the bench fees as follows
+                                <h1 class=" display-5 subheader">Bench Fees</h1>
+                                <p class="lead">The usage of the bench fees is as follows
                                 </p>
                             </div>
                         </div>
@@ -95,13 +96,13 @@
 
 
                 {{-- Diving Equipment --}}
-                <div class="col-12"  style="margin-bottom:50vh">
+                <div class="col-12" style="margin-bottom:50vh">
                     <div class="row d-flex align-items-center ">
 
                         <div class="col-12 mt-3">
                             <div class="row">
-                                <h1 class=" display-3 subheader">Diving Equipment Rental Fees</h1>
-                                <p class="lead">The usage of the diving equipment rates (daily) as follows
+                                <h1 class=" display-5 subheader">Diving Equipment Rental Fees</h1>
+                                <p class="lead">The usage of the diving equipment rates (daily) is as follows
                                 </p>
                             </div>
                         </div>
@@ -193,7 +194,7 @@
 
                         <div class="col-12 mt-3">
                             <div class="row">
-                                <h1 class=" display-3 subheader">Other Equipment Rates</h1>
+                                <h1 class=" display-5 subheader">Other Equipment Rental Fees</h1>
                                 <p class="lead">List of other equipment that's available for rental
                                 </p>
                             </div>
@@ -247,26 +248,27 @@
 
     {{-- Notes --}}
     <section class="mbr-section article"
-    style="background-color: rgb(242, 242, 242); padding-top: 120px; padding-bottom:120px; object-fit:cover;" data-scroll-section>
+        style="background-color: rgb(242, 242, 242); padding-top: 120px; padding-bottom:120px; object-fit:cover;"
+        data-scroll-section>
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-12 d-flex align-items-center" style="padding:10px">
                     <div class="container d-flex justify-content-center">
                         <div class="row ">
-                    <h2 class="col-12">Notes</h2>
-                    <ul class="col-12" type="A">
-                        <li class="lead">Supervisors of foreign students are requested to coordinate
-                            with the Laboratory Manager with regard to billing fees
-                        </li>
-                        <li class="lead">
-                            IEMS students are requested to settle their rental bills after
-                            each activity
-                        </li>
-                        <li class="lead">
-                            Project-based: Research assistants are expected to file necessary
-                            documents with the Business and Finance and expedite payment to IEMS account
-                        </li>
-                    </ul>
+                            <h2 class="col-12">Notes</h2>
+                            <ul class="col-12" type="A">
+                                <li class="lead">Supervisors of foreign students are requested to coordinate
+                                    with the Laboratory Manager with regard to billing fees
+                                </li>
+                                <li class="lead">
+                                    IEMS students are requested to settle their rental bills after
+                                    each activity
+                                </li>
+                                <li class="lead">
+                                    Project-based: Research assistants are expected to file necessary
+                                    documents with the Business and Finance and expedite payment to IEMS account
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
