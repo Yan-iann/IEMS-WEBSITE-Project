@@ -17,15 +17,15 @@
         @endif
 
         @if(Session::get('sucess'))
-            <div class="alert alert-success">
+        <div class="alert alert-success">
             {{ Session::get('sucess')}}
-            </div>
+        </div>
         @endif
 
         <div class="block mt-1 mb-3">
-                    <h1 class="display-4 subheader" >Welcome!</h1>
-                    <p> A whole library of information awaits you.</p>
-            </div>
+            <h1 class="display-4 subheader">Welcome!</h1>
+            <p> A whole library of information awaits you.</p>
+        </div>
 
 
         <form method="POST" action="{{ route('login') }}">
@@ -42,17 +42,22 @@
             <div class="mt-4">
                 <x-input-label for="password" :value="__('Password')" />
 
-                <x-text-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
+                <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+
+
+                @if (Route::has('password.request'))
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                    {{ __('Forgot your password?') }}
+                </a>
+                @endif
             </div>
+            <button class="bi bi-eye-slash" id="togglePassword" type="button"></button>
 
 
             <br>
-                <button  class="btn btn-info">
-                    Login
-                </button>
+            <button class="btn btn-info">
+                Login
+            </button>
             </div>
         </form>
     </x-auth-card>

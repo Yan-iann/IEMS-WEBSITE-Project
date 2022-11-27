@@ -1,3 +1,16 @@
+<?php
+
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
+$profile = DB::table('users')
+    ->where('users.id', '=', Auth::user()->id)
+    ->join('user_info', 'user_info.user_ID', "=", 'users.id')
+    ->select('user_info.profile_pic')
+    ->first();
+?>
+
 <div class="sidebar close">
 
     {{-- Linus Logo Header --}}
@@ -93,7 +106,7 @@
         <!--Profile-->
         <li>
             <div class="profile-details">
-               <div class="profile-content"></div>
+                <div class="profile-content"><img src="{{ asset($profile->profile_pic) }}" alt="profile"></div>
                 <div class="name-job">
                     <a href="{{ route('Sprofile') }}">
                         <div class="profile_name">{{ Auth::user()->name }}
@@ -104,8 +117,7 @@
                 <!-- Authentication for LogOut-->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <x-dropdown-link :href="route('logout')"
-                        onclick="event.preventDefault();
+                    <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
                   this.closest('form').submit();">
                         <i class='bx bx-log-out'></i>
                     </x-dropdown-link>
