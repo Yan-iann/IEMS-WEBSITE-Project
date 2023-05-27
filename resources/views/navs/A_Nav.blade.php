@@ -80,13 +80,14 @@ $profile = DB::table('users')
             </ul>
         </li>
         <!--end of Student-->
+
         <!--Profile-->
         <li>
             <div class="profile-details">
-                <div class="profile-content"> <img src="{{ asset($profile->profile_pic) }}" alt="profile">
+                <div class="profile-content"><img src="{{ asset($profile->profile_pic) }}" alt="profile">
                 </div>
                 <div class="name-job">
-                    <a href="{{ route('Aprofile') }}">
+                    <a href="{{ route('Sprofile') }}">
                         <div class="profile_name">{{ Auth::user()->name }}
                         </div> <!-- call Name -->
                     </a>
@@ -103,7 +104,6 @@ $profile = DB::table('users')
             </div>
         </li>
         <!--end of Profile-->
-    </ul>
-    <!--end of Nav Links-->
+        <!--end of Nav Links-->
 </div>
 <!--end of Sidebar-->

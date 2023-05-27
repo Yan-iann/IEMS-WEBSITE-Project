@@ -106,7 +106,8 @@ $profile = DB::table('users')
         <!--Profile-->
         <li>
             <div class="profile-details">
-                <div class="profile-content"><img src="{{ asset($profile->profile_pic) }}" alt="profile"></div>
+                <div class="profile-content"><img src="{{ asset($profile->profile_pic) }}" alt="profile">
+                </div>
                 <div class="name-job">
                     <a href="{{ route('Sprofile') }}">
                         <div class="profile_name">{{ Auth::user()->name }}
